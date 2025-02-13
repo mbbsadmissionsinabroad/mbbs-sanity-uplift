@@ -67,7 +67,7 @@ export default async function RootLayout({
             }),
           }}
         />
-        <link rel="canonical" href="https://www.mbbsadmissionsinabroad.com/" />
+        <link rel="canonical" href="https://www.mbbsadmissionsinabroad.com" />
         <meta name="robots" content="index, follow" />
 
         {/* Hreflang Tags */}
