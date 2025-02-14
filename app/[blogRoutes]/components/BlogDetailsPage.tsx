@@ -20,7 +20,7 @@ const BlogDetailsPage = (props: any) => {
           src={urlFor(props?.blogDetailsContent?.data.bannerImage)
             .format("webp")
             .url()}
-          className="h-auto max-w-full object-cover"
+          className=" h-auto max-w-full object-cover"
           width={1350}
           height={700}
           alt={props?.blogDetailsContent?.data?.title}
