@@ -50,6 +50,14 @@ export default async function RootLayout({
           property="og:url"
           content="https://www.mbbsadmissionsinabroad.com"
         />
+        <link
+          rel="preload"
+          href="/fonts/Inter.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="preconnect" href="https://cdn.sanity.io" />
         <link rel="canonical" href="https://www.mbbsadmissionsinabroad.com" />
         <meta property="og:type" content="website" />
         <script

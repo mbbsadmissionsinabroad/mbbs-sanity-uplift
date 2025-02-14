@@ -15,14 +15,20 @@ const BlogDetailsPage = (props: any) => {
           </h1>
         </div>
       </section>
-      <div className="container py-8 mx-auto w-full items-center justify-center text-justify tex sm:p-40">
-        <img
-          src={urlFor(props?.blogDetailsContent?.data.bannerImage).url()}
-          className="h-3/4 max-w-full object-fill"
-          height={1000}
-          width={10000}
+      <div className="container py-8 mx-auto w-full items-center justify-center text-justify sm:p-40">
+        <Image
+          src={urlFor(props?.blogDetailsContent?.data.bannerImage)
+            .format("webp")
+            .url()}
+          className="h-auto max-w-full object-cover"
+          width={1350}
+          height={700}
           alt={props?.blogDetailsContent?.data?.title}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1350px"
+          // priority
+          loading="lazy" // Lazy load everything except first image
         />
+
         <div className="tocContainer">
           {props?.blogDetailsContent?.data && <TOC />}
         </div>

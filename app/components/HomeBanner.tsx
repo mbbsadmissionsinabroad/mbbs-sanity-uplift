@@ -111,11 +111,12 @@ const HomeBanner: React.FC<SliderDataProps> = ({ sliderData }) => {
           {sliderContent && (
             <Image
               src={urlFor(sliderContent[0].sliderImage).url()}
-              className="opacity-30"
               alt="Background Image"
               loading="lazy"
-              style={{ objectFit: "fill" }}
               quality={100}
+              fill
+              className="opacity-30 object-fill"
+              style={{ objectFit: "fill" }}
             />
           )}
           <div className="mx-auto flex flex-wrap items-center">
