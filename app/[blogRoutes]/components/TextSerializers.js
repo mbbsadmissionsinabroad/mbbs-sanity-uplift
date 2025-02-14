@@ -1,7 +1,6 @@
 import { urlFor } from "@/lib/client";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
-import { Children } from "react";
 
 function TextSerializer({ data, className }) {
   const addId = (children) => {
@@ -21,10 +20,13 @@ function TextSerializer({ data, className }) {
         <div className="flex justify-center my-4">
           <Image
             src={urlFor(value).url()}
-            height={500}
-            width={900}
+            height={600}
+            width={800}
             className="block"
             alt="serializers"
+            layout="responsive" // Ensures proper responsiveness
+            quality={75} // Adjust quality to reduce size
+            priority // Ensures faster loading for above-the-fold images
           />
         </div>
       ),

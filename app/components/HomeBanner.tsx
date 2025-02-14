@@ -113,9 +113,8 @@ const HomeBanner: React.FC<SliderDataProps> = ({ sliderData }) => {
               src={urlFor(sliderContent[0].sliderImage).url()}
               className="opacity-30"
               alt="Background Image"
-              layout="fill"
               loading="lazy"
-              objectFit="fill"
+              style={{ objectFit: "fill" }}
               quality={100}
             />
           )}
