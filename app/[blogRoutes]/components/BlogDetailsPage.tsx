@@ -1,9 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import { urlFor } from "@/lib/client";
-import TextSerializer from "./TextSerializers";
-import Modal from "./Modal";
-import TOC from "./TOC";
+// import TextSerializer from "./TextSerializers";
+import dynamic from "next/dynamic";
+
+const TOC = dynamic(() => import("./TOC"), { ssr: false });
+const Modal = dynamic(() => import("./Modal"), { ssr: false });
+const TextSerializer = dynamic(() => import("./TextSerializers"), {
+  ssr: false,
+});
+
+// import Modal from "./Modal";
+// import TOC from "./TOC";
 
 const BlogDetailsPage = (props: any) => {
   return (
@@ -17,7 +25,7 @@ const BlogDetailsPage = (props: any) => {
       </section>
       <div className="container py-8 mx-auto w-full items-center justify-center text-justify sm:p-40">
         <Image
-          src={urlFor(props?.blogDetailsContent?.data.bannerImage)
+          src={urlFor(props?.blogDetailsContent?.data?.bannerImage)
             .format("webp")
             .url()}
           className="h-auto max-w-full object-cover"
@@ -25,8 +33,8 @@ const BlogDetailsPage = (props: any) => {
           height={700}
           alt={props?.blogDetailsContent?.data?.title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1350px"
-          // priority
-          loading="lazy" // Lazy load everything except first image
+          priority
+          loading="eager"
         />
 
         <div className="tocContainer">

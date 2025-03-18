@@ -1,0 +1,5 @@
+{
+  "/[blogRoutes]/page": "app/[blogRoutes]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/page": "app/page.js"
+}
