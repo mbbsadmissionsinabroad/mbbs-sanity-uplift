@@ -58,6 +58,7 @@
 
 // export default Page;
 
+"use client";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
 import BlogDetailsPage from "./components/BlogDetailsPage";
@@ -66,7 +67,6 @@ import Notfound from "../not-found";
 
 const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
   let blogDetailsContent;
-
   try {
     blogDetailsContent = await getBlogDetails(params?.blogRoutes ?? "");
   } catch (error) {

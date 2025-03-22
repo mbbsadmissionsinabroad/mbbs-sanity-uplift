@@ -1,6 +1,8 @@
+// "use client";
 import Image from "next/image";
 import React from "react";
 import { urlFor } from "@/lib/client";
+import Assist from "@/app/components/Assist";
 // import TextSerializer from "./TextSerializers";
 import dynamic from "next/dynamic";
 
@@ -45,6 +47,14 @@ const BlogDetailsPage = (props: any) => {
           className="serializerTitle mt-4"
         />
       </div>
+
+      {props?.blogDetailsContent?.faq?.length > 0 && (
+        <Assist
+          summary=""
+          data={props?.blogDetailsContent?.faq}
+          title={props?.blogDetailsContent?.data?.title}
+        />
+      )}
       <Modal />
     </div>
   );

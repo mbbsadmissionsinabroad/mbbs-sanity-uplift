@@ -8,8 +8,8 @@ import {
 
 interface AssistProps {
   data: {
-    title: string;
-    desc: string;
+    question: string;
+    answer: string;
   }[];
   title: string;
   summary: string;
@@ -36,10 +36,14 @@ const Assist: React.FC<AssistProps> = ({ data, title, summary }) => {
                 {data.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
                     <AccordionTrigger className="ml-2 md:ml-10 text-sm md:text-lg font-semibold">
-                      {item.title}
+                      {item.question}
                     </AccordionTrigger>
                     <AccordionContent className="bg-white p-2 md:p-10 text-sm md:text-lg">
-                      <div dangerouslySetInnerHTML={{ __html: item.desc }} />
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: item.answer,
+                        }}
+                      />
                     </AccordionContent>
                   </AccordionItem>
                 ))}
