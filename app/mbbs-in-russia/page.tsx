@@ -76,7 +76,13 @@ export default function MBBSInRussia() {
 
   return (
     <>
-      <h1 className="text-4xl pt-16 pb-8 font-large font-extrabold bg-blue-900 title-font text-center text-white">
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+        as="style"
+      />
+
+      <h1 className="text-4xl pt-16 pb-8 font-extrabold bg-blue-900 text-center text-white">
         MBBS in Russia
       </h1>
       <div className="max-w-7xl mx-auto px-4 py-10">
