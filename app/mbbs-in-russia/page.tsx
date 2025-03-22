@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -11,7 +12,7 @@ export default function MBBSInRussia() {
     university: "",
   });
   const [isLoading, setIsLoading] = useState(false);
-
+  const router = useRouter();
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -62,7 +63,7 @@ export default function MBBSInRussia() {
           phone: "",
           university: "",
         });
-        notifySuccess();
+        router.push(`/thank-you?title=Mbbs In Russia`);
       } else {
         setIsLoading(false);
         notifyFailure();
