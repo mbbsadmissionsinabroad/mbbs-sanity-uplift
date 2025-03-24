@@ -63,7 +63,7 @@ export default function MBBSInRussia() {
           phone: "",
           university: "",
         });
-        router.push(`/thank-you?title=Mbbs In Russia`);
+        router.push("/thank-you");
       } else {
         setIsLoading(false);
         notifyFailure();

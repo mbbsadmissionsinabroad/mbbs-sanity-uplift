@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation"; // Import useSearchParams
 
 const ThankYou = () => {
   const searchParams = useSearchParams();
-  const title = searchParams.get("title") || "our services"; // Get the title from URL
+  const title = searchParams.get("title") || "MBBS in Russia"; // Get the title from URL
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-white px-6">
