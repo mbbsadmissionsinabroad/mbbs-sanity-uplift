@@ -3,14 +3,14 @@ import Image from "next/image";
 import React from "react";
 import { urlFor } from "@/lib/client";
 import Assist from "@/app/components/Assist";
-// import TextSerializer from "./TextSerializers";
+import TextSerializer from "./TextSerializers";
 import dynamic from "next/dynamic";
 
 const TOC = dynamic(() => import("./TOC"), { ssr: false });
 const Modal = dynamic(() => import("./Modal"), { ssr: false });
-const TextSerializer = dynamic(() => import("./TextSerializers"), {
-  ssr: false,
-});
+// const TextSerializer = dynamic(() => import("./TextSerializers"), {
+//   ssr: false,
+// });
 
 // import Modal from "./Modal";
 // import TOC from "./TOC";
