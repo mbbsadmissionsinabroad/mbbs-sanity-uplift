@@ -6,14 +6,14 @@ import Assist from "@/app/components/Assist";
 import TextSerializer from "./TextSerializers";
 import dynamic from "next/dynamic";
 
-const TOC = dynamic(() => import("./TOC"), { ssr: false });
+// const TOC = dynamic(() => import("./TOC"), { ssr: false });
 const Modal = dynamic(() => import("./Modal"), { ssr: false });
 // const TextSerializer = dynamic(() => import("./TextSerializers"), {
 //   ssr: false,
 // });
 
 // import Modal from "./Modal";
-// import TOC from "./TOC";
+import TOC from "./TOC";
 
 const BlogDetailsPage = (props: any) => {
   return (
