@@ -3,7 +3,6 @@ import { Fragment, useState, useRef } from "react";
 import { Dialog, Popover, Tab, Transition, Menu } from "@headlessui/react";
 import { urlFor } from "@/lib/client";
 import logo from "../../public/new-lyf-logo.webp";
-import linkedIn from "../../public/images/linkedin.svg";
 import insta from "../../public/images/insta2.svg";
 
 import {
@@ -43,6 +42,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example({ navBarData }: any) {
+  console.log("gggggg", navBarData);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
