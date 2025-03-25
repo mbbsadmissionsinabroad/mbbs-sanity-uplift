@@ -58,7 +58,6 @@
 
 // export default Page;
 
-"use client";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
 import BlogDetailsPage from "./components/BlogDetailsPage";
@@ -73,7 +72,6 @@ const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
     console.error("Error fetching blog details:", error);
     return <Notfound />;
   }
-  console.log("ffffff", blogDetailsContent, params);
   if (!blogDetailsContent || blogDetailsContent.notFound) {
     return <Notfound />;
   }

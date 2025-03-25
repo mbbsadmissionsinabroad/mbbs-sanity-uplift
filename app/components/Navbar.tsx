@@ -4,12 +4,7 @@ import { Dialog, Popover, Tab, Transition, Menu } from "@headlessui/react";
 import { urlFor } from "@/lib/client";
 import logo from "../../public/new-lyf-logo.webp";
 import insta from "../../public/images/insta2.svg";
-
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 import { navbar } from "@material-tailwind/react";
@@ -42,7 +37,6 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example({ navBarData }: any) {
-  console.log("gggggg", navBarData);
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef(null);
 
