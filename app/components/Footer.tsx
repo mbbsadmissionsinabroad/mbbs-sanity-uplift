@@ -50,9 +50,9 @@ const Footer = ({ navBarData }: any) => {
                   AUSBILDUNG
                 </button>
               </Link>
-              <Link href="/gallary">
+              <Link href="/gallery">
                 <button className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 mt-10">
-                  GALLARY
+                  GALLERY
                 </button>
               </Link>
             </div>
