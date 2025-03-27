@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Head from "next/head";
 import Image from "next/image";
 import img1 from "@/public/russia-college-1.webp";
-import img2 from "@/public/russia-college-2.avif";
+import img2 from "@/public/russia-college-2.jpeg";
 import img3 from "@/public/russia-college-3.webp";
 import img4 from "@/public/russia-college-4.webp";
 
