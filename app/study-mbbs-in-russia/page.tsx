@@ -798,7 +798,7 @@ export default function MBBSInRussia() {
           />
         </svg>
         <span className="font-medium">
-          Scholarship up to ₹1 Lakh available for first few applicants! Limited
+          Scholarship up to ₹5 Lakh available for first few applicants! Limited
           seats remaining for September 2025 intake!
         </span>
       </div>
@@ -809,9 +809,9 @@ export default function MBBSInRussia() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                MBBS in Russia Starting at{" "}
-                <span className="text-orange-400">₹2 Lakhs/year</span> -
-                <br />
+                Study MBBS in Russia - {" "}<br/>
+                <span className="text-orange-400">₹1 Lakhs/Semester</span> <br/>For first 10 students
+                <br/>
                 Book Your Seat Now
               </h1>
               <p className="text-xl mb-8 text-blue-100">
