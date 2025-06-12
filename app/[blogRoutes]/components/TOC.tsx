@@ -22,11 +22,13 @@ function TOC() {
       // Check if we are in the browser
       const elements = Array.from(
         document.querySelectorAll("h2, h3, h4, h5, h6")
-      ).map((elem) => ({
-        id: elem.id,
-        text: elem.textContent || "",
-        level: Number(elem.nodeName.charAt(1)),
-      }));
+      )
+        .filter((elem) => elem.id !== "") // Exclude elements with empty id
+        .map((elem) => ({
+          id: elem.id,
+          text: elem.textContent || "",
+          level: Number(elem.nodeName.charAt(1)),
+        }));
       setHeadings(elements);
     }
   }, []);
