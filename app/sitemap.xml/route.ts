@@ -1,5 +1,5 @@
+export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
-
 const EXTERNAL_DATA_URL = "https://www.mbbsadmissionsinabroad.com";
 
 function generateSiteMap(allPagesData: { slug: string; updatedAt: string }[]) {
