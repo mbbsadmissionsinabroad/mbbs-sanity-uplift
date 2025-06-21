@@ -265,7 +265,7 @@ export default function MBBSInRussia() {
       location: "Vladikavkaz, Russia",
       established: 1939,
       description:
-        "Affordable fees starting under ₹2 Lakhs/year. Recognized by NMC, WHO with excellent clinical exposure.",
+        "Affordable fees starting under ₹3.10 Lakhs/year. Recognized by NMC, WHO with excellent clinical exposure.",
       image: img1,
       badges: ["NMC Approved", "WHO Listed", "Lowest Fees"],
     },
@@ -275,7 +275,7 @@ export default function MBBSInRussia() {
       location: "Grozny, Russia",
       established: 1938,
       description:
-        "World-class medical education under ₹2.5 Lakhs/year. Modern campus with excellent curriculum.",
+        "World-class medical education under ₹3.0 Lakhs/year. Modern campus with excellent curriculum.",
       image: img2,
       badges: ["NMC Approved", "WHO Listed", "Modern Campus"],
     },
@@ -810,13 +810,13 @@ export default function MBBSInRussia() {
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 Study MBBS in Russia - {" "}<br/>
-                <span className="text-orange-400">₹1 Lakhs/Semester</span> <br/>For first 10 students
+                <span className="text-orange-400">₹1.30 Lakhs/Semester</span>
                 <br/>
                 Book Your Seat Now
               </h1>
               <p className="text-xl mb-8 text-blue-100">
                 Top NMC, WHO Approved Russian Medical Universities for Indian
-                Students at ₹2 Lakhs/year
+                Students at ₹2.60 Lakhs/year
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-center text-lg">
@@ -834,7 +834,7 @@ export default function MBBSInRussia() {
                       />
                     </svg>
                   </span>
-                  Tuition from ₹2 Lakhs/year
+                  Tuition from ₹2.60 Lakhs/year
                 </li>
                 <li className="flex items-center text-lg">
                   <span className="bg-green-500 rounded-full p-1 mr-3">
