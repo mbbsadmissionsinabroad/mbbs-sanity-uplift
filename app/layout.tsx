@@ -142,18 +142,10 @@ export default async function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', 'TEST76022');
+            fbq('init', '1187114626535068');
             fbq('track', 'PageView');
           `}
         </Script>
-        <noscript>
-          <img
-            height="1"
-            width="1"
-            style={{ display: "none" }}
-            src="https://www.facebook.com/tr?id=TEST76022&ev=PageView&noscript=1"
-          />
-        </noscript>
       </body>
     </html>
   );
