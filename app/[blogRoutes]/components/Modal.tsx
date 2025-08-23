@@ -13,6 +13,7 @@ interface FormData {
   phone: string;
 }
 const API_URL = process.env.NEXT_PUBLIC_LEAD_URL ?? "https://default-api.com";
+const accessToken = process.env.NEXT_PUBLIC_LEAD_SECRET_KEY as string;
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_LEAD_SECRET_KEY;
 
 export default function EnquiryPopup() {
@@ -70,7 +71,22 @@ export default function EnquiryPopup() {
         body: JSON.stringify(requestData),
       });
 
-      if (!response.ok) throw new Error(`Error: ${response.statusText}`);
+       const data2 = [
+        { Attribute: 'Name', Value: formData.name.toString() },
+        { Attribute: 'Phone', Value: formData.phone },
+        { Attribute: 'Email', Value: formData.email.toString() },
+        { Attribute: 'Lead Source', Value: 'Blog Page' }
+      ];
+
+     const requestOptions2: RequestInit = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(data2),
+    };
+      const response2 = await fetch("https://admission-backend.vercel.app/send-email", requestOptions2)
 
       // Success handling
       localStorage.setItem("enquiry_submitted", "true");

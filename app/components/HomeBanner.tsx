@@ -70,10 +70,29 @@ const HomeBanner: React.FC<SliderDataProps> = ({ sliderData }) => {
       body: JSON.stringify(requestData),
     };
 
-    try {
-      const response = await fetch(URL, requestOptions);
+      const data2 = [
+        { Attribute: 'Name', Value: name.toString() },
+        { Attribute: 'Phone', Value: phone },
+        { Attribute: 'Email', Value: email.toString() },
+        { Attribute: 'Message', Value: message },
+        { Attribute: 'Lead Source', Value: 'Home Page' }
+      ];
 
-      if (!response.ok) {
+     const requestOptions2: RequestInit = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(data2),
+    };
+
+    try {
+      // const response = await fetch(URL, requestOptions);
+
+      const response2 = await fetch("https://admission-backend.vercel.app/send-email", requestOptions2)
+
+      if (!response2.ok) {
         throw new Error("Network response was not ok");
       }
 

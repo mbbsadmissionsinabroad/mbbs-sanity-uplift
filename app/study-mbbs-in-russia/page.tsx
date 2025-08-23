@@ -58,6 +58,7 @@ export default function MBBSInRussia() {
     phone: "",
     university: "",
   });
+  const accessToken = process.env.NEXT_PUBLIC_LEAD_SECRET_KEY as string;
   const [isLoading, setIsLoading] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
@@ -184,10 +185,26 @@ export default function MBBSInRussia() {
           body: JSON.stringify(requestData),
         }
       );
+       const data2 = [
+        { Attribute: 'Name', Value: formData.name.toString() },
+        { Attribute: 'Phone', Value: formData.phone },
+        { Attribute: 'Email', Value: formData.email.toString() },
+        {Attribute: 'College', Value: formData.university},
+        { Attribute: 'Lead Source', Value: 'MBBS in Russia Landing Page' }
+      ];
+
+     const requestOptions2: RequestInit = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify(data2),
+    };
+      const response2 = await fetch("https://admission-backend.vercel.app/send-email", requestOptions2)
   
-      if (response.ok) {
+      if (response.ok && response2.ok) {
         setIsLoading(false);
-        
         if (isBrochureDownload) {
           // Determine which brochure to download based on selected university
           let brochureFile = '';
