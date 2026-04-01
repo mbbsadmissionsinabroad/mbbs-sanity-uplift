@@ -18,7 +18,7 @@ const countriesList = [
     img: "/assests/country-flag-2/Georgia.png",
     title: "STUDY MBBS IN GEORGIA",
     alt: "georgia-flag",
-    slug: "mbbs-in-georgia",
+    slug: "contact?interest=mbbs-in-georgia",
   },
   {
     img: "/assests/country-flag-2/malaysia.png",
@@ -30,13 +30,13 @@ const countriesList = [
     img: "/assests/country-flag-2/Kazakhstan.png",
     title: "STUDY MBBS IN KAZAKHSTAN",
     alt: "kyrgyzstan-flag",
-    slug: "mbbs-in-kazakhstan",
+    slug: "contact?interest=mbbs-in-kazakhstan",
   },
   {
     img: "/assests/country-flag-2/poland.png",
     title: "STUDY MBBS IN POLAND",
     alt: "poland-flag",
-    slug: "mbbs-admission-in-poland-for-indian-students",
+    slug: "contact?interest=mbbs-admission-in-poland",
   },
   {
     img: "/assests/country-flag-2/Germany.png",
@@ -54,13 +54,13 @@ const countriesList = [
     img: "/assests/country-flag-2/Armenia.png",
     title: "STUDY MBBS IN ARMENIA",
     alt: "armenia-flag",
-    slug: "mbbs-in-armenia",
+      slug: "mbbs-in-armenia",
   },
   {
     img: "/assests/country-flag-2/kyrgyzstan.png",
     alt: "kyrgyzstan-flag",
     title: "STUDY MBBS IN KYRGYZSTAN",
-    slug: "mbbs-in-kyrgyzstan",
+    slug: "contact?interest=mbbs-in-kyrgyzstan",
   },
   {
     img: "/assests/country-flag-2/Italy.png",

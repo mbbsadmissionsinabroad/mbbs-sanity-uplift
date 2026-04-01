@@ -21,7 +21,7 @@ const BlogDetailsPage = (props: any) => {
       <section className="text-white body-font bg-blue-800 bg-gradient-to-r">
         <div className="container py-12 mx-auto">
           <h1 className="text-4xl font-large font-extrabold title-font text-center text-white">
-            {props?.blogDetailsContent?.data?.metaKeywords}
+            {props?.blogDetailsContent?.data?.title}
           </h1>
         </div>
       </section>

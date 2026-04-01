@@ -1,96 +1,78 @@
 import Link from "next/link";
-import React from "react";
+import { footerLinkColumns } from "@/app/data/siteContent";
 
-const Footer = ({ navBarData }: any) => {
-  const footerObject = navBarData.find((obj: any) => obj.title === "Footer");
-  const sectionSize = Math.ceil(footerObject.navItems.length / 4);
+const footerActionLinks = [
+  { title: "BLOG", href: "/blog" },
+  { title: "AUSBILDUNG", href: "/ausbildung" },
+  { title: "GALLERY", href: "/gallery" },
+];
 
-  const section1 = footerObject.navItems.slice(0, sectionSize);
-  const section2 = footerObject.navItems.slice(sectionSize, sectionSize * 2);
-  const section3 = footerObject.navItems.slice(
-    sectionSize * 2,
-    sectionSize * 3
-  );
-  const section4 = footerObject.navItems.slice(sectionSize * 3);
-
+export default function Footer() {
   return (
-    <div>
-      <footer className="text-gray-600 body-font bg-gray-100">
-        <div className="flex flex-col text-center w-full">
-          <p className="sm:text-3xl text-2xl font-bold title-font mt-4 text-blue-800">
-            Quick Links that might help
+    <footer className="bg-slate-100 text-slate-700">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-3 text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">
+            Quick Links
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Everything important in one place
+          </h2>
+          <p className="max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+            Browse our core MBBS abroad pages, student resources, and contact
+            options without searching through the whole site.
           </p>
         </div>
-        <div className="px-5 p-12 mx-auto flex md:items-start md:flex-row flex-wrap flex-col gap-8">
-          <div className="flex-grow flex flex-wrap -mb-10 md:text-left text-center order-first">
-            {[section1, section2, section3, section4].map((section, i) => (
-              <div key={i} className="lg:w-1/5 md:w-1/5 w-full px-4">
-                {section.map((obj: any, index: any) => (
-                  <nav className="list-none mb-4" key={index}>
-                    <Link
-                      href={obj.slug}
-                      className="text-gray-600 hover:text-gray-800 font-semibold"
-                      prefetch={false}
-                    >
-                      * {obj.title}
-                    </Link>
-                  </nav>
-                ))}
-              </div>
-            ))}
-            {/* New Column for Buttons */}
-            <div className="lg:w-1/5 md:w-1/5 w-full px-4 md:block">
-              <Link href="/blog">
-                <button className="w-full mb-2 bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 mt-10">
-                  BLOG
-                </button>
-              </Link>
-              <Link href="/ausbildung">
-                <button className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 mt-10">
-                  AUSBILDUNG
-                </button>
-              </Link>
-              <Link href="/gallery">
-                <button className="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 mt-10">
-                  GALLERY
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        {/* Special design for small screens */}
-        {/* <div className="md:hidden flex flex-col items-center gap-4 p-6">
-          <p className="text-lg font-bold text-blue-800">Explore More</p>
-          <div className="grid grid-cols-2 gap-4">
-            <button className="w-full mb-2 bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700 mt-10">
-              BLOG
-            </button>
-            <button className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 mt-10">
-              AUSBILDUNG
-            </button>
-            <button className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-green-700 mt-10">
-              GALLARY
-            </button>
-          </div>
-        </div> */}
-        <div className="bg-gray-200">
-          <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-            <p className="text-gray-900 text-sm text-center sm:text-left">
-              © 2024 New-Lyf —
-              <a
-                href="https://twitter.com/_mbbsabroad"
-                rel="noopener noreferrer"
-                className="text-gray-900 ml-1"
-                target="_blank"
-              >
-                @mbbsadmissionsinabroad
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
-};
 
-export default Footer;
+        <div className="mt-12 grid gap-8 lg:grid-cols-5">
+          {footerLinkColumns.map((column, index) => (
+            <div key={index} className="space-y-3">
+              {column.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  prefetch={false}
+                  className="block rounded-xl px-1 py-1 text-sm font-medium text-slate-600 transition hover:text-blue-800"
+                >
+                  * {link.title}
+                </Link>
+              ))}
+            </div>
+          ))}
+
+          <div className="space-y-3 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-slate-200">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
+              More
+            </p>
+            {footerActionLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                prefetch={false}
+                className="block rounded-2xl bg-blue-700 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-800"
+              >
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-slate-200 bg-slate-200">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left sm:px-6 lg:px-8">
+          <p className="text-sm text-slate-700">
+            © 2024 New-Lyf
+          </p>
+          <a
+            href="https://www.instagram.com/mbbsadmissionsinabroad/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
+          >
+            @mbbsadmissionsinabroad
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+}

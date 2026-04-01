@@ -6,7 +6,9 @@ interface BlogDetails {
 }
 
 export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
-  const apiHost = process.env.NEXT_PUBLIC_API_HOST;
+  const apiHost =
+    process.env.NEXT_PUBLIC_API_HOST ||
+    `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
   const query = encodeURIComponent(
     `*[ _type == "pages" && slug.current == "${routeURL}" ]`
   );

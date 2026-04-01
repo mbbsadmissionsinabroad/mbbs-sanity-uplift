@@ -1,0 +1,400 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import NetherlandsNursingLeadSection from "./NetherlandsNursingLeadSection";
+import {
+  advantages,
+  articleSchema,
+  arrivalSteps,
+  breadcrumbSchema,
+  careerPathways,
+  careerProgression,
+  comparison,
+  compensationExtras,
+  costBreakdown,
+  disadvantages,
+  documents,
+  eligibility,
+  eligibilityNotes,
+  employers,
+  faqSchema,
+  faqs,
+  highlights,
+  hospitalScale,
+  ivrNumber,
+  keyFacts,
+  lastUpdated,
+  livingCosts,
+  metaDescription,
+  metaTitle,
+  pageTitle,
+  pageUrl,
+  processSteps,
+  quickSummary,
+  recognition,
+  scholarships,
+  timeline,
+  vvtScale,
+  whatsappHref,
+  whatsappNumber,
+} from "./pageData";
+
+type Row = Record<string, string>;
+
+export const metadata: Metadata = {
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: pageUrl },
+  openGraph: {
+    title: metaTitle,
+    description: metaDescription,
+    url: pageUrl,
+    siteName: "MBBS Admissions in Abroad",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: metaTitle,
+    description: metaDescription,
+  },
+};
+
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  theme = "light",
+}: {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  theme?: "light" | "dark";
+}) {
+  const dark = theme === "dark";
+  return (
+    <div className="max-w-3xl">
+      <p className={`text-sm font-semibold uppercase tracking-[0.3em] ${dark ? "text-blue-300" : "text-blue-700"}`}>
+        {eyebrow}
+      </p>
+      <h2 className={`mt-3 text-3xl font-bold tracking-tight md:text-4xl ${dark ? "text-white" : "text-slate-900"}`}>
+        {title}
+      </h2>
+      {description ? (
+        <p className={`mt-4 text-base leading-7 md:text-lg ${dark ? "text-slate-300" : "text-slate-600"}`}>
+          {description}
+        </p>
+      ) : null}
+    </div>
+  );
+}
+
+function DataTable({ rows, caption }: { rows: Row[]; caption: string }) {
+  const headers = Object.keys(rows[0] ?? {});
+  return (
+    <div className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_20px_50px_rgba(15,23,42,0.06)]">
+      <div className="overflow-x-auto">
+        <table className="min-w-full divide-y divide-slate-200 text-left text-sm" itemScope itemType="https://schema.org/Table">
+          <caption className="sr-only">{caption}</caption>
+          <thead className="bg-slate-950 text-white">
+            <tr itemScope itemType="https://schema.org/TableRow">
+              {headers.map((header) => (
+                <th key={header} scope="col" className="whitespace-nowrap px-4 py-4 font-semibold">
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100">
+            {rows.map((row, index) => (
+              <tr key={`${Object.values(row).join("-")}-${index}`} className="align-top odd:bg-white even:bg-slate-50/60" itemScope itemType="https://schema.org/TableRow">
+                {headers.map((header) => (
+                  <td key={header} className="px-4 py-4 text-slate-700">
+                    {row[header]}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+export default function NursingJobsInNetherlandsPage() {
+  return (
+    <main className="bg-[linear-gradient(180deg,#eff6ff_0%,#f8fafc_28%,#ffffff_65%)] text-slate-900">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+
+      <section className="relative overflow-hidden border-b border-blue-100">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.17),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(16,185,129,0.12),_transparent_30%),linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(255,255,255,0.86))]" />
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
+          <div>
+            <div className="inline-flex rounded-full border border-blue-200 bg-white/90 px-4 py-2 text-sm font-medium text-blue-800 shadow-sm">
+              2026-27 Netherlands nursing jobs guide for Indian nurses
+            </div>
+            <h1 className="mt-6 max-w-4xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">
+              {pageTitle}
+            </h1>
+            <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">
+              Last Updated: {lastUpdated}
+            </p>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
+              Understand the Dutch B2 reality, BIG and Nuffic process, TWV or GVVA work permit path, salary structure and employer support before you commit to the Netherlands route.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#quick-summary" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Start With Summary</a>
+              <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95">WhatsApp {whatsappNumber}</a>
+              <a href="#costs" className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-950">See Costs</a>
+              <a href="#netherlands-nursing-contact-form" className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-950">Request Callback</a>
+              <a href={`tel:${ivrNumber.replace(/\s+/g, "")}`} className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-950">Call IVR</a>
+            </div>
+            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+              {highlights.map((item) => (
+                <div key={item} className="rounded-3xl border border-white/80 bg-white/90 p-5 shadow-[0_10px_35px_rgba(15,23,42,0.07)] backdrop-blur">
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Key reason</p>
+                  <p className="mt-3 text-base leading-7 text-slate-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <aside className="self-start rounded-[32px] border border-slate-200 bg-white p-6 shadow-[0_30px_80px_rgba(15,23,42,0.08)] lg:sticky lg:top-28">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">On this page</p>
+            <div className="mt-5 space-y-3">
+              {[
+                ["#quick-summary", "Quick summary"],
+                ["#timeline", "2026-27 timeline"],
+                ["#employers", "Top employers"],
+                ["#costs", "Costs and fees"],
+                ["#salary", "Salary data"],
+                ["#faq", "FAQ section"],
+              ].map(([href, label]) => (
+                <a key={href} href={href} className="flex items-center justify-between rounded-2xl border border-slate-200 px-4 py-3 text-sm font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-900">
+                  <span>{label}</span>
+                  <span aria-hidden="true">+</span>
+                </a>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="quick-summary" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Quick Summary" title="A fast Netherlands nursing snapshot before you go deeper" />
+        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {quickSummary.map((item) => (
+            <article key={item.feature} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">{item.feature}</p>
+              <p className="mt-4 text-base leading-7 text-slate-700">{item.details}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 rounded-[28px] border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-900">
+          The Netherlands is a strong long-term nursing destination, but only if you treat Dutch B2 and BIG registration as the central project from day one.
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
+        <SectionHeading eyebrow="Key Facts" title="At-a-glance Netherlands nursing facts for 2026-27" />
+        <div className="mt-10"><DataTable rows={keyFacts} caption="Netherlands nursing key facts table" /></div>
+      </section>
+
+      <section id="timeline" className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Timeline" title="What the Netherlands route usually looks like from India to BIG registration" theme="dark" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {timeline.map((item) => (
+              <div key={`${item.Month}-${item.Action}`} className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">{item.Month}</p>
+                <p className="mt-4 text-base leading-7 text-slate-200">{item.Action}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Step By Step" title="The Netherlands nursing process in the right order" />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {processSteps.map((step, index) => (
+            <div key={step} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Step {index + 1}</p>
+              <p className="mt-3 text-base leading-7 text-slate-700">{step}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Eligibility" title="Who usually fits the Netherlands route best" />
+          <div className="mt-10"><DataTable rows={eligibility} caption="Netherlands nursing eligibility table" /></div>
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
+            {eligibilityNotes.map((note) => (
+              <div key={note} className="rounded-3xl border border-slate-200 bg-white p-5 text-sm leading-7 text-slate-700">{note}</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="employers" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Top Employers" title="The Dutch hospital and care employers Indian nurses should compare" />
+        <div className="mt-10"><DataTable rows={employers} caption="Netherlands nursing employers table" /></div>
+      </section>
+
+      <section id="costs" className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Costs and Fees" title="What the Netherlands pathway really costs" />
+          <div className="mt-10"><DataTable rows={costBreakdown} caption="Netherlands nursing fees and costs table" /></div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95">Ask Costs on WhatsApp</a>
+            <a href="#netherlands-nursing-contact-form" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Get a Netherlands Plan</a>
+            <a href={`tel:${ivrNumber.replace(/\s+/g, "")}`} className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-950">Call IVR</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="salary" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Salary Data" title="What Dutch nursing pay looks like in practice" />
+        <div className="mt-10 grid gap-8 xl:grid-cols-2">
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-slate-900">Hospital CAO scale</h3>
+            <DataTable rows={hospitalScale} caption="Netherlands hospital salary scale table" />
+          </div>
+          <div>
+            <h3 className="mb-4 text-xl font-bold text-slate-900">Nursing homes and home care scale</h3>
+            <DataTable rows={vvtScale} caption="Netherlands VVT salary scale table" />
+          </div>
+        </div>
+        <div className="mt-8">
+          <h3 className="mb-4 text-xl font-bold text-slate-900">Bonuses and compensation extras</h3>
+          <DataTable rows={compensationExtras} caption="Netherlands nursing compensation extras table" />
+        </div>
+        <p className="mt-8 rounded-3xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-900">
+          Dutch nursing compensation looks much better when you include holiday allowance and year-end bonus, but the housing and insurance cost side is just as important to calculate.
+        </p>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Recognition" title="The authorities that control your Netherlands route" theme="dark" />
+          <div className="mt-10"><DataTable rows={recognition} caption="Netherlands nursing recognition table" /></div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Career Progression" title="How the Netherlands journey usually unfolds over time" />
+        <div className="mt-10"><DataTable rows={careerProgression} caption="Netherlands nursing career progression table" /></div>
+      </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="After Landing" title="What happens after you arrive in the Netherlands" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {arrivalSteps.map((step, index) => (
+              <div key={step} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Stage {index + 1}</p>
+                <p className="mt-3 text-base leading-7 text-slate-700">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Cost of Living" title="Why Dutch city choice changes the whole savings equation" />
+        <div className="mt-10"><DataTable rows={livingCosts} caption="Netherlands nursing living cost table" /></div>
+      </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Pros and Cons" title="A realistic view of the Netherlands for Indian nurses" />
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            <div className="rounded-[32px] border border-emerald-200 bg-emerald-50 p-8">
+              <h3 className="text-2xl font-bold text-slate-950">Advantages</h3>
+              <ul className="mt-6 space-y-4">
+                {advantages.map((item) => (
+                  <li key={item} className="list-none text-base leading-7 text-slate-700">{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-[32px] border border-amber-200 bg-amber-50 p-8">
+              <h3 className="text-2xl font-bold text-slate-950">Disadvantages</h3>
+              <ul className="mt-6 space-y-4">
+                {disadvantages.map((item) => (
+                  <li key={item} className="list-none text-base leading-7 text-slate-700">{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Comparison" title="How the Netherlands compares with other nurse destinations" />
+        <div className="mt-10"><DataTable rows={comparison} caption="Netherlands nursing comparison table" /></div>
+        <p className="mt-6 text-base leading-7 text-slate-700">
+If you want the fastest English-speaking PR route, compare this with <Link href="/nursing-jobs-in-canada" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Canada</Link>. If you want a similar EU route with stronger direct salary logic and a different language tradeoff, compare it with <Link href="/nursing-job-in-germany" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Germany</Link>. For broader healthcare education options, explore <Link href="/bsc-nursing" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link>, <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for free</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
+        </p>
+      </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Support and Funding" title="Where practical support still exists in the Netherlands route" />
+          <div className="mt-10"><DataTable rows={scholarships} caption="Netherlands nursing support options table" /></div>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Documents" title="What to prepare for Nuffic, BIG and Dutch immigration steps" theme="dark" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {documents.map((document) => (
+              <div key={document} className="rounded-[26px] border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-200">
+                {document}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Career Pathways" title="What opens up after BIG registration in the Netherlands" />
+        <div className="mt-10"><DataTable rows={careerPathways} caption="Netherlands nursing career pathways table" /></div>
+      </section>
+
+      <section className="bg-slate-50 py-12">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 lg:px-8">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">Need direct guidance?</p>
+            <p className="mt-2 text-lg font-semibold text-slate-900">Talk to the Netherlands nursing team before you commit to Dutch language, Nuffic and BIG.</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95">Chat on WhatsApp</a>
+            <a href="#netherlands-nursing-contact-form" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Open Contact Form</a>
+            <a href={`tel:${ivrNumber.replace(/\s+/g, "")}`} className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-500 hover:text-slate-950">IVR {ivrNumber}</a>
+          </div>
+        </div>
+      </section>
+
+      <NetherlandsNursingLeadSection />
+
+      <section id="faq" className="mx-auto max-w-5xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="FAQ" title="15 common Netherlands nursing questions Indian nurses ask" />
+        <div className="mt-10 space-y-4">
+          {faqs.map((faq, index) => (
+            <details key={faq.question} className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.04)]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold text-slate-900">
+                <span>Q{index + 1}. {faq.question}</span>
+                <span className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Open</span>
+              </summary>
+              <p className="mt-4 text-base leading-8 text-slate-700">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </main>
+  );
+}

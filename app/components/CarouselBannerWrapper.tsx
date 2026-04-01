@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { urlFor } from "@/lib/client";
 import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 
@@ -31,7 +30,11 @@ const CarouselBannerWrapper = ({ carouselData }: any) => {
             <>
               <CarouselItem key={index}>
                 <Image
-                  src={urlFor(obj.sliderImage).url()}
+                  src={
+                    typeof obj.sliderImage === "string"
+                      ? obj.sliderImage
+                      : obj.sliderImage?.src ?? "/assests/home-page-banner-1.png"
+                  }
                   alt="slider-image"
                   height={1000}
                   width={2000}
