@@ -34,7 +34,11 @@ function DenmarkLeadForm({
   buttonLabel: string;
 }) {
   const universityOptions = useMemo(
-    () => universities.map((item) => item["University / Program"]),
+    () =>
+      universities.map((item) => {
+        const record = item as Record<string, string>;
+        return record["University / Program"] ?? record["University"] ?? record["Program"] ?? "";
+      }),
     []
   );
 

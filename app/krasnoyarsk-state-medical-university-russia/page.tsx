@@ -36,7 +36,7 @@ import {
   whatsappNumber,
 } from "./pageData";
 
-type Row = Record<string, string>;
+type Row = Record<string, string | undefined>;
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -106,7 +106,7 @@ function DataTable({ rows, caption }: { rows: Row[]; caption: string }) {
               <tr key={`${Object.values(row).join("-")}-${index}`} className="align-top odd:bg-white even:bg-slate-50/60" itemScope itemType="https://schema.org/TableRow">
                 {headers.map((header) => (
                   <td key={header} className="px-4 py-4 text-slate-700">
-                    {row[header]}
+                    {row[header] ?? ""}
                   </td>
                 ))}
               </tr>
@@ -393,3 +393,4 @@ export default function KrasnoyarskPage() {
     </main>
   );
 }
+

@@ -37,7 +37,7 @@ import {
   whatsappNumber,
 } from "./pageData";
 
-type Row = Record<string, string>;
+type Row = Record<string, string | undefined>;
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -126,7 +126,7 @@ function DataTable({ rows, caption }: { rows: Row[]; caption: string }) {
               >
                 {headers.map((header) => (
                   <td key={header} className="px-4 py-4 text-slate-700">
-                    {row[header]}
+                    {row[header] ?? ""}
                   </td>
                 ))}
               </tr>
@@ -656,3 +656,4 @@ export default function LithuaniaPage() {
     </main>
   );
 }
+
