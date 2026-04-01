@@ -1,68 +1,55 @@
-"use client";
-import { useEffect, useState } from "react";
-import { urlFor } from "@/lib/client";
 import Image from "next/image";
+import { galleryImages } from "@/app/data/siteContent";
 
-// Define the types for gallery images
-interface GalleryImage {
-  galleryImg: any;
-}
+export const metadata = {
+  title: "Gallery | MBBS Admission in Abroad",
+  description: "A visual look at our MBBS abroad guidance and student support.",
+};
 
-// Define the structure of the gallery data
-interface GalleryData {
-  title: string;
-  galleryImage: GalleryImage[];
-}
-
-const apiHost = process.env.NEXT_PUBLIC_API_HOST;
-
-function Gallery() {
-  const [data, setData] = useState<GalleryData | null>(null);
-
-  useEffect(() => {
-    const fetchGallery = async () => {
-      try {
-        const query = encodeURIComponent(`*[ _type == "galleryPage"]`);
-        const res = await fetch(`${apiHost}${query}`);
-        const jsonData = await res.json();
-        setData(jsonData.result[0] || null);
-      } catch (error) {
-        console.error("Error fetching gallery data:", error);
-      }
-    };
-
-    fetchGallery();
-  }, []);
-
+export default function GalleryPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 md:px-8">
-      {/* Title Section */}
-      <div className="text-center mb-10">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-blue-700">
-          {data?.title || "Gallery"}
-        </h2>
-        <p className="text-gray-600 mt-2 text-lg">
-          Explore our latest moments captured beautifully.
-        </p>
-      </div>
+    <main className="bg-slate-50 py-16">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+            Gallery
+          </p>
+          <h1 className="mt-3 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            Visual stories from the MBBS abroad journey
+          </h1>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            This section is now fully coded, fast to load, and no longer depends
+            on Sanity for rendering.
+          </p>
+        </div>
 
-      {/* Gallery Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {data?.galleryImage?.map((item, i) => (
-          <div key={i} className="overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src={urlFor(item.galleryImg).url()}
-              alt="galleryItem"
-              height={400}
-              width={500}
-              loading="lazy"
-              className="w-full h-[250px] object-cover transition-transform duration-300 hover:scale-105"
-            />
-          </div>
-        ))}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {galleryImages.map((item) => (
+            <article
+              key={item.src}
+              className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="relative h-64 w-full">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h2 className="text-lg font-semibold text-slate-900">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Student-focused counseling moments, study-abroad guidance,
+                  and visual references from the site.
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </div>
+    </main>
   );
 }
-
-export default Gallery;

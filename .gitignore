@@ -1,3 +1,12 @@
 node_modules
 .env
 .next/
+.next-fresh/
+blog-import/
+devserver.log
+devserver-run.log
+devserver-run.err.log
+studio/.sanity/
+studio/dist/
+studio/studio-dev.log
+studio/studio-dev.err.log

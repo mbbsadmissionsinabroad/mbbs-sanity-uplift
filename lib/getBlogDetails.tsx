@@ -6,7 +6,11 @@ interface BlogDetails {
 }
 
 export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
-  const apiHost = process.env.NEXT_PUBLIC_API_HOST;
+  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
+  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
+  const apiHost =
+    process.env.NEXT_PUBLIC_API_HOST ||
+    `https://${projectId}.api.sanity.io/v2021-10-21/data/query/${dataset}?query=`;
   const query = encodeURIComponent(
     `*[ _type == "pages" && slug.current == "${routeURL}" ]`
   );

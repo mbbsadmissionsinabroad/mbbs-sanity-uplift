@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { getNavbarData } from "@/lib/getHomePageData";
 import "./globals.css";
 import Script from "next/script";
 import GoogleAnalytics from "./components/GoogleAnalytics";
@@ -10,6 +9,7 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.mbbsadmissionsinabroad.com"),
   title: "MBBS Admission in Abroad",
   description:
     "MBBS Admission Abroad with New-Lyf Overseas Consultants. Study MBBS in Russia, Ukraine, or the Philippines at MCI-approved universities at low costs.",
@@ -48,25 +48,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const navBarData = await getNavbarData();
-
   return (
     <html lang="en">
       <head>
-        {/* Font preload & verifications */}
-        <link
-          rel="preload"
-          href="/fonts/Inter.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://cdn.sanity.io" />
+        {/* Verifications */}
         <meta
           name="ahrefs-site-verification"
           content="22807d65778b510ff96fcf197a3b2e305768c3c37972f2ac7050e3c7dc571725"
@@ -126,10 +116,10 @@ export default async function RootLayout({
         />
       </head>
       <body className={`${inter.className} dark:bg-[#1A1C29] bg-white`}>
-        <Navbar navBarData={navBarData.result} />
+        <Navbar />
         <GoogleAnalytics GA_TRACKING_ID="G-YR4Q895Z3R" />
-        <div className="mt-20">{children}</div>
-        <Footer navBarData={navBarData.result} />
+        <div className="pt-[108px] lg:pt-[108px]">{children}</div>
+        <Footer />
 
         {/* Facebook Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">

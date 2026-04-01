@@ -1,295 +1,218 @@
 "use client";
-import { Fragment, useState, useRef } from "react";
-import { Dialog, Popover, Tab, Transition, Menu } from "@headlessui/react";
-import { urlFor } from "@/lib/client";
+
+import { Fragment, useEffect, useRef, useState } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+import * as Flags from "country-flag-icons/react/3x2";
 import logo from "../../public/new-lyf-logo.webp";
 import insta from "../../public/images/insta2.svg";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import Link from "next/link";
-import Image from "next/image";
-import { navbar } from "@material-tailwind/react";
+import {
+  mainNavLinks,
+  mbbsAbroadCountries,
+  nursingJobCountries,
+  pgAbroadCountries,
+  type SiteLink,
+} from "@/app/data/siteContent";
 
-const ChevronDownIcon = () => (
-  <svg
-    className="h-5 w-5"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 20 20"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path
-      fillRule="evenodd"
-      d="M5.293 7.293a1 1 0 0 1 1.414 0L10 10.586l3.293-3.293a1 1 0 1 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+function FlagIcon({ code }: { code: keyof typeof Flags }) {
+  const Flag = Flags[code];
+  if (!Flag) {
+    return null;
+  }
 
-const navigation = {
-  pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
-  ],
-};
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+  return <Flag className="h-4 w-6 shrink-0 rounded-[2px] object-cover" title={code} />;
 }
 
-export default function Example({ navBarData }: any) {
-  const [open, setOpen] = useState(false);
-  const dropdownRef = useRef(null);
-
-  const [selectedMobileDropdown, setSelectedMobileDropdown] = useState("");
-
-  const selectMobileDropdown = (navbarDataId: any) => {
-    setSelectedMobileDropdown((prevNavbarDataId) => {
-      if (prevNavbarDataId === navbarDataId) {
-        return "";
-      } else {
-        return navbarDataId;
-      }
-    });
-  };
-
-  const toggleDropdown = () => {
-    setOpen(!open);
-  };
+function NavLink({ link, onClick }: { link: SiteLink; onClick?: () => void }) {
   return (
-    <div className="bg-white">
-      {/* Mobile menu */}
-      <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
+    <Link
+      href={link.href}
+      prefetch={false}
+      onClick={onClick}
+      className="whitespace-nowrap rounded-full px-2 py-1.5 text-[11px] font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-800 xl:text-xs"
+    >
+      {link.title}
+    </Link>
+  );
+}
+
+export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileCountriesOpen, setMobileCountriesOpen] = useState(true);
+  const [desktopCountriesOpen, setDesktopCountriesOpen] = useState(false);
+  const [desktopNursingOpen, setDesktopNursingOpen] = useState(false);
+  const [desktopPgOpen, setDesktopPgOpen] = useState(false);
+  const desktopDropdownRef = useRef<HTMLDivElement | null>(null);
+  const desktopNursingRef = useRef<HTMLDivElement | null>(null);
+  const desktopPgRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event: MouseEvent) {
+      if (
+        desktopDropdownRef.current &&
+        !desktopDropdownRef.current.contains(event.target as Node)
+      ) {
+        setDesktopCountriesOpen(false);
+      }
+      if (
+        desktopNursingRef.current &&
+        !desktopNursingRef.current.contains(event.target as Node)
+      ) {
+        setDesktopNursingOpen(false);
+      }
+      if (
+        desktopPgRef.current &&
+        !desktopPgRef.current.contains(event.target as Node)
+      ) {
+        setDesktopPgOpen(false);
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setDesktopCountriesOpen(false);
+        setDesktopNursingOpen(false);
+        setDesktopPgOpen(false);
+        setMobileOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
+  return (
+    <div className="pointer-events-none fixed inset-x-0 top-0 z-40">
+      <Transition.Root show={mobileOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-50 lg:hidden" onClose={setMobileOpen}>
           <Transition.Child
             as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
+            enter="transition-opacity ease-linear duration-200"
             enterFrom="opacity-0"
             enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
+            leave="transition-opacity ease-linear duration-150"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25" />
+            <div className="fixed inset-0 bg-slate-900/40" />
           </Transition.Child>
 
-          <div className="fixed inset-0 z-40 flex">
+          <div className="fixed inset-0 z-50 flex">
             <Transition.Child
               as={Fragment}
-              enter="transition ease-in-out duration-300 transform"
+              enter="transition ease-in-out duration-200 transform"
               enterFrom="-translate-x-full"
               enterTo="translate-x-0"
-              leave="transition ease-in-out duration-300 transform"
+              leave="transition ease-in-out duration-150 transform"
               leaveFrom="translate-x-0"
               leaveTo="-translate-x-full"
             >
-              <Dialog.Panel className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-                <div className="flex px-4 pb-2 pt-5">
+              <Dialog.Panel className="pointer-events-auto flex w-full max-w-sm flex-col overflow-y-auto bg-[linear-gradient(180deg,#ffffff_0%,#eff6ff_100%)] shadow-2xl">
+                <div className="bg-blue-800 px-4 py-3 text-center text-sm font-semibold text-white">
+                  info@new-lyf.com
+                </div>
+                <div className="flex items-center justify-between border-b border-slate-200/80 px-4 py-4">
+                  <Link
+                    href="/"
+                    prefetch={false}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-2xl border border-slate-200 bg-white px-3 py-2 shadow-sm"
+                  >
+                    <Image src={logo} alt="New Lyf logo" height={58} width={120} />
+                  </Link>
                   <button
                     type="button"
-                    className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
-                    onClick={toggleDropdown}
+                    onClick={() => setMobileOpen(false)}
+                    className="rounded-full border border-slate-200 bg-white p-2 text-slate-500 shadow-sm transition hover:bg-slate-50"
                   >
-                    <span className="absolute -inset-0.5" />
                     <span className="sr-only">Close menu</span>
-                    <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                    <XMarkIcon className="h-6 w-6" />
                   </button>
                 </div>
-                <div
-                  className="ml-4 flex lg:ml-0  mt-4"
-                  // onClick={toggleDropdown}
-                >
-                  <Link href="/" prefetch={false}>
-                    <span className="sr-only mt-10">Your Company</span>
-                    <Image
-                      src={logo}
-                      alt="Mbbs Admission in Abroad"
-                      height={80}
-                      width={120}
+
+                <div className="space-y-3 px-4 py-6">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                    <NavLink
+                      link={{ title: "Home", href: "/" }}
+                      onClick={() => setMobileOpen(false)}
                     />
-                  </Link>
-                </div>
-                <div
-                  className="space-y-6 border-t border-gray-200 px-4 pt-8 ml-4"
-                  onClick={toggleDropdown}
-                >
-                  <div key="Home Page" className="flow-root">
-                    <Link
-                      href="/"
-                      prefetch={false}
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Home
-                    </Link>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => setMobileCountriesOpen((open) => !open)}
+                    className="flex w-full items-center justify-between rounded-[28px] border border-slate-200 bg-white px-4 py-4 text-left text-xs font-semibold text-slate-800 shadow-[0_14px_35px_rgba(15,23,42,0.06)]"
+                  >
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.22em] text-blue-700">
+                        Explore
+                      </p>
+                      <p className="mt-1">MBBS Abroad</p>
+                    </div>
+                    <ChevronDownIcon
+                      className={`h-5 w-5 transition-transform ${
+                        mobileCountriesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {mobileCountriesOpen && (
+                    <div className="grid grid-cols-1 gap-2 rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                      {mbbsAbroadCountries.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          prefetch={false}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-3 rounded-2xl border border-transparent bg-slate-50 px-3 py-3 text-xs font-medium text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                          {country.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                    <div className="flex flex-col gap-1">
+                      {mainNavLinks
+                        .filter((link) => link.title !== "Home")
+                        .map((link) => (
+                          <NavLink
+                            key={link.href}
+                            link={link}
+                            onClick={() => setMobileOpen(false)}
+                          />
+                        ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Links */}
-                <Tab.Group as="div" className="">
-                  <Tab.Panels as={Fragment}>
-                    {navBarData.map((navBar: any) => {
-                      if (navBar.title !== "Footer") {
-                        {
-                          return (
-                            <div
-                              key={navBar._id}
-                              className="space-y-4 px-4 pb-2 pt-8 ml-4"
-                            >
-                              <button
-                                type="button"
-                                className="w-full text-left items-center justify-between"
-                                onClick={() => selectMobileDropdown(navBar._id)}
-                              >
-                                <p
-                                  id="heading-mobile"
-                                  className="font-medium text-gray-900 flex items-center"
-                                >
-                                  {navBar.title}
-                                  <div
-                                    className={`${
-                                      selectedMobileDropdown === navBar._id
-                                        ? "transform rotate-180"
-                                        : ""
-                                    } ml-4 font-bold text-gray-500`}
-                                  >
-                                    <ChevronDownIcon />
-                                  </div>
-                                </p>
-                                {selectedMobileDropdown === navBar._id ? (
-                                  <ul
-                                    role="list"
-                                    aria-labelledby={`${navBar._id}-heading-mobile`}
-                                    className="mt-6 flex flex-col space-y-6"
-                                  >
-                                    {navBar.navItems.map((item: any) => (
-                                      <li
-                                        key={item.title}
-                                        className="flow-root"
-                                        onClick={toggleDropdown}
-                                      >
-                                        <Link
-                                          href={item.slug}
-                                          className="-m-2 p-2 text-gray-500 flex"
-                                          prefetch={false}
-                                        >
-                                          <Image
-                                            src={urlFor(item.image).url()}
-                                            alt=""
-                                            width={50}
-                                            height={30}
-                                            className="block h-auto w-5 flex-shrink-0 mr-5 object-contain"
-                                          />
-                                          {item.title}
-                                        </Link>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                ) : null}
-                              </button>
-                            </div>
-                          );
-                        }
-                      }
-                    })}
-                  </Tab.Panels>
-                </Tab.Group>
-                <div
-                  className="space-y-6 px-4 pt-8 ml-4"
-                  onClick={toggleDropdown}
-                >
-                  <div key="ausbildung" className="flow-root">
-                    <Link
-                      prefetch={false}
-                      href="/ausbildung"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                    >
-                      Ausbildung
-                    </Link>
-                  </div>
-                </div>
-                <div
-                  className="space-y-6 px-4 pt-8 ml-4"
-                  onClick={toggleDropdown}
-                >
-                  <div key="Learn German" className="flow-root">
-                    <Link
-                      href="/learn-german-language-course-in-bangalore"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                      prefetch={false}
-                    >
-                      Learn German
-                    </Link>
-                  </div>
-                </div>
-                <div
-                  className="space-y-6 px-4 pt-8 ml-4"
-                  onClick={toggleDropdown}
-                >
-                  <div key="Blog Page" className="flow-root">
-                    <Link
-                      href="/blog"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                      prefetch={false}
-                    >
-                      Blog
-                    </Link>
-                  </div>
-                </div>
-                <div
-                  className="space-y-6 px-4 pt-8 ml-4"
-                  onClick={toggleDropdown}
-                >
-                  <div key="Contact Page" className="flow-root">
-                    <Link
-                      href="/contact"
-                      className="-m-2 block p-2 font-medium text-gray-900"
-                      prefetch={false}
-                    >
-                      Contact
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Page name for mobile / */}
-
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6 mt-20">
-                  <div className="flow-root">
-                    <p className="-m-2 block p-2 font-medium text-gray-900">
-                      Connect with us on
+                <div className="mt-auto border-t border-slate-200/80 px-4 py-5">
+                  <div className="rounded-[28px] border border-slate-200 bg-white p-4 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-blue-700">
+                      Connect With Us
+                    </p>
+                    <p className="mt-2 text-sm text-slate-600">
+                      Follow the latest admission updates and student highlights.
                     </p>
                   </div>
-                  <div className="ml-auto flex items-center">
-                    <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-2">
-                      <p className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                        Connect with us on
-                      </p>
-                    </div>
-                    {/* <a
-                      href="https://github.com/abhinavanand500"
-                      target="_blank"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      <Image src={github} height={60} width={60} alt={""} />
-                    </a> */}
-                    {/* <a
-                      href="https://www.linkedin.com/in/abhinav-a-216a0a110/"
-                      target="_blank"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      <Image
-                        src={linkedIn}
-                        height={60}
-                        width={60}
-                        alt="linkedin"
-                      />
-                    </a> */}
-                    <a
-                      href="https://www.instagram.com/mbbsadmissionsinabroad/"
-                      target="_blank"
-                      className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                    >
-                      <Image src={insta} height={60} width={60} alt="insta" />
-                    </a>
-                  </div>
+                  <a
+                    href="https://www.instagram.com/mbbsadmissionsinabroad/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-4 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+                  >
+                    <Image src={insta} alt="Instagram" height={40} width={40} />
+                    Instagram
+                  </a>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -297,217 +220,205 @@ export default function Example({ navBarData }: any) {
         </Dialog>
       </Transition.Root>
 
-      {/* Computer view */}
-      <header className="fixed top-0 z-20 w-full bg-white mb-40">
-        {/* <a
-          className="flex h-10 items-center justify-center bg-blue-800 px-4 text-sm font-medium text-white sm:px-6 lg:px-8"
-          href="auth"
-        >
-          *Scholarship Test Link*
-        </a> */}
-        <p className="flex h-10 items-center justify-center bg-blue-800 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+      <header className="pointer-events-auto shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+        <div className="bg-blue-800 px-4 py-2 text-center text-xs font-semibold text-white">
           info@new-lyf.com
-        </p>
+        </div>
 
-        <nav aria-label="Top" className="mx-auto max-w-full sm:px-6 lg:px-8">
-          <div className="border-b border-gray-200">
-            <div className="flex h-16 items-center">
-              <button
-                type="button"
-                className=" rounded-md bg-white text-gray-400 lg:hidden"
-                onClick={toggleDropdown}
-              >
-                {/* <span className="absolute -inset-0.5" /> */}
-                <span className="sr-only">Open menu</span>
-                <Bars3Icon className="h-6 w-6 ml-4" aria-hidden="true" />
-              </button>
+        <nav className="border-b border-slate-200 bg-white">
+          <div className="mx-auto flex h-[76px] max-w-7xl items-center gap-3 px-3 sm:px-6 lg:px-8">
+            <button
+              type="button"
+              onClick={() => setMobileOpen(true)}
+              className="rounded-2xl border border-slate-200 bg-slate-50 p-2 text-slate-600 transition hover:bg-slate-100 lg:hidden"
+            >
+              <span className="sr-only">Open menu</span>
+              <Bars3Icon className="h-7 w-7" />
+            </button>
 
-              {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
-                <Link href="/" prefetch={false}>
-                  <span className="sr-only">Your Company</span>
-                  <Image src={logo} alt="logo" height={60} width={100} />
-                </Link>
+            <Link
+              href="/"
+              prefetch={false}
+              className="shrink-0 px-2.5 py-1.5 transition"
+            >
+              <span className="sr-only">New Lyf</span>
+              <Image src={logo} alt="New Lyf logo" height={46} width={108} priority />
+            </Link>
+
+            <div className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:gap-1 lg:flex">
+              <NavLink link={{ title: "Home", href: "/" }} />
+
+              <div className="relative" ref={desktopNursingRef}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDesktopNursingOpen((open) => !open);
+                    setDesktopCountriesOpen(false);
+                    setDesktopPgOpen(false);
+                  }}
+                  className={`flex items-center gap-1 whitespace-nowrap border-b-2 px-2 py-1.5 text-[11px] font-medium transition xl:text-xs ${
+                    desktopNursingOpen
+                      ? "border-blue-700 text-blue-800"
+                      : "border-transparent text-slate-700 hover:border-blue-200 hover:text-blue-800"
+                  }`}
+                >
+                  Nursing Jobs in Abroad
+                </button>
+
+                {desktopNursingOpen && (
+                  <div className="fixed inset-x-0 top-[108px] z-50 border-b border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+                    <div className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-8 py-10">
+                      {nursingJobCountries.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          prefetch={false}
+                          onClick={() => setDesktopNursingOpen(false)}
+                          className="flex min-w-0 items-center gap-4 text-[15px] font-medium text-slate-800 transition hover:text-blue-800"
+                        >
+                          <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                          <span>{country.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Flyout menus */}
-              <Popover.Group
-                className="hidden lg:ml-8 lg:block lg:self-stretch z-50 "
-                ref={dropdownRef}
-              >
-                <div className="flex h-full space-x-8 ml-4">
-                  <Link
-                    href="/"
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    prefetch={false}
-                  >
-                    Home
-                  </Link>
-                  {navBarData.map((navBar: any) => {
-                    if (navBar.title !== "Footer") {
-                      return (
-                        <Menu as="div" key={navBar._id} className="flex">
-                          {({ open }) => (
-                            <>
-                              <div className="relative flex">
-                                <Menu.Button
-                                  className={classNames(
-                                    open
-                                      ? "border-blue-800 text-blue-800"
-                                      : "border-transparent text-gray-700 hover:text-gray-800",
-                                    "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out outline-none"
-                                  )}
-                                >
-                                  {navBar.title}
-                                </Menu.Button>
-                              </div>
-                              {open && (
-                                <Transition
-                                  as={Fragment}
-                                  enter="transition ease-out duration-200"
-                                  enterFrom="opacity-0"
-                                  enterTo="opacity-100"
-                                  leave="transition ease-in duration-150"
-                                  leaveFrom="opacity-100"
-                                  leaveTo="opacity-0"
-                                >
-                                  <Menu.Items className="absolute inset-x-0 top-full text-sm text-gray-500">
-                                    {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
-                                    <div
-                                      className="absolute inset-0 top-1/2 bg-white shadow"
-                                      aria-hidden="true"
-                                    />
+              <div className="relative" ref={desktopPgRef}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDesktopPgOpen((open) => !open);
+                    setDesktopCountriesOpen(false);
+                    setDesktopNursingOpen(false);
+                  }}
+                  className={`flex items-center gap-1 whitespace-nowrap border-b-2 px-2 py-1.5 text-[11px] font-medium transition xl:text-xs ${
+                    desktopPgOpen
+                      ? "border-blue-700 text-blue-800"
+                      : "border-transparent text-slate-700 hover:border-blue-200 hover:text-blue-800"
+                  }`}
+                >
+                  PG in Abroad
+                </button>
 
-                                    <div className="relative bg-white">
-                                      <div className="mx-auto max-w-7xl px-8">
-                                        <div className="gap-x-4 gap-y-6 py-8">
-                                          <div className="row-start-1 grid grid-cols-5 gap-x-8 gap-y-10 text-sm">
-                                            {navBar.navItems.map(
-                                              (navItem: any) => (
-                                                <Menu.Item key={navItem.title}>
-                                                  {({ close }) => (
-                                                    <div>
-                                                      {/* <Link
-                                                        href="/Home"
-                                                        onClick={close}
-                                                      > */}
-                                                      <Link
-                                                        href={`/${navItem.slug}`}
-                                                        onClick={close}
-                                                        prefetch={false}
-                                                      >
-                                                        <p
-                                                          id={`${navItem._id}-heading`}
-                                                          className="font-large text-gray-900 flex"
-                                                        >
-                                                          <Image
-                                                            src={urlFor(
-                                                              navItem.image
-                                                            ).url()}
-                                                            alt="navbar"
-                                                            width={100}
-                                                            height={100}
-                                                            className="block h-auto w-5 flex-shrink-0 mr-5 object-contain"
-                                                          />
-                                                          {navItem.title}
-                                                        </p>
-                                                      </Link>
-                                                    </div>
-                                                  )}
-                                                </Menu.Item>
-                                              )
-                                            )}
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </Menu.Items>
-                                </Transition>
-                              )}
-                            </>
-                          )}
-                        </Menu>
-                      );
-                    }
-                  })}
-                  <Link
-                    href="/ausbildung"
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    prefetch={false}
-                  >
-                    Ausbildung
-                  </Link>
-
-                  <Link
-                    href="/learn-german-language-course-in-bangalore"
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    prefetch={false}
-                  >
-                    Learn German
-                  </Link>
-
-                  <Link
-                    href="/blog"
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    prefetch={false}
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                    prefetch={false}
-                  >
-                    Contact
-                  </Link>
-                </div>
-              </Popover.Group>
-
-              <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-2">
-                  <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
-                  <p className="text-sm font-medium text-gray-700 hover:text-gray-800">
-                    Connect with us on
-                  </p>
-                  {/* <span className="h-6 w-px bg-gray-200" aria-hidden="true" /> */}
-                  {/* <a
-                    href="https://github.com/abhinavanand500"
-                    target="_blank"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    <Image
-                      src={github}
-                      height={60}
-                      width={60}
-                      alt="abhinavanand500"
-                    />
-                  </a> */}
-                  {/* <a
-                    href="https://www.linkedin.com/in/abhinav-a-216a0a110/"
-                    target="_blank"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    <Image
-                      src={linkedIn}
-                      height={60}
-                      width={60}
-                      alt="abhinav-a-216a0a110"
-                    />
-                  </a> */}
-                  <a
-                    href="https://www.instagram.com/mbbsadmissionsinabroad/"
-                    target="_blank"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    <Image
-                      src={insta}
-                      height={60}
-                      width={60}
-                      alt="mbbs_admission_in_abroad"
-                    />
-                  </a>
-                </div>
+                {desktopPgOpen && (
+                  <div className="fixed inset-x-0 top-[108px] z-50 border-b border-slate-200 bg-white shadow-[0_24px_60px_rgba(15,23,42,0.08)]">
+                    <div className="mx-auto flex max-w-7xl items-start justify-between gap-8 px-8 py-10">
+                      {pgAbroadCountries.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          prefetch={false}
+                          onClick={() => setDesktopPgOpen(false)}
+                          className="flex min-w-0 max-w-[30%] items-start gap-4 text-[15px] font-medium text-slate-800 transition hover:text-blue-800"
+                        >
+                          <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                          <span>{country.title}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
+
+              <div className="relative" ref={desktopDropdownRef}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDesktopCountriesOpen((open) => !open);
+                    setDesktopNursingOpen(false);
+                    setDesktopPgOpen(false);
+                  }}
+                  className={`flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-1.5 text-[11px] font-medium transition xl:text-xs ${
+                    desktopCountriesOpen
+                      ? "bg-blue-50 text-blue-800"
+                      : "text-slate-700 hover:bg-blue-50 hover:text-blue-800"
+                  }`}
+                >
+                  MBBS Abroad
+                  <ChevronDownIcon
+                    className={`h-4 w-4 transition-transform ${
+                      desktopCountriesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {desktopCountriesOpen && (
+                  <div className="fixed left-1/2 top-[142px] z-50 flex max-h-[calc(100vh-158px)] w-[min(96vw,1540px)] -translate-x-1/2 flex-col overflow-hidden rounded-[32px] border border-slate-200 bg-[linear-gradient(180deg,#ffffff_0%,#f8fbff_100%)] px-4 py-4 shadow-[0_24px_90px_rgba(15,23,42,0.18)] sm:px-5 sm:py-5 lg:px-6 lg:py-6">
+                    <div className="mb-4 flex shrink-0 items-center justify-between gap-4">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-700">
+                          MBBS Abroad
+                        </p>
+                        <h2 className="text-lg font-semibold text-slate-900">
+                          Choose your study destination
+                        </h2>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setDesktopCountriesOpen(false)}
+                        className="rounded-full px-3 py-1 text-sm font-medium text-slate-500 hover:bg-slate-100"
+                      >
+                        Close
+                      </button>
+                    </div>
+                    <div className="mb-5 shrink-0 rounded-[24px] border border-blue-100 bg-blue-50 px-4 py-3 text-sm text-slate-600">
+                      Browse our core MBBS abroad pages, student resources, and contact options without searching through the whole site.
+                    </div>
+                    <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+                      <div className="grid grid-cols-2 gap-x-6 gap-y-4 md:grid-cols-3 lg:gap-x-8 xl:grid-cols-4 2xl:grid-cols-5">
+                        {mbbsAbroadCountries.map((country) => (
+                          <Link
+                            key={country.href}
+                            href={country.href}
+                            prefetch={false}
+                            onClick={() => setDesktopCountriesOpen(false)}
+                            className="flex min-h-[56px] items-center gap-3 rounded-2xl border border-transparent px-3 py-3 transition hover:border-blue-100 hover:bg-white hover:text-blue-800"
+                          >
+                            <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                            <span className="text-xs font-medium leading-5 text-slate-800">
+                              {country.title}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {mainNavLinks
+                .filter(
+                  (link) =>
+                    link.title !== "Home" &&
+                    link.title !== "Nursing Jobs in Abroad" &&
+                    link.title !== "PG in Abroad"
+                )
+                .map((link) => (
+                  <NavLink key={link.href} link={link} />
+                ))}
+            </div>
+
+            <div className="ml-auto hidden items-center gap-3 lg:flex">
+              <div className="hidden items-center gap-2 px-3 py-1.5 xl:flex">
+                <span className="h-2 w-2 rounded-full bg-blue-600" />
+                <span className="whitespace-nowrap text-[11px] font-medium text-slate-700 xl:text-xs">
+                  Connect with us
+                </span>
+              </div>
+              <span className="whitespace-nowrap text-[11px] font-medium text-slate-700 xl:hidden">
+                Connect with us
+              </span>
+              <a
+                href="https://www.instagram.com/mbbsadmissionsinabroad/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-1.5 transition hover:border-blue-100 hover:bg-blue-50"
+              >
+                <Image src={insta} alt="Instagram" height={36} width={36} />
+              </a>
             </div>
           </div>
         </nav>
