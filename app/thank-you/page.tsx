@@ -1,9 +1,10 @@
 "use client";
+import { Suspense } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation"; // Import useSearchParams
 
-const ThankYou = () => {
+function ThankYouContent() {
   const searchParams = useSearchParams();
   const title = searchParams.get("title") || "MBBS in Russia"; // Get the title from URL
 
@@ -66,6 +67,12 @@ const ThankYou = () => {
       </motion.div>
     </div>
   );
-};
+}
 
-export default ThankYou;
+export default function ThankYou() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-b from-blue-100 to-white" />}>
+      <ThankYouContent />
+    </Suspense>
+  );
+}

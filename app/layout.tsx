@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-import GoogleAnalytics from "./components/GoogleAnalytics";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import LayoutShell from "./components/LayoutShell";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -116,10 +114,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} dark:bg-[#1A1C29] bg-white`}>
-        <Navbar />
-        <GoogleAnalytics GA_TRACKING_ID="G-YR4Q895Z3R" />
-        <div className="pt-[108px] lg:pt-[108px]">{children}</div>
-        <Footer />
+        <LayoutShell>{children}</LayoutShell>
 
         {/* Facebook Pixel */}
         <Script id="facebook-pixel" strategy="afterInteractive">
