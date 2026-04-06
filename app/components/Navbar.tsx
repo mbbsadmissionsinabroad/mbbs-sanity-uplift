@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outli
 import Image from "next/image";
 import Link from "next/link";
 import * as Flags from "country-flag-icons/react/3x2";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../../public/new-lyf-logo.webp";
 import {
@@ -32,6 +32,16 @@ const socialLinks = [
     title: "Facebook",
     href: "https://www.facebook.com/mbbsadmissionsinabroad",
     icon: FaFacebookF,
+  },
+  {
+    title: "LinkedIn",
+    href: "https://www.linkedin.com/in/new-lyf/",
+    icon: FaLinkedinIn,
+  },
+  {
+    title: "YouTube",
+    href: "https://www.youtube.com/@mbbsadmissionsinabroad",
+    icon: FaYoutube,
   },
 ];
 
