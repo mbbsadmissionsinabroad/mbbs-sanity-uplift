@@ -6,8 +6,9 @@ import { Bars3Icon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outli
 import Image from "next/image";
 import Link from "next/link";
 import * as Flags from "country-flag-icons/react/3x2";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import logo from "../../public/new-lyf-logo.webp";
-import insta from "../../public/images/insta2.svg";
 import {
   mainNavLinks,
   mbbsAbroadCountries,
@@ -15,6 +16,24 @@ import {
   pgAbroadCountries,
   type SiteLink,
 } from "@/app/data/siteContent";
+
+const socialLinks = [
+  {
+    title: "Instagram",
+    href: "https://www.instagram.com/mbbsadmissionsinabroad/",
+    icon: FaInstagram,
+  },
+  {
+    title: "X",
+    href: "https://x.com/_mbbsabroad",
+    icon: FaXTwitter,
+  },
+  {
+    title: "Facebook",
+    href: "https://www.facebook.com/mbbsadmissionsinabroad",
+    icon: FaFacebookF,
+  },
+];
 
 function FlagIcon({ code }: { code: keyof typeof Flags }) {
   const Flag = Flags[code];
@@ -204,15 +223,25 @@ export default function Navbar() {
                       Follow the latest admission updates and student highlights.
                     </p>
                   </div>
-                  <a
-                    href="https://www.instagram.com/mbbsadmissionsinabroad/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-4 inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
-                  >
-                    <Image src={insta} alt="Instagram" height={40} width={40} />
-                    Instagram
-                  </a>
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {socialLinks.map((social) => {
+                      const Icon = social.icon;
+                      return (
+                        <a
+                          key={social.title}
+                          href={social.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
+                        >
+                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                            <Icon className="h-4 w-4" />
+                          </span>
+                          {social.title}
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -410,15 +439,21 @@ export default function Navbar() {
               <span className="whitespace-nowrap text-[11px] font-medium text-slate-700 xl:hidden">
                 Connect with us
               </span>
-              <a
-                href="https://www.instagram.com/mbbsadmissionsinabroad/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white p-1.5 transition hover:border-blue-100 hover:bg-blue-50"
-              >
-                <Image src={insta} alt="Instagram" height={36} width={36} />
-              </a>
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.title}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.title}
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
         </nav>

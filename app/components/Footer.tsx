@@ -63,14 +63,30 @@ export default function Footer() {
           <p className="text-sm text-slate-700">
             © 2024 New-Lyf
           </p>
-          <a
-            href="https://www.instagram.com/mbbsadmissionsinabroad/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
-          >
-            @mbbsadmissionsinabroad
-          </a>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
+            <Link
+              href="/privacy-policy"
+              prefetch={false}
+              className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/terms-and-conditions"
+              prefetch={false}
+              className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
+            >
+              Terms & Conditions
+            </Link>
+            <a
+              href="https://www.instagram.com/mbbsadmissionsinabroad/"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
+            >
+              @mbbsadmissionsinabroad
+            </a>
+          </div>
         </div>
       </div>
     </footer>

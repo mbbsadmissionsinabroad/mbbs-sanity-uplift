@@ -2,7 +2,6 @@
 
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -47,22 +46,11 @@ export default function Testinomials() {
               key={index}
             >
               <div className="h-full rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                <div className="flex items-center gap-4">
-                  <div className="h-16 w-16 overflow-hidden rounded-2xl bg-white">
-                    <Image
-                      src={review.image}
-                      alt={review.name}
-                      height={200}
-                      width={200}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-slate-900">
-                      {review.name}
-                    </h3>
-                    <p className="text-sm text-blue-700">{review.university}</p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    {review.name}
+                  </h3>
+                  <p className="text-sm text-blue-700">{review.university}</p>
                 </div>
                 <p className="mt-5 text-sm leading-7 text-slate-600">
                   {review.quote}

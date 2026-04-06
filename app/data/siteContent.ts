@@ -273,32 +273,109 @@ export const homeHeroHighlights = [
 
 export const studentTestimonials = [
   {
-    name: "Ritika Sharma",
-    university: "Yerevan State Medical University, Armenia",
+    name: "Nikita Lokande",
+    university: "Hebei Medical University (China)",
     quote:
-      "The admissions process was clear, fast, and well-guided. The team helped me understand the fees, documents, and visa steps before I left India.",
+      "Thanks New-Lyf for helping me in choosing the Hebei Medical University to study Medicine. I feel happy here. I made friends with many other Indian medicos here.",
     image: "/students.jpeg",
   },
   {
-    name: "Aman Gupta",
-    university: "University of Sarajevo, Bosnia",
+    name: "Sidharth",
+    university: "Manipal University (Malaysia)",
     quote:
-      "We compared Bosnia, Armenia, and Georgia, and the counseling helped us pick the right fit. The support was practical and honest from day one.",
+      "I was not getting admission to my own country to study medicince, so I approached New-Lyf consultants. They told me about the Manipal University in Malaysia. I took no time to think again for i wanted to become a doctor.",
     image: "/student2.jpeg",
   },
   {
-    name: "Neha Verma",
-    university: "University of Traditional Medicine, Armenia",
+    name: "Ithiga",
+    university: "Akaki Tsereteli State University (Georgia)",
     quote:
-      "The new pages feel much easier to read on mobile, and the enquiry form made it simple to reach out without searching around the site.",
+      "New-Lyf Consultants have given us a beautiful exposure to the Akaki Tsereteli State University. I'm really enjoying the immaculate ambiance and friendly people here in Georgia.",
     image: "/assests/who-are-we.jpeg",
   },
   {
-    name: "Karan Mehta",
-    university: "Banja Luka Medical Faculty, Bosnia",
+    name: "Firoza",
+    university: "University of Georgia (Georgia)",
     quote:
-      "The site now feels clean and direct. I could go from country overview to contact in a few clicks, which made the whole experience smoother.",
+      "I had a dream to become a doctor and study abroad for that...both my dreams are being fulfilled by New-Lyf consultants. They were very helpful and I had no difficulty to reach my destination, I'm living my dream here in Georgia!!!",
     image: "/assests/who-are-we-2.jpeg",
+  },
+  {
+    name: "Sam Rohith",
+    university: "Manipal University (Malaysia)",
+    quote:
+      "New-Lyf consultants have given us a whole new exposure to studying abroad, otherwise in our city we had no clue we can go to study abroad. The best education consultants facilitated everything for us in Malaysia. Thanks u so much for your guidence...",
+    image: "/students.jpeg",
+  },
+  {
+    name: "Dr.Genuka",
+    university: "PG Residency in Dusseldorf (Germany)",
+    quote:
+      "Studying in another country was a big concern for me and my parents, but New-Lyf consultants removed all our doubts by assuring us for safety and explained to us as to how much Germany.",
+    image: "/student2.jpeg",
+  },
+  {
+    name: "Dr.Aaditya",
+    university: "PG Residency in Berlin (Germany)",
+    quote:
+      "Being a single child of my parents, it was really difficult for me to convince my parents to send me abroad. But after having talks with New-Lyf consultants my parents allowed me to study PG Residency in Germany.",
+    image: "/assests/who-are-we.jpeg",
+  },
+  {
+    name: "Atul Tiwari",
+    university: "Nicolaus Copernicus University (Poland)",
+    quote:
+      "I am studying MBBS in Poland at Nicolaus Copernicus University. I was referred to Dr. Vineet of New Lyf Overseas by a doctor in India. I was very afraid of the admission processes. but, New Lyf overseas really made it so easy that it was like a dream. Finally I am here and happy. I wish New lyf team a very best future..",
+    image: "/assests/who-are-we-2.jpeg",
+  },
+  {
+    name: "Rajiv Ayappa Kandanda",
+    university: "PG Residency in Koblenz in germany (Germany)",
+    quote:
+      "I've just begun my PG Residency program in Koblenz, and it's already clear that this experience is exceptional. The education I'm receiving is outstanding, and the experience has been truly memorable. I am confident that the skills and knowledge I'm acquiring here will lay a strong foundation for my future career. I wholeheartedly recommend this program to anyone looking for a premier residency experience in a beautiful and inspiring setting",
+    image: "/students.jpeg",
+  },
+  {
+    name: "Shefali Gautam",
+    university: "PG Residency in Koblenz, Germany (Germany)",
+    quote:
+      "Having recently started my PG Residency program in Koblenz, I can already attest to the exceptional quality of education and the unforgettable experiences it offers. The program is providing me with invaluable skills and knowledge that I am confident will serve as a strong foundation for my future career. I wholeheartedly recommend this residency to anyone seeking a top-tier educational experience in a stunning and inspiring location.",
+    image: "/student2.jpeg",
+  },
+  {
+    name: "Pearl",
+    university: "Ulyanovsk State Medical University (Russia)",
+    quote:
+      "Ulyanovsk State Medical University, I can confidently say that the quality of education here is exceptional. The professors are highly knowledgeable and approachable, making complex subjects easier to understand. The campus facilities are modern, and the library is well-stocked with the latest medical literature",
+    image: "/assests/who-are-we.jpeg",
+  },
+  {
+    name: "Ranjitha",
+    university: "St.Martin's Hospital (Germany)",
+    quote:
+      "Thanks to New-Lyf, I have a fantasitc job where, I can work hours to suit my busy life. I have enjoyed working in many areas of the aged care and disability industry.",
+    image: "/assests/who-are-we-2.jpeg",
+  },
+  {
+    name: "Sarik Khan",
+    university: "Yerevan State Medical University (Armenia)",
+    quote:
+      "New-Lyf not only guided me for admission but also helped me and my family throughout in visa processing in very minimal time. Their team helped us all the way round in.",
+    image: "/students.jpeg",
+  },
+  {
+    name: "Usha",
+    university: "St.Anna Hospital (Germany)",
+    quote:
+      "My personal experience with New-Lyf has always been positive. They are professional, caring and considerate.",
+    image: "/student2.jpeg",
+  },
+  {
+    name: "Lavanya Reddy",
+    university: "AMA School of Medicine (Philippines)",
+    quote:
+      "I am studying 1st year MBBS in Philippines. New Lyf overseas made my life easy in securing admission. I am very grateful. Guys trust me New lyf Overseas is the best for mbbs admission",
+    image: "/assests/who-are-we.jpeg",
   },
 ];
 
