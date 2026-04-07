@@ -5,6 +5,9 @@ interface BlogDetails {
   notFound: boolean;
 }
 
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
+const directSanityApiHost = `https://${projectId}.api.sanity.io/v2021-10-21/data/query/production?query=`;
+
 function getQueryResult(payload: any) {
   if (Array.isArray(payload?.result)) return payload.result;
   if (Array.isArray(payload?.data)) return payload.data;
@@ -22,9 +25,7 @@ async function fetchQuery(apiHost: string, query: string) {
 
 export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
   const preferredApiHost =
-    process.env.NEXT_PUBLIC_API_HOST ||
-    `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
-  const directSanityApiHost = `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
+    process.env.NEXT_PUBLIC_API_HOST || directSanityApiHost;
   const query = encodeURIComponent(
     `*[ _type == "pages" && slug.current == "${routeURL}" ]`
   );
