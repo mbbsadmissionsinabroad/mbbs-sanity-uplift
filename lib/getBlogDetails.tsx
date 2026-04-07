@@ -5,18 +5,36 @@ interface BlogDetails {
   notFound: boolean;
 }
 
+function getQueryResult(payload: any) {
+  if (Array.isArray(payload?.result)) return payload.result;
+  if (Array.isArray(payload?.data)) return payload.data;
+  if (Array.isArray(payload)) return payload;
+  return [];
+}
+
+async function fetchQuery(apiHost: string, query: string) {
+  const response = await fetch(apiHost + query, {
+    next: { revalidate: 60 },
+  });
+  const json = await response.json();
+  return getQueryResult(json);
+}
+
 export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
-  const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
-  const apiHost =
+  const preferredApiHost =
     process.env.NEXT_PUBLIC_API_HOST ||
-    `https://${projectId}.api.sanity.io/v2021-10-21/data/query/${dataset}?query=`;
+    `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
+  const directSanityApiHost = `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/production?query=`;
   const query = encodeURIComponent(
     `*[ _type == "pages" && slug.current == "${routeURL}" ]`
   );
-  const url = apiHost + query;
-  const result = await fetch(url).then((res) => res.json());
-  const data = result.result[0];
+  let result = await fetchQuery(preferredApiHost, query);
+
+  if (result.length === 0 && preferredApiHost !== directSanityApiHost) {
+    result = await fetchQuery(directSanityApiHost, query);
+  }
+
+  const data = result[0];
 
   if (!data) {
     return {
@@ -30,22 +48,20 @@ export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
   const faqId =
     data.hasOwnProperty("frequentlyAskedQuestion") &&
     data.frequentlyAskedQuestion.map((id: any) => "'" + id._ref + "'").join();
-  const faqQuery = encodeURIComponent(`*[_type == "faq" && _id in [${faqId}]]`);
-  const faqUrl = apiHost + faqQuery;
-  const faqResult = await fetch(faqUrl).then((res) => res.json());
-  const faq = faqResult.result;
+  const faqQuery = faqId
+    ? encodeURIComponent(`*[_type == "faq" && _id in [${faqId}]]`)
+    : "";
+  const faq = faqQuery ? await fetchQuery(directSanityApiHost, faqQuery) : [];
 
   const youtubeId =
     data.hasOwnProperty("youtubeEmbedUrl") &&
     data.youtubeEmbedUrl.map((id: any) => "'" + id._ref + "'").join();
-  const youtubeEmbedQuery = encodeURIComponent(
-    `*[_type == "youtubeEmbed" && _id in [${youtubeId}]]`
-  );
-  const youtubeEmbedUrl = apiHost + youtubeEmbedQuery;
-  const youtubeEmbedResult = await fetch(youtubeEmbedUrl).then((res) =>
-    res.json()
-  );
-  const youtubeEmbedRes = youtubeEmbedResult.result;
+  const youtubeEmbedQuery = youtubeId
+    ? encodeURIComponent(`*[_type == "youtubeEmbed" && _id in [${youtubeId}]]`)
+    : "";
+  const youtubeEmbedRes = youtubeEmbedQuery
+    ? await fetchQuery(directSanityApiHost, youtubeEmbedQuery)
+    : [];
 
   return {
     data,
