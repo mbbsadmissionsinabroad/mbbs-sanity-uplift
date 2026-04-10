@@ -1,3 +1,5 @@
+import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
+import StaticPageResourceLinks from "@/app/components/StaticPageResourceLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 import ArmeniaLeadSection from "../mbbs-admission-in-armenia/ArmeniaLeadSection";
@@ -36,23 +38,15 @@ import {
 
 type Row = Record<string, string | undefined>;
 
-export const metadata: Metadata = {
-  title: metaTitle,
-  description: metaDescription,
-  alternates: { canonical: pageUrl },
-  openGraph: {
-    title: metaTitle,
-    description: metaDescription,
-    url: pageUrl,
-    siteName: "MBBS Admissions in Abroad",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: metaTitle,
-    description: metaDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildStaticPageMetadata({
+    route: "/mbbs-in-armenia",
+    fallbackTitle: metaTitle,
+    fallbackDescription: metaDescription,
+    fallbackCanonical: pageUrl,
+  });
+}
+
 
 function SectionHeading({
   eyebrow,
@@ -130,7 +124,7 @@ function DataTable({ rows }: { rows: Row[] }) {
               >
                 {headers.map((header) => (
                   <td key={header} className="px-4 py-4 text-slate-700">
-                    {row[header] ?? ""}
+                    {row[header]}
                   </td>
                 ))}
               </tr>
@@ -653,6 +647,8 @@ export default function ArmeniaPage() {
           </div>
         </div>
       </section>
+      <StaticPageResourceLinks currentRoute={pageUrl} />
+
 
       <ArmeniaLeadSection />
 

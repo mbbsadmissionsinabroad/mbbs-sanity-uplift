@@ -33,7 +33,10 @@ function NorwayLeadForm({
   isLoading: boolean;
   buttonLabel: string;
 }) {
-  const universityOptions = useMemo(() => universities.map((item) => item.University), []);
+  const universityOptions = useMemo(
+    () => universities.map((item) => String(item["University / Program" as keyof typeof item] ?? item["University" as keyof typeof item] ?? "")),
+    []
+  );
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">

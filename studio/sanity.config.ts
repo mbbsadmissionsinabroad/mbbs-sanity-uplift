@@ -35,6 +35,9 @@ export default defineConfig({
                   .title("Landing pages")
                   .filter('_type == "pages" && coalesce(isBlog, false) != true')
               ),
+            S.listItem()
+              .title("Static SEO pages")
+              .child(S.documentTypeList("staticSeoPage").title("Static SEO pages")),
             S.divider(),
             S.documentTypeListItem("faq").title("FAQs"),
             S.documentTypeListItem("youtubeEmbed").title("YouTube embeds"),

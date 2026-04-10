@@ -34,11 +34,7 @@ function EuropeLeadForm({
   buttonLabel: string;
 }) {
   const universityOptions = useMemo(
-    () =>
-      universities.map((item) => {
-        const record = item as Record<string, string>;
-        return record["University / Program"] ?? record["University"] ?? record["Program"] ?? "";
-      }),
+    () => universities.map((item) => String(item["University / Program" as keyof typeof item] ?? item["University" as keyof typeof item] ?? "")),
     []
   );
 

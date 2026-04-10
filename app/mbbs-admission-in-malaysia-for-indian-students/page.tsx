@@ -1,3 +1,5 @@
+import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
+import StaticPageResourceLinks from "@/app/components/StaticPageResourceLinks";
 import type { Metadata } from "next";
 import Link from "next/link";
 import MalaysiaLeadSection from "./MalaysiaLeadSection";
@@ -35,23 +37,15 @@ import {
 
 type Row = Record<string, string | undefined>;
 
-export const metadata: Metadata = {
-  title: metaTitle,
-  description: metaDescription,
-  alternates: { canonical: pageUrl },
-  openGraph: {
-    title: metaTitle,
-    description: metaDescription,
-    url: pageUrl,
-    siteName: "MBBS Admissions in Abroad",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: metaTitle,
-    description: metaDescription,
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildStaticPageMetadata({
+    route: "/mbbs-admission-in-malaysia-for-indian-students",
+    fallbackTitle: metaTitle,
+    fallbackDescription: metaDescription,
+    fallbackCanonical: pageUrl,
+  });
+}
+
 
 function SectionHeading({
   eyebrow,
@@ -102,7 +96,7 @@ function DataTable({ rows }: { rows: Row[] }) {
               <tr key={`${Object.values(row).join("-")}-${index}`} className="align-top odd:bg-white even:bg-slate-50/60" itemScope itemType="https://schema.org/TableRow">
                 {headers.map((header) => (
                   <td key={header} className="px-4 py-4 text-slate-700">
-                    {row[header] ?? ""}
+                    {row[header]}
                   </td>
                 ))}
               </tr>
@@ -355,6 +349,8 @@ export default function MalaysiaPage() {
           </div>
         </div>
       </section>
+      <StaticPageResourceLinks currentRoute={pageUrl} />
+
 
       <MalaysiaLeadSection />
 
