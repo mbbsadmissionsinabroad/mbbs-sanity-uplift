@@ -8,6 +8,8 @@ const footerActionLinks = [
 ];
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-slate-100 text-slate-700">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
@@ -61,7 +63,7 @@ export default function Footer() {
       <div className="border-t border-slate-200 bg-slate-200">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left sm:px-6 lg:px-8">
           <p className="text-sm text-slate-700">
-            © 2024 New-Lyf
+            © 2024-{currentYear} New-Lyf
           </p>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-6">
             <Link

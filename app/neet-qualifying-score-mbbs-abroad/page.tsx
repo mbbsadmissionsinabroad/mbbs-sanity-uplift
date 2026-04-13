@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import LandingPageClient from "./LandingPageClient";
 
 export const metadata: Metadata = {
-  title: "Qualifying NEET Score? Explore MBBS Abroad Options | Ney Lyf",
+  title: "NEET Qualifying Score for MBBS Abroad | New-Lyf",
   description:
-    "Get a free Ney Lyf counselling call to explore NMC-approved MBBS abroad options in Russia, Kazakhstan, Philippines, Georgia, and more based on your NEET score and budget.",
+    "See the latest official NEET qualifying score guidance and get a free New-Lyf counselling call for MBBS abroad options in Russia, Kazakhstan, Philippines, Georgia, Uzbekistan, and Kyrgyzstan.",
   alternates: {
     canonical:
       "https://www.mbbsadmissionsinabroad.com/neet-qualifying-score-mbbs-abroad",
   },
   openGraph: {
-    title: "Qualifying NEET Score? Explore MBBS Abroad Options",
+    title: "NEET Qualifying Score for MBBS Abroad | New-Lyf",
     description:
-      "Find the right country and university for your NEET score and family budget with a free Ney Lyf counselling call.",
+      "Find the right country and university for your NEET score and family budget with a free New-Lyf counselling call.",
     url: "https://www.mbbsadmissionsinabroad.com/neet-qualifying-score-mbbs-abroad",
     type: "website",
   },
