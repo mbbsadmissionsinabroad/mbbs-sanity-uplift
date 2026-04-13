@@ -651,7 +651,7 @@ export default function LandingPageClient() {
           className="absolute bottom-10 right-[10%] h-44 w-44 rounded-full bg-orange-300/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:px-8 lg:pb-24 lg:pt-20">
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:items-start lg:px-8 lg:pb-24 lg:pt-20">
           <div className="text-white">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100 backdrop-blur">
               <BadgeCheck className="h-4 w-4" />
@@ -785,7 +785,7 @@ export default function LandingPageClient() {
           <aside
             id="lead-form"
             ref={topFormRef}
-            className="scroll-mt-32 rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-8"
+            className="scroll-mt-32 self-start rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-8"
           >
             <h2 className="text-3xl font-black tracking-tight text-slate-950">
               Get your free MBBS abroad counselling call
