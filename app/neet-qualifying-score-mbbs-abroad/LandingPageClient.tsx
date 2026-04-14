@@ -253,8 +253,8 @@ function VideoCard({
   onActivate: () => void;
 }) {
   return (
-    <article className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
-      <div className="relative aspect-[9/16] bg-slate-950">
+    <article className="snap-start overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+      <div className="relative aspect-[4/5] bg-slate-950 sm:aspect-[9/16]">
         {isActive ? (
           <iframe
             className="h-full w-full"
@@ -326,7 +326,7 @@ function LeadForm({
   ];
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5">
+    <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5">
       <div className="grid gap-4 md:grid-cols-2">
         <FormField id={`${formIdPrefix}-fullName`} label="Full Name" required>
           <input
@@ -355,7 +355,7 @@ function LeadForm({
         </FormField>
 
         <div className="space-y-3 md:col-span-2">
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
             <label
               htmlFor={`${formIdPrefix}-whatsapp`}
               className="text-sm font-semibold text-slate-700"
@@ -633,7 +633,7 @@ export default function LandingPageClient() {
         href={whatsappHref}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-emerald-600"
+        className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-emerald-500 px-4 py-3 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-emerald-600 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
       >
         <MessageCircle className="h-4 w-4" />
         WhatsApp Us
@@ -651,49 +651,49 @@ export default function LandingPageClient() {
           className="absolute bottom-10 right-[10%] h-44 w-44 rounded-full bg-orange-300/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:items-start lg:px-8 lg:pb-24 lg:pt-20">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[1.06fr_0.94fr] lg:items-start lg:px-8 lg:pb-24 lg:pt-20">
           <div className="text-white">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100 backdrop-blur">
               <BadgeCheck className="h-4 w-4" />
               Free MBBS Abroad Counselling
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-4xl text-[2.35rem] font-black leading-[1.06] tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
               24 Lakh Students. 1.4 Lakh Seats. Your MBBS Dream Is Bigger Than
               One Number.
             </h1>
 
-            <p className="mt-5 max-w-3xl text-xl font-semibold text-orange-200 sm:text-2xl">
+            <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-orange-200 sm:mt-5 sm:text-2xl">
               How a qualifying NEET score can still get you an MBBS seat abroad
             </p>
 
-            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-200 sm:text-lg">
+            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
               A NEET qualifying score is enough for NMC-approved MBBS abroad in{" "}
               {heroCountries}. Same doctor dream, same recognised pathway, and
               often a more realistic budget path for Indian families.
             </p>
 
-            <div className="mt-6 rounded-[28px] border border-white/10 bg-white/10 p-5 backdrop-blur">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-100">
+            <div className="mt-5 rounded-[24px] border border-white/10 bg-white/10 p-4 backdrop-blur sm:mt-6 sm:rounded-[28px] sm:p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100 sm:text-sm">
                 Latest official NEET guidance
               </p>
-              <p className="mt-3 text-lg font-semibold leading-8 text-white">
+              <p className="mt-3 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-8">
                 The most recent released NTA cutoff for NEET-UG 2025 starts at{" "}
                 <span className="text-orange-300">144+</span> for General/EWS
                 and <span className="text-orange-300">113+</span> for OBC / SC /
                 ST. PwBD cutoffs differ by category.
               </p>
-              <p className="mt-2 text-sm leading-7 text-slate-200">
+              <p className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
                 These qualifying marks change every year, so the latest released
                 result year should always be used for planning.
               </p>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <button
                 type="button"
                 onClick={() => scrollToElement(topFormRef)}
-                className="inline-flex items-center gap-2 rounded-full bg-orange-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-300"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-300 sm:w-auto"
               >
                 Find My Country & University
                 <ArrowRight className="h-4 w-4" />
@@ -702,13 +702,13 @@ export default function LandingPageClient() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white"
+                className="text-center text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white sm:text-left"
               >
                 Prefer WhatsApp? Chat with New-Lyf
               </a>
             </div>
 
-            <p className="mt-4 text-sm leading-7 text-slate-200">
+            <p className="mt-4 text-sm leading-6 text-slate-200 sm:leading-7">
               2026 counselling is already worth starting now. Shortlisting early
               gives families more time before intake and visa timelines tighten.
             </p>
@@ -734,9 +734,9 @@ export default function LandingPageClient() {
               </div>
             </div>
 
-            <div className="mt-8 overflow-hidden rounded-[28px] border border-white/12 bg-slate-950/25 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur">
-              <div className="border-b border-white/10 px-5 py-4">
-                <h2 className="text-lg font-bold text-white">
+            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/12 bg-slate-950/25 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur sm:mt-8 sm:rounded-[28px]">
+              <div className="border-b border-white/10 px-4 py-4 sm:px-5">
+                <h2 className="text-base font-bold text-white sm:text-lg">
                   Watch the 2-minute MBBS abroad explainer
                 </h2>
               </div>
@@ -760,17 +760,17 @@ export default function LandingPageClient() {
                       backgroundPosition: "center",
                     }}
                   >
-                    <div className="flex h-full flex-col justify-between p-6">
-                      <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
+                    <div className="flex h-full flex-col justify-between p-4 sm:p-6">
+                      <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur sm:px-4 sm:text-xs">
                         <PlayCircle className="h-4 w-4" />
                         Play Video
                       </span>
                       <div>
-                        <p className="text-lg font-bold text-white">
+                        <p className="text-base font-bold text-white sm:text-lg">
                           How a qualifying NEET score can still open MBBS
                           abroad options
                         </p>
-                        <p className="mt-2 text-sm leading-7 text-slate-200">
+                        <p className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
                           Tap to load the video and hear how score, budget, and
                           country fit work together.
                         </p>
@@ -785,9 +785,9 @@ export default function LandingPageClient() {
           <aside
             id="lead-form"
             ref={topFormRef}
-            className="scroll-mt-32 self-start rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-8"
+            className="scroll-mt-32 self-start rounded-[28px] border border-white/50 bg-white p-5 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:rounded-[32px] sm:p-8"
           >
-            <h2 className="text-3xl font-black tracking-tight text-slate-950">
+            <h2 className="text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
               Get your free MBBS abroad counselling call
             </h2>
             <p className="mt-3 text-sm leading-6 text-slate-600">
@@ -829,7 +829,7 @@ export default function LandingPageClient() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
               Real students. Real MBBS seats. Real stories.
@@ -840,7 +840,7 @@ export default function LandingPageClient() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-10 grid grid-flow-col auto-cols-[84%] gap-4 overflow-x-auto pb-2 pr-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden sm:auto-cols-[64%] md:mt-12 md:grid-flow-row md:auto-cols-auto md:grid-cols-2 md:overflow-visible md:pb-0 md:pr-0 xl:grid-cols-5">
             {testimonialVideos.map((video) => (
               <VideoCard
                 key={video.videoId}
@@ -923,7 +923,7 @@ export default function LandingPageClient() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.98fr_1.02fr]">
             <div className="rounded-[32px] bg-slate-950 p-8 text-white shadow-[0_24px_70px_rgba(15,23,42,0.16)]">
               <h2 className="text-3xl font-black tracking-tight sm:text-4xl">
@@ -947,7 +947,7 @@ export default function LandingPageClient() {
               </div>
             </div>
 
-            <div className="rounded-[32px] border border-slate-200 bg-white p-7 shadow-[0_24px_70px_rgba(15,23,42,0.08)]">
+            <div className="rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] sm:rounded-[32px] sm:p-7">
               <h2 className="text-3xl font-black tracking-tight text-slate-950">
                 Current country cost snapshots
               </h2>
@@ -957,7 +957,26 @@ export default function LandingPageClient() {
                 city, and exchange rate.
               </p>
 
-              <div className="mt-6 overflow-hidden rounded-[24px] border border-slate-200">
+              <div className="mt-6 space-y-3 md:hidden">
+                {costSnapshots.map((item) => (
+                  <div
+                    key={item.country}
+                    className="rounded-[22px] border border-slate-200 bg-slate-50 p-4"
+                  >
+                    <p className="text-base font-bold text-slate-950">
+                      {item.country}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-blue-900">
+                      {item.estimate}
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {item.note}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 hidden overflow-hidden rounded-[24px] border border-slate-200 md:block">
                 <table className="w-full text-left text-sm">
                   <thead className="bg-slate-50 text-slate-700">
                     <tr>
@@ -1004,7 +1023,26 @@ export default function LandingPageClient() {
               </p>
             </div>
 
-            <div className="overflow-x-auto">
+            <div className="space-y-3 px-4 pb-4 md:hidden">
+              {latestCutoffRows.map((row) => (
+                <div
+                  key={row.category}
+                  className="rounded-[22px] border border-slate-200 bg-white p-4"
+                >
+                  <p className="text-sm font-semibold text-slate-600">
+                    {row.category}
+                  </p>
+                  <p className="mt-2 text-2xl font-black text-blue-800">
+                    {row.qualifyingScore}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {row.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden overflow-x-auto md:block">
               <table className="w-full text-left text-sm">
                 <thead className="bg-white">
                   <tr className="border-y border-slate-200">
@@ -1041,7 +1079,7 @@ export default function LandingPageClient() {
       </section>
 
       <section className="bg-slate-950 text-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
               What happens after you fill the form?
@@ -1098,7 +1136,7 @@ export default function LandingPageClient() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="text-3xl font-black tracking-tight text-slate-950 sm:text-5xl">
               Questions students and parents ask every day
@@ -1127,7 +1165,7 @@ export default function LandingPageClient() {
         ref={bottomFormRef}
         className="scroll-mt-32 bg-[linear-gradient(180deg,#081226_0%,#0f2147_100%)]"
       >
-        <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div className="text-white">
             <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
               Your NEET score is a number. Your MBBS dream is your life.
@@ -1146,8 +1184,8 @@ export default function LandingPageClient() {
             </div>
           </div>
 
-          <div className="rounded-[32px] border border-white/10 bg-white p-6 shadow-[0_24px_70px_rgba(8,18,38,0.32)] sm:p-8">
-            <h3 className="text-3xl font-black tracking-tight text-slate-950">
+          <div className="rounded-[28px] border border-white/10 bg-white p-5 shadow-[0_24px_70px_rgba(8,18,38,0.32)] sm:rounded-[32px] sm:p-8">
+            <h3 className="text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
               Find my country and university options
             </h3>
             <p className="mt-3 text-sm leading-6 text-slate-600">
@@ -1169,7 +1207,7 @@ export default function LandingPageClient() {
         </div>
       </section>
 
-      <ToastContainer position="bottom-right" theme="light" />
+      <ToastContainer position="top-center" theme="light" />
     </div>
   );
 }
