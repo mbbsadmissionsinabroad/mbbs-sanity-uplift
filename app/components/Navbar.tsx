@@ -67,6 +67,14 @@ function NavLink({ link, onClick }: { link: SiteLink; onClick?: () => void }) {
   );
 }
 
+function isPrimaryDesktopLink(link: SiteLink) {
+  return (
+    link.title !== "Home" &&
+    link.title !== "Nursing Jobs Abroad" &&
+    link.title !== "PG Abroad"
+  );
+}
+
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileCountriesOpen, setMobileCountriesOpen] = useState(true);
@@ -212,7 +220,7 @@ export default function Navbar() {
                   <div className="rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
                     <div className="flex flex-col gap-1">
                       {mainNavLinks
-                        .filter((link) => link.title !== "Home")
+                        .filter(isPrimaryDesktopLink)
                         .map((link) => (
                           <NavLink
                             key={link.href}
@@ -301,7 +309,7 @@ export default function Navbar() {
                       : "border-transparent text-slate-700 hover:border-blue-200 hover:text-blue-800"
                   }`}
                 >
-                  Nursing Jobs in Abroad
+                  Nursing Jobs Abroad
                 </button>
 
                 {desktopNursingOpen && (
@@ -338,7 +346,7 @@ export default function Navbar() {
                       : "border-transparent text-slate-700 hover:border-blue-200 hover:text-blue-800"
                   }`}
                 >
-                  PG in Abroad
+                  PG Abroad
                 </button>
 
                 {desktopPgOpen && (
@@ -428,12 +436,7 @@ export default function Navbar() {
               </div>
 
               {mainNavLinks
-                .filter(
-                  (link) =>
-                    link.title !== "Home" &&
-                    link.title !== "Nursing Jobs in Abroad" &&
-                    link.title !== "PG in Abroad"
-                )
+                .filter(isPrimaryDesktopLink)
                 .map((link) => (
                   <NavLink key={link.href} link={link} />
                 ))}
