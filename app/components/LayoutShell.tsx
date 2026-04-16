@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import GoogleAnalytics from "./GoogleAnalytics";
+import DeferredTracking from "./DeferredTracking";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
@@ -17,7 +17,7 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-      <GoogleAnalytics GA_TRACKING_ID="G-YR4Q895Z3R" />
+      <DeferredTracking />
       <main id="main-content" className="pt-[108px] lg:pt-[108px]">
         {children}
       </main>

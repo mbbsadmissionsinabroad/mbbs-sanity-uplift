@@ -3,51 +3,29 @@
 import { Fragment, useMemo, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { MessageCircleMore, PhoneCall, Send, X } from "lucide-react";
-import CountryList from "@/app/contact/utilities/countriesAndStates.json";
 
 type FormState = {
   name: string;
   phone: string;
   email: string;
   course: string;
-  studyCountry: string;
-  residentCountry: string;
-  state: string;
   message: string;
 };
 
 const WHATSAPP_NUMBER = "918147030030";
 const IVR_NUMBER = "+918050575767";
-
-const courseCountryMapping: Record<string, string[]> = {
-  "MBBS Abroad": [
-    "Germany",
-    "Malaysia",
-    "Philippines",
-    "Kazakhstan",
-    "Georgia",
-    "USA",
-    "Others",
-  ],
-  "PG Medical": ["Germany"],
-  "Nursing Jobs": ["Germany", "Netherlands", "Denmark", "Lithuania", "Canada"],
-};
+const courseOptions = ["MBBS Abroad", "PG Medical", "Nursing Jobs", "Ausbildung"];
 
 const initialFormState: FormState = {
   name: "",
   phone: "",
   email: "",
   course: "",
-  studyCountry: "",
-  residentCountry: "",
-  state: "",
   message: "",
 };
 
 function useLeadForm(source: string) {
   const [formData, setFormData] = useState<FormState>(initialFormState);
-  const [availableCountries, setAvailableCountries] = useState<string[]>([]);
-  const [states, setStates] = useState<string[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState<{
     type: "success" | "error" | null;
@@ -65,28 +43,6 @@ function useLeadForm(source: string) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCourseChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const course = event.target.value;
-    setFormData((prev) => ({
-      ...prev,
-      course,
-      studyCountry: "",
-    }));
-    setAvailableCountries(courseCountryMapping[course] || []);
-  };
-
-  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const country = event.target.value;
-    const countryData = CountryList.find((item) => item.country === country);
-
-    setFormData((prev) => ({
-      ...prev,
-      residentCountry: country,
-      state: "",
-    }));
-    setStates(countryData ? countryData.states : []);
-  };
-
   const submit = async (event?: React.FormEvent) => {
     if (event) event.preventDefault();
     setIsSubmitting(true);
@@ -98,9 +54,9 @@ function useLeadForm(source: string) {
         Phone: formData.phone,
         Email: formData.email,
         Course: formData.course,
-        StudyCountry: formData.studyCountry,
-        ResidentCountry: formData.residentCountry,
-        State: formData.state,
+        StudyCountry: "",
+        ResidentCountry: "",
+        State: "",
         Message: formData.message,
       },
       actions: [
@@ -143,8 +99,6 @@ function useLeadForm(source: string) {
       }
 
       setFormData(initialFormState);
-      setAvailableCountries([]);
-      setStates([]);
       setStatus({
         type: "success",
         message: "Thanks! Our team will contact you shortly.",
@@ -163,13 +117,9 @@ function useLeadForm(source: string) {
 
   return {
     formData,
-    availableCountries,
-    states,
     isSubmitting,
     status,
     handleInputChange,
-    handleCourseChange,
-    handleCountryChange,
     submit,
   };
 }
@@ -249,12 +199,12 @@ function SharedFields({
             id={`${formIdPrefix}-course`}
             name="course"
             value={form.formData.course}
-            onChange={form.handleCourseChange}
+            onChange={form.handleInputChange}
             className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
             required
           >
             <option value="">Select an option</option>
-            {Object.keys(courseCountryMapping).map((course) => (
+            {courseOptions.map((course) => (
               <option key={course} value={course}>
                 {course}
               </option>
@@ -263,97 +213,23 @@ function SharedFields({
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label
-            htmlFor={`${formIdPrefix}-study-country`}
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
-            Study / Job Country
-          </label>
-          <select
-            id={`${formIdPrefix}-study-country`}
-            name="studyCountry"
-            value={form.formData.studyCountry}
-            onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
-            required
-          >
-            <option value="">Select a country</option>
-            {form.availableCountries.map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label
-            htmlFor={`${formIdPrefix}-resident-country`}
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
-            Resident Country
-          </label>
-          <select
-            id={`${formIdPrefix}-resident-country`}
-            name="residentCountry"
-            value={form.formData.residentCountry}
-            onChange={form.handleCountryChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
-            required
-          >
-            <option value="">Select your country</option>
-            {CountryList.map((country) => (
-              <option key={country.alpha2Code} value={country.country}>
-                {country.country}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <label
-            htmlFor={`${formIdPrefix}-state`}
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
-            State / Province
-          </label>
-          <select
-            id={`${formIdPrefix}-state`}
-            name="state"
-            value={form.formData.state}
-            onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
-            required
-          >
-            <option value="">Select state</option>
-            {form.states.map((state) => (
-              <option key={state} value={state}>
-                {state}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label
-            htmlFor={`${formIdPrefix}-message`}
-            className="mb-2 block text-sm font-medium text-slate-700"
-          >
-            Message
-          </label>
-          <textarea
-            id={`${formIdPrefix}-message`}
-            name="message"
-            value={form.formData.message}
-            onChange={form.handleInputChange}
-            rows={1}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
-            placeholder="Tell us your budget, preferred country, or current stage."
-            required
-          />
-        </div>
+      <div>
+        <label
+          htmlFor={`${formIdPrefix}-message`}
+          className="mb-2 block text-sm font-medium text-slate-700"
+        >
+          Message
+        </label>
+        <textarea
+          id={`${formIdPrefix}-message`}
+          name="message"
+          value={form.formData.message}
+          onChange={form.handleInputChange}
+          rows={3}
+          className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+          placeholder="Tell us your budget, preferred country, NEET status, or current stage."
+          required
+        />
       </div>
     </>
   );

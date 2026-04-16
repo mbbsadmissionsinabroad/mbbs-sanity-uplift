@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import {
   HomeInlineLeadSection,
-  HomePopupLeadForm,
   HomeQuickContactBar,
 } from "./HomeLeadCapture";
 import {
@@ -37,6 +36,9 @@ import {
 
 const Testinomials = dynamic(() => import("./Testinomials"));
 const Assist = dynamic(() => import("./Assist"));
+const HomePopupLeadForm = dynamic(() =>
+  import("./HomeLeadCapture").then((module) => module.HomePopupLeadForm)
+);
 
 const heroStats = [
   { value: "15+", label: "years guiding students" },
