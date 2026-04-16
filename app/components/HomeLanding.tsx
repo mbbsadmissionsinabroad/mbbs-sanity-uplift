@@ -2,9 +2,9 @@
 
 import type { ReactNode } from "react";
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
@@ -23,8 +23,6 @@ import {
   Sparkles,
   Stethoscope,
 } from "lucide-react";
-import Testinomials from "./Testinomials";
-import Assist from "./Assist";
 import {
   HomeInlineLeadSection,
   HomePopupLeadForm,
@@ -37,14 +35,8 @@ import {
   howCanWeAssistYouSummary,
 } from "../utilities/HomePageStaticData";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+const Testinomials = dynamic(() => import("./Testinomials"));
+const Assist = dynamic(() => import("./Assist"));
 
 const heroStats = [
   { value: "15+", label: "years guiding students" },
@@ -165,25 +157,12 @@ const contentHighlights = [
 
 function Reveal({
   children,
-  delay = 0,
   className,
 }: {
   children: ReactNode;
-  delay?: number;
   className?: string;
 }) {
-  return (
-    <motion.div
-      className={className}
-      variants={fadeUp}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ delay }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 function SectionIntro({
@@ -248,17 +227,13 @@ export default function HomeLanding() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_38%),radial-gradient(circle_at_80%_20%,rgba(16,185,129,0.14),transparent_30%),linear-gradient(135deg,#081226_10%,#0f1e3e_55%,#102f6f_100%)]" />
         <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_52%)]" />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute left-[6%] top-28 h-32 w-32 rounded-full border border-white/15 bg-white/10 blur-3xl"
-          animate={{ y: [0, -18, 0], x: [0, 10, 0] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute bottom-16 right-[14%] h-40 w-40 rounded-full border border-sky-300/20 bg-sky-300/10 blur-3xl"
-          animate={{ y: [0, 18, 0], x: [0, -12, 0] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.06fr_0.94fr] lg:px-8 lg:pb-24 lg:pt-24">
@@ -300,17 +275,13 @@ export default function HomeLanding() {
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3">
               {heroStats.map((item, index) => (
-                <motion.div
+                <div
                   key={item.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.45, delay: 0.1 + index * 0.1 }}
                   className="rounded-3xl border border-white/12 bg-white/10 px-5 py-5 backdrop-blur"
                 >
                   <p className="text-3xl font-black text-white">{item.value}</p>
                   <p className="mt-1 text-sm text-slate-200">{item.label}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -327,13 +298,9 @@ export default function HomeLanding() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1}>
+          <Reveal>
             <div className="relative">
-              <motion.div
-                className="absolute -left-6 top-8 hidden rounded-3xl border border-white/60 bg-white/90 p-4 shadow-2xl lg:block"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="absolute -left-6 top-8 hidden rounded-3xl border border-white/60 bg-white/90 p-4 shadow-2xl lg:block">
                 <div className="flex items-center gap-3">
                   <div className="rounded-2xl bg-sky-100 p-3 text-sky-700">
                     <GraduationCap className="h-5 w-5" />
@@ -347,21 +314,17 @@ export default function HomeLanding() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
               <div className="grid grid-cols-2 gap-4">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                  className="relative col-span-2 overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 shadow-[0_30px_70px_rgba(2,6,23,0.3)]"
-                >
+                <div className="relative col-span-2 overflow-hidden rounded-[2rem] border border-white/20 bg-white/10 shadow-[0_30px_70px_rgba(2,6,23,0.3)]">
                   <Image
                     src="/malaysia-hero-skyline.jpg"
                     alt="Students exploring an international study destination skyline"
                     width={1200}
                     height={820}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 42vw"
+                    quality={72}
                     className="h-[320px] w-full object-cover sm:h-[360px]"
                     priority
                   />
@@ -373,39 +336,31 @@ export default function HomeLanding() {
                       Modern destinations, practical planning, and clearer choices for Indian medical aspirants.
                     </p>
                   </div>
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, x: -18 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.55, delay: 0.08 }}
-                  className="overflow-hidden rounded-[1.7rem] border border-white/15 bg-white/10 shadow-xl"
-                >
+                <div className="overflow-hidden rounded-[1.7rem] border border-white/15 bg-white/10 shadow-xl">
                   <Image
                     src="/students.jpeg"
                     alt="Indian students discussing study abroad plans"
                     width={700}
                     height={820}
+                    sizes="(max-width: 640px) 50vw, 22vw"
+                    quality={68}
                     className="h-52 w-full object-cover"
                   />
-                </motion.div>
+                </div>
 
-                <motion.div
-                  initial={{ opacity: 0, x: 18 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.55, delay: 0.16 }}
-                  className="overflow-hidden rounded-[1.7rem] border border-white/15 bg-white/10 shadow-xl"
-                >
+                <div className="overflow-hidden rounded-[1.7rem] border border-white/15 bg-white/10 shadow-xl">
                   <Image
                     src="/russia-college-2.jpeg"
                     alt="International medical campus exterior"
                     width={700}
                     height={820}
+                    sizes="(max-width: 640px) 50vw, 22vw"
+                    quality={68}
                     className="h-52 w-full object-cover"
                   />
-                </motion.div>
+                </div>
               </div>
             </div>
           </Reveal>
@@ -415,7 +370,7 @@ export default function HomeLanding() {
       <section className="relative z-10 -mt-8">
         <div className="mx-auto grid max-w-7xl gap-4 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
           {contentHighlights.map((item, index) => (
-            <Reveal key={item.title} delay={index * 0.06}>
+            <Reveal key={item.title}>
               <div className="h-full rounded-[2rem] border border-slate-200 bg-white/95 p-6 shadow-[0_20px_45px_rgba(15,23,42,0.08)] backdrop-blur">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
                   Homepage upgrade
@@ -443,11 +398,8 @@ export default function HomeLanding() {
           {pathwayCards.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Reveal key={item.title} delay={index * 0.08}>
-                <motion.div
-                  whileHover={{ y: -6 }}
-                  className="h-full rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_16px_35px_rgba(15,23,42,0.06)]"
-                >
+              <Reveal key={item.title}>
+                <div className="h-full rounded-[2rem] border border-slate-200 bg-white p-6 shadow-[0_16px_35px_rgba(15,23,42,0.06)] transition-transform duration-300 hover:-translate-y-1.5">
                   <div className="inline-flex rounded-2xl bg-sky-50 p-3 text-sky-700">
                     <Icon className="h-6 w-6" />
                   </div>
@@ -457,7 +409,7 @@ export default function HomeLanding() {
                   <p className="mt-3 text-sm leading-7 text-slate-600">
                     {item.body}
                   </p>
-                </motion.div>
+                </div>
               </Reveal>
             );
           })}
@@ -473,10 +425,10 @@ export default function HomeLanding() {
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-4">
-            {guidanceSteps.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.step} delay={index * 0.08}>
+          {guidanceSteps.map((item, index) => {
+            const Icon = item.icon;
+            return (
+                <Reveal key={item.step}>
                   <div className="relative h-full overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 backdrop-blur">
                     <div className="absolute right-5 top-4 text-6xl font-black text-white/5">
                       {item.step}
@@ -506,10 +458,10 @@ export default function HomeLanding() {
           body="Each card below takes students directly to a destination or career page, so the homepage becomes a better launchpad instead of a dead-end brochure."
         />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {featuredDestinations.map((item, index) => (
-            <Reveal key={item.href} delay={index * 0.07}>
-              <motion.div whileHover={{ y: -6 }} className="group h-full">
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {featuredDestinations.map((item) => (
+            <Reveal key={item.href}>
+              <div className="group h-full transition-transform duration-300 hover:-translate-y-1.5">
                 <Link
                   href={item.href}
                   className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_18px_40px_rgba(15,23,42,0.06)] transition-shadow hover:shadow-[0_22px_50px_rgba(15,23,42,0.12)]"
@@ -520,6 +472,8 @@ export default function HomeLanding() {
                       alt={item.title}
                       width={900}
                       height={640}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      quality={68}
                       className="h-64 w-full object-cover transition duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
@@ -541,7 +495,7 @@ export default function HomeLanding() {
                     </span>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -562,6 +516,7 @@ export default function HomeLanding() {
                   src="/assests/home-page-banner-1.png"
                   alt="Counselling session for students planning study abroad"
                   fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
@@ -576,40 +531,43 @@ export default function HomeLanding() {
               </div>
             </Reveal>
 
-            <Reveal delay={0.08} className="md:col-span-4">
+            <Reveal className="md:col-span-4">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
                   src="/russia-college-3.webp"
                   alt="Study abroad medical campus"
                   fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover"
                 />
               </div>
             </Reveal>
 
-            <Reveal delay={0.14} className="md:col-span-3">
+            <Reveal className="md:col-span-3">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
                   src="/student2.jpeg"
                   alt="Student portrait for study abroad experience"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover"
                 />
               </div>
             </Reveal>
 
-            <Reveal delay={0.18} className="md:col-span-3">
+            <Reveal className="md:col-span-3">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
                   src="/russia-college-4.webp"
                   alt="International medical infrastructure"
                   fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
                   className="object-cover"
                 />
               </div>
             </Reveal>
 
-            <Reveal delay={0.22} className="md:col-span-6">
+            <Reveal className="md:col-span-6">
               <div className="flex h-full min-h-[200px] flex-col justify-between rounded-[2rem] border border-sky-100 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.06)]">
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700">
                   <ShieldCheck className="h-4 w-4" />
