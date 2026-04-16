@@ -280,7 +280,7 @@ export default function HomeLanding() {
                   className="rounded-3xl border border-white/12 bg-white/10 px-5 py-5 backdrop-blur"
                 >
                   <p className="text-3xl font-black text-white">{item.value}</p>
-                  <p className="mt-1 text-sm text-slate-200">{item.label}</p>
+                  <p className="mt-1 text-sm text-slate-100">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -306,7 +306,7 @@ export default function HomeLanding() {
                     <GraduationCap className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-600">
                       Guidance
                     </p>
                     <p className="text-sm font-semibold text-slate-900">
@@ -329,7 +329,7 @@ export default function HomeLanding() {
                     priority
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent p-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-200">
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100">
                       Global Study Paths
                     </p>
                     <p className="mt-2 max-w-md text-lg font-semibold text-white">
@@ -436,11 +436,11 @@ export default function HomeLanding() {
                     <div className="inline-flex rounded-2xl bg-white/10 p-3 text-sky-300">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-sky-200">
+                    <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-sky-100">
                       Step {item.step}
                     </p>
                     <h3 className="mt-3 text-xl font-bold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">
+                    <p className="mt-3 text-sm leading-7 text-slate-200">
                       {item.body}
                     </p>
                   </div>
@@ -521,7 +521,7 @@ export default function HomeLanding() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
                 <div className="absolute bottom-0 p-6 text-white">
-                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
                     Counselling
                   </p>
                   <p className="mt-2 text-2xl font-bold">

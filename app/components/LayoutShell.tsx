@@ -18,7 +18,9 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
     <>
       <Navbar />
       <GoogleAnalytics GA_TRACKING_ID="G-YR4Q895Z3R" />
-      <div className="pt-[108px] lg:pt-[108px]">{children}</div>
+      <main id="main-content" className="pt-[108px] lg:pt-[108px]">
+        {children}
+      </main>
       <Footer />
     </>
   );

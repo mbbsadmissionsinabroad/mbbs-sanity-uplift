@@ -176,17 +176,23 @@ function useLeadForm(source: string) {
 
 function SharedFields({
   form,
+  formIdPrefix,
 }: {
   form: ReturnType<typeof useLeadForm>;
+  formIdPrefix: string;
 }) {
   return (
     <>
       <div className="grid gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-name`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Name
           </label>
           <input
+            id={`${formIdPrefix}-name`}
             type="text"
             name="name"
             value={form.formData.name}
@@ -196,10 +202,14 @@ function SharedFields({
           />
         </div>
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-phone`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Phone
           </label>
           <input
+            id={`${formIdPrefix}-phone`}
             type="tel"
             name="phone"
             value={form.formData.phone}
@@ -212,10 +222,14 @@ function SharedFields({
 
       <div className="grid gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-email`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Email
           </label>
           <input
+            id={`${formIdPrefix}-email`}
             type="email"
             name="email"
             value={form.formData.email}
@@ -225,10 +239,14 @@ function SharedFields({
           />
         </div>
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-course`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Course / Job Interested
           </label>
           <select
+            id={`${formIdPrefix}-course`}
             name="course"
             value={form.formData.course}
             onChange={form.handleCourseChange}
@@ -247,10 +265,14 @@ function SharedFields({
 
       <div className="grid gap-4 md:grid-cols-2">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-study-country`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Study / Job Country
           </label>
           <select
+            id={`${formIdPrefix}-study-country`}
             name="studyCountry"
             value={form.formData.studyCountry}
             onChange={form.handleInputChange}
@@ -266,10 +288,14 @@ function SharedFields({
           </select>
         </div>
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-resident-country`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Resident Country
           </label>
           <select
+            id={`${formIdPrefix}-resident-country`}
             name="residentCountry"
             value={form.formData.residentCountry}
             onChange={form.handleCountryChange}
@@ -288,10 +314,14 @@ function SharedFields({
 
       <div className="grid gap-4 md:grid-cols-[0.8fr_1.2fr]">
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-state`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             State / Province
           </label>
           <select
+            id={`${formIdPrefix}-state`}
             name="state"
             value={form.formData.state}
             onChange={form.handleInputChange}
@@ -307,10 +337,14 @@ function SharedFields({
           </select>
         </div>
         <div>
-          <label className="mb-2 block text-sm font-medium text-slate-700">
+          <label
+            htmlFor={`${formIdPrefix}-message`}
+            className="mb-2 block text-sm font-medium text-slate-700"
+          >
             Message
           </label>
           <textarea
+            id={`${formIdPrefix}-message`}
             name="message"
             value={form.formData.message}
             onChange={form.handleInputChange}
@@ -378,13 +412,13 @@ export function HomeInlineLeadSection({
     <section className="bg-slate-950 py-20 text-white">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:px-8">
         <div className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur">
-          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+          <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
             Direct Contact
           </p>
           <h2 className="mt-4 text-3xl font-black tracking-tight">
             Prefer talking to us right away?
           </h2>
-          <p className="mt-4 text-sm leading-7 text-slate-300">
+          <p className="mt-4 text-sm leading-7 text-slate-200">
             Reach our team directly on WhatsApp, call the IVR line, or open the
             popup enquiry form. These CTAs now match the homepage design so the
             next step feels obvious on every screen size.
@@ -440,7 +474,7 @@ export function HomeInlineLeadSection({
           </p>
 
           <form onSubmit={form.submit} className="mt-8 space-y-4">
-            <SharedFields form={form} />
+            <SharedFields form={form} formIdPrefix="home-inline" />
 
             {form.status.type && (
               <div
@@ -518,7 +552,7 @@ export function HomePopupLeadForm({
                   <div className="bg-[linear-gradient(160deg,#081226_0%,#0f2a58_58%,#0ea5e9_140%)] p-8 text-white">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
                           Popup Enquiry
                         </p>
                         <h2 className="mt-4 text-3xl font-black tracking-tight">
@@ -528,13 +562,14 @@ export function HomePopupLeadForm({
                       <button
                         type="button"
                         onClick={onClose}
+                        aria-label="Close enquiry form"
                         className="rounded-full border border-white/10 bg-white/10 p-2 text-white transition hover:bg-white/20"
                       >
                         <X className="h-5 w-5" />
                       </button>
                     </div>
 
-                    <p className="mt-6 text-sm leading-7 text-slate-200">
+                    <p className="mt-6 text-sm leading-7 text-slate-100">
                       Fill this form for a callback, or skip the wait and contact
                       us directly through WhatsApp or IVR.
                     </p>
@@ -561,7 +596,7 @@ export function HomePopupLeadForm({
 
                   <div className="p-8">
                     <form onSubmit={handleSubmit} className="space-y-4">
-                      <SharedFields form={form} />
+                      <SharedFields form={form} formIdPrefix="home-popup" />
 
                       {form.status.type && (
                         <div
