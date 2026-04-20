@@ -771,7 +771,8 @@ export default function LandingPageClient() {
             </div>
 
             <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-orange-200 sm:mt-5 sm:text-2xl">
-              How a qualifying NEET score can still get you an MBBS seat abroad
+              Just a NEET score of 130 -150 can still get you an NMC-approved
+              MBBS seat abroad.
             </p>
 
             <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
