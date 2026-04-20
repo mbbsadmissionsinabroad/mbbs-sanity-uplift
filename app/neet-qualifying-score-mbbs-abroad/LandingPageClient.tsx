@@ -726,7 +726,8 @@ export default function LandingPageClient() {
             <div className="mt-6 overflow-hidden rounded-[24px] border border-white/12 bg-slate-950/25 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur sm:mt-8 sm:rounded-[28px]">
               <div className="border-b border-white/10 px-4 py-4 sm:px-5">
                 <h2 className="text-base font-bold text-white sm:text-lg">
-                  Watch the 2-minute MBBS abroad explainer
+                  Just a NEET score of 130 -150 can still get you an
+                  NMC-approved MBBS seat abroad.
                 </h2>
               </div>
               <div className="aspect-video">
@@ -769,11 +770,6 @@ export default function LandingPageClient() {
                 )}
               </div>
             </div>
-
-            <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-orange-200 sm:mt-5 sm:text-2xl">
-              Just a NEET score of 130 -150 can still get you an NMC-approved
-              MBBS seat abroad.
-            </p>
 
             <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
               A NEET qualifying score is enough for NMC-approved MBBS abroad in{" "}
