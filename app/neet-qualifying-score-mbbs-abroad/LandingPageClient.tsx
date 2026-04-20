@@ -685,18 +685,18 @@ export default function LandingPageClient() {
         type="button"
         onClick={() => {
           trackLandingEvent({
-            type: "cta_click",
-            page: landingPagePath,
-            source: "NEET Landing Page - Floating Quick Form CTA",
-            ctaLabel: "Quick Form",
-            ctaDestination: "#lead-form",
-          });
-          scrollToElement(topFormRef);
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Floating Quick Form CTA",
+                    ctaLabel: "Book Free Consultation",
+                    ctaDestination: "#lead-form",
+                  });
+                  scrollToElement(topFormRef);
         }}
         className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-orange-400 px-4 py-3 text-xs font-semibold text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-orange-300 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
       >
         <ArrowRight className="h-4 w-4" />
-        Quick Form
+        Book Free Consultation
       </button>
 
       <section className="relative overflow-hidden">
