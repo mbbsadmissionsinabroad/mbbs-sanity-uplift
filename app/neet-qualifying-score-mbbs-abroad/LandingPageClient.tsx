@@ -7,7 +7,6 @@ import {
   ArrowRight,
   BadgeCheck,
   CheckCircle2,
-  MessageCircle,
   PhoneCall,
   PlayCircle,
   ShieldCheck,
@@ -70,8 +69,6 @@ interface LandingEventPayload {
 const BRAND_NAME = "New-Lyf";
 const heroVideoId = "FDSSu6Tns6s";
 const landingPagePath = "/neet-qualifying-score-mbbs-abroad";
-const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%20New-Lyf%2C%20I%20want%20to%20know%20which%20country%20suits%20my%20NEET%20score.";
 
 const latestCutoffRows = [
   {
@@ -684,24 +681,23 @@ export default function LandingPageClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noreferrer"
-        onClick={() =>
+      <button
+        type="button"
+        onClick={() => {
           trackLandingEvent({
             type: "cta_click",
             page: landingPagePath,
-            source: "NEET Landing Page - Floating WhatsApp CTA",
-            ctaLabel: "WhatsApp Us",
-            ctaDestination: whatsappHref,
-          })
-        }
-        className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-emerald-500 px-4 py-3 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-emerald-600 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
+            source: "NEET Landing Page - Floating Quick Form CTA",
+            ctaLabel: "Quick Form",
+            ctaDestination: "#lead-form",
+          });
+          scrollToElement(topFormRef);
+        }}
+        className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-orange-400 px-4 py-3 text-xs font-semibold text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-orange-300 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
       >
-        <MessageCircle className="h-4 w-4" />
-        WhatsApp Us
-      </a>
+        <ArrowRight className="h-4 w-4" />
+        Quick Form
+      </button>
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(251,146,60,0.16),transparent_28%),linear-gradient(140deg,#081226_10%,#102a5f_52%,#0f3f7a_100%)]" />
@@ -726,95 +722,6 @@ export default function LandingPageClient() {
               24 Lakh Students. 1.4 Lakh Seats. Your MBBS Dream Is Bigger Than
               One Number.
             </h1>
-
-            <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-orange-200 sm:mt-5 sm:text-2xl">
-              How a qualifying NEET score can still get you an MBBS seat abroad
-            </p>
-
-            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
-              A NEET qualifying score is enough for NMC-approved MBBS abroad in{" "}
-              {heroCountries}. Same doctor dream, same recognised pathway, and
-              often a more realistic budget path for Indian families.
-            </p>
-
-            <div className="mt-5 rounded-[24px] border border-white/10 bg-white/10 p-4 backdrop-blur sm:mt-6 sm:rounded-[28px] sm:p-5">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100 sm:text-sm">
-                Latest official NEET guidance
-              </p>
-              <p className="mt-3 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-8">
-                The most recent released NTA cutoff for NEET-UG 2025 starts at{" "}
-                <span className="text-orange-300">144+</span> for General/EWS
-                and <span className="text-orange-300">113+</span> for OBC / SC /
-                ST. PwBD cutoffs differ by category.
-              </p>
-              <p className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
-                These qualifying marks change every year, so the latest released
-                result year should always be used for planning.
-              </p>
-            </div>
-
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <button
-                type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Hero Primary CTA",
-                    ctaLabel: "Find My Country & University",
-                    ctaDestination: "#lead-form",
-                  });
-                  scrollToElement(topFormRef);
-                }}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-300 sm:w-auto"
-              >
-                Find My Country & University
-                <ArrowRight className="h-4 w-4" />
-              </button>
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
-                  trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Hero WhatsApp Link",
-                    ctaLabel: "Prefer WhatsApp? Chat with New-Lyf",
-                    ctaDestination: whatsappHref,
-                  })
-                }
-                className="text-center text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white sm:text-left"
-              >
-                Prefer WhatsApp? Chat with New-Lyf
-              </a>
-            </div>
-
-            <p className="mt-4 text-sm leading-6 text-slate-200 sm:leading-7">
-              2026 counselling is already worth starting now. Shortlisting early
-              gives families more time before intake and visa timelines tighten.
-            </p>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">24 Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
-                  students sit for NEET every year
-                </p>
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">1.4 Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
-                  MBBS seats are available in India
-                </p>
-              </div>
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">22+ Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
-                  students still need a realistic backup path
-                </p>
-              </div>
-            </div>
 
             <div className="mt-6 overflow-hidden rounded-[24px] border border-white/12 bg-slate-950/25 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur sm:mt-8 sm:rounded-[28px]">
               <div className="border-b border-white/10 px-4 py-4 sm:px-5">
@@ -862,6 +769,96 @@ export default function LandingPageClient() {
                 )}
               </div>
             </div>
+
+            <p className="mt-4 max-w-3xl text-lg font-semibold leading-8 text-orange-200 sm:mt-5 sm:text-2xl">
+              How a qualifying NEET score can still get you an MBBS seat abroad
+            </p>
+
+            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
+              A NEET qualifying score is enough for NMC-approved MBBS abroad in{" "}
+              {heroCountries}. Same doctor dream, same recognised pathway, and
+              often a more realistic budget path for Indian families.
+            </p>
+
+            <div className="mt-5 rounded-[24px] border border-white/10 bg-white/10 p-4 backdrop-blur sm:mt-6 sm:rounded-[28px] sm:p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100 sm:text-sm">
+                Latest official NEET guidance
+              </p>
+              <p className="mt-3 text-base font-semibold leading-7 text-white sm:text-lg sm:leading-8">
+                The most recent released NTA cutoff for NEET-UG 2025 starts at{" "}
+                <span className="text-orange-300">144+</span> for General/EWS
+                and <span className="text-orange-300">113+</span> for OBC / SC /
+                ST. PwBD cutoffs differ by category.
+              </p>
+              <p className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
+                These qualifying marks change every year, so the latest released
+                result year should always be used for planning.
+              </p>
+            </div>
+
+            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <button
+                type="button"
+                onClick={() => {
+                  trackLandingEvent({
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Hero Primary CTA",
+                    ctaLabel: "Find My Country & University",
+                    ctaDestination: "#lead-form",
+                  });
+                  scrollToElement(topFormRef);
+                }}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-300 sm:w-auto"
+              >
+                Find My Country & University
+                <ArrowRight className="h-4 w-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  trackLandingEvent({
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Hero Quick Form CTA",
+                    ctaLabel: "Jump to Quick Form",
+                    ctaDestination: "#lead-form",
+                  });
+                  scrollToElement(topFormRef);
+                }}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15 sm:w-auto"
+              >
+                Jump to Quick Form
+                <ArrowRight className="h-4 w-4" />
+              </button>
+            </div>
+
+            <p className="mt-4 text-sm leading-6 text-slate-200 sm:leading-7">
+              2026 counselling is already worth starting now. Shortlisting early
+              gives families more time before intake and visa timelines tighten.
+            </p>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                <p className="text-3xl font-black text-white">24 Lakh</p>
+                <p className="mt-2 text-sm leading-6 text-slate-200">
+                  students sit for NEET every year
+                </p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                <p className="text-3xl font-black text-white">1.4 Lakh</p>
+                <p className="mt-2 text-sm leading-6 text-slate-200">
+                  MBBS seats are available in India
+                </p>
+              </div>
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
+                <p className="text-3xl font-black text-white">22+ Lakh</p>
+                <p className="mt-2 text-sm leading-6 text-slate-200">
+                  students still need a realistic backup path
+                </p>
+              </div>
+            </div>
+
           </div>
 
           <aside
@@ -922,7 +919,7 @@ export default function LandingPageClient() {
             </p>
           </div>
 
-          <div className="mt-10 grid grid-flow-col auto-cols-[84%] gap-4 overflow-x-auto pb-2 pr-4 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden sm:auto-cols-[64%] md:mt-12 md:grid-flow-row md:auto-cols-auto md:grid-cols-2 md:overflow-visible md:pb-0 md:pr-0 xl:grid-cols-5">
+          <div className="mt-10 grid touch-pan-x grid-flow-col auto-cols-[84%] gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-4 pb-2 pr-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:auto-cols-[64%] sm:scroll-pl-6 md:mt-12 md:grid-flow-row md:auto-cols-auto md:grid-cols-2 md:overflow-visible md:pb-0 md:pr-0 xl:grid-cols-5">
             {testimonialVideos.map((video) => (
               <VideoCard
                 key={video.videoId}
