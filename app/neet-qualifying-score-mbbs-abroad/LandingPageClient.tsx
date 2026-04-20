@@ -51,8 +51,25 @@ interface CostSnapshot {
   note: string;
 }
 
+interface LandingEventPayload {
+  type: "form_submission" | "cta_click";
+  page: string;
+  source: string;
+  ctaLabel?: string;
+  ctaDestination?: string;
+  fullName?: string;
+  mobile?: string;
+  whatsapp?: string;
+  email?: string;
+  city?: string;
+  neetStatus?: string;
+  neetScoreRange?: string;
+  message?: string;
+}
+
 const BRAND_NAME = "New-Lyf";
 const heroVideoId = "FDSSu6Tns6s";
+const landingPagePath = "/neet-qualifying-score-mbbs-abroad";
 const whatsappHref =
   "https://wa.me/918147030030?text=Hi%20New-Lyf%2C%20I%20want%20to%20know%20which%20country%20suits%20my%20NEET%20score.";
 
@@ -202,6 +219,17 @@ function scrollToElement(ref: RefObject<HTMLElement>) {
   if (!ref.current) return;
   const top = ref.current.getBoundingClientRect().top + window.scrollY - 112;
   window.scrollTo({ top, behavior: "smooth" });
+}
+
+async function postLandingEvent(payload: LandingEventPayload) {
+  await fetch("/api/landing-events", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+    keepalive: true,
+  });
 }
 
 function buildEmailPayload(formData: LeadFormData, source: string) {
@@ -540,6 +568,12 @@ export default function LandingPageClient() {
     setFormData((previous) => ({ ...previous, neetStatus: value }));
   };
 
+  const trackLandingEvent = (payload: LandingEventPayload) => {
+    void postLandingEvent(payload).catch((error) => {
+      console.error("Landing event tracking failed", error);
+    });
+  };
+
   const submitLead = async (source: string) => {
     if (!formData.neetStatus) {
       toast.error("Please select your NEET status.");
@@ -579,7 +613,7 @@ export default function LandingPageClient() {
     setIsSubmitting(true);
 
     try {
-      const [leadResponse, emailResponse] = await Promise.all([
+      const [leadResponse, emailResponse, sheetResponse] = await Promise.allSettled([
         fetch(apiUrl, {
           method: "POST",
           headers: {
@@ -596,10 +630,31 @@ export default function LandingPageClient() {
           },
           body: JSON.stringify(emailPayload),
         }),
+        postLandingEvent({
+          type: "form_submission",
+          page: landingPagePath,
+          source,
+          fullName: formData.fullName,
+          mobile: formData.mobile,
+          whatsapp: effectiveWhatsapp,
+          email: formData.email,
+          city: formData.city,
+          neetStatus: formData.neetStatus,
+          neetScoreRange: formData.neetScoreRange,
+        }),
       ]);
 
-      if (!leadResponse.ok || !emailResponse.ok) {
+      if (
+        leadResponse.status !== "fulfilled" ||
+        emailResponse.status !== "fulfilled" ||
+        !leadResponse.value.ok ||
+        !emailResponse.value.ok
+      ) {
         throw new Error("Lead form submission failed");
+      }
+
+      if (sheetResponse.status === "rejected") {
+        console.error("Google Sheets logging failed", sheetResponse.reason);
       }
 
       setFormData(initialFormData);
@@ -633,6 +688,15 @@ export default function LandingPageClient() {
         href={whatsappHref}
         target="_blank"
         rel="noreferrer"
+        onClick={() =>
+          trackLandingEvent({
+            type: "cta_click",
+            page: landingPagePath,
+            source: "NEET Landing Page - Floating WhatsApp CTA",
+            ctaLabel: "WhatsApp Us",
+            ctaDestination: whatsappHref,
+          })
+        }
         className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-emerald-500 px-4 py-3 text-xs font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-emerald-600 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
       >
         <MessageCircle className="h-4 w-4" />
@@ -692,7 +756,16 @@ export default function LandingPageClient() {
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <button
                 type="button"
-                onClick={() => scrollToElement(topFormRef)}
+                onClick={() => {
+                  trackLandingEvent({
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Hero Primary CTA",
+                    ctaLabel: "Find My Country & University",
+                    ctaDestination: "#lead-form",
+                  });
+                  scrollToElement(topFormRef);
+                }}
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-300 sm:w-auto"
               >
                 Find My Country & University
@@ -702,6 +775,15 @@ export default function LandingPageClient() {
                 href={whatsappHref}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() =>
+                  trackLandingEvent({
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Hero WhatsApp Link",
+                    ctaLabel: "Prefer WhatsApp? Chat with New-Lyf",
+                    ctaDestination: whatsappHref,
+                  })
+                }
                 className="text-center text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white sm:text-left"
               >
                 Prefer WhatsApp? Chat with New-Lyf
@@ -911,7 +993,16 @@ export default function LandingPageClient() {
               </p>
               <button
                 type="button"
-                onClick={() => scrollToElement(topFormRef)}
+                onClick={() => {
+                  trackLandingEvent({
+                    type: "cta_click",
+                    page: landingPagePath,
+                    source: "NEET Landing Page - Mid Page CTA",
+                    ctaLabel: "Get your free counselling call",
+                    ctaDestination: "#lead-form",
+                  });
+                  scrollToElement(topFormRef);
+                }}
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-300"
               >
                 Get your free counselling call
