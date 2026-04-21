@@ -243,7 +243,7 @@ function VideoCard({
   onActivate: () => void;
 }) {
   return (
-    <article className="overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
+    <article className="h-full overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
       <div className="relative aspect-[9/16] bg-slate-950">
         {isActive ? (
           <iframe
@@ -676,14 +676,18 @@ export default function LandingPageClient() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          <div className="mt-12 -mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:snap-none md:overflow-visible md:px-0 md:pb-0 md:[scrollbar-width:auto] md:[-ms-overflow-style:auto] md:grid-cols-2 xl:grid-cols-5">
             {testimonialVideos.map((video) => (
-              <VideoCard
+              <div
                 key={video.videoId}
-                video={video}
-                isActive={activeVideoId === video.videoId}
-                onActivate={() => setActiveVideoId(video.videoId)}
-              />
+                className="min-w-[78vw] shrink-0 snap-start md:min-w-0"
+              >
+                <VideoCard
+                  video={video}
+                  isActive={activeVideoId === video.videoId}
+                  onActivate={() => setActiveVideoId(video.videoId)}
+                />
+              </div>
             ))}
           </div>
 
