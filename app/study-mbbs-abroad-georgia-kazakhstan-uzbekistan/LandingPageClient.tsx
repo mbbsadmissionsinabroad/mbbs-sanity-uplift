@@ -14,7 +14,6 @@ import {
   CheckCircle2,
   GraduationCap,
   Home,
-  MessageCircle,
   PlayCircle,
   ShieldCheck,
   Stethoscope,
@@ -65,8 +64,6 @@ interface VideoStory {
 const BRAND_NAME = "New-Lyf";
 const landingPagePath = "/study-mbbs-abroad-georgia-kazakhstan-uzbekistan";
 const heroVideoId = "FDSSu6Tns6s";
-const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%20New-Lyf%2C%20I%20want%20free%20guidance%20for%20MBBS%20in%20Georgia%2C%20Kazakhstan%2C%20or%20Uzbekistan.";
 
 const destinationCards: DestinationCard[] = [
   {
@@ -500,24 +497,25 @@ export default function LandingPageClient() {
 
   return (
     <div className="bg-[linear-gradient(180deg,#f7fbff_0%,#ffffff_24%,#fffdf8_100%)] text-slate-900">
-      <a
-        href={whatsappHref}
-        target="_blank"
-        rel="noreferrer"
+      <button
+        type="button"
         onClick={() =>
-          trackLandingEvent({
-            eventType: "cta_click",
-            page: landingPagePath,
-            source: "New-Lyf MBBS Abroad Landing Page - Floating WhatsApp CTA",
-            ctaLabel: "WhatsApp Us",
-            ctaDestination: whatsappHref,
-          })
+          {
+            trackLandingEvent({
+              eventType: "cta_click",
+              page: landingPagePath,
+              source: "New-Lyf MBBS Abroad Landing Page - Floating Quick Form CTA",
+              ctaLabel: "Book Free Consultation",
+              ctaDestination: "#hero-form",
+            });
+            scrollToElement(heroFormRef);
+          }
         }
-        className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-3 text-sm font-semibold text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-emerald-600"
+        className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-orange-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-orange-300"
       >
-        <MessageCircle className="h-4 w-4" />
-        WhatsApp Us
-      </a>
+        <ArrowRight className="h-4 w-4" />
+        Book Free Consultation
+      </button>
 
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(251,146,60,0.18),transparent_30%),linear-gradient(135deg,#081226_8%,#113978_58%,#1d4ed8_100%)]" />
@@ -537,7 +535,8 @@ export default function LandingPageClient() {
             <div className="mt-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 shadow-[0_24px_70px_rgba(8,18,38,0.22)] backdrop-blur">
               <div className="border-b border-white/10 px-6 py-5">
                 <h2 className="text-2xl font-black tracking-tight text-white">
-                  Watch the 2-minute MBBS abroad explainer
+                  Just a NEET score of 130 -150 can still get you an
+                  NMC-approved MBBS seat abroad.
                 </h2>
               </div>
               <div className="aspect-video">
@@ -559,23 +558,14 @@ export default function LandingPageClient() {
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                     }}
-                  >
-                    <div className="flex h-full flex-col justify-between p-6">
-                      <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-                        <PlayCircle className="h-4 w-4" />
-                        Play Video
-                      </span>
-                      <div>
-                        <p className="text-lg font-bold text-white">
-                          How New-Lyf helps students choose the right MBBS abroad path
-                        </p>
-                        <p className="mt-2 text-sm leading-7 text-slate-200">
-                          Tap to load the video and understand destination fit,
-                          fees, recognition, and the admission journey.
-                        </p>
+                    >
+                      <div className="flex h-full flex-col justify-between p-6">
+                        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
+                          <PlayCircle className="h-4 w-4" />
+                          Play Video
+                        </span>
                       </div>
-                    </div>
-                  </button>
+                    </button>
                 )}
               </div>
             </div>
@@ -626,24 +616,22 @@ export default function LandingPageClient() {
                 Get Free Expert Counseling
                 <ArrowRight className="h-4 w-4" />
               </button>
-              <a
-                href={whatsappHref}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() =>
+              <button
+                type="button"
+                onClick={() => {
                   trackLandingEvent({
                     eventType: "cta_click",
                     page: landingPagePath,
-                    source:
-                      "New-Lyf MBBS Abroad Landing Page - Hero WhatsApp Link",
-                    ctaLabel: "Prefer WhatsApp? Chat with New-Lyf",
-                    ctaDestination: whatsappHref,
-                  })
-                }
+                    source: "New-Lyf MBBS Abroad Landing Page - Hero Quick Form CTA",
+                    ctaLabel: "Book Free Consultation",
+                    ctaDestination: "#hero-form",
+                  });
+                  scrollToElement(heroFormRef);
+                }}
                 className="text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white"
               >
-                Prefer WhatsApp? Chat with New-Lyf
-              </a>
+                Book Free Consultation
+              </button>
             </div>
           </div>
 
