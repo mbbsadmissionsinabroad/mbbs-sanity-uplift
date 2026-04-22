@@ -1,5 +1,5 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
-export const pageUrl = `${siteUrl}/mbbs-admission-in-belize`;
+export const pageUrl = `${siteUrl}/mbbs-in-belize`;
 export const pageTitle =
   "MBBS Admission in Belize 2026-27 for Indian Students - Complete Guide";
 export const metaTitle =

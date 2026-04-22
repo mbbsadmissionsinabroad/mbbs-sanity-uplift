@@ -55,7 +55,7 @@ export const mbbsAbroadCountries: CountryLink[] = [
   },
   {
     title: "Belize",
-    href: "/mbbs-admission-in-belize",
+    href: "/mbbs-in-belize",
     flagCode: "BZ",
   },
   {

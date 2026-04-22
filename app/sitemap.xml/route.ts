@@ -50,7 +50,7 @@ function generateSiteMap(allPagesData: { slug: string; updatedAt: string }[]) {
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-belize</loc>
+        <loc>${EXTERNAL_DATA_URL}/mbbs-in-belize</loc>
         <lastmod>2026-03-25</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
