@@ -35,7 +35,7 @@ export const keyFacts = [
   { Feature: "Residency Duration", Details: "4-6 years" },
   { Feature: "Tuition Fees", Details: "Zero" },
   { Feature: "Resident Salary", Details: "EUR 4,800-EUR 5,500 per month gross" },
-  { Feature: "Preparation Cost", Details: "Usually around Rs 20-25 lakh before first salary" },
+  { Feature: "Preparation Cost", Details: "Usually around Rs 15 lakh before first salary" },
   { Feature: "Language Requirement", Details: "B2 general German plus FSP medical German; KP if required" },
   { Feature: "Recognition Route", Details: "Approbation or Berufserlaubnis through the chosen state medical authority" },
   { Feature: "Recognition in India", Details: "Not directly accepted as Indian MD/MS equivalence" },

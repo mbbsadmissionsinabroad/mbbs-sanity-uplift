@@ -22,7 +22,6 @@ import {
   livingCosts,
   metaDescription,
   metaTitle,
-  monthlyFinance,
   pageTitle,
   pageUrl,
   postPgSteps,
@@ -238,9 +237,6 @@ export default function MedicalPgInGermanyPage() {
           <div className="mt-10">
             <DataTable rows={costBreakdown} caption="Medical PG Germany pre-residency cost table" />
           </div>
-          <div className="mt-10">
-            <DataTable rows={monthlyFinance} caption="Medical PG Germany monthly finance table" />
-          </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95">Ask Costs on WhatsApp</a>
             <a href="#medical-pg-germany-contact-form" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Get a Germany Plan</a>
@@ -371,7 +367,10 @@ export default function MedicalPgInGermanyPage() {
           </div>
         </div>
       </section>
-      <StaticPageResourceLinks currentRoute={pageUrl} />
+      <StaticPageResourceLinks
+        currentRoute={pageUrl}
+        excludeExternalLabels={["Make it in Germany"]}
+      />
 
 
       <MedicalPgGermanyLeadSection />

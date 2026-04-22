@@ -52,7 +52,13 @@ function LinkCard({ link, external = false }: { link: ResourceLink; external?: b
   );
 }
 
-export default function StaticPageResourceLinks({ currentRoute }: { currentRoute: string }) {
+export default function StaticPageResourceLinks({
+  currentRoute,
+  excludeExternalLabels = [],
+}: {
+  currentRoute: string;
+  excludeExternalLabels?: string[];
+}) {
   const normalizedRoute = normalizeRoute(currentRoute);
   const currentPage = staticSeoPages.find((page) => page.route === normalizedRoute);
 
@@ -64,7 +70,9 @@ export default function StaticPageResourceLinks({ currentRoute }: { currentRoute
     label: page.title,
     href: page.route,
   }));
-  const externalLinks = externalLinksBySection[currentPage.section] ?? [];
+  const externalLinks = (externalLinksBySection[currentPage.section] ?? []).filter(
+    (link) => !excludeExternalLabels.includes(link.label)
+  );
 
   return (
     <section className="bg-slate-50 py-16">
