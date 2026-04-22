@@ -31,6 +31,26 @@ const nextConfig = {
         destination: "/medical-pg-in-europe-for-indian-students",
         permanent: true,
       },
+      {
+        source: "/bsc-nursing",
+        destination: "/contact?interest=bsc-nursing",
+        permanent: true,
+      },
+      {
+        source: "/mbbs-without-neet",
+        destination: "/contact?interest=mbbs-without-neet",
+        permanent: true,
+      },
+      {
+        source: "/mbbs-in-germany",
+        destination: "/mbbs-admission-in-germany-for-indian-students",
+        permanent: true,
+      },
+      {
+        source: "/mbbs-admission-in-bangladesh",
+        destination: "/mbbs-admission-in-bangladesh-for-indian-students",
+        permanent: true,
+      },
     ];
   },
 };

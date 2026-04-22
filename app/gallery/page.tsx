@@ -1,9 +1,13 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { galleryImages } from "@/app/data/siteContent";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Gallery | MBBS Admission in Abroad",
   description: "A visual look at our MBBS abroad guidance and student support.",
+  alternates: {
+    canonical: "https://www.mbbsadmissionsinabroad.com/gallery",
+  },
 };
 
 export default function GalleryPage() {

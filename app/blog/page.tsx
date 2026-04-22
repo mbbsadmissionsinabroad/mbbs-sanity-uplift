@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
 import React from "react";
 import BlogSection from "./components/BlogSection";
+
+export const metadata: Metadata = {
+  title: "Blog | MBBS Admissions in Abroad",
+  description:
+    "Explore MBBS abroad guidance, updates, and practical articles for students and families planning overseas medical education.",
+  alternates: {
+    canonical: "https://www.mbbsadmissionsinabroad.com/blog",
+  },
+};
 
 const page = () => {
   return (

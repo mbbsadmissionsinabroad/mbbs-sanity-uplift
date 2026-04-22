@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import ContactPageClient, {
   type LocationData,
 } from "./components/ContactPageClient";
+import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
+
+const route = "/contact";
+const canonicalUrl = "https://www.mbbsadmissionsinabroad.com/contact";
+const metaTitle = "Contact New-Lyf | MBBS Abroad Counselling and Support";
+const metaDescription =
+  "Contact New-Lyf for MBBS abroad counselling, nursing jobs guidance, PG abroad support, and branch-level assistance.";
 
 const SANITY_PROJECT_ID =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
@@ -45,6 +53,42 @@ async function getContactLocations(): Promise<Record<string, LocationData>> {
   } catch {
     return {};
   }
+}
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams?: Record<string, string | string[] | undefined>;
+}): Promise<Metadata> {
+  const resolvedSearchParams = searchParams ?? {};
+  const interestParam = resolvedSearchParams.interest;
+  const interest =
+    typeof interestParam === "string"
+      ? interestParam
+      : Array.isArray(interestParam)
+        ? interestParam[0]
+        : undefined;
+
+  if (interest) {
+    return {
+      title: metaTitle,
+      description: metaDescription,
+      alternates: {
+        canonical: `${canonicalUrl}?interest=${encodeURIComponent(interest)}`,
+      },
+      robots: {
+        index: false,
+        follow: true,
+      },
+    };
+  }
+
+  return buildStaticPageMetadata({
+    route,
+    fallbackTitle: metaTitle,
+    fallbackDescription: metaDescription,
+    fallbackCanonical: canonicalUrl,
+  });
 }
 
 export default async function ContactPage() {
