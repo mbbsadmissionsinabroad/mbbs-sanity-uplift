@@ -238,9 +238,9 @@ export default function ContactPageClient({
           </div>
 
           <div className="mt-8 flex w-full flex-col bg-white md:ml-auto md:mt-0 md:w-1/3 md:py-8">
-            <h2 className="title-font mb-1 text-4xl font-semibold text-blue-800">
-              Contact Us
-            </h2>
+            <h1 className="title-font mb-1 text-4xl font-semibold text-blue-800">
+              Contact New-Lyf
+            </h1>
             <p className="mb-5 leading-relaxed text-gray-600">
               Please provide your details below:
             </p>
