@@ -222,14 +222,14 @@ export const documents = [
   "KP result if applicable",
   "MEA apostille on academic documents",
   "Certified German translations by a sworn translator",
-  "German CV and cover letter",
+  "Europass CV",
   "Reference letters from senior doctors",
   "Police clearance certificate",
   "Health fitness certificate",
   "Defizitbescheid",
   "Hospital employment contract",
   "Health insurance proof",
-  "Biometric photographs",
+  "Beglaubigung",
 ];
 
 export const careerPathways = [
