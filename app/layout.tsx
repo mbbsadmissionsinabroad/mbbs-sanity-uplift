@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mbbsadmissionsinabroad.com"),
-  title: "MBBS Admission in Abroad",
+  title: "MBBS Admission Abroad | New-Lyf Overseas Guidance",
   description:
     "MBBS Admission Abroad with New-Lyf Overseas Consultants. Study MBBS in Russia, Ukraine, or the Philippines at MCI-approved universities at low costs.",
   robots: "index, follow",
