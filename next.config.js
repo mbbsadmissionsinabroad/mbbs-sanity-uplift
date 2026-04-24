@@ -47,6 +47,16 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/_next/static/chunks/app/layout-29a6323b7b1a3690.js",
+        destination: "/_next/static/chunks/app/layout-3c1cc424ac46a7c7.js",
+        permanent: true,
+      },
+      {
+        source: "/_next/static/chunks/webpack-99b0370b468ae749.js",
+        destination: "/_next/static/chunks/webpack-23d8c933bc30247a.js",
+        permanent: true,
+      },
+      {
         source: "/contact",
         has: [
           {
