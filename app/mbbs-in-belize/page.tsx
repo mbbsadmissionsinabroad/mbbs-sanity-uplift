@@ -199,9 +199,9 @@ export default function BelizePage() {
       <section id="nmc-advisory" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="rounded-[32px] border border-red-200 bg-[linear-gradient(180deg,#fff1f2_0%,#fff7ed_100%)] p-8 shadow-[0_20px_60px_rgba(127,29,29,0.10)]">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-700">Critical Warning</p>
-          <h2 className="mt-3 text-3xl font-bold text-slate-950">
+          <h3 className="mt-3 text-3xl font-bold text-slate-950">
             Read the India-return risk before everything else
-          </h2>
+          </h3>
           <p className="mt-4 max-w-4xl text-base leading-8 text-slate-700">
             Belize can no longer be treated as a routine India-return MBBS option. Current India-focused
             reporting references an NMC advisory dated <strong>{advisoryReferenceDate}</strong> that publicly

@@ -27,6 +27,12 @@ export default function GalleryPage() {
           </p>
         </div>
 
+        <div className="mt-12">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Recent counseling moments and student support snapshots
+          </h2>
+        </div>
+
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {galleryImages.map((item) => (
             <article

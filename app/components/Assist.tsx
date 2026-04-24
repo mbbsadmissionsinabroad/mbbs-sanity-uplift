@@ -15,17 +15,24 @@ interface AssistProps {
   }[];
   title: string;
   summary: string;
+  headingLevel?: "h2" | "h3";
 }
 
-const Assist: React.FC<AssistProps> = ({ data, title, summary }) => {
+const Assist: React.FC<AssistProps> = ({
+  data,
+  title,
+  summary,
+  headingLevel = "h2",
+}) => {
+  const HeadingTag = headingLevel;
   return (
     <div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-4 mx-auto">
           <div className=" mb-20">
-            <h2 className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl mt-4 mb-8 text-center">
+            <HeadingTag className="text-4xl font-bold tracking-tight text-blue-900 sm:text-4xl mt-4 mb-8 text-center">
               {title}
-            </h2>
+            </HeadingTag>
             <p className="lg:w-3/4 mx-auto leading-relaxed text-base text-justify my-10">
               {summary}
             </p>

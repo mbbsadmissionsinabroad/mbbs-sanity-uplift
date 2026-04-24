@@ -249,6 +249,7 @@ export default function ArmeniaPage() {
         className="mx-auto max-w-7xl px-4 py-16 lg:px-8"
       >
         <SectionHeading
+          level="h2"
           eyebrow="Quick Summary"
           title="A fast snapshot before you go deeper"
         />

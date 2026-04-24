@@ -380,9 +380,9 @@ export default function HomeLanding() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
                   Homepage upgrade
                 </p>
-                <h3 className="mt-3 text-xl font-bold text-slate-950">
+                <p className="mt-3 text-xl font-bold text-slate-950">
                   {item.title}
-                </h3>
+                </p>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {item.body}
                 </p>
@@ -629,12 +629,14 @@ export default function HomeLanding() {
         data={howCanWeAssistYou}
         title="HOW CAN WE ASSIST YOU"
         summary={howCanWeAssistYouSummary}
+        headingLevel="h3"
       />
 
       <Assist
         data={faq}
         title="MBBS ADMISSION CONSULTANCY IN INDIA"
         summary={faqSummary}
+        headingLevel="h3"
       />
     </div>
   );

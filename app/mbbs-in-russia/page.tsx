@@ -321,7 +321,7 @@ export default function RussiaPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="rounded-[32px] border border-white/10 bg-white/5 p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-300">Critical Advisory</p>
-            <h2 className="mt-4 text-3xl font-bold">Russia 2026 banking and travel planning needs more care than before</h2>
+            <h3 className="mt-4 text-3xl font-bold">Russia 2026 banking and travel planning needs more care than before</h3>
             <p className="mt-4 text-base leading-8 text-slate-300">As of {advisoryReferenceDate}, Russia's geopolitical environment still creates practical friction around SWIFT channels, routine card usability and certain flight routes. Families should confirm live payment channels before transferring funds and review current Indian Embassy in Moscow advisories before travel.</p>
           </div>
         </div>

@@ -28,6 +28,11 @@ const page = () => {
         </div>
       </section>
       <div className="sm:container py-12 mx-auto w-full items-center justify-center">
+        <div className="mx-auto mb-8 max-w-5xl px-4 text-center">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            Latest MBBS abroad guidance, country updates, and planning articles
+          </h2>
+        </div>
         <BlogSection />
       </div>
     </>

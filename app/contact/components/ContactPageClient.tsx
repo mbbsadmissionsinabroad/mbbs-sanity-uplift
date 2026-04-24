@@ -241,6 +241,9 @@ export default function ContactPageClient({
             <h1 className="title-font mb-1 text-4xl font-semibold text-blue-800">
               Contact New-Lyf
             </h1>
+            <h2 className="mb-3 text-2xl font-semibold text-slate-900">
+              Reach our study abroad support team
+            </h2>
             <p className="mb-5 leading-relaxed text-gray-600">
               Please provide your details below:
             </p>
