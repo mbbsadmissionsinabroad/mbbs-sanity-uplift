@@ -4,7 +4,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/ausbildung",
     "title": "Ausbildung in Germany 2026 Guide for Indian Students - Earn While You Learn",
-    "metaTitle": "Ausbildung in Germany 2026 - Complete Guide for Indian Students",
+    "metaTitle": "Ausbildung in Germany 2026 | Indian Guide",
     "metaDescription": "Planning Ausbildung in Germany in 2026? Explore zero tuition vocational training, stipend, top courses, eligibility, visa steps, PR pathway and career options for Indian students.",
     "section": "ausbildung",
     "kind": "ausbildung"
@@ -20,7 +20,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/learn-german-language-course-in-bangalore",
     "title": "German Language Course in Bangalore 2026: Complete Guide (A1 to C2, Fees, Syllabus and Career)",
-    "metaTitle": "German Language Course in Bangalore 2026 | A1 to C2 Classes",
+    "metaTitle": "German Course in Bangalore 2026 | A1-C2",
     "metaDescription": "Best German language course in Bangalore with A1 to C2 levels, Goethe-aligned syllabus, online and offline batches, certified trainers and fees from Rs 12,800.",
     "section": "learn-german",
     "kind": "learn-german"
@@ -92,7 +92,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/mbbs-admission-in-malaysia-for-indian-students",
     "title": "MBBS in Malaysia 2026-27 for Indian Students - Complete Guide",
-    "metaTitle": "MBBS in Malaysia 2026-27 - Complete Guide for Indian Students",
+    "metaTitle": "MBBS in Malaysia 2026-27 | Indian Students",
     "metaDescription": "Planning MBBS in Malaysia 2026-27? Top NMC-approved universities, fees in INR, NEET rules, FMGE 28.91% pass rate, admission timeline and a full guide for Indian students.",
     "section": "mbbs-abroad",
     "kind": "mbbs-admission"
@@ -292,7 +292,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/medical-pg-in-europe-for-indian-students",
     "title": "Medical PG in Europe 2026-27 for Indian Doctors - Complete Guide",
-    "metaTitle": "Medical PG in Europe 2026-27 - Complete Guide for Indian Doctors",
+    "metaTitle": "Medical PG in Europe 2026-27 | Indian Doctors",
     "metaDescription": "Medical PG in Europe 2026-27: Germany, Ireland, Netherlands, Czech Republic and more. Compare zero tuition, paid residency, salary data, EU recognition, language, and the full doctor pathway.",
     "section": "medical-pg",
     "kind": "medical-pg"
@@ -308,7 +308,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/nursing-job-in-germany",
     "title": "Nursing Jobs in Germany 2026-27 for Indian Nurses - Complete Guide",
-    "metaTitle": "Nursing Jobs in Germany 2026-27 - Complete Guide for Indian Nurses",
+    "metaTitle": "Nursing Jobs in Germany 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in Germany 2026-27? Get Triple Win, Anerkennung, German language requirements, salary, costs, top states and full guidance for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"
@@ -316,7 +316,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/nursing-jobs-in-canada",
     "title": "Nursing Jobs in Canada 2026-27 for Indian Nurses - Complete Guide",
-    "metaTitle": "Nursing Jobs in Canada 2026-27 - Complete Guide for Indian Nurses",
+    "metaTitle": "Nursing Jobs in Canada 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in Canada 2026-27? Get NNAS, NCLEX-RN, IELTS, salary, PR pathway, costs, top provinces and a full step-by-step guide for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"
@@ -324,7 +324,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/nursing-jobs-in-denmark",
     "title": "Nursing Jobs in Denmark 2026-27 for Indian Nurses - Complete Guide",
-    "metaTitle": "Nursing Jobs in Denmark 2026-27 - Complete Guide for Indian Nurses",
+    "metaTitle": "Nursing Jobs in Denmark 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in Denmark 2026-27? Understand the zero-quota policy, STPS authorization, Danish B2 requirement, salary, costs and 2027 roadmap for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"
@@ -332,7 +332,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/nursing-jobs-in-lithuania",
     "title": "Nursing Jobs in Lithuania 2026-27 for Indian Nurses - Complete Guide",
-    "metaTitle": "Nursing Jobs in Lithuania 2026-27 - Complete Guide for Indian Nurses",
+    "metaTitle": "Nursing Jobs in Lithuania 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in Lithuania 2026-27? Compare the LSMU study path, direct work route, salary, EU mobility, visa steps, costs and full guidance for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"
@@ -340,7 +340,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
     "route": "/nursing-jobs-in-netherlands",
     "title": "Nursing Jobs in Netherlands 2026-27 for Indian Nurses - Complete Guide",
-    "metaTitle": "Nursing Jobs in Netherlands 2026-27 - Complete Guide for Indian Nurses",
+    "metaTitle": "Nursing Jobs in Netherlands 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in the Netherlands 2026-27? Get BIG registration, Nuffic evaluation, Dutch language requirements, TWV/GVVA work permit route, salary, costs and full guidance for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"

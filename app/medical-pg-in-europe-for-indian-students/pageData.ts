@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/medical-pg-in-europe-for-indian-students`;
 export const pageTitle =
   "Medical PG in Europe 2026-27 for Indian Doctors - Complete Guide";
 export const metaTitle =
-  "Medical PG in Europe 2026-27 - Complete Guide for Indian Doctors";
+  "Medical PG in Europe 2026-27 | Indian Doctors";
 export const metaDescription =
   "Medical PG in Europe 2026-27: Germany, Ireland, Netherlands, Czech Republic and more. Compare zero tuition, paid residency, salary data, EU recognition, language, and the full doctor pathway.";
 

@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/nursing-jobs-in-denmark`;
 export const pageTitle =
   "Nursing Jobs in Denmark 2026-27 for Indian Nurses - Complete Guide";
 export const metaTitle =
-  "Nursing Jobs in Denmark 2026-27 - Complete Guide for Indian Nurses";
+  "Nursing Jobs in Denmark 2026-27 | Indian Nurses";
 export const metaDescription =
   "Planning nursing jobs in Denmark 2026-27? Understand the zero-quota policy, STPS authorization, Danish B2 requirement, salary, costs and 2027 roadmap for Indian nurses.";
 

@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/nursing-job-in-germany`;
 export const pageTitle =
   "Nursing Jobs in Germany 2026-27 for Indian Nurses - Complete Guide";
 export const metaTitle =
-  "Nursing Jobs in Germany 2026-27 - Complete Guide for Indian Nurses";
+  "Nursing Jobs in Germany 2026-27 | Indian Nurses";
 export const metaDescription =
   "Planning nursing jobs in Germany 2026-27? Get Triple Win, Anerkennung, German language requirements, salary, costs, top states and full guidance for Indian nurses.";
 

@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/learn-german-language-course-in-bangalore`;
 export const pageTitle =
   "German Language Course in Bangalore 2026: Complete Guide (A1 to C2, Fees, Syllabus and Career)";
 export const metaTitle =
-  "German Language Course in Bangalore 2026 | A1 to C2 Classes";
+  "German Course in Bangalore 2026 | A1-C2";
 export const metaDescription =
   "Best German language course in Bangalore with A1 to C2 levels, Goethe-aligned syllabus, online and offline batches, certified trainers and fees from Rs 12,800.";
 

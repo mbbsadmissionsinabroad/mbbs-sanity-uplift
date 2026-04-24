@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/nursing-jobs-in-canada`;
 export const pageTitle =
   "Nursing Jobs in Canada 2026-27 for Indian Nurses - Complete Guide";
 export const metaTitle =
-  "Nursing Jobs in Canada 2026-27 - Complete Guide for Indian Nurses";
+  "Nursing Jobs in Canada 2026-27 | Indian Nurses";
 export const metaDescription =
   "Planning nursing jobs in Canada 2026-27? Get NNAS, NCLEX-RN, IELTS, salary, PR pathway, costs, top provinces and a full step-by-step guide for Indian nurses.";
 

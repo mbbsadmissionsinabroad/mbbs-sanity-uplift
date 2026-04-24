@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/mbbs-admission-in-malaysia-for-indian-student
 export const pageTitle =
   "MBBS in Malaysia 2026-27 for Indian Students - Complete Guide";
 export const metaTitle =
-  "MBBS in Malaysia 2026-27 - Complete Guide for Indian Students";
+  "MBBS in Malaysia 2026-27 | Indian Students";
 export const metaDescription =
   "Planning MBBS in Malaysia 2026-27? Top NMC-approved universities, fees in INR, NEET rules, FMGE 28.91% pass rate, admission timeline and a full guide for Indian students.";
 

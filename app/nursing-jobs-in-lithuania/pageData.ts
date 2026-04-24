@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/nursing-jobs-in-lithuania`;
 export const pageTitle =
   "Nursing Jobs in Lithuania 2026-27 for Indian Nurses - Complete Guide";
 export const metaTitle =
-  "Nursing Jobs in Lithuania 2026-27 - Complete Guide for Indian Nurses";
+  "Nursing Jobs in Lithuania 2026-27 | Indian Nurses";
 export const metaDescription =
   "Planning nursing jobs in Lithuania 2026-27? Compare the LSMU study path, direct work route, salary, EU mobility, visa steps, costs and full guidance for Indian nurses.";
 

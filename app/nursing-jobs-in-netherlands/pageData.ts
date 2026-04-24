@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/nursing-jobs-in-netherlands`;
 export const pageTitle =
   "Nursing Jobs in Netherlands 2026-27 for Indian Nurses - Complete Guide";
 export const metaTitle =
-  "Nursing Jobs in Netherlands 2026-27 - Complete Guide for Indian Nurses";
+  "Nursing Jobs in Netherlands 2026-27 | Indian Nurses";
 export const metaDescription =
   "Planning nursing jobs in the Netherlands 2026-27? Get BIG registration, Nuffic evaluation, Dutch language requirements, TWV/GVVA work permit route, salary, costs and full guidance for Indian nurses.";
 

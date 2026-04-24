@@ -3,7 +3,7 @@ export const pageUrl = `${siteUrl}/ausbildung`;
 export const pageTitle =
   "Ausbildung in Germany 2026 Guide for Indian Students - Earn While You Learn";
 export const metaTitle =
-  "Ausbildung in Germany 2026 - Complete Guide for Indian Students";
+  "Ausbildung in Germany 2026 | Indian Guide";
 export const metaDescription =
   "Planning Ausbildung in Germany in 2026? Explore zero tuition vocational training, stipend, top courses, eligibility, visa steps, PR pathway and career options for Indian students.";
 
