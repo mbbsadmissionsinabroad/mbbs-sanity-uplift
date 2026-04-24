@@ -128,14 +128,33 @@ export default function PrivacyPolicyPage() {
             </Link>
             .
           </p>
+          <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <h2 className="text-2xl font-semibold text-slate-900">
+              In simple terms
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+              We collect the details you send us, such as your name, phone
+              number, email, city, and study interest. We use them to reply,
+              guide you, and improve the site.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
+              We do not sell your data. We may share it with tools or partners
+              only when needed to run the site, answer your enquiry, or give
+              support.
+            </p>
+            <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
+              If you want to ask about your data, correct it, or request
+              deletion where the law allows, you can contact us.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="space-y-10 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-10">
-          <h2 className="text-2xl font-semibold text-slate-900">
+          <h3 className="text-2xl font-semibold text-slate-900">
             Policy Sections
-          </h2>
+          </h3>
           {sections.map((section) => (
             <section key={section.title} className="space-y-4">
               <h3 className="text-2xl font-semibold text-slate-900">

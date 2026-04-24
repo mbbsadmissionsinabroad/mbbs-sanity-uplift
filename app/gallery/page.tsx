@@ -22,8 +22,9 @@ export default function GalleryPage() {
             Visual stories from the MBBS abroad journey
           </h1>
           <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-            This section is now fully coded, fast to load, and no longer depends
-            on Sanity for rendering.
+            This page shows real image assets from the site. It loads fast. It
+            gives families a quick feel for the brand, the team, and the kind
+            of support students often ask for.
           </p>
         </div>
 
@@ -32,20 +33,15 @@ export default function GalleryPage() {
             Recent counseling moments and student support snapshots
           </h2>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
-            This gallery is meant to give students and parents a more grounded
-            feel for how New-Lyf presents MBBS abroad guidance, destination
-            support, counseling touchpoints, and student-first communication.
-            Instead of acting like a decorative image wall, it supports the
-            broader site experience by showing real visual context around the
-            kind of study-abroad assistance families are actually exploring.
+            This gallery helps students and parents see the tone of our work.
+            You can view counselling scenes, student support moments, and
+            simple brand visuals used across the website. It is not just a wall
+            of images. It gives real context to the service.
           </p>
           <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
-            You will see a mix of consultation imagery, admission-themed
-            creatives, and student journey references used across the website.
-            Together they help explain the brand style, the counseling
-            environment, and the type of overseas medical education pathways
-            the site focuses on, from MBBS admissions to nursing and Germany
-            planning routes.
+            You will see a mix of call visuals, admission designs, and student
+            journey images. Together they show what kind of MBBS abroad,
+            nursing, and Germany planning help this site is built to offer.
           </p>
         </div>
 
@@ -81,11 +77,9 @@ export default function GalleryPage() {
             Why this gallery matters
           </h3>
           <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
-            For international education websites, strong visuals do more than
-            make the layout feel complete. They help students understand the
-            tone of the counseling brand, the seriousness of the service, and
-            the kind of destinations, campuses, and support moments they can
-            expect to encounter as they move deeper into the enquiry process.
+            Good visuals do more than fill space. They help users judge tone,
+            trust, and fit. They also make the enquiry path feel more real and
+            less abstract.
           </p>
         </section>
       </div>

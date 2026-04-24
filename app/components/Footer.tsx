@@ -13,8 +13,24 @@ export default function Footer() {
   return (
     <footer className="bg-slate-100 text-slate-700">
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">
+            Use The Site Well
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            Start with the main guide for your goal. Then check fees, exam
+            rules, and visa steps. Keep notes. Compare only a few pages at one
+            time. That makes the choice clear.
+          </p>
+          <p className="mt-3 text-sm leading-7 text-slate-700 sm:text-base">
+            If a page feels too broad, use the contact form and ask one direct
+            question. Short, clear questions get better help. That saves time
+            for students and parents.
+          </p>
+        </div>
+
+        <div className="flex flex-col items-center gap-3 text-center">
+          <p className="mt-12 text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">
             Quick Links
           </p>
           <h3 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">

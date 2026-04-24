@@ -77,8 +77,47 @@ export default function StaticPageResourceLinks({
   return (
     <section className="bg-slate-50 py-16">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="rounded-[32px] border border-sky-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)] sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">
+            Simple Guide
+          </p>
+          <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+            How to read this page without stress
+          </h3>
+          <div className="mt-5 grid gap-6 lg:grid-cols-2">
+            <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
+              <p>
+                Start with the quick facts. They show the main cost, course
+                length, exam path, and key risk. Read that part first.
+              </p>
+              <p>
+                Then check fees, language, and visa steps. These three parts
+                shape most real choices for students and parents.
+              </p>
+              <p>
+                Use the tables to compare facts, not hype. Look for budget,
+                entry rule, exam load, and what happens after the degree.
+              </p>
+            </div>
+            <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
+              <p>
+                Read the pros and cons with your family. A good fit is not just
+                a low fee. It must also suit your plan and your limits.
+              </p>
+              <p>
+                Save the pages that feel right. Drop the ones that need a test,
+                cost, or language level you do not want.
+              </p>
+              <p>
+                If one rule still feels hard, ask before you pay any fee. A
+                short check now can save time, stress, and lost money later.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Related Resources</p>
+          <p className="mt-12 text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Related Resources</p>
           <h3 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Helpful next pages and official resources
           </h3>
