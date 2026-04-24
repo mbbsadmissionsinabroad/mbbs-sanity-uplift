@@ -268,9 +268,9 @@ export default function NetherlandsNursingLeadSection() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">
               Contact Netherlands Nursing Desk
             </p>
-            <h2 className="mt-4 text-3xl font-bold">
+            <h3 className="mt-4 text-3xl font-bold">
               Speak to our team on WhatsApp or request a callback
-            </h2>
+            </h3>
             <p className="mt-4 text-base leading-8 text-slate-300">
               Use this section for Dutch language planning, Nuffic assessment, BIG route support and employer targeting.
             </p>

@@ -291,9 +291,9 @@ export function HomeInlineLeadSection({
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
             Direct Contact
           </p>
-          <h2 className="mt-4 text-3xl font-black tracking-tight">
+          <h3 className="mt-4 text-3xl font-black tracking-tight">
             Prefer talking to us right away?
-          </h2>
+          </h3>
           <p className="mt-4 text-sm leading-7 text-slate-200">
             Reach our team directly on WhatsApp, call the IVR line, or open the
             popup enquiry form. These CTAs now match the homepage design so the
@@ -431,9 +431,9 @@ export function HomePopupLeadForm({
                         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
                           Popup Enquiry
                         </p>
-                        <h2 className="mt-4 text-3xl font-black tracking-tight">
+                        <h3 className="mt-4 text-3xl font-black tracking-tight">
                           Let our team help you choose the right path
-                        </h2>
+                        </h3>
                       </div>
                       <button
                         type="button"

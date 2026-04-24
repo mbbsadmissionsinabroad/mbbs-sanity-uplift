@@ -217,7 +217,7 @@ export default function AzerbaijanPage() {
               {note.includes("/mbbs-without-neet") ? (
                 <>
                   The India-return rule context matters here too.{" "}
-                  <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">
+                  <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">
                     Read the full explanation
                   </Link>.
                 </>
@@ -324,7 +324,7 @@ export default function AzerbaijanPage() {
             <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-300 underline underline-offset-4">
               MBBS in Uzbekistan 2026
             </Link>. For an EU-oriented route, review{" "}
-            <Link href="/mbbs-in-germany" className="font-semibold text-sky-300 underline underline-offset-4">
+            <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-300 underline underline-offset-4">
               MBBS in Germany for free
             </Link>.
           </p>
@@ -354,7 +354,7 @@ export default function AzerbaijanPage() {
         <div className="mt-10"><DataTable rows={careerPathways} /></div>
         <p className="mt-6 rounded-3xl border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">
           Also consider{" "}
-          <Link href="/bsc-nursing" className="font-semibold underline underline-offset-4">
+          <Link href="/contact" className="font-semibold underline underline-offset-4">
             BSc Nursing abroad
           </Link>{" "}
           if you are comparing healthcare careers beyond MBBS.

@@ -269,7 +269,7 @@ export default function BelizePage() {
               {note.includes("/mbbs-without-neet") ? (
                 <>
                   Belize does not create a shortcut around India-return rules.{" "}
-                  <Link href="/mbbs-without-neet" className="font-semibold text-orange-700 underline underline-offset-4">
+                  <Link href="/contact" className="font-semibold text-orange-700 underline underline-offset-4">
                     Read why NEET still matters
                   </Link>.
                 </>
@@ -431,7 +431,7 @@ export default function BelizePage() {
           </div>
           <p className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
             Also compare lower-risk healthcare routes like{" "}
-            <Link href="/bsc-nursing" className="font-semibold text-orange-300 underline underline-offset-4">
+            <Link href="/contact" className="font-semibold text-orange-300 underline underline-offset-4">
               BSc Nursing abroad
             </Link>{" "}
             if you are reviewing all possible overseas healthcare pathways.

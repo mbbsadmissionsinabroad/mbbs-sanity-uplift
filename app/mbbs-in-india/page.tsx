@@ -198,7 +198,7 @@ export default function IndiaPage() {
             <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
               {note.includes("/mbbs-without-neet") ? (
                 <>
-                  If you are evaluating non-standard pathways separately, read <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
+                  If you are evaluating non-standard pathways separately, read <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
                 </>
               ) : (
                 note
@@ -287,7 +287,7 @@ export default function IndiaPage() {
           <SectionHeading eyebrow="Alternatives" title="How India compares with key abroad routes" />
           <div className="mt-10"><DataTable rows={comparison} caption="India versus abroad MBBS comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            If you are comparing lower-cost abroad routes, review <Link href="/mbbs-in-kyrgyzstan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Kyrgyzstan 2026-27</Link>. For an EU-career-oriented route, compare with <Link href="/mbbs-admission-in-romania-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Romania 2026-27 Guide</Link>. If you are evaluating non-standard options, read <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
+            If you are comparing lower-cost abroad routes, review <Link href="/mbbs-in-kyrgyzstan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Kyrgyzstan 2026-27</Link>. For an EU-career-oriented route, compare with <Link href="/mbbs-admission-in-romania-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Romania 2026-27 Guide</Link>. If you are evaluating non-standard options, read <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
           </p>
         </div>
       </section>
@@ -311,7 +311,7 @@ export default function IndiaPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="India MBBS career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/bsc-nursing" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 

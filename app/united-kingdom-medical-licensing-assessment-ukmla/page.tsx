@@ -341,11 +341,11 @@ export default function UkmlaPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Compare Europe</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">Medical PG in Europe</p>
           </Link>
-          <Link href="/mbbs-without-neet" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
+          <Link href="/contact" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Alternative route</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">MBBS without NEET</p>
           </Link>
-          <Link href="/bsc-nursing" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
+          <Link href="/contact" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Allied path</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">BSc Nursing Abroad</p>
           </Link>

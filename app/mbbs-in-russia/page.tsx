@@ -291,7 +291,7 @@ export default function RussiaPage() {
           <SectionHeading eyebrow="Comparison" title="Russia vs other MBBS abroad destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Russia comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            Compare Russia with <Link href="/mbbs-admission-in-bangladesh-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Bangladesh</Link>, <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Uzbekistan</Link>, <Link href="/mbbs-admission-in-romania-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Romania</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET</Link> if you are still deciding which route best fits your budget and India-return plan.
+            Compare Russia with <Link href="/mbbs-admission-in-bangladesh-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Bangladesh</Link>, <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Uzbekistan</Link>, <Link href="/mbbs-admission-in-romania-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Romania</Link> and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET</Link> if you are still deciding which route best fits your budget and India-return plan.
           </p>
         </div>
       </section>

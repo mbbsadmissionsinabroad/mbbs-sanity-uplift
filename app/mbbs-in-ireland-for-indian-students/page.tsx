@@ -311,8 +311,8 @@ export default function IrelandPage() {
           <p className="mt-6 text-base leading-7 text-slate-700">
             You can also explore <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS in Germany for near-zero tuition fees</Link>,{" "}
             <Link href="/mbbs-in-uzbekistan" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS in Uzbekistan 2026</Link>,{" "}
-            <Link href="/mbbs-without-neet" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS without NEET for Indian students</Link> and{" "}
-            <Link href="/bsc-nursing" className="font-semibold text-emerald-700 hover:text-emerald-900">BSc Nursing abroad</Link>.
+            <Link href="/contact" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS without NEET for Indian students</Link> and{" "}
+            <Link href="/contact" className="font-semibold text-emerald-700 hover:text-emerald-900">BSc Nursing abroad</Link>.
           </p>
         </div>
       </section>
@@ -363,7 +363,7 @@ export default function IrelandPage() {
           <SectionHeading eyebrow="Without NEET?" title="Why that route still does not solve India licensing" description="Students often search for workarounds, but India-practice planning still begins with the right eligibility path." />
           <p className="mt-8 max-w-4xl text-base leading-8 text-slate-700 md:text-lg">
             If NEET is your main concern, read the broader guidance on{" "}
-            <Link href="/mbbs-without-neet" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS without NEET for Indian students</Link>. Ireland is academically elite, but India-side medical registration still depends on the correct pathway from the beginning.
+            <Link href="/contact" className="font-semibold text-emerald-700 hover:text-emerald-900">MBBS without NEET for Indian students</Link>. Ireland is academically elite, but India-side medical registration still depends on the correct pathway from the beginning.
           </p>
         </div>
       </section>

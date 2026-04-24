@@ -328,7 +328,7 @@ export default function NursingJobsInGermanyPage() {
         <SectionHeading eyebrow="Comparison" title="How Germany compares with other nurse destinations" />
         <div className="mt-10"><DataTable rows={comparison} caption="Germany nursing comparison table" /></div>
         <p className="mt-6 text-base leading-7 text-slate-700">
-            If you want to compare Germany with an English-speaking route, see <Link href="/nursing-jobs-in-canada" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Canada</Link>. For broader healthcare education pathways, explore <Link href="/bsc-nursing" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link>, <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for free</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
+            If you want to compare Germany with an English-speaking route, see <Link href="/nursing-jobs-in-canada" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Canada</Link>. For broader healthcare education pathways, explore <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link>, <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for free</Link> and <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
         </p>
       </section>
 

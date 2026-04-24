@@ -335,7 +335,7 @@ export default function MedicalPgInGermanyPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Related guide</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">MBBS in Germany for free</p>
           </Link>
-          <Link href="/mbbs-without-neet" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
+          <Link href="/contact" className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-blue-200 hover:text-blue-800">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">Alternative guide</p>
             <p className="mt-3 text-lg font-semibold text-slate-900">MBBS without NEET for Indian students</p>
           </Link>

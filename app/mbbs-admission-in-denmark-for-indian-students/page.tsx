@@ -198,7 +198,7 @@ export default function DenmarkPage() {
             <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
               {note.includes("/mbbs-without-neet") ? (
                 <>
-                  If you are intentionally comparing no-India-return paths, read <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
+                  If you are intentionally comparing no-India-return paths, read <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
                 </>
               ) : (
                 note
@@ -287,7 +287,7 @@ export default function DenmarkPage() {
           <SectionHeading eyebrow="Alternatives" title="How Denmark compares with other common destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Denmark alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            If you want a lower-cost India-return option, compare with <Link href="/mbbs-admission-in-bangladesh" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Bangladesh 2026-27</Link>. If you are comparing broader European pathways, review <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany</Link>.
+            If you want a lower-cost India-return option, compare with <Link href="/mbbs-admission-in-bangladesh-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS Admission in Bangladesh 2026-27</Link>. If you are comparing broader European pathways, review <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany</Link>.
           </p>
         </div>
       </section>
@@ -311,7 +311,7 @@ export default function DenmarkPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="Denmark career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/bsc-nursing" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 

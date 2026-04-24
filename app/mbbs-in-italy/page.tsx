@@ -219,7 +219,7 @@ export default function ItalyPage() {
               {note.includes("/mbbs-without-neet") ? (
                 <>
                   Licensing rules matter here too.{" "}
-                  <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">
+                  <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">
                     Read the full explanation
                   </Link>.
                 </>
@@ -323,7 +323,7 @@ export default function ItalyPage() {
           <div className="mt-10"><DataTable rows={comparison} caption="Italy comparison table" /></div>
           <p className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-5 text-sm leading-7 text-slate-300">
             If you are comparing the best-value EU route, also review{" "}
-            <Link href="/mbbs-in-germany" className="font-semibold text-sky-300 underline underline-offset-4">
+            <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-300 underline underline-offset-4">
               MBBS in Germany for free
             </Link>. If your main filter is the lowest India-return budget, compare{" "}
             <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-300 underline underline-offset-4">
@@ -356,7 +356,7 @@ export default function ItalyPage() {
         <div className="mt-10"><DataTable rows={careerPathways} caption="Italy career pathways table" /></div>
         <p className="mt-6 rounded-3xl border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">
           Also consider{" "}
-          <Link href="/bsc-nursing" className="font-semibold underline underline-offset-4">
+          <Link href="/contact" className="font-semibold underline underline-offset-4">
             BSc Nursing abroad
           </Link>{" "}
           if you are comparing broader healthcare career routes alongside MBBS.

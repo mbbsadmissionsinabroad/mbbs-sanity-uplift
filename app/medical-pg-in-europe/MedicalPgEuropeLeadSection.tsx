@@ -237,7 +237,7 @@ export default function MedicalPgEuropeLeadSection() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[32px] bg-[linear-gradient(135deg,#1d4ed8_0%,#0f172a_100%)] p-8 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">Contact Europe PG Desk</p>
-            <h2 className="mt-4 text-3xl font-bold">Speak to our team on WhatsApp or request a callback</h2>
+            <h3 className="mt-4 text-3xl font-bold">Speak to our team on WhatsApp or request a callback</h3>
             <p className="mt-4 text-base leading-8 text-slate-300">
               Use this section for country selection, language planning, recognition strategy, and realistic Europe PG timelines.
             </p>

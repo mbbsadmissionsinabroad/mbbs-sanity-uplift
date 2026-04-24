@@ -231,7 +231,7 @@ export default function GeorgiaLeadSection() {
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="rounded-[32px] bg-[linear-gradient(135deg,#1d4ed8_0%,#0f172a_100%)] p-8 text-white">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-200">Contact Georgia Desk</p>
-            <h2 className="mt-4 text-3xl font-bold">Speak to our team on WhatsApp or request a callback</h2>
+            <h3 className="mt-4 text-3xl font-bold">Speak to our team on WhatsApp or request a callback</h3>
             <p className="mt-4 text-base leading-8 text-slate-300">Use this section for Georgia university comparison, FMGE-focused planning, budget discussion and 2026-27 intake support.</p>
             <div className="mt-8 grid gap-4">
               <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-center text-sm font-semibold text-white transition hover:brightness-95">WhatsApp {whatsappNumber}</a>

@@ -328,7 +328,7 @@ export default function NursingJobsInDenmarkPage() {
         <SectionHeading eyebrow="Comparison" title="How Denmark compares with other nurse destinations" />
         <div className="mt-10"><DataTable rows={comparison} caption="Denmark nursing comparison table" /></div>
         <p className="mt-6 text-base leading-7 text-slate-700">
-            If you want an active route right now instead of a 2027 waiting strategy, compare this with <Link href="/nursing-jobs-in-canada" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Canada</Link>. For broader education-led healthcare routes, explore <Link href="/bsc-nursing" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link>, <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for free</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
+            If you want an active route right now instead of a 2027 waiting strategy, compare this with <Link href="/nursing-jobs-in-canada" className="font-semibold text-blue-700 hover:text-blue-900">nursing jobs in Canada</Link>. For broader education-led healthcare routes, explore <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link>, <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for free</Link> and <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
         </p>
       </section>
 

@@ -552,7 +552,7 @@ export default function LithuaniaPage() {
             </Link>
             ,{" "}
             <Link
-              href="/mbbs-without-neet"
+              href="/contact"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               MBBS without NEET for Indian students

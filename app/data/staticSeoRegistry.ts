@@ -290,14 +290,6 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "kind": "mbbs-in"
   },
   {
-    "route": "/medical-pg-in-europe",
-    "title": "Medical PG in Europe for Indian Doctors",
-    "metaTitle": "Medical PG in Europe for Indian Doctors - Complete Guide",
-    "metaDescription": "Explore medical PG in Europe for Indian doctors with country comparisons, licensing pathways, salary outlook, and residency planning support.",
-    "section": "medical-pg",
-    "kind": "medical-pg"
-  },
-  {
     "route": "/medical-pg-in-europe-for-indian-students",
     "title": "Medical PG in Europe 2026-27 for Indian Doctors - Complete Guide",
     "metaTitle": "Medical PG in Europe 2026-27 - Complete Guide for Indian Doctors",
@@ -322,14 +314,6 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "kind": "nursing"
   },
   {
-    "route": "/nursing-jobs-in-abroad",
-    "title": "Nursing Jobs Abroad for Indian Nurses",
-    "metaTitle": "Nursing Jobs Abroad for Indian Nurses - Country Guidance",
-    "metaDescription": "Explore nursing jobs abroad for Indian nurses with country comparisons, eligibility guidance, language requirements, and process support.",
-    "section": "nursing-jobs",
-    "kind": "nursing"
-  },
-  {
     "route": "/nursing-jobs-in-canada",
     "title": "Nursing Jobs in Canada 2026-27 for Indian Nurses - Complete Guide",
     "metaTitle": "Nursing Jobs in Canada 2026-27 - Complete Guide for Indian Nurses",
@@ -342,14 +326,6 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "title": "Nursing Jobs in Denmark 2026-27 for Indian Nurses - Complete Guide",
     "metaTitle": "Nursing Jobs in Denmark 2026-27 - Complete Guide for Indian Nurses",
     "metaDescription": "Planning nursing jobs in Denmark 2026-27? Understand the zero-quota policy, STPS authorization, Danish B2 requirement, salary, costs and 2027 roadmap for Indian nurses.",
-    "section": "nursing-jobs",
-    "kind": "nursing"
-  },
-  {
-    "route": "/nursing-jobs-in-germany",
-    "title": "Nursing Jobs in Germany for Indian Nurses",
-    "metaTitle": "Nursing Jobs in Germany for Indian Nurses - Complete Guide",
-    "metaDescription": "Explore nursing jobs in Germany for Indian nurses with salary, recognition, language requirements, documentation, and relocation guidance.",
     "section": "nursing-jobs",
     "kind": "nursing"
   },
@@ -368,14 +344,6 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "metaDescription": "Planning nursing jobs in the Netherlands 2026-27? Get BIG registration, Nuffic evaluation, Dutch language requirements, TWV/GVVA work permit route, salary, costs and full guidance for Indian nurses.",
     "section": "nursing-jobs",
     "kind": "nursing"
-  },
-  {
-    "route": "/pg-in-abroad",
-    "title": "PG Abroad for Indian Doctors",
-    "metaTitle": "PG Abroad for Indian Doctors - Guidance and Counselling",
-    "metaDescription": "Explore PG abroad options for Indian doctors with guidance on eligibility, country options, licensing pathways, and counselling support.",
-    "section": "medical-pg",
-    "kind": "medical-pg"
   },
   {
     "route": "/study-mbbs-in-russia",

@@ -287,7 +287,7 @@ export default function VietnamPage() {
           <SectionHeading eyebrow="Alternatives" title="How Vietnam compares with other common destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Vietnam alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            Compare Vietnam with <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Uzbekistan 2026</Link>, <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>, <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>, <Link href="/mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>.
+            Compare Vietnam with <Link href="/mbbs-in-uzbekistan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Uzbekistan 2026</Link>, <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>, <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>, <Link href="/mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>.
           </p>
         </div>
       </section>

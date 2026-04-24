@@ -218,7 +218,7 @@ export default function KrasnoyarskPage() {
               {note.includes("/mbbs-without-neet") ? (
                 <>
                   Licensing rules matter here too.{" "}
-                  <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">
+                  <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">
                     Read the full explanation
                   </Link>.
                 </>
@@ -365,7 +365,7 @@ export default function KrasnoyarskPage() {
         <div className="mt-10"><DataTable rows={careerPathways} caption="KSMU career pathways table" /></div>
         <p className="mt-6 text-sm leading-7 text-slate-600">
           If your family is also comparing allied healthcare routes, explore{" "}
-          <Link href="/bsc-nursing" className="font-semibold text-sky-700 underline underline-offset-4">
+          <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">
             BSc Nursing abroad
           </Link>
           {" "}for a shorter and often lower-cost healthcare path.

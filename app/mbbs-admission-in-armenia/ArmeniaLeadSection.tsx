@@ -289,9 +289,9 @@ export default function ArmeniaLeadSection() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
               Contact Armenia Desk
             </p>
-            <h2 className="mt-4 text-3xl font-bold">
+            <h3 className="mt-4 text-3xl font-bold">
               Speak to our team on WhatsApp or request a callback
-            </h2>
+            </h3>
             <p className="mt-4 text-base leading-8 text-slate-300">
               If you want quick answers on fees, eligibility, FMGE-focused
               universities or application timelines, the fastest route is direct

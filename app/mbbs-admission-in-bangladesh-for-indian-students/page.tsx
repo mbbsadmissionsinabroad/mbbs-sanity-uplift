@@ -198,7 +198,7 @@ export default function BangladeshPage() {
             <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
               {note.includes("/mbbs-without-neet") ? (
                 <>
-                  Licensing rules matter here too. <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">Read the full explanation</Link>.
+                  Licensing rules matter here too. <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">Read the full explanation</Link>.
                 </>
               ) : (
                 note
@@ -311,7 +311,7 @@ export default function BangladeshPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="Bangladesh career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/bsc-nursing" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 

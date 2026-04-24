@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mbbsadmissionsinabroad.com",
     languages: {
+      "x-default": "https://www.mbbsadmissionsinabroad.com/",
       en: "https://www.mbbsadmissionsinabroad.com/",
       es: "https://www.mbbsadmissionsinabroad.com/es",
       fr: "https://www.mbbsadmissionsinabroad.com/fr",

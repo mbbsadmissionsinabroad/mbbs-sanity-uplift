@@ -559,14 +559,14 @@ export default function ArmeniaPage() {
             </Link>
             ,{" "}
             <Link
-              href="/mbbs-without-neet"
+              href="/contact"
               className="font-semibold text-emerald-700 hover:text-emerald-900"
             >
               MBBS without NEET for Indian students
             </Link>{" "}
             and{" "}
             <Link
-              href="/bsc-nursing"
+              href="/contact"
               className="font-semibold text-emerald-700 hover:text-emerald-900"
             >
               BSc Nursing abroad
@@ -665,7 +665,7 @@ export default function ArmeniaPage() {
           <p className="mt-8 max-w-4xl text-base leading-8 text-slate-700 md:text-lg">
             If NEET is your main concern, read the broader guidance on{" "}
             <Link
-              href="/mbbs-without-neet"
+              href="/contact"
               className="font-semibold text-emerald-700 hover:text-emerald-900"
             >
               MBBS without NEET for Indian students

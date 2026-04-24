@@ -217,7 +217,7 @@ export default function FinlandPage() {
               {note.includes("/mbbs-without-neet") ? (
                 <>
                   NEET still matters if you want the India-return route.{" "}
-                  <Link href="/mbbs-without-neet" className="font-semibold text-cyan-700 underline underline-offset-4">
+                  <Link href="/contact" className="font-semibold text-cyan-700 underline underline-offset-4">
                     Read the full context here
                   </Link>.
                 </>
@@ -327,7 +327,7 @@ export default function FinlandPage() {
             <Link href="/mbbs-in-uzbekistan" className="font-semibold text-cyan-300 underline underline-offset-4">
               MBBS in Uzbekistan 2026
             </Link>. If your goal is an EU route with lower tuition, also review{" "}
-            <Link href="/mbbs-in-germany" className="font-semibold text-cyan-300 underline underline-offset-4">
+            <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-cyan-300 underline underline-offset-4">
               MBBS in Germany for free
             </Link>.
           </p>
@@ -357,7 +357,7 @@ export default function FinlandPage() {
         <div className="mt-10"><DataTable rows={careerPathways} /></div>
         <p className="mt-6 rounded-3xl border border-cyan-200 bg-cyan-50 p-5 text-sm leading-7 text-cyan-950">
           Also consider{" "}
-          <Link href="/bsc-nursing" className="font-semibold underline underline-offset-4">
+          <Link href="/contact" className="font-semibold underline underline-offset-4">
             BSc Nursing abroad
           </Link>{" "}
           if you are comparing healthcare careers with a shorter, lower-risk training path.

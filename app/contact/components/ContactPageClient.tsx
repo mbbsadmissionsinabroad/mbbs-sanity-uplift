@@ -222,15 +222,15 @@ export default function ContactPageClient({
 
               <div className="relative flex flex-wrap rounded bg-white py-6 shadow-md">
                 <div className="px-6 lg:w-1/2">
-                  <h3 className="title-font text-xs font-semibold tracking-widest text-gray-900">
+                  <p className="title-font text-xs font-semibold tracking-widest text-gray-900">
                     ADDRESS
-                  </h3>
+                  </p>
                   <p className="mt-1">{currentLocation.address}</p>
                 </div>
                 <div className="mt-4 px-6 lg:mt-0 lg:w-1/2">
-                  <h3 className="title-font text-xs font-semibold tracking-widest text-gray-900">
+                  <p className="title-font text-xs font-semibold tracking-widest text-gray-900">
                     PHONE
-                  </h3>
+                  </p>
                   <p className="leading-relaxed">{currentLocation.phone}</p>
                 </div>
               </div>

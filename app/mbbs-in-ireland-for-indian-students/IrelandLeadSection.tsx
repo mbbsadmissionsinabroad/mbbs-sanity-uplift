@@ -289,9 +289,9 @@ export default function IrelandLeadSection() {
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">
               Contact Ireland Desk
             </p>
-            <h2 className="mt-4 text-3xl font-bold">
+            <h3 className="mt-4 text-3xl font-bold">
               Speak to our team on WhatsApp or request a callback
-            </h2>
+            </h3>
             <p className="mt-4 text-base leading-8 text-slate-300">
               Use this section for shortlist review, exam planning, fee strategy, visa questions and 2026-27 Ireland intake guidance.
             </p>

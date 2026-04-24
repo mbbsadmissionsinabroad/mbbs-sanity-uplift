@@ -316,8 +316,8 @@ export default function SwedenPage() {
           <p className="mt-6 text-base leading-7 text-slate-700">
             You can also explore <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Germany for near-zero tuition fees</Link>,{" "}
             <Link href="/mbbs-in-uzbekistan" className="font-semibold text-blue-700 hover:text-blue-900">MBBS in Uzbekistan 2026</Link>,{" "}
-            <Link href="/bsc-nursing" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link> and{" "}
-            <Link href="/mbbs-without-neet" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
+            <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">BSc Nursing abroad</Link> and{" "}
+            <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>.
           </p>
         </div>
       </section>
@@ -368,7 +368,7 @@ export default function SwedenPage() {
           <SectionHeading eyebrow="Without NEET?" title="Why that route still does not solve India licensing" description="Students often search for workarounds, but India-practice planning still begins with the correct eligibility path." />
           <p className="mt-8 max-w-4xl text-base leading-8 text-slate-700 md:text-lg">
             If NEET is your main concern, read the broader guidance on{" "}
-            <Link href="/mbbs-without-neet" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>. Sweden can be exceptional for Europe-focused students, but India-side medical registration still starts with proper NEET eligibility and a compliant foreign degree route.
+            <Link href="/contact" className="font-semibold text-blue-700 hover:text-blue-900">MBBS without NEET for Indian students</Link>. Sweden can be exceptional for Europe-focused students, but India-side medical registration still starts with proper NEET eligibility and a compliant foreign degree route.
           </p>
         </div>
       </section>
