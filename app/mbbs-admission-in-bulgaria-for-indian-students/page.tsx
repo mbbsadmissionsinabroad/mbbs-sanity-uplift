@@ -284,7 +284,7 @@ export default function BulgariaPage() {
           <SectionHeading eyebrow="Alternatives" title="How Bulgaria compares with other common destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Bulgaria alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-              Compare Bulgaria with <Link href="/mbbs-in-hungary" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Hungary 2026-27</Link>, <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link>, the current <Link href="/contact?interest=mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> guidance path, and <Link href="/mbbs-in-france" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in France for Indian students</Link>. For India licensing planning, review <Link href="/contact?interest=nmc-next-exam-guide" className="font-semibold text-sky-700 underline underline-offset-4">NMC NEXT exam preparation guide</Link>, <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>, and <Link href="/contact?interest=cheapest-mbbs-abroad" className="font-semibold text-sky-700 underline underline-offset-4">cheapest MBBS abroad for Indian students 2026</Link>.
+              Compare Bulgaria with <Link href="/mbbs-in-hungary" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Hungary 2026-27</Link>, <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link>, the current <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> guidance path, and <Link href="/mbbs-in-france" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in France for Indian students</Link>. For India licensing planning, review <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">NMC NEXT exam preparation guide</Link>, <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>, and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">cheapest MBBS abroad for Indian students 2026</Link>.
           </p>
         </div>
       </section>
@@ -308,7 +308,7 @@ export default function BulgariaPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="Bulgaria career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact?interest=bsc-nursing-abroad" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 

@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function NursingJobsRedirectPage() {
-  redirect("/contact?interest=nursing-jobs-in-abroad");
+  redirect("/contact");
 }

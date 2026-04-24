@@ -291,7 +291,7 @@ export const disadvantages = [
 export const saferAlternatives = [
   { title: "MBBS in Uzbekistan 2026", href: "/mbbs-in-uzbekistan" },
   { title: "MBBS in Georgia", href: "/mbbs-in-georgia" },
-  { title: "MBBS in Philippines", href: "/contact?interest=mbbs-in-philippines" },
+  { title: "MBBS in Philippines", href: "/contact" },
 ];
 
 export const comparison = [

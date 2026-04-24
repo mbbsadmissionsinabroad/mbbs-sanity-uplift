@@ -284,7 +284,7 @@ export default function FrancePage() {
           <SectionHeading eyebrow="Alternatives" title="How France compares with other common destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="France alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            For English-medium alternatives, compare with <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link> and <Link href="/contact?interest=mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link>. For a different language-heavy EU option, review <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>.
+            For English-medium alternatives, compare with <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link> and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link>. For a different language-heavy EU option, review <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>.
           </p>
         </div>
       </section>

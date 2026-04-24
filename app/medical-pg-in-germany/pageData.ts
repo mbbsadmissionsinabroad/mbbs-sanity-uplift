@@ -285,7 +285,7 @@ export const breadcrumbSchema = {
   "@type": "BreadcrumbList",
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
-    { "@type": "ListItem", position: 2, name: "PG in Abroad", item: `${siteUrl}/contact?interest=pg-in-abroad` },
+    { "@type": "ListItem", position: 2, name: "PG in Abroad", item: `${siteUrl}/contact` },
     { "@type": "ListItem", position: 3, name: "Medical PG in Germany", item: pageUrl },
   ],
 };

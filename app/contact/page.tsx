@@ -55,34 +55,7 @@ async function getContactLocations(): Promise<Record<string, LocationData>> {
   }
 }
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams?: Record<string, string | string[] | undefined>;
-}): Promise<Metadata> {
-  const resolvedSearchParams = searchParams ?? {};
-  const interestParam = resolvedSearchParams.interest;
-  const interest =
-    typeof interestParam === "string"
-      ? interestParam
-      : Array.isArray(interestParam)
-        ? interestParam[0]
-        : undefined;
-
-  if (interest) {
-    return {
-      title: metaTitle,
-      description: metaDescription,
-      alternates: {
-        canonical: `${canonicalUrl}?interest=${encodeURIComponent(interest)}`,
-      },
-      robots: {
-        index: false,
-        follow: true,
-      },
-    };
-  }
-
+export async function generateMetadata(): Promise<Metadata> {
   return buildStaticPageMetadata({
     route,
     fallbackTitle: metaTitle,

@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function PgAbroadRedirectPage() {
-  redirect("/contact?interest=pg-in-abroad");
+  redirect("/contact");
 }

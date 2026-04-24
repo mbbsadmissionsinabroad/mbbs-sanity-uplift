@@ -528,21 +528,21 @@ export default function LithuaniaPage() {
             </Link>
             , the current{" "}
             <Link
-              href="/contact?interest=mbbs-in-georgia"
+              href="/contact"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               MBBS in Georgia 2026
             </Link>{" "}
             guidance path, and the evolving{" "}
             <Link
-              href="/contact?interest=mbbs-admission-in-latvia"
+              href="/contact"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               MBBS in Latvia 2026
             </Link>{" "}
             enquiry route. For India licensing planning, review{" "}
             <Link
-              href="/contact?interest=nmc-next-exam-guide"
+              href="/contact"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               NMC NEXT exam preparation guide
@@ -556,7 +556,7 @@ export default function LithuaniaPage() {
             </Link>
             , and{" "}
             <Link
-              href="/contact?interest=cheapest-mbbs-in-europe"
+              href="/contact"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               cheapest MBBS in Europe for Indian students
@@ -612,7 +612,7 @@ export default function LithuaniaPage() {
         <p className="mt-6 text-sm leading-7 text-slate-600">
           If you are also comparing non-MBBS healthcare routes, explore{" "}
           <Link
-            href="/contact?interest=bsc-nursing-abroad"
+            href="/contact"
             className="font-semibold text-sky-700 underline underline-offset-4"
           >
             BSc Nursing abroad

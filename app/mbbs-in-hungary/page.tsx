@@ -195,7 +195,7 @@ export default function HungaryPage() {
             <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
                 {note.includes("/mbbs-in-armenia") ? (
                 <>
-                    If you want a lower-cost no-entrance-exam comparison, review <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link> and the current <Link href="/contact?interest=mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> guidance path.
+                    If you want a lower-cost no-entrance-exam comparison, review <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link> and the current <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> guidance path.
                 </>
               ) : (
                 note
@@ -284,7 +284,7 @@ export default function HungaryPage() {
           <SectionHeading eyebrow="Alternatives" title="How Hungary compares with other common destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Hungary alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            Compare Hungary with <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link>, <Link href="/mbbs-in-france" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in France for Indian students</Link>, the current <Link href="/contact?interest=mbbs-in-georgia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia 2026</Link> guidance path, and <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>. For India licensing planning, review <Link href="/contact?interest=nmc-next-exam-guide" className="font-semibold text-sky-700 underline underline-offset-4">NMC NEXT exam preparation guide</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
+            Compare Hungary with <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link>, <Link href="/mbbs-in-france" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in France for Indian students</Link>, the current <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia 2026</Link> guidance path, and <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>. For India licensing planning, review <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">NMC NEXT exam preparation guide</Link> and <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
           </p>
         </div>
       </section>
@@ -308,7 +308,7 @@ export default function HungaryPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="Hungary career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact?interest=bsc-nursing-abroad" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link> and, if scholarship is central to your decision, ask us directly about the <Link href="/contact?interest=stipendium-hungaricum-scholarship" className="font-semibold text-sky-700 underline underline-offset-4">Stipendium Hungaricum scholarship guide</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link> and, if scholarship is central to your decision, ask us directly about the <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">Stipendium Hungaricum scholarship guide</Link>.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 
