@@ -1,6 +1,21 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import { galleryImages } from "@/app/data/siteContent";
+import homeBannerOne from "../../public/assests/home-page-banner-1.png";
+import homeBannerTwo from "../../public/assests/home-page-banner-2.webp";
+import studentsImage from "../../public/students.jpeg";
+import studentTwoImage from "../../public/student2.jpeg";
+import whoAreWeImage from "../../public/assests/who-are-we.jpeg";
+import whoAreWeTwoImage from "../../public/assests/who-are-we-2.jpeg";
+
+const galleryAssetMap = {
+  "/assests/home-page-banner-1.png": homeBannerOne,
+  "/assests/home-page-banner-2.webp": homeBannerTwo,
+  "/students.jpeg": studentsImage,
+  "/student2.jpeg": studentTwoImage,
+  "/assests/who-are-we.jpeg": whoAreWeImage,
+  "/assests/who-are-we-2.jpeg": whoAreWeTwoImage,
+} as const;
 
 export const metadata: Metadata = {
   title: "Gallery | MBBS Admission in Abroad",
@@ -52,12 +67,20 @@ export default function GalleryPage() {
               className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
             >
               <div className="relative h-64 w-full">
+                {(() => {
+                  const imageAsset =
+                    galleryAssetMap[item.src as keyof typeof galleryAssetMap];
+
+                  return (
                 <Image
-                  src={item.src}
+                  src={imageAsset}
                   alt={item.alt}
-                  fill
-                  className="object-cover"
+                  width={imageAsset.width}
+                  height={imageAsset.height}
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
+                  );
+                })()}
               </div>
               <div className="p-5">
                 <h3 className="text-lg font-semibold text-slate-900">
@@ -81,6 +104,21 @@ export default function GalleryPage() {
             trust, and fit. They also make the enquiry path feel more real and
             less abstract.
           </p>
+          <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {[
+              "These images show real support scenes.",
+              "They help families see the brand quickly.",
+              "They make the enquiry path feel clear.",
+              "They add trust before a call or form fill.",
+            ].map((item) => (
+              <p
+                key={item}
+                className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-6 text-slate-700"
+              >
+                {item}
+              </p>
+            ))}
+          </div>
         </section>
       </div>
     </main>

@@ -87,31 +87,53 @@ export default function StaticPageResourceLinks({
           <div className="mt-5 grid gap-6 lg:grid-cols-2">
             <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
               <p>
-                Start with the quick facts. They show the main cost, course
-                length, exam path, and key risk. Read that part first.
+                Start with the quick facts. They show cost, time, exam path,
+                and risk. Read that part first.
               </p>
               <p>
                 Then check fees, language, and visa steps. These three parts
-                shape most real choices for students and parents.
+                drive most real family choices.
               </p>
               <p>
-                Use the tables to compare facts, not hype. Look for budget,
-                entry rule, exam load, and what happens after the degree.
+                Use the tables to compare facts, not hype. Look at budget,
+                entry rules, exam load, and the path after the degree.
               </p>
             </div>
             <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
               <p>
                 Read the pros and cons with your family. A good fit is not just
-                a low fee. It must also suit your plan and your limits.
+                a low fee. It must suit your plan and your limits too.
               </p>
               <p>
                 Save the pages that feel right. Drop the ones that need a test,
-                cost, or language level you do not want.
+                a fee, or a language level you do not want.
               </p>
               <p>
                 If one rule still feels hard, ask before you pay any fee. A
-                short check now can save time, stress, and lost money later.
+                short check now can save time, stress, and money later.
               </p>
+            </div>
+          </div>
+          <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+            <h4 className="text-lg font-semibold text-slate-900">
+              Easy checklist
+            </h4>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                "Check the total fee, not only tuition.",
+                "Check if the course is in full English.",
+                "Check what exam you must clear later.",
+                "Check what living cost your family can manage.",
+                "Check the visa steps and timeline early.",
+                "If two options look close, pick the safer one.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
+                >
+                  {item}
+                </p>
+              ))}
             </div>
           </div>
         </div>
@@ -122,8 +144,9 @@ export default function StaticPageResourceLinks({
             Helpful next pages and official resources
           </h3>
           <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg">
-            Use these internal guides to compare your next options, and use the official links to verify rules,
-            recognition, exams, and destination requirements.
+            Use these guides to compare your next options. Use the official
+            links to verify rules, recognition, exams, and country
+            requirements.
           </p>
         </div>
 

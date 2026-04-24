@@ -146,6 +146,21 @@ export default function PrivacyPolicyPage() {
               If you want to ask about your data, correct it, or request
               deletion where the law allows, you can contact us.
             </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                "You send details. We use them to reply.",
+                "We keep only the data we need.",
+                "We do not sell your data.",
+                "You can ask us questions about your data.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
       </section>

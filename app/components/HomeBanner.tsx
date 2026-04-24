@@ -6,6 +6,8 @@ import { useState, type MouseEvent } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { homeHeroHighlights } from "@/app/data/siteContent";
+import homeBannerOne from "../../public/assests/home-page-banner-1.png";
+import homeBannerTwo from "../../public/assests/home-page-banner-2.webp";
 
 export default function HomeBanner() {
   const [isLoading, setIsLoading] = useState(false);
@@ -89,11 +91,12 @@ export default function HomeBanner() {
 
       <div className="absolute inset-0">
         <Image
-          src="/assests/home-page-banner-1.png"
+          src={homeBannerOne}
           alt="MBBS abroad consultation background"
-          fill
+          width={homeBannerOne.width}
+          height={homeBannerOne.height}
           priority
-          className="object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-900/70" />
       </div>
@@ -143,10 +146,10 @@ export default function HomeBanner() {
         <div className="rounded-[2rem] border border-white/10 bg-white/95 p-5 text-slate-900 shadow-2xl shadow-black/20">
           <div className="overflow-hidden rounded-[1.5rem]">
             <Image
-              src="/assests/home-page-banner-2.webp"
+              src={homeBannerTwo}
               alt="MBBS abroad student consultation"
-              width={1200}
-              height={800}
+              width={homeBannerTwo.width}
+              height={homeBannerTwo.height}
               className="h-56 w-full object-cover sm:h-64"
             />
           </div>

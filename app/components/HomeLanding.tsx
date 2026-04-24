@@ -33,6 +33,10 @@ import {
   howCanWeAssistYou,
   howCanWeAssistYouSummary,
 } from "../utilities/HomePageStaticData";
+import homeBannerOne from "../../public/assests/home-page-banner-1.png";
+import russiaCollege3 from "../../public/russia-college-3.webp";
+import russiaCollege4 from "../../public/russia-college-4.webp";
+import studentTwoImage from "../../public/student2.jpeg";
 
 const Testinomials = dynamic(() => import("./Testinomials"));
 const Assist = dynamic(() => import("./Assist"));
@@ -522,11 +526,12 @@ export default function HomeLanding() {
             <Reveal className="md:col-span-5 md:row-span-2">
               <div className="relative h-full min-h-[420px] overflow-hidden rounded-[2rem]">
                 <Image
-                  src="/assests/home-page-banner-1.png"
+                  src={homeBannerOne}
                   alt="Counselling session for students planning study abroad"
-                  fill
+                  width={homeBannerOne.width}
+                  height={homeBannerOne.height}
                   sizes="(max-width: 768px) 100vw, 42vw"
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent" />
                 <div className="absolute bottom-0 p-6 text-white">
@@ -543,11 +548,12 @@ export default function HomeLanding() {
             <Reveal className="md:col-span-4">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
-                  src="/russia-college-3.webp"
+                  src={russiaCollege3}
                   alt="Study abroad medical campus"
-                  fill
+                  width={russiaCollege3.width}
+                  height={russiaCollege3.height}
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </Reveal>
@@ -555,11 +561,12 @@ export default function HomeLanding() {
             <Reveal className="md:col-span-3">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
-                  src="/student2.jpeg"
+                  src={studentTwoImage}
                   alt="Student portrait for study abroad experience"
-                  fill
+                  width={studentTwoImage.width}
+                  height={studentTwoImage.height}
                   sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </Reveal>
@@ -567,11 +574,12 @@ export default function HomeLanding() {
             <Reveal className="md:col-span-3">
               <div className="relative min-h-[200px] overflow-hidden rounded-[2rem]">
                 <Image
-                  src="/russia-college-4.webp"
+                  src={russiaCollege4}
                   alt="International medical infrastructure"
-                  fill
+                  width={russiaCollege4.width}
+                  height={russiaCollege4.height}
                   sizes="(max-width: 768px) 100vw, 25vw"
-                  className="object-cover"
+                  className="absolute inset-0 h-full w-full object-cover"
                 />
               </div>
             </Reveal>
