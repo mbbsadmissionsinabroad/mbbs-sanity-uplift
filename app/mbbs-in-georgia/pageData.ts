@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Georgia 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Georgia 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Georgia 2026-27? Compare NMC-approved universities, FMGE performance, fees, visa-free entry, intakes and India-return value for Indian students.";
+  "MBBS in Georgia 2026-27 for Indian students: NMC-approved universities, fees, FMGE performance, intakes, and admissions.";
 
 export const lastUpdated = "March 27, 2026";
 export const whatsappNumber = "+918147030030";

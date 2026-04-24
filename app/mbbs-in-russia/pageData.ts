@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Russia 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Russia 2026-27? Get NMC-approved universities, fees in INR, FMGE 29.54% pass rate by university, admission timeline, NEET rules and a complete guide.";
+  "MBBS in Russia 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, NEET rules, and admissions.";
 
 export const lastUpdated = "March 24, 2026";
 export const advisoryReferenceDate = "March 24, 2026";

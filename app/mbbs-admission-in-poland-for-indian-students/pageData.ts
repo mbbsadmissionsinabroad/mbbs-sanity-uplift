@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Poland 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Poland 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Poland 2026-27? Compare NMC-approved EU universities, fees in INR, FMGE context, entrance exam details, Schengen benefits and admission steps for Indian students.";
+  "MBBS in Poland 2026-27 for Indian students: NMC-relevant universities, fees, entrance exams, visa steps, and admission guidance.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Nursing Jobs in Denmark 2026-27 | Indian Nurses";
 export const metaDescription =
-  "Planning nursing jobs in Denmark 2026-27? Understand the zero-quota policy, STPS authorization, Danish B2 requirement, salary, costs and 2027 roadmap for Indian nurses.";
+  "Nursing jobs in Denmark 2026-27 for Indian nurses: STPS authorization, Danish B2, salary, costs, and 2027 roadmap.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

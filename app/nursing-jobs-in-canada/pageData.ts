@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Nursing Jobs in Canada 2026-27 | Indian Nurses";
 export const metaDescription =
-  "Planning nursing jobs in Canada 2026-27? Get NNAS, NCLEX-RN, IELTS, salary, PR pathway, costs, top provinces and a full step-by-step guide for Indian nurses.";
+  "Nursing jobs in Canada 2026-27 for Indian nurses: NNAS, NCLEX-RN, IELTS, salaries, PR pathways, and costs.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

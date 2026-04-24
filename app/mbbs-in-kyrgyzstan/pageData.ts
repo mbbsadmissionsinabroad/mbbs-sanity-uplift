@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Kyrgyzstan 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Kyrgyzstan 2026-27? Explore NMC-relevant universities, fees in INR and USD, FMGE context, NEET rules, visa steps and Kyrgyzstan admission planning for Indian students.";
+  "MBBS in Kyrgyzstan 2026-27 for Indian students: NMC-relevant universities, fees, NEET rules, visa steps, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

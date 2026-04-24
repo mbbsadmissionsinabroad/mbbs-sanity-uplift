@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Germany 2026-27 – Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Germany 2026-27? Near-zero fees at public universities, NMC recognition, German language guide, APS certificate, NEET rules and full admission steps.";
+  "MBBS in Germany 2026-27 for Indian students: near-zero public fees, German language path, APS, NEET rules, and admissions.";
 
 export const whatsappNumber = "+91 81470 30030";
 export const whatsappHref =

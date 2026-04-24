@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Sweden 2026-27 - Complete Indian Guide";
 export const metaDescription =
-  "Planning MBBS in Sweden 2026-27? Karolinska, Uppsala, Lund fees in INR, Swedish language guide, NMC recognition, NEET rules, visa process and a full admission guide.";
+  "MBBS in Sweden 2026-27 for Indian students: Karolinska, Uppsala, Lund, fees, language requirements, visas, and admissions.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

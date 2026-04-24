@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Azerbaijan 2026-27 - Complete Guide for Indians";
 export const metaDescription =
-  "Planning MBBS in Azerbaijan 2026-27? Explore fees in INR and USD, NMC-eligible route planning, admission timeline, NEET rules, living costs, scholarships and student guidance.";
+  "MBBS in Azerbaijan 2026-27 for Indian students: fees, NEET rules, living costs, scholarships, and admission guidance.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

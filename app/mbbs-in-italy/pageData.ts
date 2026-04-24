@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Italy 2026-27 - Complete Guide for Indians";
 export const metaDescription =
-  "Planning MBBS in Italy 2026-27? Explore IMAT, public university fees in INR, DSU scholarships, NMC-eligible universities, visa process and India-return guidance.";
+  "MBBS in Italy 2026-27 for Indian students: IMAT, public fees, DSU scholarships, NMC-eligible universities, and visa guidance.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Kazakhstan 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Kazakhstan 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Kazakhstan 2026-27? Compare NMC-approved universities, FMGE performance, fees, visa process, living costs and India-return value for Indian students.";
+  "MBBS in Kazakhstan 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, visas, and India-return value.";
 
 export const lastUpdated = "March 27, 2026";
 export const whatsappNumber = "+918147030030";

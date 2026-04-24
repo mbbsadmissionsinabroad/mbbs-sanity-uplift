@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Nursing Jobs in Netherlands 2026-27 | Indian Nurses";
 export const metaDescription =
-  "Planning nursing jobs in the Netherlands 2026-27? Get BIG registration, Nuffic evaluation, Dutch language requirements, TWV/GVVA work permit route, salary, costs and full guidance for Indian nurses.";
+  "Nursing jobs in Netherlands 2026-27 for Indian nurses: BIG registration, Nuffic, Dutch language, permits, salary, and costs.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

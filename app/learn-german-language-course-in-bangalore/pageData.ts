@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "German Course in Bangalore 2026 | A1-C2";
 export const metaDescription =
-  "Best German language course in Bangalore with A1 to C2 levels, Goethe-aligned syllabus, online and offline batches, certified trainers and fees from Rs 12,800.";
+  "German language course in Bangalore with A1-C2 levels, Goethe-aligned training, online and offline batches, and clear fee guidance.";
 
 export const lastUpdated = "March 31, 2026";
 export const whatsappNumber = "+918147030030";

@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in France 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in France 2026-27? Explore fees in INR and EUR, French language requirements, NEET rules, admission planning and career pathways for Indian students.";
+  "MBBS in France 2026-27 for Indian students: fees, French language requirements, NEET rules, and admission guidance.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

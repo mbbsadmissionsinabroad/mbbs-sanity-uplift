@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Philippines 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Philippines 2026-27? Compare NMC-approved universities, NMAT and BS+MD structure, fees in INR, FMGE context and admission steps for Indian students.";
+  "MBBS in Philippines 2026-27 for Indian students: NMC-approved universities, NMAT and BS+MD route, fees, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

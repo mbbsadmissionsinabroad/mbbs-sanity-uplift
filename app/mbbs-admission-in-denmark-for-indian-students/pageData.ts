@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Denmark 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Denmark 2026-27? Explore Danish medical universities, fees in INR and USD, language requirements, NEET rules, visa steps and India-return planning for Indian students.";
+  "MBBS in Denmark 2026-27 for Indian students: medical universities, fees, language requirements, visas, and India-return planning.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Nursing Jobs in Germany 2026-27 | Indian Nurses";
 export const metaDescription =
-  "Planning nursing jobs in Germany 2026-27? Get Triple Win, Anerkennung, German language requirements, salary, costs, top states and full guidance for Indian nurses.";
+  "Nursing jobs in Germany 2026-27 for Indian nurses: Triple Win, Anerkennung, German language levels, salaries, costs, and state guidance.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

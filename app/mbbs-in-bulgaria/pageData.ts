@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Bulgaria 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Bulgaria 2026-27? Compare NMC-approved EU universities, fees in INR and EUR, FMGE context, nostrification, entrance exam planning and admission steps for Indian students.";
+  "MBBS in Bulgaria 2026-27 for Indian students: NMC-approved EU universities, fees, entrance planning, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

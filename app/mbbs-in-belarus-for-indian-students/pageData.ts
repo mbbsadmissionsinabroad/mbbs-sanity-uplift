@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Belarus 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Belarus 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Belarus 2026-27? Compare NMC-approved universities, FMGE context, fees in INR and USD, admission steps and India-return practicality for Indian students.";
+  "MBBS in Belarus 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

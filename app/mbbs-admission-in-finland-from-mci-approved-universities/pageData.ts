@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Finland 2026-27 - Complete Guide for Indians";
 export const metaDescription =
-  "Planning MBBS in Finland 2026-27? Explore Finland medical universities, fees in EUR and INR, language requirements, NEET rules, visa process, scholarships and career pathways for Indian students.";
+  "MBBS in Finland 2026-27 for Indian students: medical universities, fees, language requirements, visas, and career pathways.";
 
 export const lastUpdated = "March 25, 2026";
 export const whatsappNumber = "+918147030030";

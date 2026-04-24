@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Bosnia 2026-27 - Complete Guide for Indian Students";
 export const metaDescription =
-  "Planning MBBS in Bosnia 2026-27? Explore NMC-approved universities, fees in INR, NEET eligibility, admission steps, FMGE data and a full guide for Indian students.";
+  "MBBS in Bosnia 2026-27 for Indian students: NMC-approved universities, fees, NEET eligibility, FMGE context, and admissions.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

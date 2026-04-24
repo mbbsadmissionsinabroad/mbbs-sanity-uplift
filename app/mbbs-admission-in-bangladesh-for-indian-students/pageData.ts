@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Bangladesh 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Bangladesh 2026-27? Explore NMC-approved colleges, fees in INR and USD, NEET requirements, FMGE trends, admission timeline, visa process and student guidance.";
+  "MBBS in Bangladesh 2026-27 for Indian students: NMC-approved colleges, fees, NEET rules, FMGE context, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

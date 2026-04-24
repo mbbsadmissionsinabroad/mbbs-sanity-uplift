@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Hungary 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Hungary 2026-27? Compare NMC-approved universities, entrance exam planning, fees in INR and EUR, scholarship options and admission steps for Indian students.";
+  "MBBS in Hungary 2026-27 for Indian students: NMC-approved universities, entrance exams, fees, scholarships, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

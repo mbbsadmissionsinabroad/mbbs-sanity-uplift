@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Romania 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Romania 2026-27? Explore EU-recognised medical universities, fees in EUR and INR, FMGE context, NEET rules, visa steps and career pathways for Indian students.";
+  "MBBS in Romania 2026-27 for Indian students: EU-recognised universities, fees, NEET rules, visa steps, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

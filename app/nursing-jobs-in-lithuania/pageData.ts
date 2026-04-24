@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Nursing Jobs in Lithuania 2026-27 | Indian Nurses";
 export const metaDescription =
-  "Planning nursing jobs in Lithuania 2026-27? Compare the LSMU study path, direct work route, salary, EU mobility, visa steps, costs and full guidance for Indian nurses.";
+  "Nursing jobs in Lithuania 2026-27 for Indian nurses: LSMU study path, work route, salaries, EU mobility, and visa steps.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

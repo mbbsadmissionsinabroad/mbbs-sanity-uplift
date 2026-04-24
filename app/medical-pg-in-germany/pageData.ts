@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Medical PG in Germany 2026-27 - Complete Guide for Doctors";
 export const metaDescription =
-  "Medical PG in Germany 2026-27 for Indian doctors: zero tuition, EUR 4,800-EUR 5,500/month paid residency, Approbation process, FSP/KP exams, German language guide and career paths.";
+  "Medical PG in Germany 2026-27 for Indian doctors: zero tuition, paid residency, Approbation, FSP/KP exams, and career guidance.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

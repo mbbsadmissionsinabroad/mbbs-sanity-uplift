@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Medical PG in Europe 2026-27 | Indian Doctors";
 export const metaDescription =
-  "Medical PG in Europe 2026-27: Germany, Ireland, Netherlands, Czech Republic and more. Compare zero tuition, paid residency, salary data, EU recognition, language, and the full doctor pathway.";
+  "Medical PG in Europe 2026-27 for Indian doctors: compare paid residency, recognition, language, and pathway fit across top destinations.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

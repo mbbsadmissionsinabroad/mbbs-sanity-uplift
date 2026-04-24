@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Nepal 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Nepal 2026-27? Compare fees, FMGE context, MEC counselling, no-visa access, NMC-approved colleges and admission steps for Indian students.";
+  "MBBS in Nepal 2026-27 for Indian students: fees, FMGE context, MEC counselling, NMC-approved colleges, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

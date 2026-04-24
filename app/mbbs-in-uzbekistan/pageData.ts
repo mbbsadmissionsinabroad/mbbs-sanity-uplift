@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Uzbekistan 2026-27 - Complete Guide for Indians";
 export const metaDescription =
-  "Planning MBBS in Uzbekistan 2026-27? Get NMC-approved universities, fees from Rs 18L, FMGE 47.83% pass rate, NEET rules, admission timeline and a full guide.";
+  "MBBS in Uzbekistan 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, NEET rules, and admissions.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

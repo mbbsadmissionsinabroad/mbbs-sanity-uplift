@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Lithuania 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Lithuania 2026-27? Compare NMC-approved EU universities, fees in INR and EUR, IELTS and entrance exam requirements, FMGE context and admission steps for Indian students.";
+  "MBBS in Lithuania 2026-27 for Indian students: NMC-approved EU universities, fees, IELTS, entrance exams, and admissions.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

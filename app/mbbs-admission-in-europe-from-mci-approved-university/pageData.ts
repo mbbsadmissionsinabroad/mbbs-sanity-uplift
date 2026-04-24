@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Europe 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Europe 2026-27? Compare European countries, NMC-relevant universities, fees in INR, FMGE context, scholarships, visa steps and India-return planning for Indian students.";
+  "MBBS in Europe 2026-27 for Indian students: compare countries, NMC-relevant universities, fees, visas, and India-return planning.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Austria 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Austria 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Austria 2026-27? Compare MedAT, German-language requirements, public and private fees, NMC relevance and admission steps for Indian students.";
+  "MBBS in Austria 2026-27 for Indian students: MedAT, German-language requirements, fees, and admission steps.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";

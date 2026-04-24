@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Malaysia 2026-27 | Indian Students";
 export const metaDescription =
-  "Planning MBBS in Malaysia 2026-27? Top NMC-approved universities, fees in INR, NEET rules, FMGE 28.91% pass rate, admission timeline and a full guide for Indian students.";
+  "MBBS in Malaysia 2026-27 for Indian students: NMC-approved universities, fees, NEET rules, FMGE context, and admissions.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

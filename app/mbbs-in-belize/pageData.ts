@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS Admission in Belize 2026-27 - Complete Indian Guide";
 export const metaDescription =
-  "Planning MBBS in Belize 2026-27? Read NMC blacklisting warnings, FMGE 23.58% pass rate, fees in INR, university status, visa process and a full Indian guide.";
+  "MBBS in Belize 2026-27 for Indian students: NMC warning context, FMGE trends, fees, university status, and admission guidance.";
 
 export const lastUpdated = "March 25, 2026";
 export const advisoryReferenceDate = "May 19, 2025";

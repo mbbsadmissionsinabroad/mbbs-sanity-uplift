@@ -4,7 +4,7 @@ export const pageTitle =
   "MBBS Admission in Spain 2026-27 for Indian Students - Complete Guide";
 export const metaTitle = "MBBS Admission in Spain 2026-27 - Complete Guide";
 export const metaDescription =
-  "Planning MBBS in Spain 2026-27? Compare public vs private medicine fees, Spanish vs English-medium options, EU practice rights, MIR pathway and India-return relevance.";
+  "MBBS in Spain 2026-27 for Indian students: public vs private fees, language options, EU pathways, and admission guidance.";
 
 export const lastUpdated = "March 27, 2026";
 export const whatsappNumber = "+918147030030";

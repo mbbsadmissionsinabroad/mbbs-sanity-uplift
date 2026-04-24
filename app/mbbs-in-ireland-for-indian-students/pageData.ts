@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "MBBS in Ireland 2026-27 - Complete Guide for Indian Students";
 export const metaDescription =
-  "Planning MBBS in Ireland 2026-27? Explore MB BCh BAO fees, NMC-approved universities, NEET rules, IELTS, FMGE data, EU practice rights and a full guide for Indian students.";
+  "MBBS in Ireland 2026-27 for Indian students: MB BCh BAO fees, NMC-approved universities, IELTS, and admission guidance.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =

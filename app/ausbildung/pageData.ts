@@ -5,7 +5,7 @@ export const pageTitle =
 export const metaTitle =
   "Ausbildung in Germany 2026 | Indian Guide";
 export const metaDescription =
-  "Planning Ausbildung in Germany in 2026? Explore zero tuition vocational training, stipend, top courses, eligibility, visa steps, PR pathway and career options for Indian students.";
+  "Ausbildung in Germany 2026 for Indian students: zero-tuition vocational training, stipend, eligibility, visa steps, and careers.";
 
 export const lastUpdated = "March 31, 2026";
 export const eurToInrNote = "EUR 1 approx. Rs 107 based on March 2026 reference-rate context; rounded for readability.";
