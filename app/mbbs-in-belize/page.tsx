@@ -199,9 +199,9 @@ export default function BelizePage() {
       <section id="nmc-advisory" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <div className="rounded-[32px] border border-red-200 bg-[linear-gradient(180deg,#fff1f2_0%,#fff7ed_100%)] p-8 shadow-[0_20px_60px_rgba(127,29,29,0.10)]">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-700">Critical Warning</p>
-          <h3 className="mt-3 text-3xl font-bold text-slate-950">
+          <h2 className="mt-3 text-3xl font-bold text-slate-950">
             Read the India-return risk before everything else
-          </h3>
+          </h2>
           <p className="mt-4 max-w-4xl text-base leading-8 text-slate-700">
             Belize can no longer be treated as a routine India-return MBBS option. Current India-focused
             reporting references an NMC advisory dated <strong>{advisoryReferenceDate}</strong> that publicly
@@ -215,7 +215,7 @@ export default function BelizePage() {
       </section>
 
       <section id="quick-summary" className="mx-auto max-w-7xl px-4 py-6 lg:px-8">
-        <SectionHeading level="h2" eyebrow="Quick Summary" title="A fast Belize snapshot before you go deeper" />
+        <SectionHeading eyebrow="Quick Summary" title="A fast Belize snapshot before you go deeper" />
         <div className="mt-10 grid gap-5 lg:grid-cols-5">
           {quickSummary.map((item) => (
             <article key={item.feature} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
