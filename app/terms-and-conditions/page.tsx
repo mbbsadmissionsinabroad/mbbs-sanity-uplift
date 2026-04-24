@@ -162,11 +162,14 @@ export default function TermsAndConditionsPage() {
 
       <section className="mx-auto max-w-5xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="space-y-10 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-10">
+          <h2 className="text-2xl font-semibold text-slate-900">
+            Terms Sections
+          </h2>
           {sections.map((section) => (
             <section key={section.title} className="space-y-4">
-              <h2 className="text-2xl font-semibold text-slate-900">
+              <h3 className="text-2xl font-semibold text-slate-900">
                 {section.title}
-              </h2>
+              </h3>
               {section.body.map((paragraph, index) => (
                 <p
                   key={`${section.title}-${index}`}
@@ -179,9 +182,9 @@ export default function TermsAndConditionsPage() {
           ))}
 
           <section className="space-y-4">
-            <h2 className="text-2xl font-semibold text-slate-900">
+            <h3 className="text-2xl font-semibold text-slate-900">
               Contact Us
-            </h2>
+            </h3>
             <p className="text-sm leading-7 text-slate-700 sm:text-base">
               Don&apos;t hesitate to contact us if you have any questions.
             </p>

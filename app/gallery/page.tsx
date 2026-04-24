@@ -42,9 +42,9 @@ export default function GalleryPage() {
                 />
               </div>
               <div className="p-5">
-                <h2 className="text-lg font-semibold text-slate-900">
+                <h3 className="text-lg font-semibold text-slate-900">
                   {item.title}
-                </h2>
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-slate-600">
                   Student-focused counseling moments, study-abroad guidance,
                   and visual references from the site.

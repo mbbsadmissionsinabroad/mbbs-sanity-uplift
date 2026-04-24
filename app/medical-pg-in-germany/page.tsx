@@ -56,21 +56,24 @@ function SectionHeading({
   title,
   description,
   theme = "light",
+  level = "h3",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   theme?: "light" | "dark";
+  level?: "h2" | "h3";
 }) {
   const dark = theme === "dark";
+  const HeadingTag = level;
   return (
     <div className="max-w-3xl">
       <p className={`text-sm font-semibold uppercase tracking-[0.3em] ${dark ? "text-blue-300" : "text-blue-700"}`}>
         {eyebrow}
       </p>
-      <h2 className={`mt-3 text-3xl font-bold tracking-tight md:text-4xl ${dark ? "text-white" : "text-slate-900"}`}>
+      <HeadingTag className={`mt-3 text-3xl font-bold tracking-tight md:text-4xl ${dark ? "text-white" : "text-slate-900"}`}>
         {title}
-      </h2>
+      </HeadingTag>
       {description ? (
         <p className={`mt-4 text-base leading-7 md:text-lg ${dark ? "text-slate-300" : "text-slate-600"}`}>
           {description}
@@ -176,7 +179,7 @@ export default function MedicalPgInGermanyPage() {
       </section>
 
       <section id="quick-summary" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <SectionHeading eyebrow="Quick Summary" title="The Germany PG snapshot doctors should understand first" />
+        <SectionHeading level="h2" eyebrow="Quick Summary" title="The Germany PG snapshot doctors should understand first" />
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {quickSummary.map((item) => (
             <article key={item.detail} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
@@ -390,4 +393,3 @@ export default function MedicalPgInGermanyPage() {
     </main>
   );
 }
-

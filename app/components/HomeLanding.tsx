@@ -171,19 +171,22 @@ function SectionIntro({
   eyebrow,
   title,
   body,
+  level = "h3",
 }: {
   eyebrow: string;
   title: string;
   body: string;
+  level?: "h2" | "h3";
 }) {
+  const HeadingTag = level;
   return (
     <div className="mx-auto max-w-3xl text-center">
       <p className="text-xs font-semibold uppercase tracking-[0.28em] text-sky-700">
         {eyebrow}
       </p>
-      <h2 className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
+      <HeadingTag className="mt-4 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl">
         {title}
-      </h2>
+      </HeadingTag>
       <p className="mt-4 text-base leading-7 text-slate-600">{body}</p>
     </div>
   );
@@ -377,9 +380,9 @@ export default function HomeLanding() {
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
                   Homepage upgrade
                 </p>
-                <h2 className="mt-3 text-xl font-bold text-slate-950">
+                <h3 className="mt-3 text-xl font-bold text-slate-950">
                   {item.title}
-                </h2>
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-600">
                   {item.body}
                 </p>
@@ -394,6 +397,7 @@ export default function HomeLanding() {
           eyebrow="Why Students Choose Us"
           title="The support stays practical from first enquiry to departure"
           body="The previous homepage talked about counselling, visa support, documentation, and affordable options. This version keeps those promises and makes them easier to understand at a glance."
+          level="h2"
         />
 
         <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -424,6 +428,7 @@ export default function HomeLanding() {
             eyebrow="How It Works"
             title="A clearer path from confusion to campus"
             body="We turned the old service list into a more usable flow so families can see what happens next instead of reading broad promises."
+            level="h3"
           />
 
           <div className="mt-12 grid gap-5 lg:grid-cols-4">
@@ -458,6 +463,7 @@ export default function HomeLanding() {
           eyebrow="Featured Destinations"
           title="Start with the countries and pathways families ask about most"
           body="Each card below takes students directly to a destination or career page, so the homepage becomes a better launchpad instead of a dead-end brochure."
+          level="h3"
         />
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -509,6 +515,7 @@ export default function HomeLanding() {
             eyebrow="Visual Story"
             title="More atmosphere, more confidence, and a stronger sense of life beyond the brochure"
             body="The old homepage had useful information but not much visual momentum. This gallery gives the page more depth while keeping the subject focused on international education."
+            level="h3"
           />
 
           <div className="mt-12 grid gap-4 md:grid-cols-12 md:grid-rows-2">

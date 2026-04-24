@@ -56,13 +56,16 @@ function SectionHeading({
   title,
   description,
   theme = "light",
+  level = "h3",
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   theme?: "light" | "dark";
+  level?: "h2" | "h3";
 }) {
   const dark = theme === "dark";
+  const HeadingTag = level;
   return (
     <div className="max-w-3xl">
       <p
@@ -70,11 +73,11 @@ function SectionHeading({
       >
         {eyebrow}
       </p>
-      <h2
+      <HeadingTag
         className={`mt-3 text-3xl font-bold tracking-tight md:text-4xl ${dark ? "text-white" : "text-slate-900"}`}
       >
         {title}
-      </h2>
+      </HeadingTag>
       {description ? (
         <p
           className={`mt-4 text-base leading-7 md:text-lg ${dark ? "text-slate-300" : "text-slate-600"}`}
@@ -652,4 +655,3 @@ export default function LithuaniaPage() {
     </main>
   );
 }
-
