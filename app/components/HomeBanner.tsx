@@ -143,7 +143,7 @@ export default function HomeBanner() {
         <div className="rounded-[2rem] border border-white/10 bg-white/95 p-5 text-slate-900 shadow-2xl shadow-black/20">
           <div className="overflow-hidden rounded-[1.5rem]">
             <Image
-              src="/assests/home-page-banner-2.png"
+              src="/assests/home-page-banner-2.webp"
               alt="MBBS abroad student consultation"
               width={1200}
               height={800}

@@ -386,7 +386,7 @@ export const galleryImages = [
     title: "Guided admissions support",
   },
   {
-    src: "/assests/home-page-banner-2.png",
+    src: "/assests/home-page-banner-2.webp",
     alt: "MBBS abroad banner showing student support",
     title: "Student-first counseling",
   },
