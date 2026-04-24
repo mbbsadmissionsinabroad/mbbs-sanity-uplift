@@ -141,7 +141,7 @@ export default function TermsAndConditionsPage() {
             Terms & Conditions
           </p>
           <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-            VST NEW-LYF PRARAMBHA PVT. LTD
+            Terms and Conditions for MBBS Admissions in Abroad
           </h1>
           <p className="mt-4 text-base leading-7 text-slate-600">
             Updated at: April 6, 2026
