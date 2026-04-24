@@ -60,6 +60,20 @@ const page = () => {
             post becomes part of a clearer decision-making process instead of a
             disconnected read.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            We recommend using the blog alongside the core country and service
+            pages. Read a destination overview first, then use related blog
+            posts to dig deeper into fees, recognition, exams, visas,
+            internships, language preparation, and post-study career planning.
+            This approach gives students a more complete picture before they
+            speak with a counsellor or submit an enquiry.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            As the site grows, this section will continue to support students
+            who want sharper comparisons, more transparent guidance, and a
+            better understanding of what studying or working abroad actually
+            involves beyond headline promises.
+          </p>
         </div>
       </div>
     </>
