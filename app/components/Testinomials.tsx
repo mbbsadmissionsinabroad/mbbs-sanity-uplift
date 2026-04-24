@@ -20,9 +20,9 @@ export default function Testinomials() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
               Student Stories
             </p>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h3 className="mt-3 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               What our students say
-            </h2>
+            </h3>
           </div>
           <p className="max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
             A cleaner page structure makes it easier to compare countries, read

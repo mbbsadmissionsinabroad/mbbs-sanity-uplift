@@ -17,9 +17,9 @@ export default function Footer() {
           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-blue-700">
             Quick Links
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h3 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Everything important in one place
-          </h2>
+          </h3>
           <p className="max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
             Browse our core MBBS abroad pages, student resources, and contact
             options without searching through the whole site.
