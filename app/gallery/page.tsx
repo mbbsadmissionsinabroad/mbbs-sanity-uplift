@@ -31,6 +31,22 @@ export default function GalleryPage() {
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
             Recent counseling moments and student support snapshots
           </h2>
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
+            This gallery is meant to give students and parents a more grounded
+            feel for how New-Lyf presents MBBS abroad guidance, destination
+            support, counseling touchpoints, and student-first communication.
+            Instead of acting like a decorative image wall, it supports the
+            broader site experience by showing real visual context around the
+            kind of study-abroad assistance families are actually exploring.
+          </p>
+          <p className="mt-4 max-w-4xl text-sm leading-7 text-slate-600 sm:text-base">
+            You will see a mix of consultation imagery, admission-themed
+            creatives, and student journey references used across the website.
+            Together they help explain the brand style, the counseling
+            environment, and the type of overseas medical education pathways
+            the site focuses on, from MBBS admissions to nursing and Germany
+            planning routes.
+          </p>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -59,6 +75,19 @@ export default function GalleryPage() {
             </article>
           ))}
         </div>
+
+        <section className="mt-16 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+          <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
+            Why this gallery matters
+          </h3>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            For international education websites, strong visuals do more than
+            make the layout feel complete. They help students understand the
+            tone of the counseling brand, the seriousness of the service, and
+            the kind of destinations, campuses, and support moments they can
+            expect to encounter as they move deeper into the enquiry process.
+          </p>
+        </section>
       </div>
     </main>
   );

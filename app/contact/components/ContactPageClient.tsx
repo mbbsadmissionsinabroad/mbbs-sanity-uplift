@@ -245,7 +245,22 @@ export default function ContactPageClient({
               Reach our study abroad support team
             </h2>
             <p className="mb-5 leading-relaxed text-gray-600">
-              Please provide your details below:
+              Use this page when you want direct guidance on MBBS abroad,
+              medical PG pathways, nursing jobs, or German-language and
+              Ausbildung planning. Our team uses the details you share here to
+              understand your preferred course, country interest, current
+              location, and the kind of support you need next.
+            </p>
+            <p className="mb-5 leading-relaxed text-gray-600">
+              Once you submit the form, our counsellors can respond with a more
+              relevant conversation instead of a generic sales call. That means
+              clearer country suggestions, more realistic budget direction,
+              document guidance, and practical next steps based on your
+              background rather than guesswork.
+            </p>
+            <p className="mb-5 leading-relaxed text-gray-600">
+              Please provide your details below so we can route your enquiry to
+              the right admission or support specialist:
             </p>
 
             <form onSubmit={handleSubmit}>
@@ -402,6 +417,20 @@ export default function ContactPageClient({
                 Submit
               </button>
             </form>
+
+            <div className="mt-10 rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">
+                What happens after you contact us
+              </h3>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                Most enquiries move through a simple support flow. First, we
+                review your submitted details. Next, we connect you with a team
+                member who handles the relevant pathway, whether that is MBBS
+                abroad, nursing jobs, PG planning, or German training. After
+                that, you can discuss eligibility, timing, budget, documents,
+                and the most suitable country options with more confidence.
+              </p>
+            </div>
           </div>
         </div>
       </section>
