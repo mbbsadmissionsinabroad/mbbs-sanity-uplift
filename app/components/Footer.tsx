@@ -83,7 +83,7 @@ export default function Footer() {
             <a
               href="https://www.instagram.com/mbbsadmissionsinabroad/"
               target="_blank"
-              rel="noreferrer"
+              rel="nofollow noopener noreferrer external"
               className="text-sm font-medium text-slate-700 transition hover:text-blue-800"
             >
               @mbbsadmissionsinabroad

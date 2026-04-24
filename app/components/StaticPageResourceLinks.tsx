@@ -34,7 +34,7 @@ function LinkCard({ link, external = false }: { link: ResourceLink; external?: b
       <a
         href={link.href}
         target="_blank"
-        rel="noreferrer"
+        rel="nofollow noopener noreferrer external"
         className="rounded-[24px] border border-slate-200 bg-white p-5 text-sm font-medium text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-900"
       >
         {link.label}
