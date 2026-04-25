@@ -413,7 +413,7 @@ function LeadForm({
           />
         </div>
 
-        <FormField id={`${formIdPrefix}-email`} label="Email ID">
+        <FormField id={`${formIdPrefix}-email`} label="Email ID" required>
           <input
             id={`${formIdPrefix}-email`}
             name="email"
@@ -421,7 +421,8 @@ function LeadForm({
             value={formData.email}
             onChange={onInputChange}
             className={inputClassName}
-            placeholder="Optional, but useful for sending details"
+            placeholder="Enter your email address"
+            required
           />
         </FormField>
 
@@ -675,8 +676,38 @@ export default function LandingPageClient() {
   };
 
   const submitLead = async (source: string) => {
+    if (!formData.fullName.trim()) {
+      toast.error("Please enter your full name.");
+      return;
+    }
+
+    if (!formData.mobile.trim()) {
+      toast.error("Please enter your mobile number.");
+      return;
+    }
+
+    if (!formData.sameAsMobile && !formData.whatsapp.trim()) {
+      toast.error("Please enter your WhatsApp number.");
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+
+    if (!formData.city.trim()) {
+      toast.error("Please enter your city.");
+      return;
+    }
+
     if (!formData.neetStatus) {
       toast.error("Please select your NEET status.");
+      return;
+    }
+
+    if (!formData.neetScoreRange) {
+      toast.error("Please select your NEET score range.");
       return;
     }
 

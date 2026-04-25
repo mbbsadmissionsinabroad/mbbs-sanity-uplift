@@ -503,6 +503,26 @@ export default function LandingPageClient() {
   };
 
   const submitLead = async (source: string) => {
+    if (!formData.fullName.trim()) {
+      toast.error("Please enter your full name.");
+      return;
+    }
+
+    if (!formData.phone.trim()) {
+      toast.error("Please enter your phone number.");
+      return;
+    }
+
+    if (!formData.email.trim()) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+
+    if (!formData.preferredDestination) {
+      toast.error("Please choose your preferred destination.");
+      return;
+    }
+
     if (!apiUrl || !accessToken) {
       toast.error(
         "Lead form is not configured yet. Please add the public API environment variables."
