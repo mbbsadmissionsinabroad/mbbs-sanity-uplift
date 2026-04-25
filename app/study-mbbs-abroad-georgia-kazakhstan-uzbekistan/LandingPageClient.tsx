@@ -4,9 +4,8 @@ import type {
   ChangeEvent,
   FormEvent,
   ReactNode,
-  RefObject,
 } from "react";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight,
@@ -17,6 +16,7 @@ import {
   PlayCircle,
   ShieldCheck,
   Stethoscope,
+  X,
 } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -59,6 +59,11 @@ interface VideoStory {
   title: string;
   videoId: string;
   caption: string;
+}
+
+interface ConsultationModalState {
+  source: string;
+  ctaLabel: string;
 }
 
 const BRAND_NAME = "New-Lyf";
@@ -170,12 +175,6 @@ const initialFormData: LeadFormData = {
   email: "",
   preferredDestination: "",
 };
-
-function scrollToElement(ref: RefObject<HTMLElement>) {
-  if (!ref.current) return;
-  const top = ref.current.getBoundingClientRect().top + window.scrollY - 112;
-  window.scrollTo({ top, behavior: "smooth" });
-}
 
 async function postLandingEvent(payload: LandingEventPayload) {
   const response = await fetch("/api/landing-events", {
@@ -385,14 +384,99 @@ function LeadForm({
   );
 }
 
+function ConsultationModal({
+  formData,
+  isSubmitting,
+  onClose,
+  onInputChange,
+  onSubmit,
+  triggerLabel,
+}: {
+  formData: LeadFormData;
+  isSubmitting: boolean;
+  onClose: () => void;
+  onInputChange: (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
+  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  triggerLabel: string;
+}) {
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consultation-modal-title"
+    >
+      <div
+        className="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[32px] border border-white/20 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.28)] sm:p-8"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
+          aria-label="Close consultation form"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+          Free consultation
+        </p>
+        <h2
+          id="consultation-modal-title"
+          className="mt-3 max-w-xl text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
+        >
+          Get your free, personalized MBBS consultation today
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-slate-600">
+          You clicked <span className="font-semibold text-slate-950">{triggerLabel}</span>.
+          Fill this same form here and a New-Lyf expert will guide you on
+          destination fit, costs, and next steps.
+        </p>
+
+        <div className="mt-6">
+          <LeadForm
+            formIdPrefix="consultation-modal"
+            formData={formData}
+            isSubmitting={isSubmitting}
+            onInputChange={onInputChange}
+            onSubmit={onSubmit}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function LandingPageClient() {
   const router = useRouter();
-  const heroFormRef = useRef<HTMLElement>(null);
-  const bottomCtaRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState<LeadFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeHeroVideo, setActiveHeroVideo] = useState(false);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const [consultationModal, setConsultationModal] =
+    useState<ConsultationModalState | null>(null);
 
   const apiUrl = process.env.NEXT_PUBLIC_LEAD_URL ?? "";
   const accessToken = process.env.NEXT_PUBLIC_LEAD_SECRET_KEY ?? "";
@@ -405,6 +489,17 @@ export default function LandingPageClient() {
       ...previous,
       [name]: value,
     }));
+  };
+
+  const openConsultationModal = (source: string, ctaLabel: string) => {
+    trackLandingEvent({
+      eventType: "cta_click",
+      page: landingPagePath,
+      source,
+      ctaLabel,
+      ctaDestination: "consultation-modal",
+    });
+    setConsultationModal({ source, ctaLabel });
   };
 
   const submitLead = async (source: string) => {
@@ -495,21 +590,36 @@ export default function LandingPageClient() {
     await submitLead("New-Lyf MBBS Abroad Landing Page - Bottom Form");
   };
 
+  const handleModalSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    await submitLead(
+      consultationModal?.source
+        ? `${consultationModal.source} - Modal Form`
+        : "New-Lyf MBBS Abroad Landing Page - Consultation Modal Form"
+    );
+    setConsultationModal(null);
+  };
+
   return (
     <div className="bg-[linear-gradient(180deg,#f7fbff_0%,#ffffff_24%,#fffdf8_100%)] text-slate-900">
+      {consultationModal ? (
+        <ConsultationModal
+          formData={formData}
+          isSubmitting={isSubmitting}
+          onClose={() => setConsultationModal(null)}
+          onInputChange={handleInputChange}
+          onSubmit={handleModalSubmit}
+          triggerLabel={consultationModal.ctaLabel}
+        />
+      ) : null}
+
       <button
         type="button"
         onClick={() =>
-          {
-            trackLandingEvent({
-              eventType: "cta_click",
-              page: landingPagePath,
-              source: "New-Lyf MBBS Abroad Landing Page - Floating Quick Form CTA",
-              ctaLabel: "Book Free Consultation",
-              ctaDestination: "#hero-form",
-            });
-            scrollToElement(heroFormRef);
-          }
+          openConsultationModal(
+            "New-Lyf MBBS Abroad Landing Page - Floating Quick Form CTA",
+            "Book Free Consultation"
+          )
         }
         className="fixed bottom-5 right-5 z-40 inline-flex items-center gap-2 rounded-full bg-orange-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-orange-300"
       >
@@ -601,16 +711,12 @@ export default function LandingPageClient() {
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    eventType: "cta_click",
-                    page: landingPagePath,
-                    source: "New-Lyf MBBS Abroad Landing Page - Hero CTA",
-                    ctaLabel: "Submit & Get Free Expert Counseling",
-                    ctaDestination: "#hero-form",
-                  });
-                  scrollToElement(heroFormRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "New-Lyf MBBS Abroad Landing Page - Hero CTA",
+                    "Get Free Expert Counseling"
+                  )
+                }
                 className="inline-flex items-center gap-2 rounded-full bg-orange-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-300"
               >
                 Get Free Expert Counseling
@@ -618,16 +724,12 @@ export default function LandingPageClient() {
               </button>
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    eventType: "cta_click",
-                    page: landingPagePath,
-                    source: "New-Lyf MBBS Abroad Landing Page - Hero Quick Form CTA",
-                    ctaLabel: "Book Free Consultation",
-                    ctaDestination: "#hero-form",
-                  });
-                  scrollToElement(heroFormRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "New-Lyf MBBS Abroad Landing Page - Hero Quick Form CTA",
+                    "Book Free Consultation"
+                  )
+                }
                 className="text-sm font-semibold text-sky-100 underline decoration-sky-200/70 underline-offset-4 transition hover:text-white"
               >
                 Book Free Consultation
@@ -637,7 +739,6 @@ export default function LandingPageClient() {
 
           <aside
             id="hero-form"
-            ref={heroFormRef}
             className="rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-8"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
@@ -842,7 +943,6 @@ export default function LandingPageClient() {
       </section>
 
       <section
-        ref={bottomCtaRef}
         className="bg-[linear-gradient(180deg,#ffffff_0%,#eef4ff_100%)]"
       >
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 lg:grid-cols-[0.94fr_1.06fr] lg:px-8">
@@ -866,17 +966,12 @@ export default function LandingPageClient() {
               </p>
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    eventType: "cta_click",
-                    page: landingPagePath,
-                    source:
-                      "New-Lyf MBBS Abroad Landing Page - Bottom CTA Button",
-                    ctaLabel: "Download Free Brochure & Check Your Eligibility Now",
-                    ctaDestination: "#bottom-form",
-                  });
-                  scrollToElement(bottomCtaRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "New-Lyf MBBS Abroad Landing Page - Bottom CTA Button",
+                    "Download Free Brochure & Check Your Eligibility Now"
+                  )
+                }
                 className="mt-5 inline-flex items-center gap-2 rounded-full bg-orange-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-300"
               >
                 Download Free Brochure & Check Your Eligibility Now
