@@ -1,7 +1,7 @@
 "use client";
 
-import type { ChangeEvent, FormEvent, ReactNode, RefObject } from "react";
-import { useMemo, useRef, useState } from "react";
+import type { ChangeEvent, FormEvent, ReactNode } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight,
@@ -10,6 +10,7 @@ import {
   PhoneCall,
   PlayCircle,
   ShieldCheck,
+  X,
 } from "lucide-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -64,6 +65,11 @@ interface LandingEventPayload {
   neetStatus?: string;
   neetScoreRange?: string;
   message?: string;
+}
+
+interface ConsultationModalState {
+  source: string;
+  ctaLabel: string;
 }
 
 const BRAND_NAME = "New-Lyf";
@@ -211,12 +217,6 @@ const initialFormData: LeadFormData = {
   neetScoreRange: "",
   sameAsMobile: true,
 };
-
-function scrollToElement(ref: RefObject<HTMLElement>) {
-  if (!ref.current) return;
-  const top = ref.current.getBoundingClientRect().top + window.scrollY - 112;
-  window.scrollTo({ top, behavior: "smooth" });
-}
 
 async function postLandingEvent(payload: LandingEventPayload) {
   await fetch("/api/landing-events", {
@@ -503,14 +503,106 @@ function LeadForm({
   );
 }
 
+function ConsultationModal({
+  formData,
+  isSubmitting,
+  onClose,
+  onInputChange,
+  onCheckboxChange,
+  onStatusChange,
+  onSubmit,
+  triggerLabel,
+}: {
+  formData: LeadFormData;
+  isSubmitting: boolean;
+  onClose: () => void;
+  onInputChange: (
+    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
+  onCheckboxChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onStatusChange: (value: NeetStatus) => void;
+  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+  triggerLabel: string;
+}) {
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[70] flex items-center justify-center bg-slate-950/70 px-4 py-6 backdrop-blur-sm"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="consultation-modal-title"
+    >
+      <div
+        className="relative max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-[32px] border border-white/20 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.28)] sm:p-8"
+        onClick={(event) => event.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-slate-300 hover:text-slate-950"
+          aria-label="Close consultation form"
+        >
+          <X className="h-5 w-5" />
+        </button>
+
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
+          Free consultation
+        </p>
+        <h2
+          id="consultation-modal-title"
+          className="mt-3 max-w-2xl text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
+        >
+          Get your free MBBS abroad counselling call
+        </h2>
+        <p className="mt-3 text-sm leading-6 text-slate-600">
+          You clicked{" "}
+          <span className="font-semibold text-slate-950">{triggerLabel}</span>.
+          Fill this same form here and a {BRAND_NAME} counsellor will call or
+          WhatsApp you after reviewing your score range and preferences.
+        </p>
+
+        <div className="mt-6">
+          <LeadForm
+            formIdPrefix="consultation-modal"
+            formData={formData}
+            isSubmitting={isSubmitting}
+            onInputChange={onInputChange}
+            onCheckboxChange={onCheckboxChange}
+            onStatusChange={onStatusChange}
+            onSubmit={onSubmit}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function LandingPageClient() {
   const router = useRouter();
-  const topFormRef = useRef<HTMLElement>(null);
-  const bottomFormRef = useRef<HTMLElement>(null);
   const [formData, setFormData] = useState<LeadFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeHeroVideo, setActiveHeroVideo] = useState(false);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const [consultationModal, setConsultationModal] =
+    useState<ConsultationModalState | null>(null);
 
   const apiUrl = process.env.NEXT_PUBLIC_LEAD_URL ?? "";
   const accessToken = process.env.NEXT_PUBLIC_LEAD_SECRET_KEY ?? "";
@@ -569,6 +661,17 @@ export default function LandingPageClient() {
     void postLandingEvent(payload).catch((error) => {
       console.error("Landing event tracking failed", error);
     });
+  };
+
+  const openConsultationModal = (source: string, ctaLabel: string) => {
+    trackLandingEvent({
+      type: "cta_click",
+      page: landingPagePath,
+      source,
+      ctaLabel,
+      ctaDestination: "consultation-modal",
+    });
+    setConsultationModal({ source, ctaLabel });
   };
 
   const submitLead = async (source: string) => {
@@ -674,8 +777,30 @@ export default function LandingPageClient() {
     await submitLead("NEET Qualifying Score Landing Page - Bottom Form");
   };
 
+  const handleModalSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    await submitLead(
+      consultationModal?.source
+        ? `${consultationModal.source} - Modal Form`
+        : "NEET Qualifying Score Landing Page - Consultation Modal Form"
+    );
+    setConsultationModal(null);
+  };
+
   return (
     <div className="bg-[linear-gradient(180deg,#fcfbf7_0%,#fffdf8_28%,#f8fbff_100%)] text-slate-900">
+      {consultationModal ? (
+        <ConsultationModal
+          formData={formData}
+          isSubmitting={isSubmitting}
+          onClose={() => setConsultationModal(null)}
+          onInputChange={handleInputChange}
+          onCheckboxChange={handleCheckboxChange}
+          onStatusChange={handleStatusChange}
+          onSubmit={handleModalSubmit}
+          triggerLabel={consultationModal.ctaLabel}
+        />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -683,16 +808,12 @@ export default function LandingPageClient() {
 
       <button
         type="button"
-        onClick={() => {
-          trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Floating Quick Form CTA",
-                    ctaLabel: "Book Free Consultation",
-                    ctaDestination: "#lead-form",
-                  });
-                  scrollToElement(topFormRef);
-        }}
+        onClick={() =>
+          openConsultationModal(
+            "NEET Landing Page - Floating Quick Form CTA",
+            "Book Free Consultation"
+          )
+        }
         className="fixed bottom-4 right-4 z-40 inline-flex max-w-[calc(100vw-1.5rem)] items-center gap-2 rounded-full bg-orange-400 px-4 py-3 text-xs font-semibold text-slate-950 shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:bg-orange-300 sm:bottom-5 sm:right-5 sm:px-5 sm:text-sm"
       >
         <ArrowRight className="h-4 w-4" />
@@ -796,16 +917,12 @@ export default function LandingPageClient() {
             <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Hero Primary CTA",
-                    ctaLabel: "Find My Country & University",
-                    ctaDestination: "#lead-form",
-                  });
-                  scrollToElement(topFormRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "NEET Landing Page - Hero Primary CTA",
+                    "Find My Country & University"
+                  )
+                }
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-orange-300 sm:w-auto"
               >
                 Find My Country & University
@@ -813,16 +930,12 @@ export default function LandingPageClient() {
               </button>
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Hero Quick Form CTA",
-                    ctaLabel: "Jump to Quick Form",
-                    ctaDestination: "#lead-form",
-                  });
-                  scrollToElement(topFormRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "NEET Landing Page - Hero Quick Form CTA",
+                    "Jump to Quick Form"
+                  )
+                }
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/15 sm:w-auto"
               >
                 Jump to Quick Form
@@ -860,7 +973,6 @@ export default function LandingPageClient() {
 
           <aside
             id="lead-form"
-            ref={topFormRef}
             className="scroll-mt-32 self-start rounded-[28px] border border-white/50 bg-white p-5 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:rounded-[32px] sm:p-8"
           >
             <h2 className="text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
@@ -987,16 +1099,12 @@ export default function LandingPageClient() {
               </p>
               <button
                 type="button"
-                onClick={() => {
-                  trackLandingEvent({
-                    type: "cta_click",
-                    page: landingPagePath,
-                    source: "NEET Landing Page - Mid Page CTA",
-                    ctaLabel: "Get your free counselling call",
-                    ctaDestination: "#lead-form",
-                  });
-                  scrollToElement(topFormRef);
-                }}
+                onClick={() =>
+                  openConsultationModal(
+                    "NEET Landing Page - Mid Page CTA",
+                    "Get your free counselling call"
+                  )
+                }
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-orange-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-orange-300"
               >
                 Get your free counselling call
@@ -1246,10 +1354,7 @@ export default function LandingPageClient() {
         </div>
       </section>
 
-      <section
-        ref={bottomFormRef}
-        className="scroll-mt-32 bg-[linear-gradient(180deg,#081226_0%,#0f2147_100%)]"
-      >
+      <section className="scroll-mt-32 bg-[linear-gradient(180deg,#081226_0%,#0f2147_100%)]">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
           <div className="text-white">
             <h2 className="text-3xl font-black tracking-tight sm:text-5xl">
