@@ -166,6 +166,39 @@ export default function StaticPageResourceLinks({
               ))}
             </div>
           </div>
+          <div className="mt-6 rounded-[24px] border border-emerald-100 bg-emerald-50 p-5">
+            <h4 className="text-lg font-semibold text-slate-900">
+              Quick family recap
+            </h4>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                "This page is a filter.",
+                "Use it to rule paths in or out.",
+                "Start with fee.",
+                "Then check the course length.",
+                "Next, check the test path.",
+                "Then check the visa steps.",
+                "Look at food and rent too.",
+                "Ask if the city feels safe.",
+                "Ask if the class is fully in English.",
+                "Ask what happens after the degree.",
+                "Do not trust hype alone.",
+                "Trust clear facts and clear costs.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+            <div className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              <p>Good pages make the next step easy.</p>
+              <p>Hard pages waste time and create doubt.</p>
+              <p>Use this guide to get to a simple yes or no.</p>
+            </div>
+          </div>
         </div>
 
         <div className="max-w-3xl">
