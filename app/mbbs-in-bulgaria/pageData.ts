@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-admission-in-bulgaria-for-indian-students`;
 export const pageTitle =
-  "MBBS Admission in Bulgaria 2026-27 for Indian Students - Complete Guide";
+  "MBBS in Bulgaria 2026-27 for Indian Students";
 export const metaTitle =
   "MBBS Admission in Bulgaria 2026-27 - Complete Guide";
 export const metaDescription =

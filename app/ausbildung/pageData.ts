@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/ausbildung`;
 export const pageTitle =
-  "Ausbildung in Germany 2026 Guide for Indian Students - Earn While You Learn";
+  "Ausbildung in Germany 2026 for Indian Students";
 export const metaTitle =
   "Ausbildung in Germany 2026 | Indian Guide";
 export const metaDescription =

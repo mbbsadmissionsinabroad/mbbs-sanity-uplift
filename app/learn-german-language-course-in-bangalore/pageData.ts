@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/learn-german-language-course-in-bangalore`;
 export const pageTitle =
-  "German Language Course in Bangalore 2026: Complete Guide (A1 to C2, Fees, Syllabus and Career)";
+  "German Language Course in Bangalore 2026: A1 to C2 Guide";
 export const metaTitle =
   "German Course in Bangalore 2026 | A1-C2";
 export const metaDescription =

@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-philippines`;
 export const pageTitle =
-  "MBBS Admission in Philippines 2026-27 for Indian Students - Complete Guide";
+  "MBBS in Philippines 2026-27 for Indian Students";
 export const metaTitle =
   "MBBS Admission in Philippines 2026-27 - Complete Guide";
 export const metaDescription =

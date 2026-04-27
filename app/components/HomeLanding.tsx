@@ -252,7 +252,7 @@ export default function HomeLanding() {
               Study Abroad Guidance
             </div>
             <h1 className="mt-6 max-w-3xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Study MBBS abroad with more clarity, stronger guidance, and a homepage that finally feels worth trusting.
+              Study MBBS abroad with clarity, confidence, and trusted guidance.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
               We rebuilt the first impression around what students actually need:

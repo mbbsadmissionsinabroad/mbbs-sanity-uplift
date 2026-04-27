@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-lithuania`;
 export const pageTitle =
-  "MBBS Admission in Lithuania 2026-27 for Indian Students - Complete Guide";
+  "MBBS in Lithuania 2026-27 for Indian Students";
 export const metaTitle =
   "MBBS Admission in Lithuania 2026-27 - Complete Guide";
 export const metaDescription =

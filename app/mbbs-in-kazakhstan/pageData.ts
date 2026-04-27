@@ -1,7 +1,7 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-kazakhstan`;
 export const pageTitle =
-  "MBBS Admission in Kazakhstan 2026-27 for Indian Students - Complete Guide";
+  "MBBS in Kazakhstan 2026-27 for Indian Students";
 export const metaTitle = "MBBS Admission in Kazakhstan 2026-27 - Complete Guide";
 export const metaDescription =
   "MBBS in Kazakhstan 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, visas, and India-return value.";
