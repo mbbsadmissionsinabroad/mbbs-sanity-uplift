@@ -9,8 +9,8 @@ export type CountryLink = SiteLink & {
 
 export const mainNavLinks: SiteLink[] = [
   { title: "Home", href: "/" },
-  { title: "Nursing Jobs Abroad", href: "/contact" },
-  { title: "PG Abroad", href: "/contact" },
+  { title: "Nursing Jobs Abroad", href: "/nursing-jobs-in-abroad" },
+  { title: "PG Abroad", href: "/pg-in-abroad" },
   { title: "Ausbildung", href: "/ausbildung" },
   { title: "Learn German", href: "/learn-german-language-course-in-bangalore" },
   { title: "Blog", href: "/blog" },
@@ -258,8 +258,8 @@ export const footerLinkColumns: SiteLink[][] = [
     { title: "MBBS in Malaysia", href: "/mbbs-admission-in-malaysia-for-indian-students" },
   ],
   [
-    { title: "Nursing Jobs Abroad", href: "/contact" },
-    { title: "PG Abroad", href: "/contact" },
+    { title: "Nursing Jobs Abroad", href: "/nursing-jobs-in-abroad" },
+    { title: "PG Abroad", href: "/pg-in-abroad" },
     { title: "Ausbildung", href: "/ausbildung" },
     { title: "Contact Us", href: "/contact" },
   ],
