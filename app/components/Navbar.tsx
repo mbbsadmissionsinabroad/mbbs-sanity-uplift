@@ -78,6 +78,8 @@ function isPrimaryDesktopLink(link: SiteLink) {
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileCountriesOpen, setMobileCountriesOpen] = useState(true);
+  const [mobileNursingOpen, setMobileNursingOpen] = useState(false);
+  const [mobilePgOpen, setMobilePgOpen] = useState(false);
   const [desktopCountriesOpen, setDesktopCountriesOpen] = useState(false);
   const [desktopNursingOpen, setDesktopNursingOpen] = useState(false);
   const [desktopPgOpen, setDesktopPgOpen] = useState(false);
@@ -203,6 +205,76 @@ export default function Navbar() {
                   {mobileCountriesOpen && (
                     <div className="grid grid-cols-1 gap-2 rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
                       {mbbsAbroadCountries.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          prefetch={false}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-3 rounded-2xl border border-transparent bg-slate-50 px-3 py-3 text-xs font-medium text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                          {country.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => setMobileNursingOpen((open) => !open)}
+                    className="flex w-full items-center justify-between rounded-[28px] border border-slate-200 bg-white px-4 py-4 text-left text-xs font-semibold text-slate-800 shadow-[0_14px_35px_rgba(15,23,42,0.06)]"
+                  >
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.22em] text-blue-700">
+                        Explore
+                      </p>
+                      <p className="mt-1">Nursing Jobs Abroad</p>
+                    </div>
+                    <ChevronDownIcon
+                      className={`h-5 w-5 transition-transform ${
+                        mobileNursingOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {mobileNursingOpen && (
+                    <div className="grid grid-cols-1 gap-2 rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                      {nursingJobCountries.map((country) => (
+                        <Link
+                          key={country.href}
+                          href={country.href}
+                          prefetch={false}
+                          onClick={() => setMobileOpen(false)}
+                          className="flex items-center gap-3 rounded-2xl border border-transparent bg-slate-50 px-3 py-3 text-xs font-medium text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
+                        >
+                          <FlagIcon code={country.flagCode as keyof typeof Flags} />
+                          {country.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
+                  <button
+                    type="button"
+                    onClick={() => setMobilePgOpen((open) => !open)}
+                    className="flex w-full items-center justify-between rounded-[28px] border border-slate-200 bg-white px-4 py-4 text-left text-xs font-semibold text-slate-800 shadow-[0_14px_35px_rgba(15,23,42,0.06)]"
+                  >
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.22em] text-blue-700">
+                        Explore
+                      </p>
+                      <p className="mt-1">PG Abroad</p>
+                    </div>
+                    <ChevronDownIcon
+                      className={`h-5 w-5 transition-transform ${
+                        mobilePgOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {mobilePgOpen && (
+                    <div className="grid grid-cols-1 gap-2 rounded-[28px] border border-slate-200 bg-white p-3 shadow-[0_14px_35px_rgba(15,23,42,0.06)]">
+                      {pgAbroadCountries.map((country) => (
                         <Link
                           key={country.href}
                           href={country.href}
