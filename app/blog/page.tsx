@@ -74,6 +74,13 @@ const page = () => {
             better understanding of what studying or working abroad actually
             involves beyond headline promises.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            Families often use the blog as a second layer of research. First,
+            they visit a country or service page. Then, they use blog articles
+            to dig into fees, eligibility, recognition, deadlines, language
+            preparation, and career fit. That makes the reading process more
+            useful than browsing random articles without a clear plan.
+          </p>
         </div>
       </div>
     </>

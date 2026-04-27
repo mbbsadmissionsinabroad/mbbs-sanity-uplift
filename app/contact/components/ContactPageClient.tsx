@@ -262,6 +262,22 @@ export default function ContactPageClient({
               Please provide your details below so we can route your enquiry to
               the right admission or support specialist:
             </p>
+            <div className="mb-6 rounded-3xl border border-slate-200 bg-slate-50 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">
+                A better enquiry gives you a better reply
+              </h3>
+              <p className="mt-3 leading-relaxed text-gray-600">
+                Try to share the path you are exploring, the country you are
+                thinking about, and your present study or work stage. That
+                helps our team move faster and respond with more relevant next
+                steps instead of general advice.
+              </p>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6 text-gray-600">
+                <li>Tell us whether you want MBBS abroad, PG abroad, or nursing jobs guidance.</li>
+                <li>Tell us which country or countries you are comparing right now.</li>
+                <li>Tell us where you are based so we can route support more clearly.</li>
+              </ul>
+            </div>
 
             <form onSubmit={handleSubmit}>
               <div className="relative mb-4">

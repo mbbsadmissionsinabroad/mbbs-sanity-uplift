@@ -73,6 +73,21 @@ export default function StaticPageResourceLinks({
   const externalLinks = (externalLinksBySection[currentPage.section] ?? []).filter(
     (link) => !excludeExternalLabels.includes(link.label)
   );
+  const readingOrder = [
+    "Start with the summary so you know the route, the fee range, and the main risk points.",
+    "Move to fees, visa steps, hostel or living cost, and exam context before you compare colleges.",
+    "Use the tables to compare facts fast instead of reading every line in one sitting.",
+    "Shortlist only the pages that fit your budget, your language comfort, and your return plan.",
+    "Ask for help before paying any fee if one rule, city, university, or exam step still feels unclear.",
+  ];
+  const familyQuestions = [
+    "Does the full cost fit our family budget after tuition, hostel, food, visa, and travel?",
+    "Is the course fully in English, and what happens if the student struggles after the first year?",
+    "What is the India return path or local licensing path after the course is complete?",
+    "How safe is the city, and what daily support will the student actually get after landing?",
+    "How long can admissions, visa, and travel preparation realistically take from this point?",
+    "If two options look close, which one gives the safer long-term outcome instead of the cheapest first impression?",
+  ];
 
   return (
     <section className="bg-slate-50 py-16">
@@ -84,119 +99,59 @@ export default function StaticPageResourceLinks({
           <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
             Read this page the easy way
           </h3>
-          <div className="mt-5 grid gap-6 lg:grid-cols-2">
-            <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
-              <p>
-                Start with the quick facts. Read that part first.
-              </p>
-              <p>
-                Then check fees, visa steps, and stay cost.
-              </p>
-              <p>
-                Use the tables. They help you compare real facts.
-              </p>
-              <p>
-                Keep one goal in mind. Ask, "Can my family do this?"
-              </p>
-              <p>
-                Do not rush to the last step. Check the full path first.
-              </p>
-            </div>
-            <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
-              <p>
-                Read the good and bad points with your family.
-              </p>
-              <p>
-                A low fee is not enough. The plan must fit your life.
-              </p>
-              <p>
-                Save the pages that feel right. Drop the rest fast.
-              </p>
-              <p>
-                If one rule feels hard, ask before you pay.
-              </p>
-              <p>
-                A short check now can save time and money later.
-              </p>
-            </div>
+          <div className="mt-5 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+            <p>
+              Most students do not need every line on the page at once. They need a fast way to sort good options from weak
+              ones. Use this guide as a filter first, then go deeper only on the parts that affect fees, recognition, language,
+              exams, and long-term safety.
+            </p>
+            <p>
+              A page like this works best when you read it with one clear question in mind. Ask whether the route matches your
+              budget, your study comfort, your family support, and your return plan. If the answer is still unclear, that is a
+              sign to pause and verify facts before you move further.
+            </p>
+            <p>
+              The goal is not to read more than everyone else. The goal is to make a cleaner decision. That is why the summary,
+              tables, cost notes, and official links matter more than long sales talk or flashy claims.
+            </p>
           </div>
           <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
             <h4 className="text-lg font-semibold text-slate-900">
-              Easy checklist
+              Best reading order
             </h4>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {[
-                "Check the full fee, not just tuition.",
-                "Check if all classes are in English.",
-                "Check what test comes after the course.",
-                "Check how much rent and food will cost.",
-                "Check how long the visa steps may take.",
-                "If two paths look close, pick the safer one.",
-              ].map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
-                >
-                  {item}
-                </p>
+            <ol className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:font-semibold marker:text-sky-700">
+              {readingOrder.map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
+            </ol>
           </div>
           <div className="mt-6 rounded-[24px] border border-sky-100 bg-sky-50 p-5">
             <h4 className="text-lg font-semibold text-slate-900">
-              In plain words
+              Ask these six questions before you decide
             </h4>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {[
-                "This page helps you sort the route fast.",
-                "Read cost first. Then read risk.",
-                "Next, check the test path.",
-                "Then ask if the life there suits you.",
-                "Look at stay, food, and local travel.",
-                "Ask what help you get after you land.",
-                "See how long the course will take.",
-                "See what may slow you down later.",
-              ].map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
-                >
-                  {item}
-                </p>
+            <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-sky-700">
+              {familyQuestions.map((item) => (
+                <li key={item}>{item}</li>
               ))}
-            </div>
+            </ul>
           </div>
           <div className="mt-6 rounded-[24px] border border-emerald-100 bg-emerald-50 p-5">
             <h4 className="text-lg font-semibold text-slate-900">
               Quick family recap
             </h4>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2">
-              {[
-                "This page is a filter.",
-                "Use it to rule paths in or out.",
-                "Start with fee.",
-                "Then check the course length.",
-                "Next, check the test path.",
-                "Then check the visa steps.",
-                "Look at food and rent too.",
-                "Ask if the city feels safe.",
-                "Ask if the class is fully in English.",
-                "Ask what happens after the degree.",
-                "Do not trust hype alone.",
-                "Trust clear facts and clear costs.",
-              ].map((item) => (
-                <p
-                  key={item}
-                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
-                >
-                  {item}
-                </p>
-              ))}
-            </div>
-            <div className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
-              <p>Good pages make the next step easy.</p>
-              <p>Hard pages waste time and create doubt.</p>
-              <p>Use this guide to get to a simple yes or no.</p>
+            <div className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              <p>
+                This page is here to help you rule options in or out. Start with cost. Then check course length, language,
+                recognition, visa time, and daily life. If the route still looks strong after that, it deserves more time.
+              </p>
+              <p>
+                Do not trust hype alone. Trust clear facts, full cost visibility, and a realistic picture of what happens after
+                the degree, training, or job placement step is complete.
+              </p>
+              <p>
+                Good pages make the next step easy. Weak pages create confusion. Use this guide to get to a clear yes, a clear
+                no, or a short list worth discussing with your family.
+              </p>
             </div>
           </div>
         </div>

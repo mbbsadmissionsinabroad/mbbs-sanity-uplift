@@ -85,6 +85,37 @@ export default function NursingJobsAbroadPage() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto max-w-6xl px-6 pb-16 md:pb-24">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+            <h2 className="text-2xl font-black text-slate-900">
+              How to use this page before you choose a country
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Nursing jobs abroad can look similar at first, but the real path changes a lot from country to country. Some
+              routes depend more on language. Some depend more on licensing. Others depend on employer demand, document speed,
+              or whether you already have work experience.
+            </p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Use this section as a planning filter. Compare the country fit, the language barrier, the licensing path, and
+              the true relocation effort before you start paying for exams, translations, coaching, or paperwork.
+            </p>
+          </div>
+          <div className="rounded-[2rem] border border-blue-100 bg-blue-50 p-8">
+            <h2 className="text-2xl font-black text-slate-900">
+              Quick checks for Indian nurses
+            </h2>
+            <ul className="mt-4 space-y-3 pl-5 text-sm leading-7 text-slate-700 marker:text-blue-700">
+              <li>Check which countries want your exact qualification and experience level.</li>
+              <li>Check the target language level before you start the job search.</li>
+              <li>Check the full relocation cost, not just the salary headline.</li>
+              <li>Check what happens after arrival, registration, and adaptation steps.</li>
+              <li>Choose the route that is clearer and safer, not only the one that sounds faster.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

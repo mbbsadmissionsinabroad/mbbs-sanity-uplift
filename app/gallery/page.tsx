@@ -105,6 +105,12 @@ export default function GalleryPage() {
             trust, and fit. They also make the enquiry path feel more real and
             less abstract.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            A gallery like this also helps parents and students understand what
+            kind of guidance environment they are dealing with. Instead of
+            reading only claims, they can see the visual style, the student
+            focus, and the kind of support context presented across the site.
+          </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
               "These images show real support scenes.",
