@@ -73,16 +73,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/nursing-jobs-in-abroad",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
-        source: "/pg-in-abroad",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
         source: "/medical-pg-in-europe",
         destination: "/medical-pg-in-europe-for-indian-students",
         permanent: true,
