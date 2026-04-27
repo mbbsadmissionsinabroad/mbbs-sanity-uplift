@@ -1,282 +1,105 @@
-export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
-const EXTERNAL_DATA_URL = "https://www.mbbsadmissionsinabroad.com";
 
-function generateSiteMap(allPagesData: { slug: string; updatedAt: string }[]) {
+import { staticSeoPages } from "../data/staticSeoRegistry";
+
+export const revalidate = 3600;
+
+const SITE_URL = "https://www.mbbsadmissionsinabroad.com";
+
+type SitemapEntry = {
+  route: string;
+  changefreq?: "daily" | "weekly" | "monthly";
+  priority?: string;
+};
+
+const coreRoutes: SitemapEntry[] = [
+  { route: "/", changefreq: "weekly", priority: "1.0" },
+  { route: "/blog", changefreq: "weekly", priority: "0.8" },
+  { route: "/contact", changefreq: "monthly", priority: "0.7" },
+  { route: "/gallery", changefreq: "monthly", priority: "0.7" },
+  { route: "/privacy-policy", changefreq: "monthly", priority: "0.4" },
+  { route: "/terms-and-conditions", changefreq: "monthly", priority: "0.4" },
+  { route: "/nursing-jobs-in-abroad", changefreq: "monthly", priority: "0.7" },
+  { route: "/pg-in-abroad", changefreq: "monthly", priority: "0.7" },
+  { route: "/neet-qualifying-score-mbbs-abroad", changefreq: "weekly", priority: "0.9" },
+  {
+    route: "/study-mbbs-abroad-georgia-kazakhstan-uzbekistan",
+    changefreq: "weekly",
+    priority: "0.9",
+  },
+  { route: "/es", changefreq: "monthly", priority: "0.5" },
+  { route: "/fr", changefreq: "monthly", priority: "0.5" },
+];
+
+function escapeXml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function toAbsoluteUrl(route: string) {
+  if (route === "/") {
+    return SITE_URL;
+  }
+
+  return `${SITE_URL}${route}`;
+}
+
+function buildEntries() {
+  const registryEntries: SitemapEntry[] = staticSeoPages.map((page) => ({
+    route: page.route,
+    changefreq: "monthly",
+    priority: "0.8",
+  }));
+
+  const seen = new Set<string>();
+
+  return [...coreRoutes, ...registryEntries].filter((entry) => {
+    if (!entry.route || seen.has(entry.route)) {
+      return false;
+    }
+
+    seen.add(entry.route);
+    return true;
+  });
+}
+
+function generateSiteMap(entries: SitemapEntry[]) {
+  const lastmod = new Date().toISOString();
+
+  const urls = entries
+    .map((entry) => {
+      const loc = escapeXml(toAbsoluteUrl(entry.route));
+      const changefreq = entry.changefreq ?? "monthly";
+      const priority = entry.priority ?? "0.7";
+
+      return [
+        "  <url>",
+        `    <loc>${loc}</loc>`,
+        `    <lastmod>${lastmod}</lastmod>`,
+        `    <changefreq>${changefreq}</changefreq>`,
+        `    <priority>${priority}</priority>`,
+        "  </url>",
+      ].join("\n");
+    })
+    .join("\n");
+
   return `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>${EXTERNAL_DATA_URL}</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/blog</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/contact</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/gallery</loc>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-  <loc>${EXTERNAL_DATA_URL}/mbbs-in-armenia</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-bosnia</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-germany-for-indian-students</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-georgia</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-belize</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-in-belarus-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-azerbaijan</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-austria-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-bangladesh-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-bulgaria-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-denmark-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-europe-from-mci-approved-university</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-france</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-hungary</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-finland-from-mci-approved-universities</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-in-ireland-for-indian-students</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-italy</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-kyrgyzstan</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-kazakhstan</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-lithuania</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/krasnoyarsk-state-medical-university-russia</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-malaysia-for-indian-students</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-netherlands-for-indian-students</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-nepal-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-poland-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-philippines</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-india</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-norway-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-romania-for-indian-students</loc>
-        <lastmod>2026-03-26</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-    <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-sweden-for-indian-students</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-admission-in-spain-for-indian-students</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-uzbekistan</loc>
-        <lastmod>2026-03-25</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/mbbs-in-vietnam</loc>
-        <lastmod>2026-03-27</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    ${allPagesData
-      .map(
-        (data) => `
-    <url>
-        <loc>${EXTERNAL_DATA_URL}/${data.slug}</loc>
-        <lastmod>${data.updatedAt}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>`
-      )
-      .join("")}
-  </urlset>`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>`;
 }
 
 export async function GET() {
-  try {
-    const query = encodeURIComponent(
-      `*[_type in ["nav", "homePage", "reviews", "pages"]]`
-    );
+  const sitemap = generateSiteMap(buildEntries());
 
-    const response = await fetch(
-      `https://xz1irwuo.api.sanity.io/v2021-10-21/data/query/production?query=${query}`,
-      { cache: "no-store" }
-    );
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch data from Sanity");
-    }
-
-    const apiResult = await response.json();
-
-    const pagesData = apiResult.result
-      .filter(
-        (item: any) =>
-          item._type === "pages" &&
-          item.slug &&
-          item.slug.current &&
-          item._updatedAt
-      )
-      .map((item: any) => ({
-        slug: item.slug.current,
-        updatedAt: item._updatedAt,
-      }));
-
-    const sitemap = generateSiteMap(pagesData);
-
-    // Return the XML sitemap
-    return new NextResponse(sitemap, {
-      headers: {
-        "Content-Type": "application/xml",
-      },
-    });
-  } catch (error) {
-    console.error("Error generating sitemap:", error);
-    return new NextResponse("Error generating sitemap", { status: 500 });
-  }
+  return new NextResponse(sitemap, {
+    headers: {
+      "Content-Type": "application/xml; charset=utf-8",
+      "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+    },
+  });
 }
