@@ -19,7 +19,8 @@ const galleryAssetMap = {
 
 export const metadata: Metadata = {
   title: "Gallery | MBBS Admission in Abroad",
-  description: "A visual look at our MBBS abroad guidance and student support.",
+  description:
+    "Explore New-Lyf gallery images featuring MBBS abroad counselling, student support moments, and visual snapshots from our study abroad guidance work.",
   alternates: {
     canonical: "https://www.mbbsadmissionsinabroad.com/gallery",
   },
