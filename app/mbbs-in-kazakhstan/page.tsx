@@ -171,6 +171,28 @@ export default function KazakhstanPage() {
         <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Kazakhstan works best as a cost-aware, outcomes-aware route where university selection matters far more than students first assume.</div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+        <div className="rounded-[28px] border border-amber-100 bg-amber-50 p-6">
+          <h3 className="text-2xl font-bold text-slate-900">Kazakhstan in simple words</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              "This path is low cost.",
+              "Pick the university with care.",
+              "Check hostel and city costs.",
+              "Ask how the return exam path works.",
+              "Read the visa steps early.",
+              "Do not choose on fee alone.",
+              "A safe campus matters.",
+              "Clear facts matter more than hype.",
+            ].map((item) => (
+              <p key={item} className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <SectionHeading eyebrow="Key Facts" title="At-a-glance Kazakhstan medicine facts for 2026-27" />
         <div className="mt-10"><DataTable rows={keyFacts} caption="Kazakhstan medicine key facts table" /></div>

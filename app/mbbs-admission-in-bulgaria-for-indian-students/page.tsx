@@ -171,6 +171,28 @@ export default function BulgariaPage() {
         <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Bulgaria is one of the strongest lower-cost EU medicine routes for Indian students, but nostrification and exam timing need to be handled seriously from the start.</div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+        <div className="rounded-[28px] border border-amber-100 bg-amber-50 p-6">
+          <h3 className="text-2xl font-bold text-slate-900">Bulgaria in simple words</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              "This is an EU route.",
+              "Costs can still vary a lot.",
+              "Check the city, not just the college.",
+              "Read hostel and food costs too.",
+              "Ask what support you get there.",
+              "Check the return exam path early.",
+              "A low fee is not the full story.",
+              "Pick the safer option if unsure.",
+            ].map((item) => (
+              <p key={item} className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <SectionHeading eyebrow="Key Facts" title="At-a-glance Bulgaria medicine facts for 2026-27" />
         <div className="mt-10"><DataTable rows={keyFacts} caption="Bulgaria medicine key facts table" /></div>

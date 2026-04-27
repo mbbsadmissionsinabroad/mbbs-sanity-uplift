@@ -171,6 +171,28 @@ export default function SpainPage() {
         <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Spain works best as an EU-career route with two very different lanes: lower-cost public Spanish-medium medicine and higher-cost private English-medium medicine.</div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+        <div className="rounded-[28px] border border-amber-100 bg-amber-50 p-6">
+          <h3 className="text-2xl font-bold text-slate-900">Spain in simple words</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              "Spain can be strong.",
+              "It also takes more planning.",
+              "Language work is a big part.",
+              "Public seats are not easy.",
+              "Check the full living cost.",
+              "Read the exam path with care.",
+              "Do not rush the choice.",
+              "Only proceed if the fit feels real.",
+            ].map((item) => (
+              <p key={item} className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <SectionHeading eyebrow="Key Facts" title="At-a-glance Spain medicine facts for 2026-27" />
         <div className="mt-10"><DataTable rows={keyFacts} caption="Spain medicine key facts table" /></div>

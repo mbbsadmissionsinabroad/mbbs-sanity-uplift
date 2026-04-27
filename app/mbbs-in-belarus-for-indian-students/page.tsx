@@ -171,6 +171,28 @@ export default function BelarusPage() {
         <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Belarus is especially compelling when your priority is a lower-cost, English-medium route that still supports a serious India-return plan.</div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+        <div className="rounded-[28px] border border-amber-100 bg-amber-50 p-6">
+          <h3 className="text-2xl font-bold text-slate-900">Belarus in simple words</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              "The fee may look low.",
+              "Risk can still be high.",
+              "Read the policy and safety picture.",
+              "Check recognition comfort for your family.",
+              "Ask how the return path will work.",
+              "Do not choose only on cost.",
+              "Take the safer route if doubt stays.",
+              "Long-term peace matters more than speed.",
+            ].map((item) => (
+              <p key={item} className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <SectionHeading eyebrow="Key Facts" title="At-a-glance Belarus medicine facts for 2026-27" />
         <div className="mt-10"><DataTable rows={keyFacts} caption="Belarus medicine key facts table" /></div>

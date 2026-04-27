@@ -276,6 +276,28 @@ export default function LithuaniaPage() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-7xl px-4 pb-8 lg:px-8">
+        <div className="rounded-[28px] border border-amber-100 bg-amber-50 p-6">
+          <h3 className="text-2xl font-bold text-slate-900">Lithuania in simple words</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            {[
+              "This route is quieter.",
+              "The EU setting can help some families.",
+              "Check the total budget first.",
+              "Check local living costs too.",
+              "Read the course path in full.",
+              "Ask how clinical training works.",
+              "Do not pay before all facts are clear.",
+              "A simple plan is often the best plan.",
+            ].map((item) => (
+              <p key={item} className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <SectionHeading
           eyebrow="Key Facts"
