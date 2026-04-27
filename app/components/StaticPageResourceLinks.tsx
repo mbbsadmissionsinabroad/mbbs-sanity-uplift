@@ -82,35 +82,41 @@ export default function StaticPageResourceLinks({
             Simple Guide
           </p>
           <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            How to read this page without stress
+            Read this page the easy way
           </h3>
           <div className="mt-5 grid gap-6 lg:grid-cols-2">
             <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
               <p>
-                Start with the quick facts. They show cost, time, exam path,
-                and risk. Read that part first.
+                Start with the quick facts. Read that part first.
               </p>
               <p>
-                Then check fees, language, and visa steps. These three parts
-                drive most real family choices.
+                Then check fees, visa steps, and stay cost.
               </p>
               <p>
-                Use the tables to compare facts, not hype. Look at budget,
-                entry rules, exam load, and the path after the degree.
+                Use the tables. They help you compare real facts.
+              </p>
+              <p>
+                Keep one goal in mind. Ask, "Can my family do this?"
+              </p>
+              <p>
+                Do not rush to the last step. Check the full path first.
               </p>
             </div>
             <div className="space-y-3 text-sm leading-7 text-slate-700 md:text-base">
               <p>
-                Read the pros and cons with your family. A good fit is not just
-                a low fee. It must suit your plan and your limits too.
+                Read the good and bad points with your family.
               </p>
               <p>
-                Save the pages that feel right. Drop the ones that need a test,
-                a fee, or a language level you do not want.
+                A low fee is not enough. The plan must fit your life.
               </p>
               <p>
-                If one rule still feels hard, ask before you pay any fee. A
-                short check now can save time, stress, and money later.
+                Save the pages that feel right. Drop the rest fast.
+              </p>
+              <p>
+                If one rule feels hard, ask before you pay.
+              </p>
+              <p>
+                A short check now can save time and money later.
               </p>
             </div>
           </div>
@@ -120,12 +126,36 @@ export default function StaticPageResourceLinks({
             </h4>
             <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {[
-                "Check the total fee, not only tuition.",
-                "Check if the course is in full English.",
-                "Check what exam you must clear later.",
-                "Check what living cost your family can manage.",
-                "Check the visa steps and timeline early.",
-                "If two options look close, pick the safer one.",
+                "Check the full fee, not just tuition.",
+                "Check if all classes are in English.",
+                "Check what test comes after the course.",
+                "Check how much rent and food will cost.",
+                "Check how long the visa steps may take.",
+                "If two paths look close, pick the safer one.",
+              ].map((item) => (
+                <p
+                  key={item}
+                  className="rounded-2xl border border-white bg-white px-4 py-3 text-sm leading-6 text-slate-700"
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
+          </div>
+          <div className="mt-6 rounded-[24px] border border-sky-100 bg-sky-50 p-5">
+            <h4 className="text-lg font-semibold text-slate-900">
+              In plain words
+            </h4>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                "This page helps you sort the route fast.",
+                "Read cost first. Then read risk.",
+                "Next, check the test path.",
+                "Then ask if the life there suits you.",
+                "Look at stay, food, and local travel.",
+                "Ask what help you get after you land.",
+                "See how long the course will take.",
+                "See what may slow you down later.",
               ].map((item) => (
                 <p
                   key={item}
