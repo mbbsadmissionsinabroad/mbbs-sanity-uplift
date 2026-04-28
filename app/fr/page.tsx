@@ -70,6 +70,13 @@ export default function FrenchLandingPage() {
               semble simple au depart peut devenir plus lourde si cette partie
               reste floue.
             </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Une autre bonne methode consiste a reduire la liste tres tot. Si
+              une route reste confuse apres la lecture du cout, de la langue,
+              de la reconnaissance et du soutien, elle ne merite sans doute pas
+              plus de temps. Cela aide la famille a se concentrer sur les
+              options les plus solides.
+            </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link

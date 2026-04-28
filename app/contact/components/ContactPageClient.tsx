@@ -278,6 +278,23 @@ export default function ContactPageClient({
                 <li>Tell us where you are based so we can route support more clearly.</li>
               </ul>
             </div>
+            <div className="mb-6 rounded-3xl border border-blue-100 bg-blue-50 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">
+                What happens after you send the form
+              </h3>
+              <p className="mt-3 leading-relaxed text-gray-600">
+                After submission, the aim is to move you to a more useful next
+                step. That could mean a cleaner shortlist, clearer eligibility
+                direction, more realistic budget planning, or a better idea of
+                the documents and preparation needed before you proceed.
+              </p>
+              <p className="mt-3 leading-relaxed text-gray-600">
+                This contact page works best when it saves time. If your first
+                message is specific, our team can usually respond with less
+                guesswork and a more direct conversation about what fits, what
+                does not fit, and what should be checked next.
+              </p>
+            </div>
 
             <form onSubmit={handleSubmit}>
               <div className="relative mb-4">

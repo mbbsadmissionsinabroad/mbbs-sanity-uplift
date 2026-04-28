@@ -118,6 +118,19 @@ export default function GalleryPage() {
             that extra context makes the next step feel more understandable
             than reading text alone.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            A gallery can also help families prepare better questions. Instead
+            of asking only general questions, they can move toward more useful
+            topics like counselling quality, document support, destination fit,
+            and the kind of student follow-up that happens after the first
+            call. That makes the page more practical than a simple image wall.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            In that sense, this gallery supports the rest of the website. It
+            adds visual proof, more context, and a clearer sense of tone. That
+            helps users connect the service pages, enquiry pages, and student
+            stories into one more understandable journey.
+          </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
               "These images show real support scenes.",

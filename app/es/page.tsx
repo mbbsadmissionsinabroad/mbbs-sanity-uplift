@@ -69,6 +69,12 @@ export default function SpanishLandingPage() {
               aun asi crear tension si la preparacion real es mucho mayor de lo
               esperado.
             </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Otra buena practica es reducir la lista rapido. Si una ruta no es
+              clara despues de revisar coste, idioma, reconocimiento y apoyo,
+              probablemente no merece mas tiempo. Eso ayuda a la familia a
+              concentrarse solo en opciones mas fuertes.
+            </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link

@@ -156,6 +156,13 @@ export default function StaticPageResourceLinks({
     "Use these guides to reach a clear yes, a clear no, or a short list worth discussing.",
   ];
   const briefing = sectionBriefing[currentPage.section];
+  const comparisonRules = [
+    "Write the full annual cost, not only tuition.",
+    "Write the main language requirement in one line.",
+    "Write the first licensing or recognition checkpoint.",
+    "Write the likely timeline from admission to stable study or work.",
+    "Keep the option only if all four points stay clear after reading.",
+  ];
 
   return (
     <section className="bg-slate-50 py-16">
@@ -241,6 +248,28 @@ export default function StaticPageResourceLinks({
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-sky-100 bg-sky-50 p-5">
+            <h3 className="text-lg font-semibold text-slate-900">
+              A simple comparison method that saves time
+            </h3>
+            <p className="mt-4 text-sm leading-7 text-slate-700">
+              Many families waste energy because they compare too many routes at
+              once. A cleaner method is to compare only a few clear factors in
+              the same order every time. This reduces noise and makes the next
+              discussion easier.
+            </p>
+            <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-sky-700">
+              {comparisonRules.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-7 text-slate-700">
+              If two routes still look equal after this, the safer route is
+              usually the one with the clearer timeline, the cleaner support
+              system, and fewer unknowns around documents or language.
+            </p>
           </div>
         </div>
 
