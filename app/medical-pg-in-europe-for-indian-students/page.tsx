@@ -377,6 +377,46 @@ export default function MedicalPgInEuropePage() {
           </div>
         </div>
       </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading
+            eyebrow="Plain Language Review"
+            title="How doctors can compare Europe PG routes without getting lost"
+          />
+          <div className="mt-8 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+            <div className="space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+              <p>
+                Europe is useful only when it becomes specific. A broad promise
+                about Europe is not enough for a doctor decision. The real
+                question is which country has the clearest entry route for your
+                language level, document set, specialty aim, and timeline.
+              </p>
+              <p>
+                A good comparison is simple. Compare language pressure, entry
+                rules, likely timeline, total early spending, and long-term
+                specialist value. When those five points stay visible, the
+                country becomes easier to judge. When those points stay blurred,
+                the route usually sounds better than it executes.
+              </p>
+              <p>
+                Many doctors save time by removing weak-fit countries early.
+                That is often smarter than trying to keep every possible option
+                alive. The stronger route is usually the one where the next
+                checkpoint is clear, the licensing logic is understandable, and
+                the path from India to the first stable training or work role
+                can be explained in simple words.
+              </p>
+              <p>
+                Use this page to narrow the field. Then use country pages and
+                official requirements to confirm the shortlist. That is the
+                safest way to move from curiosity to a realistic plan without
+                wasting months on exciting but weak-fit options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 
 

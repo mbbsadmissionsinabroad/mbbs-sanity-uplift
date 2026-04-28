@@ -174,6 +174,28 @@ export default function GalleryPage() {
             student stories, and the planning pages into one understandable
             journey.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            Another reason this page matters is simple. Many users do not move
+            from homepage to form in one straight line. They compare countries,
+            open support pages, look for student proof, and then return later to
+            the contact page. A stronger gallery helps that middle stage because
+            it gives visual reassurance without forcing users into more complex
+            claims or long sales language.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            In practical terms, this page supports MBBS abroad decision-making by
+            showing the counselling environment, the style of communication, and
+            the kind of student-facing presentation used across the site. That
+            context matters for trust. Families often look for small signals of
+            seriousness before they decide whether an enquiry call is worth
+            taking.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            So this page is not only about images. It is about helping the rest
+            of the website feel more complete. When visual proof, service pages,
+            country guides, and enquiry forms all feel connected, the website
+            becomes easier to understand and easier to trust.
+          </p>
         </section>
       </div>
     </main>

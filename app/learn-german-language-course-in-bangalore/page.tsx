@@ -235,6 +235,50 @@ export default function LearnGermanPage() {
           ))}
         </div>
       </section>
+
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading
+            eyebrow="Simple Decision Guide"
+            title="How families can judge a German course without overcomplicating it"
+          />
+          <div className="mt-8 rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+            <div className="space-y-4 text-sm leading-7 text-slate-700 md:text-base">
+              <p>
+                A German course is useful only when it helps the student move to
+                the next real step with less confusion. That next step may be a
+                nursing route, Ausbildung, PG in Germany, MBBS planning, or
+                simple language confidence for future migration work. If the
+                course does not make that next step clearer, families should
+                compare the syllabus and support more carefully.
+              </p>
+              <p>
+                The strongest course is rarely the one that sounds the most
+                impressive in one sentence. It is usually the course that shows
+                clear level progression, realistic batch timing, practical exam
+                preparation, and a believable support structure for learners who
+                need consistency over many months. That is the standard worth
+                using when you compare options in Bangalore.
+              </p>
+              <p>
+                Parents can also keep the choice simple. Ask what level the
+                student needs, how long it will take, what support exists
+                between levels, and what exam or career purpose the course
+                serves. If those answers stay clear, the route is stronger. If
+                those answers stay vague, the cheaper fee or larger promise does
+                not automatically make the course a better choice.
+              </p>
+              <p>
+                A good page should reduce future confusion. It should make the
+                student more confident about the learning path, not more anxious
+                about hidden steps. That is why practical clarity matters more
+                than broad marketing language when a family is choosing the next
+                serious German-learning commitment.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 
 

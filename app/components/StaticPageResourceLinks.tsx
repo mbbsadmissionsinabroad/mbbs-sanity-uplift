@@ -315,6 +315,52 @@ export default function StaticPageResourceLinks({
               </p>
             </div>
           </div>
+
+          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white p-5">
+            <h3 className="text-lg font-semibold text-slate-900">
+              What this page should help you decide today
+            </h3>
+            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              <p>
+                Use this page to answer one practical question first. Is this
+                route worth keeping on your shortlist? You do not need a final
+                yes in one reading. You need enough clarity to know whether the
+                option fits your budget, your comfort level, and your long-term
+                plan better than the other routes you are comparing.
+              </p>
+              <p>
+                That is why the best pages do three things well. They show the
+                likely cost without hiding important extras. They show the
+                recognition or process steps without making the return plan feel
+                mysterious. They also describe daily life in simple language so
+                the student and the family can imagine what the route will feel
+                like after the first few weeks, not only on the day of
+                admission.
+              </p>
+              <p>
+                A good comparison also protects your time. When you can explain
+                a route in plain words, you can make cleaner decisions. When a
+                route needs too many long explanations, too many exceptions, or
+                too many promises from a future phone call, it usually means the
+                route still needs stronger verification before any payment,
+                coaching, or application step.
+              </p>
+              <p>
+                Try to leave each page with a short summary of your own. Write
+                the total cost, the main language condition, the biggest benefit,
+                the biggest risk, and the next checkpoint. If that summary feels
+                stable after a second reading, the page has done its job. If the
+                summary keeps changing, the route still needs more checking.
+              </p>
+              <p>
+                This is the safest way to use guides like this. Let the page
+                reduce confusion before you let it create excitement. Families
+                who follow that rule usually shortlist better, spend more
+                carefully, and avoid weak-fit options much earlier in the
+                decision process.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 max-w-3xl">

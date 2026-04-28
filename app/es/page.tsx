@@ -98,6 +98,31 @@ export default function SpanishLandingPage() {
               antes de avanzar. Eso tambien ahorra tiempo, dinero y esfuerzo.
             </p>
           </div>
+          <div className="mt-8 rounded-[2rem] border border-slate-200 bg-slate-50 p-6 text-left">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              Decision mas clara, riesgo mas bajo
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Muchas familias no necesitan mas promesas. Necesitan una forma mas
+              clara de comparar pais, coste, reconocimiento, idioma y apoyo.
+              Cuando esos puntos se explican bien, la decision mejora. Cuando
+              esos puntos siguen cambiando en cada llamada o en cada pagina, la
+              ruta todavia no esta lista para una decision segura.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Por eso conviene usar esta pagina como un filtro corto. Si una
+              opcion sigue siendo fuerte despues de revisar coste total,
+              universidad, idioma, visa y vida diaria, merece una revision mas
+              profunda. Si una opcion sigue siendo dificil de explicar, es mejor
+              pausar y confirmar datos antes de pagar o enviar documentos.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              En resumen, una buena decision suele sentirse mas simple despues
+              de una segunda lectura. Ese es el objetivo de esta pagina en
+              espanol: ayudar a la familia a reducir confusion, ver mejor los
+              pasos reales y avanzar solo con opciones que sigan siendo claras.
+            </p>
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link
               href="/"
