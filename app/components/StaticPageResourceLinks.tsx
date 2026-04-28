@@ -28,27 +28,42 @@ function pickInternalLinks(entry: StaticSeoRegistryEntry) {
   return [...sameKind, ...sameSection].slice(0, 6);
 }
 
-function LinkCard({ link, external = false }: { link: ResourceLink; external?: boolean }) {
-  if (external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="nofollow noopener noreferrer external"
-        className="rounded-[24px] border border-slate-200 bg-white p-5 text-sm font-medium text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-900"
-      >
-        {link.label}
-      </a>
-    );
-  }
-
+function LinkList({
+  title,
+  links,
+  external = false,
+}: {
+  title: string;
+  links: ResourceLink[];
+  external?: boolean;
+}) {
   return (
-    <Link
-      href={link.href}
-      className="rounded-[24px] border border-slate-200 bg-white p-5 text-sm font-medium text-slate-700 shadow-[0_12px_30px_rgba(15,23,42,0.05)] transition hover:border-sky-300 hover:text-sky-900"
-    >
-      {link.label}
-    </Link>
+    <div className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm">
+      <h3 className="text-xl font-bold text-slate-900">{title}</h3>
+      <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+        {links.map((link) => (
+          <li key={link.href} className="border-b border-slate-100 pb-3 last:border-b-0 last:pb-0">
+            {external ? (
+              <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer external"
+                className="font-medium text-slate-700 transition hover:text-sky-900"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                href={link.href}
+                className="font-medium text-slate-700 transition hover:text-sky-900"
+              >
+                {link.label}
+              </Link>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -74,25 +89,25 @@ export default function StaticPageResourceLinks({
     (link) => !excludeExternalLabels.includes(link.label)
   );
   const readingOrder = [
-    "Start with the summary so you know the route, the fee range, and the main risk points.",
-    "Move to fees, visa steps, hostel or living cost, and exam context before you compare colleges.",
-    "Use the tables to compare facts fast instead of reading every line in one sitting.",
-    "Shortlist only the pages that fit your budget, your language comfort, and your return plan.",
-    "Ask for help before paying any fee if one rule, city, university, or exam step still feels unclear.",
+    "Start with the summary. It tells you the route, the fee range, and the main risk points.",
+    "Then read the cost notes, visa steps, hostel or living cost, and exam context.",
+    "Use the tables to compare facts fast. Do not try to remember every line at once.",
+    "Shortlist only the routes that fit your budget, language comfort, and return plan.",
+    "If one rule still feels unclear, pause and verify it before paying any fee.",
   ];
   const familyQuestions = [
-    "Does the full cost fit our family budget after tuition, hostel, food, visa, and travel?",
-    "Is the course fully in English, and what happens if the student struggles after the first year?",
-    "What is the India return path or local licensing path after the course is complete?",
-    "How safe is the city, and what daily support will the student actually get after landing?",
-    "How long can admissions, visa, and travel preparation realistically take from this point?",
-    "If two options look close, which one gives the safer long-term outcome instead of the cheapest first impression?",
+    "Can the family manage the full cost after tuition, hostel, food, visa, and travel?",
+    "Is the language plan realistic, or will it become a stress point after admission?",
+    "Is the degree, job route, or training path clear for the country and for the return plan?",
+    "How safe is the city, and what support will the student get after landing?",
+    "How long can admissions, visa work, and travel preparation realistically take?",
+    "If two routes look close, which one feels safer over the long term, not just cheaper today?",
   ];
   const decisionNotes = [
-    "Students often lose time when they compare ten countries at once. It is better to compare three realistic options properly.",
-    "Parents usually care about the same core points. They want safe cities, visible total cost, recognition clarity, and support after landing.",
-    "If one route still feels confusing after reading the summary, that route is not ready for a payment decision yet.",
-    "A strong page should make the next step easier. It should not force you to guess about fees, documents, timelines, or recognition.",
+    "A good route should stay clear after you compare cost, recognition, and daily life.",
+    "Parents usually need the same four answers: safety, full cost, recognition, and support.",
+    "If a page still feels vague after the summary and tables, it is not ready for a payment decision.",
+    "Use these guides to reach a clear yes, a clear no, or a short list worth discussing.",
   ];
 
   return (
@@ -102,89 +117,69 @@ export default function StaticPageResourceLinks({
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">
             Simple Guide
           </p>
-          <h3 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            Read this page the easy way
-          </h3>
+          <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+            Read this page in a simple order
+          </h2>
           <div className="mt-5 space-y-4 text-sm leading-7 text-slate-700 md:text-base">
             <p>
-              Most students do not need every line on the page at once. They need a fast way to sort good options from weak
-              ones. Use this guide as a filter first, then go deeper only on the parts that affect fees, recognition, language,
-              exams, and long-term safety.
+              Most students do not need every detail at once. They need a quick way to sort strong
+              options from weak ones. Use the summary first. Then check fees, recognition, language,
+              visa steps, and daily life. That order gives you a better decision frame.
             </p>
             <p>
-              A page like this works best when you read it with one clear question in mind. Ask whether the route matches your
-              budget, your study comfort, your family support, and your return plan. If the answer is still unclear, that is a
-              sign to pause and verify facts before you move further.
+              A page like this is useful when it helps you remove confusion. If the route still feels
+              unclear after you read the summary, cost notes, and official links, the safe choice is
+              to verify facts before moving ahead. Good planning saves time, money, and stress.
             </p>
             <p>
-              The goal is not to read more than everyone else. The goal is to make a cleaner decision. That is why the summary,
-              tables, cost notes, and official links matter more than long sales talk or flashy claims.
+              Families do not need more hype. They need visible cost, clear recognition, realistic
+              timelines, and honest next steps. That is why the tables, official links, and decision
+              prompts below matter more than sales language.
             </p>
           </div>
-          <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
-            <h4 className="text-lg font-semibold text-slate-900">
-              Best reading order
-            </h4>
-            <ol className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:font-semibold marker:text-sky-700">
-              {readingOrder.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ol>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">Best reading order</h3>
+              <ol className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:font-semibold marker:text-sky-700">
+                {readingOrder.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ol>
+            </div>
+
+            <div className="rounded-[24px] border border-sky-100 bg-sky-50 p-5">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Ask these questions before you decide
+              </h3>
+              <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-sky-700">
+                {familyQuestions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="mt-6 rounded-[24px] border border-sky-100 bg-sky-50 p-5">
-            <h4 className="text-lg font-semibold text-slate-900">
-              Ask these six questions before you decide
-            </h4>
-            <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-sky-700">
-              {familyQuestions.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
+
           <div className="mt-6 rounded-[24px] border border-emerald-100 bg-emerald-50 p-5">
-            <h4 className="text-lg font-semibold text-slate-900">
-              Quick family recap
-            </h4>
+            <h3 className="text-lg font-semibold text-slate-900">Quick family recap</h3>
             <div className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               <p>
-                This page is here to help you rule options in or out. Start with cost. Then check course length, language,
-                recognition, visa time, and daily life. If the route still looks strong after that, it deserves more time.
+                Start with total cost. Then check course length, language, recognition, visa time,
+                and daily support. If the route still looks strong after that, it deserves deeper
+                review. If it still feels vague, do not rush into a payment decision.
               </p>
               <p>
-                Do not trust hype alone. Trust clear facts, full cost visibility, and a realistic picture of what happens after
-                the degree, training, or job placement step is complete.
-              </p>
-              <p>
-                Good pages make the next step easy. Weak pages create confusion. Use this guide to get to a clear yes, a clear
-                no, or a short list worth discussing with your family.
+                The goal is not to read everything. The goal is to make a cleaner decision. A useful
+                page should help you rule a route in, rule it out, or keep it on a short list for the
+                next family discussion.
               </p>
             </div>
           </div>
-          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white p-5">
-            <h4 className="text-lg font-semibold text-slate-900">
-              What this page should help you decide
-            </h4>
-            <div className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-              <p>
-                By the time you finish this page, you should know whether the route belongs in your shortlist, whether it needs
-                deeper verification, or whether it should be dropped. That is a better outcome than reading a long guide and
-                still feeling unsure about the next step.
-              </p>
-              <p>
-                Use the facts here to build a family discussion. Focus on total cost, recognition, study or training pressure,
-                language load, visa speed, and daily life. Those are the points that usually shape a good decision more than
-                promotional phrases do.
-              </p>
-              <p>
-                If this page helps you narrow the choice, it has already done useful work. You do not need perfect certainty on
-                the first read. You need a cleaner decision frame and a better set of questions for the next conversation.
-              </p>
-            </div>
-          </div>
+
           <div className="mt-6 rounded-[24px] border border-amber-100 bg-amber-50 p-5">
-            <h4 className="text-lg font-semibold text-slate-900">
-              Four signs a route is worth deeper review
-            </h4>
+            <h3 className="text-lg font-semibold text-slate-900">
+              Signs a route is worth deeper review
+            </h3>
             <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-amber-700">
               {decisionNotes.map((item) => (
                 <li key={item}>{item}</li>
@@ -193,36 +188,22 @@ export default function StaticPageResourceLinks({
           </div>
         </div>
 
-        <div className="max-w-3xl">
-          <p className="mt-12 text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Related Resources</p>
-          <h3 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+        <div className="mt-12 max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">
+            Related Resources
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Helpful next pages and official resources
-          </h3>
+          </h2>
           <p className="mt-4 text-base leading-7 text-slate-600 md:text-lg">
-            Use these guides to compare your next options. Use the official
-            links to verify rules, recognition, exams, and country
-            requirements.
+            Use the internal pages for comparisons and the official sources for rules, recognition,
+            exams, or country guidance. This keeps your shortlist practical and evidence-based.
           </p>
         </div>
 
         <div className="mt-10 grid gap-8 xl:grid-cols-2">
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">Internal links</h3>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              {internalLinks.map((link) => (
-                <LinkCard key={link.href} link={link} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-bold text-slate-900">External links</h3>
-            <div className="mt-5 grid gap-4 md:grid-cols-2">
-              {externalLinks.map((link) => (
-                <LinkCard key={link.href} link={link} external />
-              ))}
-            </div>
-          </div>
+          <LinkList title="Internal links" links={internalLinks} />
+          <LinkList title="External links" links={externalLinks} external />
         </div>
       </div>
     </section>

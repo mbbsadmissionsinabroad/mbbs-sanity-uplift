@@ -6,7 +6,7 @@ export const metaDescription =
   "MBBS in Armenia 2026-27 for Indian students: NMC-approved universities, fees, NEET requirements, FMGE context, and admissions.";
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%20I%20want%20guidance%20for%20MBBS%20admission%20in%20Armenia%20for%202026-27.";
+  "https://api.whatsapp.com/send?phone=918147030030&text=Hi%20I%20want%20guidance%20for%20MBBS%20admission%20in%20Armenia%20for%202026-27.";
 export const ivrNumber = "+918050575767";
 
 export const quickSummary = [

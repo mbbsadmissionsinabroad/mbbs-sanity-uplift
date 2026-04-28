@@ -321,7 +321,7 @@ export default function Navbar() {
                           key={social.title}
                           href={social.href}
                           target="_blank"
-                          rel="nofollow noopener noreferrer external"
+                          rel="noopener noreferrer external"
                           className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
                         >
                           <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700">
@@ -531,11 +531,12 @@ export default function Navbar() {
                     key={social.title}
                     href={social.href}
                     target="_blank"
-                    rel="nofollow noopener noreferrer external"
+                    rel="noopener noreferrer external"
                     aria-label={social.title}
                     className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
                   >
                     <Icon className="h-4 w-4" />
+                    <span className="sr-only">{social.title}</span>
                   </a>
                 );
               })}

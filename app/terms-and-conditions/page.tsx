@@ -40,7 +40,7 @@ const sections = [
       "Device: any internet connected device such as a phone, tablet, computer or any other device that can be used to visit VST NEW-LYF PRARAMBHA PVT. LTD and use the services.",
       "Service: refers to the service provided by VST NEW-LYF PRARAMBHA PVT. LTD as described in the relative terms (if available) and on this platform.",
       "Third-party service: refers to advertisers, contest sponsors, promotional and marketing partners, and others who provide our content or whose products or services we think may interest you.",
-      "Website: VST NEW-LYF PRARAMBHA PVT. LTD's site, which can be accessed via this URL: https://www.mbbsadmissionsinabroad.com/",
+      "Website: VST NEW-LYF PRARAMBHA PVT. LTD operates the MBBS Admissions in Abroad website for information and enquiries.",
       "You: a person or entity that is registered with VST NEW-LYF PRARAMBHA PVT. LTD to use the Services.",
     ],
   },
@@ -152,7 +152,7 @@ export default function TermsAndConditionsPage() {
               href="https://www.mbbsadmissionsinabroad.com/"
               className="font-semibold text-blue-700 underline underline-offset-4"
             >
-              https://www.mbbsadmissionsinabroad.com/
+              our homepage
             </Link>{" "}
             and related communications operated by VST NEW-LYF PRARAMBHA PVT.
             LTD.
@@ -192,7 +192,13 @@ export default function TermsAndConditionsPage() {
               Via Email: ceo@new-lyf.com
             </p>
             <p className="text-sm leading-7 text-slate-700 sm:text-base">
-              Via this Link: https://www.mbbsadmissionsinabroad.com/contact
+              Via this link:{" "}
+              <Link
+                href="/contact"
+                className="font-semibold text-blue-700 underline underline-offset-4"
+              >
+                visit our contact page
+              </Link>
             </p>
           </section>
         </div>

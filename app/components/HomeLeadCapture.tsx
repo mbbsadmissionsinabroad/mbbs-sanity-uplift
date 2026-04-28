@@ -15,6 +15,7 @@ type FormState = {
 const WHATSAPP_NUMBER = "918147030030";
 const IVR_NUMBER = "+918050575767";
 const courseOptions = ["MBBS Abroad", "PG Medical", "Nursing Jobs", "Ausbildung"];
+const WHATSAPP_BASE_URL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}`;
 
 const initialFormState: FormState = {
   name: "",
@@ -243,9 +244,9 @@ export function HomeQuickContactBar({
   return (
     <div className="flex flex-wrap gap-3">
       <a
-        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+        href={WHATSAPP_BASE_URL}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer external"
         className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
       >
         <MessageCircleMore className="h-4 w-4" />
@@ -278,7 +279,7 @@ export function HomeInlineLeadSection({
   const form = useLeadForm("Home Page Inline Form");
   const whatsappUrl = useMemo(
     () =>
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+      `${WHATSAPP_BASE_URL}&text=${encodeURIComponent(
         "Hi, I want guidance for MBBS abroad admissions."
       )}`,
     []
@@ -304,7 +305,7 @@ export function HomeInlineLeadSection({
             <a
               href={whatsappUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer external"
               className="flex items-center justify-between rounded-[1.5rem] border border-emerald-300/20 bg-emerald-400 px-5 py-4 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
             >
               <span className="inline-flex items-center gap-3">
@@ -452,9 +453,9 @@ export function HomePopupLeadForm({
 
                     <div className="mt-8 space-y-4">
                       <a
-                        href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                        href={WHATSAPP_BASE_URL}
                         target="_blank"
-                        rel="noreferrer"
+                        rel="noopener noreferrer external"
                         className="flex items-center gap-3 rounded-[1.5rem] bg-emerald-400 px-5 py-4 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
                       >
                         <MessageCircleMore className="h-5 w-5" />

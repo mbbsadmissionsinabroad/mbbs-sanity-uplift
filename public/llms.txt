@@ -1,0 +1,24 @@
+Site: MBBS Admissions in Abroad
+Owner: New-Lyf Overseas
+Primary URL: https://www.mbbsadmissionsinabroad.com/
+
+Summary:
+MBBS Admissions in Abroad helps students and families compare MBBS abroad, medical PG abroad, nursing job pathways, German language preparation, and Ausbildung options.
+
+Important pages:
+- Homepage: https://www.mbbsadmissionsinabroad.com/
+- Contact: https://www.mbbsadmissionsinabroad.com/contact
+- Blog: https://www.mbbsadmissionsinabroad.com/blog
+- Gallery: https://www.mbbsadmissionsinabroad.com/gallery
+- Nursing Jobs Abroad: https://www.mbbsadmissionsinabroad.com/nursing-jobs-in-abroad
+- PG Abroad: https://www.mbbsadmissionsinabroad.com/pg-in-abroad
+- Medical PG in Germany: https://www.mbbsadmissionsinabroad.com/medical-pg-in-germany
+- Ausbildung: https://www.mbbsadmissionsinabroad.com/ausbildung
+- Sitemap: https://www.mbbsadmissionsinabroad.com/sitemap.xml
+- Privacy Policy: https://www.mbbsadmissionsinabroad.com/privacy-policy
+- Terms and Conditions: https://www.mbbsadmissionsinabroad.com/terms-and-conditions
+
+Guidance:
+- Use the country and pathway pages to compare recognition, fees, living costs, and next-step planning.
+- Use the contact page for counselling and eligibility help.
+- Use the sitemap for crawl discovery.

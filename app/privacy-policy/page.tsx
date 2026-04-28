@@ -97,7 +97,7 @@ const sections = [
     body: [
       "If you have any questions about this Privacy Policy or how your data is handled, you can contact us using the details below.",
       "Email: ceo@new-lyf.com",
-      "Website: https://www.mbbsadmissionsinabroad.com/contact",
+      "Website: Please use our contact page for privacy-related queries.",
       "Company: VST NEW-LYF PRARAMBHA PVT. LTD",
     ],
   },
@@ -124,7 +124,7 @@ export default function PrivacyPolicyPage() {
               href="https://www.mbbsadmissionsinabroad.com/"
               className="font-semibold text-blue-700 underline underline-offset-4"
             >
-              https://www.mbbsadmissionsinabroad.com/
+              our homepage
             </Link>
             .
           </p>
@@ -183,6 +183,17 @@ export default function PrivacyPolicyPage() {
                   {paragraph}
                 </p>
               ))}
+              {section.title === "Contact Us" && (
+                <p className="text-sm leading-7 text-slate-700 sm:text-base">
+                  Contact page:{" "}
+                  <Link
+                    href="/contact"
+                    className="font-semibold text-blue-700 underline underline-offset-4"
+                  >
+                    visit our contact page
+                  </Link>
+                </p>
+              )}
             </section>
           ))}
         </div>

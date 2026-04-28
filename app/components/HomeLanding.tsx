@@ -208,9 +208,9 @@ export default function HomeLanding() {
 
       <div className="fixed bottom-5 right-5 z-40 hidden flex-col gap-3 lg:flex">
         <a
-          href="https://wa.me/918147030030"
+          href="https://api.whatsapp.com/send?phone=918147030030"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer external"
           className="inline-flex items-center gap-2 rounded-full bg-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_16px_36px_rgba(15,23,42,0.16)] transition hover:bg-emerald-300"
         >
           <MessageCircleMore className="h-4 w-4" />

@@ -9,7 +9,7 @@ export const metaDescription =
 
 export const whatsappNumber = "+91 81470 30030";
 export const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%2C%20I%20need%20guidance%20for%20MBBS%20admission%20in%20Germany%202026-27.";
+  "https://api.whatsapp.com/send?phone=918147030030&text=Hi%2C%20I%20need%20guidance%20for%20MBBS%20admission%20in%20Germany%202026-27.";
 export const ivrNumber = "+91 80505 75767";
 
 export const quickSummary = [

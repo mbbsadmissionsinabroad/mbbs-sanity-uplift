@@ -11,7 +11,7 @@ export const lastUpdated = "March 31, 2026";
 export const eurToInrNote = "EUR 1 approx. Rs 107 based on March 2026 reference-rate context; rounded for readability.";
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%20I%20want%20guidance%20for%20Ausbildung%20in%20Germany%20for%202026.";
+  "https://api.whatsapp.com/send?phone=918147030030&text=Hi%20I%20want%20guidance%20for%20Ausbildung%20in%20Germany%20for%202026.";
 export const ivrNumber = "+918050575767";
 
 export const quickSummary = [

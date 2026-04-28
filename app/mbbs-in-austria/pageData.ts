@@ -9,7 +9,7 @@ export const metaDescription =
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =
-  "https://wa.me/918147030030?text=Hi%20I%20want%20guidance%20for%20MBBS%20in%20Austria%20for%202026-27.";
+  "https://api.whatsapp.com/send?phone=918147030030&text=Hi%20I%20want%20guidance%20for%20MBBS%20in%20Austria%20for%202026-27.";
 export const ivrNumber = "+918050575767";
 
 export const quickSummary = [
