@@ -78,6 +78,30 @@ export default function FrenchLandingPage() {
               options les plus solides.
             </p>
           </div>
+          <div className="mt-8 rounded-[2rem] border border-blue-100 bg-blue-50 p-6 text-left">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              Comment utiliser cette page de facon pratique
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Cette page sert de point de depart. Elle aide la famille a
+              comprendre l idee generale du site, a reduire les doutes du debut
+              et a passer ensuite vers les pages de pays, les routes de nursing,
+              PG abroad ou le contact direct avec New-Lyf.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              La meilleure decision ne vient pas d une seule promesse. Elle
+              vient d une comparaison claire entre le cout total, la
+              reconnaissance, la langue, la vie quotidienne et les vraies
+              etapes d admission. Si ces points restent clairs apres la
+              lecture, la route merite souvent une verification plus serieuse.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Si la voie reste confuse, la page reste quand meme utile. Cela
+              signifie simplement que la famille doit verifier plus d elements
+              avant d avancer. Cette clarte evite souvent des erreurs, des
+              depenses inutiles et beaucoup de stress.
+            </p>
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link
               href="/"

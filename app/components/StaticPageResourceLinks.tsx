@@ -30,7 +30,7 @@ function pickInternalLinks(entry: StaticSeoRegistryEntry) {
 
 const sectionBriefing: Record<
   StaticSeoRegistryEntry["section"],
-  { title: string; paragraphs: string[] }
+  { title: string; paragraphs: string[]; practicalSummary: string[] }
 > = {
   "mbbs-abroad": {
     title: "What a good MBBS abroad decision usually looks like",
@@ -38,6 +38,10 @@ const sectionBriefing: Record<
       "A strong MBBS abroad route should stay understandable after you compare tuition, hostel, food, visa cost, language pressure, internship structure, and India-return planning. If the route only sounds attractive in one short headline, it usually needs deeper verification before a family commits money.",
       "Students and parents usually need the same core answers. They want to know whether the degree path is usable, whether the city and university are stable, whether the total cost will stay manageable year after year, and whether the student can realistically adapt to classes, climate, and daily life.",
       "The purpose of these country guides is to reduce emotional guessing. Use the summary, tables, and official links to reach a simple decision frame: this route fits, this route does not fit, or this route needs one final round of checking before you move ahead.",
+    ],
+    practicalSummary: [
+      "In plain words, a country becomes easier to trust when the total cost is visible, the university path is understandable, the student can explain the class language plan, and the return pathway does not remain vague. Families usually feel calmer when those four things stay clear after a second reading.",
+      "This is why a short, honest shortlist is better than a long exciting list. The right page should help you remove weak options early. If a route still depends on too many assumptions after you compare costs, recognition, and daily life, it is safer to hold back than to force a decision.",
     ],
   },
   "medical-pg": {
@@ -47,6 +51,10 @@ const sectionBriefing: Record<
       "Many doctors lose time because they compare countries only by salary or popularity. A better comparison looks at recognition, exam load, translation work, employer demand, realistic timeline, and how difficult it is to move from India into the first stable training or work position.",
       "Use the guide as a filter, not as a promise. If the route still feels confusing after you read the key requirements, it usually means one important part is still unclear and should be checked before any payment or major paperwork step.",
     ],
+    practicalSummary: [
+      "Doctors usually make faster decisions when they stop comparing prestige first and compare process first. The stronger route is usually the one with the clearer exam path, the more stable entry point, the better specialty fit, and the lower chance of document or language confusion after leaving India.",
+      "A page like this should help you answer a practical question: if you start now, what happens next month, what happens after that, and what is the first stable checkpoint? If that chain is still blurry, more checking is needed before money, time, or resignation decisions are made.",
+    ],
   },
   "nursing-jobs": {
     title: "What nurses and families should confirm early",
@@ -54,6 +62,10 @@ const sectionBriefing: Record<
       "Nursing jobs abroad are easiest to compare when you look at the full path, not only the job title. Language level, registration, adaptation period, relocation cost, and employer support matter as much as the salary line because they decide how smooth the move will feel in real life.",
       "Families often benefit from one simple rule. Choose the route that stays clear after you compare language, licensing, and total cost. If the route still sounds vague or depends on too many assumptions, it is safer to slow down and verify more before starting training or document spending.",
       "These pages are meant to help Indian nurses remove weak-fit options early. That saves time and protects effort. A good route should feel more practical after reading, not more confusing.",
+    ],
+    practicalSummary: [
+      "For nurses, the best route is not always the route with the biggest salary line. The stronger option is usually the one where language progress, registration, employer support, relocation cost, and the first work milestone all stay understandable at the same time.",
+      "If a family can clearly explain the total spending, the likely training or registration sequence, and the support available after arrival, the route is usually worth deeper review. If those points still remain hazy, the safer choice is to verify more before paying for classes or document work.",
     ],
   },
   "learn-german": {
@@ -63,6 +75,10 @@ const sectionBriefing: Record<
       "Price alone is not enough. A cheap course that leaves the student underprepared creates more delay later. A useful course should make the path clearer, build confidence level by level, and reduce confusion about exams, documents, or professional communication.",
       "Read the page with one question in mind: will this course help the student move to the next real step with less stress? If the answer still feels uncertain, compare the syllabus and support structure more carefully before joining.",
     ],
+    practicalSummary: [
+      "A good German course should reduce future confusion, not simply fill current time. Families usually benefit when they can explain what level the student needs, how the batches move from one level to the next, and what real goal the course supports after completion.",
+      "If a course page makes the path clearer around levels, exams, documents, and communication confidence, it is doing its job. If it stays broad and vague after reading, compare the teaching structure more carefully before you choose it.",
+    ],
   },
   ausbildung: {
     title: "How families can read Ausbildung pages more clearly",
@@ -70,6 +86,10 @@ const sectionBriefing: Record<
       "Ausbildung planning becomes easier when the family separates the route into plain parts: course type, stipend, German level, visa path, living cost, and long-term job outcome. Looking at those parts one by one gives a clearer picture than relying on broad promises about Germany alone.",
       "A good Ausbildung option should feel realistic from both the student side and the family side. The student should be able to handle the language and training routine. The family should be comfortable with the preparation cost, timeline, and the support available before and after arrival.",
       "Use the guide to reduce confusion, not to create excitement without detail. If the route still looks unclear after reading the summary and official links, it deserves another round of checking before any final decision.",
+    ],
+    practicalSummary: [
+      "In simple terms, a strong Ausbildung route is one where the student can handle the language level, the stipend and living cost look balanced, and the training path still makes sense after the first few months in Germany. That is the point where a route starts feeling realistic rather than only attractive.",
+      "Families usually move faster when they ask direct questions about language, preparation cost, timeline, support, and long-term job value. If the answers still stay unclear after reading the page once or twice, it is wiser to slow down before making a financial commitment.",
     ],
   },
 };
@@ -270,6 +290,30 @@ export default function StaticPageResourceLinks({
               usually the one with the clearer timeline, the cleaner support
               system, and fewer unknowns around documents or language.
             </p>
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-violet-100 bg-violet-50 p-5">
+            <h3 className="text-lg font-semibold text-slate-900">
+              What families usually need before they say yes
+            </h3>
+            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              {briefing.practicalSummary.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+              <p>
+                A final yes usually comes only when the route feels consistent on
+                money, recognition, student comfort, and timing. If one of those
+                parts keeps changing every time you read a new page or talk to a
+                new person, that inconsistency is a warning sign in itself.
+              </p>
+              <p>
+                Use that as a simple test. Strong routes usually become easier to
+                explain. Weak routes usually become harder to explain. The pages
+                that support a good decision are the pages that leave the family
+                with fewer unknowns, fewer contradictions, and a much cleaner
+                next step.
+              </p>
+            </div>
           </div>
         </div>
 

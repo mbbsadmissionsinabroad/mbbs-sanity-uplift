@@ -76,6 +76,28 @@ export default function SpanishLandingPage() {
               concentrarse solo en opciones mas fuertes.
             </p>
           </div>
+          <div className="mt-8 rounded-[2rem] border border-blue-100 bg-blue-50 p-6 text-left">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              Como usar esta pagina de forma practica
+            </h2>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Esta pagina sirve como punto de partida. Ayuda a la familia a
+              entender la idea general del sitio, reducir dudas del inicio y
+              pasar despues a las paginas de pais, a las rutas de nursing, a PG
+              abroad o al contacto directo con New-Lyf.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              La mejor decision no sale de una sola promesa. Sale de comparar
+              coste total, reconocimiento, idioma, vida diaria y pasos reales
+              de admision. Si esos puntos siguen claros despues de leer, la
+              opcion suele merecer una revision mas seria.
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Si una ruta sigue confusa, la pagina ya dio una respuesta util.
+              Significa que la familia todavia necesita confirmar mas datos
+              antes de avanzar. Eso tambien ahorra tiempo, dinero y esfuerzo.
+            </p>
+          </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link
               href="/"

@@ -147,6 +147,34 @@ export default function GalleryPage() {
             ))}
           </div>
         </section>
+
+        <section className="mt-10 rounded-3xl border border-blue-100 bg-blue-50 p-6 shadow-sm sm:p-8">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+            How this page supports the rest of the site
+          </h2>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            This gallery also works as a support page for the wider website.
+            Many students move between country guides, enquiry forms, nursing
+            pages, Germany pages, and student stories before they decide
+            whether to call or submit a consultation request. A visual page
+            adds context to that journey without forcing the user into another
+            long sales page.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            Parents often use visual pages in a practical way. They want to see
+            if the brand feels consistent, if the student-facing tone looks
+            serious, and if the overall presentation supports the claims made
+            elsewhere on the site. That is why this page carries more value
+            than a plain image archive.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+            When the gallery is read together with the country and contact
+            pages, it gives a more complete picture of tone, support, and
+            guidance style. That helps users connect the enquiry path, the
+            student stories, and the planning pages into one understandable
+            journey.
+          </p>
+        </section>
       </div>
     </main>
   );

@@ -144,6 +144,37 @@ export default function PgAbroadPage() {
             a long list built around salary headlines or social media trends.
           </p>
         </div>
+
+        <div className="mt-6 rounded-[2rem] border border-blue-100 bg-blue-50 p-8">
+          <h2 className="text-2xl font-black text-slate-900">
+            What a strong PG route should make obvious
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            A good PG abroad route should be explainable in simple steps. You
+            should know the first requirement, the next document or exam
+            checkpoint, the likely language pressure, and the first stable
+            training or work milestone after you start moving.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            This matters because many doctors compare countries in the wrong
+            order. They start with salary or popularity and only later look at
+            licensing, translation work, specialty fit, and time to entry. A
+            safer process checks execution first and excitement later.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            Families also need the route to feel stable in practical terms. The
+            stronger option is usually the one that stays understandable on
+            budget, timing, exams, language, and long-term recognition. If one
+            of those parts keeps changing, the route is not ready for a payment
+            decision yet.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-700">
+            Use this page as a filter first and a shortlist builder second. If
+            the path becomes easier to explain after reading, it may deserve
+            the next step. If it becomes harder to explain, you have probably
+            saved yourself from a weak-fit route.
+          </p>
+        </div>
       </section>
     </main>
   );
