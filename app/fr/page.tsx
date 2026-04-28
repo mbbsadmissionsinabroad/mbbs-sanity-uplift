@@ -63,6 +63,13 @@ export default function FrenchLandingPage() {
               quotidienne dans le pays choisi convient vraiment a l etudiant.
               Ces questions donnent une base plus solide qu une promesse vague.
             </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Il est aussi utile de verifier le vrai calendrier du projet. La
+              famille doit comprendre le temps necessaire pour les documents, l
+              admission, le visa et l installation initiale. Une option qui
+              semble simple au depart peut devenir plus lourde si cette partie
+              reste floue.
+            </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link

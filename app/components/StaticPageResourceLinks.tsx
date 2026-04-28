@@ -28,6 +28,52 @@ function pickInternalLinks(entry: StaticSeoRegistryEntry) {
   return [...sameKind, ...sameSection].slice(0, 6);
 }
 
+const sectionBriefing: Record<
+  StaticSeoRegistryEntry["section"],
+  { title: string; paragraphs: string[] }
+> = {
+  "mbbs-abroad": {
+    title: "What a good MBBS abroad decision usually looks like",
+    paragraphs: [
+      "A strong MBBS abroad route should stay understandable after you compare tuition, hostel, food, visa cost, language pressure, internship structure, and India-return planning. If the route only sounds attractive in one short headline, it usually needs deeper verification before a family commits money.",
+      "Students and parents usually need the same core answers. They want to know whether the degree path is usable, whether the city and university are stable, whether the total cost will stay manageable year after year, and whether the student can realistically adapt to classes, climate, and daily life.",
+      "The purpose of these country guides is to reduce emotional guessing. Use the summary, tables, and official links to reach a simple decision frame: this route fits, this route does not fit, or this route needs one final round of checking before you move ahead.",
+    ],
+  },
+  "medical-pg": {
+    title: "How doctors can use this page more practically",
+    paragraphs: [
+      "A PG abroad path becomes easier when the doctor separates image from process. First check licensing, then language, then training entry, then specialty fit, and only after that compare long-term income or migration upside. That order protects you from spending time on an exciting route that is weak in execution.",
+      "Many doctors lose time because they compare countries only by salary or popularity. A better comparison looks at recognition, exam load, translation work, employer demand, realistic timeline, and how difficult it is to move from India into the first stable training or work position.",
+      "Use the guide as a filter, not as a promise. If the route still feels confusing after you read the key requirements, it usually means one important part is still unclear and should be checked before any payment or major paperwork step.",
+    ],
+  },
+  "nursing-jobs": {
+    title: "What nurses and families should confirm early",
+    paragraphs: [
+      "Nursing jobs abroad are easiest to compare when you look at the full path, not only the job title. Language level, registration, adaptation period, relocation cost, and employer support matter as much as the salary line because they decide how smooth the move will feel in real life.",
+      "Families often benefit from one simple rule. Choose the route that stays clear after you compare language, licensing, and total cost. If the route still sounds vague or depends on too many assumptions, it is safer to slow down and verify more before starting training or document spending.",
+      "These pages are meant to help Indian nurses remove weak-fit options early. That saves time and protects effort. A good route should feel more practical after reading, not more confusing.",
+    ],
+  },
+  "learn-german": {
+    title: "How to judge a German course page the right way",
+    paragraphs: [
+      "A German course choice should be based on syllabus clarity, level progression, batch format, trainer support, and whether the course actually helps the student reach the next real-world goal. That goal may be MBBS abroad planning, nursing migration, PG in Germany, or Ausbildung preparation.",
+      "Price alone is not enough. A cheap course that leaves the student underprepared creates more delay later. A useful course should make the path clearer, build confidence level by level, and reduce confusion about exams, documents, or professional communication.",
+      "Read the page with one question in mind: will this course help the student move to the next real step with less stress? If the answer still feels uncertain, compare the syllabus and support structure more carefully before joining.",
+    ],
+  },
+  ausbildung: {
+    title: "How families can read Ausbildung pages more clearly",
+    paragraphs: [
+      "Ausbildung planning becomes easier when the family separates the route into plain parts: course type, stipend, German level, visa path, living cost, and long-term job outcome. Looking at those parts one by one gives a clearer picture than relying on broad promises about Germany alone.",
+      "A good Ausbildung option should feel realistic from both the student side and the family side. The student should be able to handle the language and training routine. The family should be comfortable with the preparation cost, timeline, and the support available before and after arrival.",
+      "Use the guide to reduce confusion, not to create excitement without detail. If the route still looks unclear after reading the summary and official links, it deserves another round of checking before any final decision.",
+    ],
+  },
+};
+
 function LinkList({
   title,
   links,
@@ -109,6 +155,7 @@ export default function StaticPageResourceLinks({
     "If a page still feels vague after the summary and tables, it is not ready for a payment decision.",
     "Use these guides to reach a clear yes, a clear no, or a short list worth discussing.",
   ];
+  const briefing = sectionBriefing[currentPage.section];
 
   return (
     <section className="bg-slate-50 py-16">
@@ -185,6 +232,15 @@ export default function StaticPageResourceLinks({
                 <li key={item}>{item}</li>
               ))}
             </ul>
+          </div>
+
+          <div className="mt-6 rounded-[24px] border border-slate-200 bg-slate-50 p-5">
+            <h3 className="text-lg font-semibold text-slate-900">{briefing.title}</h3>
+            <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
+              {briefing.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
 

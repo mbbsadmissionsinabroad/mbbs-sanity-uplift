@@ -138,6 +138,18 @@ export default function NursingJobsAbroadPage() {
             realistic timing, and fewer surprises. That is the standard this
             page is meant to help you apply.
           </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            It also helps to compare support after arrival. Ask who helps with
+            registration, adaptation, document follow-up, and day-to-day
+            settling. A route can look strong before departure and still become
+            difficult if post-arrival support is weak or unclear.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            If you use this page well, you should end up with fewer but better
+            options. That is usually the fastest way to protect time, money,
+            and energy while still moving toward a realistic nursing route
+            abroad.
+          </p>
         </div>
       </section>
     </main>

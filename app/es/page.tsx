@@ -62,6 +62,13 @@ export default function SpanishLandingPage() {
               en el pais elegido encaja con el estudiante. Estas preguntas
               ayudan mas que una promesa general.
             </p>
+            <p className="mt-4 text-base leading-8 text-slate-600">
+              Tambien es util revisar la linea de tiempo completa. Conviene
+              saber cuanto tardan los documentos, la admision, la visa y la
+              adaptacion inicial. Una opcion puede parecer buena al principio y
+              aun asi crear tension si la preparacion real es mucho mayor de lo
+              esperado.
+            </p>
           </div>
           <div className="mt-8 grid gap-4 md:grid-cols-2">
             <Link

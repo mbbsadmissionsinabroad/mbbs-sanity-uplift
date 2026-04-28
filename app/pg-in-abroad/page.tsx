@@ -132,6 +132,17 @@ export default function PgAbroadPage() {
             decision. Keep only the options that become clearer as you gather
             facts. Drop the ones that stay vague.
           </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            A practical PG route should show visible milestones. You should be
+            able to explain the first step, the next checkpoint, the main
+            document load, and the likely time to progress. If you cannot
+            explain that path simply, the route usually needs better checking.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            This is why we encourage doctors to compare fewer routes more
+            deeply. A short list with clearer facts is usually more useful than
+            a long list built around salary headlines or social media trends.
+          </p>
         </div>
       </section>
     </main>

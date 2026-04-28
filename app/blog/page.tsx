@@ -88,6 +88,20 @@ const page = () => {
             medical or nursing goals. That is why this section is built around
             practical decision support rather than general motivation alone.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            Readers can also use this page as a planning hub. Open one article,
+            note the main cost point, recognition point, language point, and
+            timing point, then compare that with another route. That simple
+            method turns the blog from a reading section into a better decision
+            tool for families who are still shortlisting countries or services.
+          </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            The strongest blog content does one job well. It reduces confusion.
+            It should help a student say yes with more confidence, say no with
+            good reason, or keep only a short list for the next counsellor
+            conversation. That is the standard this section is designed to
+            support as the site keeps growing.
+          </p>
         </div>
       </div>
     </>
