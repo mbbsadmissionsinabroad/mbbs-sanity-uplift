@@ -111,6 +111,13 @@ export default function GalleryPage() {
             reading only claims, they can see the visual style, the student
             focus, and the kind of support context presented across the site.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            Visual pages also support trust in a simple way. They help users
+            connect the service promise with real-looking support scenes,
+            student-facing material, and brand consistency. For many families,
+            that extra context makes the next step feel more understandable
+            than reading text alone.
+          </p>
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             {[
               "These images show real support scenes.",

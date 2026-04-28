@@ -446,6 +446,13 @@ export default function ContactPageClient({
                 that, you can discuss eligibility, timing, budget, documents,
                 and the most suitable country options with more confidence.
               </p>
+              <p className="mt-3 text-sm leading-7 text-slate-600">
+                A good contact page should do more than collect a name and
+                number. It should help the right student reach the right team
+                faster. That is why we ask about the course path, destination
+                interest, and current location. The clearer your form details
+                are, the more useful the follow-up conversation can be.
+              </p>
             </div>
           </div>
         </div>

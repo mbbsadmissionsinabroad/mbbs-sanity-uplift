@@ -81,6 +81,13 @@ const page = () => {
             preparation, and career fit. That makes the reading process more
             useful than browsing random articles without a clear plan.
           </p>
+          <p className="mt-4 text-sm leading-7 text-slate-600 sm:text-base">
+            A useful blog should also save time. It should help readers reject
+            weak-fit routes early and focus on the destinations or pathways
+            that match their budget, documents, language comfort, and long-term
+            medical or nursing goals. That is why this section is built around
+            practical decision support rather than general motivation alone.
+          </p>
         </div>
       </div>
     </>

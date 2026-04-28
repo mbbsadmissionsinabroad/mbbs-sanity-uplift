@@ -101,6 +101,13 @@ export default function PgAbroadPage() {
               amount of preparation needed from India. This helps you avoid spending months on a route that looks attractive on
               paper but does not fit your long-term plan.
             </p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              Doctors also need to compare the day-to-day reality of the path.
+              Ask how long it takes to enter training, how much language effort
+              is needed, whether the specialty path is stable, and how much
+              support you can expect while moving from India into the next
+              system.
+            </p>
           </div>
           <div className="rounded-[2rem] border border-blue-100 bg-blue-50 p-8">
             <h2 className="text-2xl font-black text-slate-900">
@@ -114,6 +121,17 @@ export default function PgAbroadPage() {
               <li>Choose the route that gives a stable training path, not just a popular headline.</li>
             </ul>
           </div>
+        </div>
+        <div className="mt-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-black text-slate-900">
+            A simple rule for deciding faster
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            If a route still leaves you confused about exams, language,
+            licensing, or the real start point, it is not ready for a payment
+            decision. Keep only the options that become clearer as you gather
+            facts. Drop the ones that stay vague.
+          </p>
         </div>
       </section>
     </main>

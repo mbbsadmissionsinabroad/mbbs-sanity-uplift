@@ -101,6 +101,13 @@ export default function NursingJobsAbroadPage() {
               Use this section as a planning filter. Compare the country fit, the language barrier, the licensing path, and
               the true relocation effort before you start paying for exams, translations, coaching, or paperwork.
             </p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              This page works best when you use it to narrow your next step.
+              Some nurses need a route with stronger employer demand. Others
+              need a route with lower language pressure or a clearer licensing
+              path. The aim is not to read every detail at once. The aim is to
+              decide which route deserves your time.
+            </p>
           </div>
           <div className="rounded-[2rem] border border-blue-100 bg-blue-50 p-8">
             <h2 className="text-2xl font-black text-slate-900">
@@ -114,6 +121,23 @@ export default function NursingJobsAbroadPage() {
               <li>Choose the route that is clearer and safer, not only the one that sounds faster.</li>
             </ul>
           </div>
+        </div>
+        <div className="mt-6 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm">
+          <h2 className="text-2xl font-black text-slate-900">
+            What families should confirm before paying
+          </h2>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            Before you spend money on training, tests, or documents, confirm
+            the full cost, the language level, the registration path, the
+            likely job timeline, and the support available after arrival. A
+            route that looks attractive on social media may still be a poor fit
+            if one of these points is unclear.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            The stronger path is usually the one that gives visible steps,
+            realistic timing, and fewer surprises. That is the standard this
+            page is meant to help you apply.
+          </p>
         </div>
       </section>
     </main>

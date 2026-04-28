@@ -88,6 +88,12 @@ export default function StaticPageResourceLinks({
     "How long can admissions, visa, and travel preparation realistically take from this point?",
     "If two options look close, which one gives the safer long-term outcome instead of the cheapest first impression?",
   ];
+  const decisionNotes = [
+    "Students often lose time when they compare ten countries at once. It is better to compare three realistic options properly.",
+    "Parents usually care about the same core points. They want safe cities, visible total cost, recognition clarity, and support after landing.",
+    "If one route still feels confusing after reading the summary, that route is not ready for a payment decision yet.",
+    "A strong page should make the next step easier. It should not force you to guess about fees, documents, timelines, or recognition.",
+  ];
 
   return (
     <section className="bg-slate-50 py-16">
@@ -153,6 +159,37 @@ export default function StaticPageResourceLinks({
                 no, or a short list worth discussing with your family.
               </p>
             </div>
+          </div>
+          <div className="mt-6 rounded-[24px] border border-slate-200 bg-white p-5">
+            <h4 className="text-lg font-semibold text-slate-900">
+              What this page should help you decide
+            </h4>
+            <div className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              <p>
+                By the time you finish this page, you should know whether the route belongs in your shortlist, whether it needs
+                deeper verification, or whether it should be dropped. That is a better outcome than reading a long guide and
+                still feeling unsure about the next step.
+              </p>
+              <p>
+                Use the facts here to build a family discussion. Focus on total cost, recognition, study or training pressure,
+                language load, visa speed, and daily life. Those are the points that usually shape a good decision more than
+                promotional phrases do.
+              </p>
+              <p>
+                If this page helps you narrow the choice, it has already done useful work. You do not need perfect certainty on
+                the first read. You need a cleaner decision frame and a better set of questions for the next conversation.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 rounded-[24px] border border-amber-100 bg-amber-50 p-5">
+            <h4 className="text-lg font-semibold text-slate-900">
+              Four signs a route is worth deeper review
+            </h4>
+            <ul className="mt-4 space-y-3 pl-5 text-sm leading-6 text-slate-700 marker:text-amber-700">
+              {decisionNotes.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </div>
 
