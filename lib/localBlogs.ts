@@ -76,6 +76,8 @@ export type LocalBlogEntry = {
   }>;
 };
 
+export type LocalBlogSummary = Omit<LocalBlogEntry, "pageContent" | "faq">;
+
 const rawBlogs = rawLocalBlogs as RawLocalBlog[];
 
 function escapeHtml(value: string) {
@@ -337,7 +339,7 @@ function sanitizeCardTitle(rawBlog: RawLocalBlog) {
   return rawBlog.cardTitle;
 }
 
-function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
+function buildBaseLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogSummary {
   const canonical = `${SITE_URL}/${rawBlog.slug}`;
   const keywords = [rawBlog.focusKeyword, ...rawBlog.keywordSynonyms].filter(Boolean);
   const metaKeywords = keywords.join(", ");
@@ -361,14 +363,6 @@ function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
     publicSlug: rawBlog.slug,
     blogCategory: rawBlog.blogCategory,
     bannerImageUrl,
-    pageContent:
-      rawBlog.format === "plain"
-        ? parsePlainContent(rawBlog.bodySource)
-        : parseMarkdownContent(rawBlog.bodySource),
-    faq: rawBlog.faq.map((item) => ({
-      question: item.question,
-      answer: renderFaqAnswerHtml(item.answerLines, rawBlog.format),
-    })),
     seo: {
       title: rawBlog.metaTitle,
       description: rawBlog.metaDescription,
@@ -383,11 +377,25 @@ function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
   };
 }
 
-export const localBlogs: LocalBlogEntry[] = rawBlogs.map(toLocalBlogEntry);
+function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
+  return {
+    ...buildBaseLocalBlogEntry(rawBlog),
+    pageContent:
+      rawBlog.format === "plain"
+        ? parsePlainContent(rawBlog.bodySource)
+        : parseMarkdownContent(rawBlog.bodySource),
+    faq: rawBlog.faq.map((item) => ({
+      question: item.question,
+      answer: renderFaqAnswerHtml(item.answerLines, rawBlog.format),
+    })),
+  };
+}
+
+export const localBlogs: LocalBlogSummary[] = rawBlogs.map(buildBaseLocalBlogEntry);
 
 export function getLocalBlogBySlug(slug: string) {
   const normalizedSlug = slug.replace(/^\/+/, "").toLowerCase();
-  return localBlogs.find(
-    (blog) => blog.slug.current.toLowerCase() === normalizedSlug
-  );
+  const rawBlog = rawBlogs.find((blog) => blog.slug.toLowerCase() === normalizedSlug);
+
+  return rawBlog ? toLocalBlogEntry(rawBlog) : undefined;
 }
