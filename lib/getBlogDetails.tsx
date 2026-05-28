@@ -1,3 +1,5 @@
+import { getLocalBlogBySlug } from "./localBlogs";
+
 interface BlogDetails {
   data: any;
   faq: any;
@@ -24,6 +26,16 @@ async function fetchQuery(apiHost: string, query: string) {
 }
 
 export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
+  const localBlog = getLocalBlogBySlug(routeURL);
+  if (localBlog) {
+    return {
+      data: localBlog,
+      faq: localBlog.faq,
+      youtubeEmbedRes: [],
+      notFound: false,
+    };
+  }
+
   const preferredApiHost =
     process.env.NEXT_PUBLIC_API_HOST || directSanityApiHost;
   const query = encodeURIComponent(

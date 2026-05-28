@@ -83,7 +83,8 @@ export async function generateMetadata({
 
     const data = blogDetailsContent.data || {};
     const seo = data.seo || {};
-    const title = seo.title || data.metaTitle || data.title || "MBBS Admissions in Abroad";
+    const title =
+      seo.title || data.metaTitle || data.title || "MBBS Admissions in Abroad";
     const description =
       seo.description ||
       data.metaDescription ||
@@ -91,11 +92,24 @@ export async function generateMetadata({
     const canonical = seo.canonicalUrl || data.canonical || `${siteUrl}/${route}`;
     const robots = seo.robots || "index,follow";
     const imageSource = seo.ogImage || data.bannerImage || data.mainImage;
-    const imageUrl = imageSource ? urlFor(imageSource).width(1200).height(630).fit("crop").url() : undefined;
+    const imageUrl = data.bannerImageUrl
+      ? `${siteUrl}${data.bannerImageUrl}`
+      : imageSource
+        ? urlFor(imageSource).width(1200).height(630).fit("crop").url()
+        : undefined;
+    const keywordList = Array.isArray(seo.keywords)
+      ? seo.keywords
+      : typeof data.metaKeywords === "string"
+        ? data.metaKeywords
+            .split(",")
+            .map((keyword: string) => keyword.trim())
+            .filter(Boolean)
+        : undefined;
 
     return {
       title,
       description,
+      keywords: keywordList,
       alternates: {
         canonical,
       },
@@ -121,9 +135,11 @@ export async function generateMetadata({
 }
 
 const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
+  const route = params?.blogRoutes ?? "";
+
   let blogDetailsContent;
   try {
-    blogDetailsContent = await getBlogDetails(params?.blogRoutes ?? "");
+    blogDetailsContent = await getBlogDetails(route);
   } catch (error) {
     console.error("Error fetching blog details:", error);
     return <Notfound />;

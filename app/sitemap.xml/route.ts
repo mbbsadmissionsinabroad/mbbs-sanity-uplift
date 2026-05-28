@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 
 import { staticSeoPages } from "../data/staticSeoRegistry";
+import { localBlogs } from "@/lib/localBlogs";
 
 export const revalidate = 3600;
 
@@ -8,6 +9,7 @@ const SITE_URL = "https://www.mbbsadmissionsinabroad.com";
 
 type SitemapEntry = {
   route: string;
+  lastmod?: string;
   changefreq?: "daily" | "weekly" | "monthly";
   priority?: string;
 };
@@ -48,16 +50,22 @@ function toAbsoluteUrl(route: string) {
   return `${SITE_URL}${route}`;
 }
 
-function buildEntries() {
+async function buildEntries() {
   const registryEntries: SitemapEntry[] = staticSeoPages.map((page) => ({
     route: page.route,
     changefreq: "monthly",
     priority: "0.8",
   }));
+  const localBlogEntries: SitemapEntry[] = localBlogs.map((blog) => ({
+    route: `/${blog.slug.current}`,
+    lastmod: blog._updatedAt,
+    changefreq: "weekly",
+    priority: "0.7",
+  }));
 
   const seen = new Set<string>();
 
-  return [...coreRoutes, ...registryEntries].filter((entry) => {
+  return [...coreRoutes, ...registryEntries, ...localBlogEntries].filter((entry) => {
     if (!entry.route || seen.has(entry.route)) {
       return false;
     }
@@ -68,11 +76,12 @@ function buildEntries() {
 }
 
 function generateSiteMap(entries: SitemapEntry[]) {
-  const lastmod = new Date().toISOString();
+  const generatedAt = new Date().toISOString();
 
   const urls = entries
     .map((entry) => {
       const loc = escapeXml(toAbsoluteUrl(entry.route));
+      const lastmod = escapeXml(entry.lastmod ?? generatedAt);
       const changefreq = entry.changefreq ?? "monthly";
       const priority = entry.priority ?? "0.7";
 
@@ -94,7 +103,7 @@ ${urls}
 }
 
 export async function GET() {
-  const sitemap = generateSiteMap(buildEntries());
+  const sitemap = generateSiteMap(await buildEntries());
 
   return new NextResponse(sitemap, {
     headers: {

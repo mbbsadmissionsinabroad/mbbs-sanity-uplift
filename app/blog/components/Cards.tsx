@@ -4,14 +4,18 @@ import { urlFor } from "@/lib/client";
 import Link from "next/link";
 
 const Cards = ({ blog, index }: any) => {
+  const href = `/${blog.publicSlug || blog.slug.current}`;
+  const imageSrc = blog.bannerImageUrl
+    ? blog.bannerImageUrl
+    : urlFor(blog.bannerImage).url();
   return (
     <div className="p-4 md:w-1/3">
-      <Link href={blog.slug.current}>
+      <Link href={href}>
         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
           <Image
             className="lg:h-48 md:h-36 w-full object-cover object-center"
-            src={urlFor(blog.bannerImage).url()}
-            alt="slider-image"
+            src={imageSrc}
+            alt={blog.cardTitle || blog.title || "Blog article"}
             height={1000}
             width={2000}
           />
@@ -20,7 +24,7 @@ const Cards = ({ blog, index }: any) => {
               {blog.blogCategory}
             </h2>
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-              {blog.title}
+              {blog.cardTitle || blog.title}
             </h1>
             <p className="leading-relaxed mb-3">{blog.metaDescription}</p>
             <div className="flex items-center flex-wrap ">
