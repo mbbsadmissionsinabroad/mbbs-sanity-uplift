@@ -605,21 +605,38 @@
   padding: 24px;
 }
 
-.speakerAvatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 24px;
+.speakerCardBody {
   display: grid;
-  place-items: center;
+  gap: 22px;
+  align-items: start;
+}
+
+.speakerCopy {
+  min-width: 0;
+}
+
+.speakerMedia {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.speakerPhotoFrame {
+  position: relative;
+  width: 132px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 28px;
   background: linear-gradient(135deg, #7d1630, #cc5f49);
-  color: #fff9f8;
-  font-size: 1.25rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  box-shadow: 0 18px 36px rgba(124, 17, 39, 0.18);
+  flex-shrink: 0;
+}
+
+.speakerPhoto {
+  object-fit: cover;
 }
 
 .speakerRole {
-  margin-top: 20px;
+  margin-top: 0;
   background: rgba(124, 17, 39, 0.08);
   color: #7b162d;
 }
@@ -797,6 +814,14 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .speakerCardBody {
+    grid-template-columns: minmax(0, 1fr) 148px;
+  }
+
+  .speakerPhotoFrame {
+    width: 148px;
+  }
+
   .deadlineGrid,
   .webinarGrid {
     grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
@@ -827,6 +852,14 @@
 
   .testimonialGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .speakerCardBody {
+    grid-template-columns: minmax(0, 1fr) 168px;
+  }
+
+  .speakerPhotoFrame {
+    width: 168px;
   }
 }
 
@@ -929,6 +962,20 @@
 
   .panelMeta {
     grid-template-columns: 1fr;
+  }
+
+  .speakerCardBody {
+    gap: 18px;
+  }
+
+  .speakerMedia {
+    justify-content: flex-start;
+    order: -1;
+  }
+
+  .speakerPhotoFrame {
+    width: 112px;
+    border-radius: 24px;
   }
 
   .modalCard {

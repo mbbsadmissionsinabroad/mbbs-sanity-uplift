@@ -76,6 +76,8 @@ const speakerCards = [
   {
     name: "Doctor Vinith",
     role: "Medical expert",
+    imageSrc: "/speaker-dr-vinith.jpg",
+    imageAlt: "Doctor Vinith",
     credential: "Focused on medical-pathway clarity for NEET families planning beyond the re-exam panic.",
     description:
       "Covers practical MBBS-abroad fit, long-term practice thinking, and the questions families should answer before they commit to a country.",
@@ -83,6 +85,8 @@ const speakerCards = [
   {
     name: "Mr. Avinash",
     role: "International admissions specialist",
+    imageSrc: "/speaker-mr-avinash.jpg",
+    imageAlt: "Mr. Avinash",
     credential: "Brings 10+ years of admissions planning experience for students moving on tight intake timelines.",
     description:
       "Breaks down shortlisting, documentation, and the August-intake process so students can move before the admission rush peaks.",
@@ -458,16 +462,28 @@ export default function WebinarLandingPage() {
         <div className={styles.speakerGrid}>
           {speakerCards.map((speaker) => (
             <article key={speaker.name} className={styles.speakerCard}>
-              <div className={styles.speakerAvatar}>
-                {speaker.name
-                  .split(" ")
-                  .map((part) => part[0])
-                  .join("")}
+              <div className={styles.speakerCardBody}>
+                <div className={styles.speakerCopy}>
+                  <p className={styles.speakerRole}>{speaker.role}</p>
+                  <h3 className={styles.speakerName}>{speaker.name}</h3>
+                  <p className={styles.speakerCredential}>{speaker.credential}</p>
+                  <p className={styles.speakerDescription}>
+                    {speaker.description}
+                  </p>
+                </div>
+
+                <div className={styles.speakerMedia}>
+                  <div className={styles.speakerPhotoFrame}>
+                    <Image
+                      src={speaker.imageSrc}
+                      alt={speaker.imageAlt}
+                      fill
+                      sizes="(max-width: 767px) 120px, 160px"
+                      className={styles.speakerPhoto}
+                    />
+                  </div>
+                </div>
               </div>
-              <p className={styles.speakerRole}>{speaker.role}</p>
-              <h3 className={styles.speakerName}>{speaker.name}</h3>
-              <p className={styles.speakerCredential}>{speaker.credential}</p>
-              <p className={styles.speakerDescription}>{speaker.description}</p>
             </article>
           ))}
         </div>
