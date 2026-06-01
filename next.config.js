@@ -97,6 +97,11 @@ const nextConfig = {
         destination: "/mbbs-admission-in-bangladesh-for-indian-students",
         permanent: true,
       },
+      {
+        source: "/mbbs-admission-in-russia",
+        destination: "/mbbs-in-russia",
+        permanent: true,
+      },
     ];
   },
 };

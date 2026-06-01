@@ -1,8 +1,8 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-kazakhstan`;
 export const pageTitle =
-  "MBBS in Kazakhstan 2026-27 for Indian Students";
-export const metaTitle = "MBBS Admission in Kazakhstan 2026-27 - Complete Guide";
+  "MBBS in Kazakhstan 2026-27 for Indian Students - Complete Guide";
+export const metaTitle = "MBBS in Kazakhstan 2026 | NMC Approved Universities, Fees & FMGE Guide";
 export const metaDescription =
   "MBBS in Kazakhstan 2026-27 for Indian students: NMC-approved universities, fees, FMGE context, visas, and India-return value.";
 
@@ -195,13 +195,13 @@ export const careerPathways = [
 ];
 
 export const faqs = [
-  { question: "Is MBBS in Kazakhstan recognised by NMC India?", answer: "Kazakhstan can work for Indian students when the chosen university fits the current India-recognition pathway, so direct verification is essential before enrolment." },
-  { question: "What is the FMGE pass rate for Kazakhstan?", answer: "Kazakhstan is discussed as a stronger option than several nearby competitors, but university selection matters sharply inside the country." },
-  { question: "Is NEET required for MBBS in Kazakhstan?", answer: "Yes. Indian students should treat NEET as mandatory because it is tied to the India-recognition route after graduation." },
+  { question: "Is MBBS in Kazakhstan recognised by NMC India?", answer: "Yes, provided you choose a university listed in both the NMC-approved pathway and WDOMS. Always verify at wdoms.org before paying any fee. Universities like Al-Farabi Kazakh National University, Asfendiyarov KazNMU, and Astana Medical University are well established on the India-recognition pathway." },
+  { question: "What is the FMGE pass rate for Kazakhstan?", answer: "Kazakhstan's national FMGE average is approximately 40-55% depending on the university and year. Al-Farabi Kazakh National University consistently outperforms the national average. This is usually stronger than Russia and China, but lower than top Georgia outcomes. University selection is the single biggest factor." },
+  { question: "Is NEET required for MBBS in Kazakhstan?", answer: "Yes. NEET qualification is mandatory for Indian students under the NMC foreign medical graduate rules. A valid NEET scorecard is needed for India-side recognition and later licensing after graduation." },
   { question: "Do I need IELTS or TOEFL for Kazakhstan?", answer: "Usually no, which is one of the route's practical advantages." },
-  { question: "How much does MBBS in Kazakhstan cost in total?", answer: "The realistic all-in total usually lands in a comparatively affordable band versus many international medicine destinations." },
+  { question: "How much does MBBS in Kazakhstan cost in total?", answer: "A realistic all-in cost over 5-6 years is usually around Rs 28 lakh-Rs 42 lakh depending on the university and city. This includes tuition, hostel, food, visa renewals, insurance, and travel. Almaty and Astana usually cost more than regional cities like Shymkent, Aktobe, or Karaganda." },
   { question: "Is there an entrance exam in Kazakhstan for MBBS?", answer: "Usually no separate Kazakhstan entrance exam is required for the standard direct-admission route." },
-  { question: "Which Kazakhstan university is best for FMGE-focused students?", answer: "Al-Farabi is often the first data-led shortlist choice because of its standout recent FMGE performance, though fit still depends on budget and city preference." },
+  { question: "Which Kazakhstan university is best for FMGE-focused students?", answer: "Al-Farabi Kazakh National University in Almaty usually shows the strongest FMGE outcomes in Kazakhstan. Asfendiyarov KazNMU and Astana Medical University are strong second choices. Students who prioritise cost over outcomes often choose West Kazakhstan or South Kazakhstan Medical Academy, but the FMGE gap can be significant." },
   { question: "Is Kazakhstan better than Russia for India-return students?", answer: "Many students view Kazakhstan more positively when they want a stronger FMGE platform with English-medium clarity and simpler shortlisting." },
   { question: "Do I need Russian or Kazakh?", answer: "Not for starting the academic route, but basic language comfort helps a lot with daily life and clinical interaction later." },
   { question: "Is Kazakhstan safe for Indian students?", answer: "Many students choose Kazakhstan because the main university cities are considered practical, orderly and manageable for international students." },

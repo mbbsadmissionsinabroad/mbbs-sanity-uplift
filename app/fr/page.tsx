@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mbbsadmissionsinabroad.com/fr",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 const keyPoints = [

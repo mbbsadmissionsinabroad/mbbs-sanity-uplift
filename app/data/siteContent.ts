@@ -10,10 +10,13 @@ export type CountryLink = SiteLink & {
 export const mainNavLinks: SiteLink[] = [
   { title: "Home", href: "/" },
   { title: "Nursing Jobs Abroad", href: "/nursing-jobs-in-abroad" },
+  { title: "Study Nursing in Bosnia", href: "/study-nursing-in-bosnia" },
   { title: "PG Abroad", href: "/pg-in-abroad" },
+  { title: "PG in Pharm D", href: "/pg-in-pharm-d" },
   { title: "Ausbildung", href: "/ausbildung" },
   { title: "Learn German", href: "/learn-german-language-course-in-bangalore" },
   { title: "Blog", href: "/blog" },
+  { title: "Gallery", href: "/gallery" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -116,11 +119,6 @@ export const mbbsAbroadCountries: CountryLink[] = [
   {
     title: "Russia",
     href: "/mbbs-in-russia",
-    flagCode: "RU",
-  },
-  {
-    title: "Krasnoyarsk State Medical University Russia",
-    href: "/krasnoyarsk-state-medical-university-russia",
     flagCode: "RU",
   },
   {
@@ -259,7 +257,9 @@ export const footerLinkColumns: SiteLink[][] = [
   ],
   [
     { title: "Nursing Jobs Abroad", href: "/nursing-jobs-in-abroad" },
+    { title: "Study Nursing in Bosnia", href: "/study-nursing-in-bosnia" },
     { title: "PG Abroad", href: "/pg-in-abroad" },
+    { title: "PG in Pharm D", href: "/pg-in-pharm-d" },
     { title: "Ausbildung", href: "/ausbildung" },
     { title: "Contact Us", href: "/contact" },
   ],
@@ -381,8 +381,8 @@ export const studentTestimonials = [
 
 export const galleryImages = [
   {
-    src: "/assests/home-page-banner-1.png",
-    alt: "MBBS abroad home banner with counselling desk",
+    src: "/gallery-counselling.jpg",
+    alt: "Counsellor speaking with a student during a study abroad guidance session",
     title: "Guided admissions support",
   },
   {

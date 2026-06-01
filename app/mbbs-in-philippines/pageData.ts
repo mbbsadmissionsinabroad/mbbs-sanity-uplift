@@ -1,11 +1,11 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-philippines`;
 export const pageTitle =
-  "MBBS in Philippines 2026-27 for Indian Students";
+  "MBBS in Philippines 2026-27 for Indian Students - Complete Guide";
 export const metaTitle =
-  "MBBS Admission in Philippines 2026-27 - Complete Guide";
+  "MBBS in Philippines 2026 | NMC Approved Universities, Fees & FMGE Guide";
 export const metaDescription =
-  "MBBS in Philippines 2026-27 for Indian students: NMC-approved universities, NMAT and BS+MD route, fees, and admissions.";
+  "MBBS in Philippines 2026-27 for Indian students: NMC-approved universities, NMAT and BS+MD route, fees, FMGE context, and admission guidance.";
 
 export const lastUpdated = "March 26, 2026";
 export const whatsappNumber = "+918147030030";
@@ -88,18 +88,21 @@ export const additionalCosts = [
 ];
 
 export const examContext = [
-  { Metric: "FMGE / NExT context", Philippines: "Strong at top universities", Poland: "Strong recent signal", Nepal: "Very strong top-college signal", Russia: "High-volume mixed" },
+  { Metric: "FMGE / NExT context", Philippines: "24-27% national average (NMC 2022-24); higher at MCU, AUF, UV Gullas", Poland: "Strong recent signal", Nepal: "Very strong top-college signal", Russia: "High-volume mixed" },
   { Metric: "English-medium comfort", Philippines: "Very high", Poland: "High", Lithuania: "High", Russia: "Mixed in clinical practice" },
   { Metric: "Process complexity", Philippines: "Moderate due to BS plus NMAT", Nepal: "Low-moderate", Poland: "Moderate", Hungary: "High" },
   { Metric: "EU career portability", Philippines: "Low", Poland: "High", Lithuania: "High", Bulgaria: "High" },
 ];
 
 export const philippinesExamNotes = [
-  { Note: "Top Philippine universities show strong FMGE conversations", Meaning: "That is one reason the country remains attractive for India-return students despite not being in the EU." },
-  { Note: "University choice matters a lot", Meaning: "The spread between better and weaker Philippine options is wide, so shortlisting quality universities is crucial." },
+  { Note: "National FMGE performance is lower than many students expect", Meaning: "The Philippines overall FMGE pass rate sits around 24-27% in the 2022-24 NMC data, so students should not assume the country is uniformly strong for India-return licensing." },
+  { Note: "University choice matters a lot", Meaning: "The spread between better and weaker Philippine options is wide, so shortlisting MCU, AUF, UV Gullas or similarly proven universities is crucial." },
   { Note: "US-style structure helps", Meaning: "The English-medium and reasoning-heavy academic model can support both NExT and USMLE-minded students." },
   { Note: "NMAT is part of the route", Meaning: "Students should treat NMAT as a planned milestone, not as an afterthought during BS." },
 ];
+
+export const examCallout =
+  "University selection note: The Philippines national FMGE pass rate is 24-27% (NMC data 2022-24). This is below the overall FMGE average. Students who choose MCU, AUF, or UV Gullas historically see better individual outcomes. That makes shortlisting the right university the single most important decision for India-return success.";
 
 export const recognition = [
   { Body: "NMC", Why: "Essential for Indian students and the first filter before committing financially" },
@@ -135,7 +138,7 @@ export const advantages = [
   "The Philippines offers one of the strongest low-cost English-medium MBBS routes in the world.",
   "Students do not face the daily language friction common in many other foreign destinations.",
   "The US-style structure gives the route broader USA-facing appeal than many similarly priced options.",
-  "Top universities in the Philippines can be very competitive for India-return students focused on licensing exams.",
+  "Top universities like MCU and AUF can perform better than the national average for India-return students, which is why university shortlisting matters so much here.",
   "The full-route cost stays far below most EU destinations and many private Indian colleges.",
 ];
 
@@ -192,10 +195,11 @@ export const careerPathways = [
 ];
 
 export const faqs = [
-  { question: "Is MBBS from Philippines valid in India?", answer: "Yes, if you study at a currently acceptable university and later complete the India licensing path under the applicable NExT-era rules." },
-  { question: "Is NEET compulsory for MBBS in Philippines?", answer: "Yes, Indian students should treat NEET as mandatory because it is tied to the India-recognition pathway." },
-  { question: "Is NMAT compulsory in the Philippines route?", answer: "Yes, NMAT is a major progression requirement between the BS stage and the MD stage." },
-  { question: "How much does MBBS in Philippines cost in total?", answer: "The realistic all-in total often falls around Rs 16L-Rs 35L depending on university and city." },
+  { question: "Is MBBS from Philippines valid in India?", answer: "Yes, MBBS from NMC-approved Philippine universities is valid in India. Graduates must clear the Indian licensing route under NExT to practise in India. The overall FMGE or NExT-style signal for Philippines graduates is only around 24-27% in NMC data from 2022-24, which makes university selection critical." },
+  { question: "Is NEET compulsory for MBBS in Philippines?", answer: "Yes. NEET qualification is mandatory for Indian students who want to practise medicine in India after graduating from the Philippines. This follows the current NMC foreign medical graduate rules." },
+  { question: "What is the total fee for MBBS in Philippines 2026?", answer: "The realistic total cost of MBBS in the Philippines for Indian students in 2026-27 is usually around Rs 16 lakh-Rs 35 lakh depending on the university and city. Low-fee routes like UV Gullas or Davao Medical often sit in the Rs 16 lakh-Rs 24 lakh range, while MCU and AUF are commonly in the Rs 24 lakh-Rs 32 lakh band." },
+  { question: "What is the FMGE pass rate for Philippines medical universities?", answer: "The overall FMGE pass rate for Philippines medical graduates is around 24-27% in NMC data from 2022-24. Top universities like Manila Central University, Angeles University Foundation, and sometimes UV Gullas are discussed as better individual performers, which is why university choice matters so much." },
+  { question: "Is NMAT compulsory in the Philippines route?", answer: "Yes. NMAT is mandatory for progression from the BS pre-med stage into the MD program in the Philippines. Students should plan for it from the start instead of treating it as a last-minute hurdle." },
   { question: "Is the Philippines fully English-medium?", answer: "Yes, that is one of the country's biggest advantages for Indian students." },
   { question: "Which is the best university in the Philippines?", answer: "That depends on whether you prioritise FMGE context, budget, city life or overall academic brand, but MCU and AUF are common FMGE-focused discussions." },
   { question: "Is the Philippines cheaper than Europe for MBBS?", answer: "Yes, the Philippines is usually dramatically cheaper than Poland, Lithuania or Hungary." },

@@ -65,14 +65,17 @@ export const eligibilityNotes = [
 ];
 
 export const universities = [
-  { "#": "1", University: "Georgian American University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Standout FMGE performer and often the first Georgia shortlist pick" },
-  { "#": "2", University: "BAU International University Tbilisi", City: "Tbilisi", "Approx. Annual Fee": "USD 6,000", "Approx. INR": "Rs 4.92L", Note: "Strong clinical simulation environment and strong recent exam signal" },
-  { "#": "3", University: "Georgian National University SEU", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500-6,000", "Approx. INR": "Rs 4.51L-Rs 4.92L", Note: "Big Indian student base and strong recent FMGE profile" },
-  { "#": "4", University: "Caucasus University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Research-linked curriculum with a strong recent India-return signal" },
-  { "#": "5", University: "David Tvildiani Medical University", City: "Tbilisi", "Approx. Annual Fee": "USD 6,000", "Approx. INR": "Rs 4.92L", Note: "Established private medical brand with a good outcomes conversation" },
-  { "#": "6", University: "Alte University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Affordable Tbilisi option with a stronger-than-average recent signal" },
-  { "#": "7", University: "New Vision University", City: "Tbilisi", "Approx. Annual Fee": "USD 7,000-8,200", "Approx. INR": "Rs 5.74L-Rs 6.72L", Note: "Premium campus with higher total budget expectations" },
-  { "#": "8", University: "European University Georgia", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Popular direct-admission route with moderate cost" },
+  { "#": "1", University: "Tbilisi State Medical University", City: "Tbilisi", "Approx. Annual Fee": "USD 8,000", "Approx. INR": "Rs 6.56L", Note: "Georgia's oldest and most prestigious state medical university; NMC-approved with strong global recognition" },
+  { "#": "2", University: "University of Georgia (Tbilisi)", City: "Tbilisi", "Approx. Annual Fee": "USD 6,300-7,000", "Approx. INR": "Rs 5.17L-Rs 5.74L", Note: "One of Georgia's largest private universities with modern infrastructure and a premium-tier reputation" },
+  { "#": "3", University: "East European University (EEU)", City: "Tbilisi", "Approx. Annual Fee": "USD 5,000", "Approx. INR": "Rs 4.10L", Note: "Budget-friendly entry point into Georgia MBBS with growing Indian student interest and a developing FMGE track record" },
+  { "#": "4", University: "Georgian American University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Standout FMGE performer and often the first Georgia shortlist pick" },
+  { "#": "5", University: "BAU International University Tbilisi", City: "Tbilisi", "Approx. Annual Fee": "USD 6,000", "Approx. INR": "Rs 4.92L", Note: "Strong clinical simulation environment and strong recent exam signal" },
+  { "#": "6", University: "Georgian National University SEU", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500-6,000", "Approx. INR": "Rs 4.51L-Rs 4.92L", Note: "Big Indian student base and strong recent FMGE profile" },
+  { "#": "7", University: "Caucasus University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Research-linked curriculum with a strong recent India-return signal" },
+  { "#": "8", University: "David Tvildiani Medical University", City: "Tbilisi", "Approx. Annual Fee": "USD 6,000", "Approx. INR": "Rs 4.92L", Note: "Established private medical brand with a good outcomes conversation" },
+  { "#": "9", University: "Alte University", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Affordable Tbilisi option with a stronger-than-average recent signal" },
+  { "#": "10", University: "New Vision University", City: "Tbilisi", "Approx. Annual Fee": "USD 7,000-8,200", "Approx. INR": "Rs 5.74L-Rs 6.72L", Note: "Premium campus with higher total budget expectations" },
+  { "#": "11", University: "European University Georgia", City: "Tbilisi", "Approx. Annual Fee": "USD 5,500", "Approx. INR": "Rs 4.51L", Note: "Popular direct-admission route with moderate cost" },
 ];
 
 export const feeBreakdown = [

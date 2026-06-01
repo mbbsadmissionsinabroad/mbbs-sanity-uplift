@@ -33,7 +33,7 @@ import {
   howCanWeAssistYou,
   howCanWeAssistYouSummary,
 } from "../utilities/HomePageStaticData";
-import homeBannerOne from "../../public/assests/home-page-banner-1.png";
+import homeBannerOne from "../../public/home-counselling.jpg";
 import russiaCollege3 from "../../public/russia-college-3.webp";
 import russiaCollege4 from "../../public/russia-college-4.webp";
 import studentTwoImage from "../../public/student2.jpeg";

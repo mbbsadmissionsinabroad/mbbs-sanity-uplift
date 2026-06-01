@@ -73,7 +73,6 @@ interface ConsultationModalState {
 }
 
 const BRAND_NAME = "New-Lyf";
-const heroVideoId = "FDSSu6Tns6s";
 const landingPagePath = "/neet-qualifying-score-mbbs-abroad";
 
 const latestCutoffRows = [
@@ -258,8 +257,8 @@ function FormField({
   children: ReactNode;
 }) {
   return (
-    <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-semibold text-slate-700">
+    <div>
+      <label htmlFor={id} className="sr-only">
         {label}
         {required ? " *" : ""}
       </label>
@@ -342,7 +341,7 @@ function LeadForm({
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 }) {
   const inputClassName =
-    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-100";
+    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-100";
 
   const statusOptions: NeetStatus[] = [
     "Appearing NEET 2026",
@@ -351,8 +350,8 @@ function LeadForm({
   ];
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5">
-      <div className="grid gap-4 md:grid-cols-2">
+    <form onSubmit={onSubmit} className="space-y-3 sm:space-y-4">
+      <div className="grid gap-3 md:grid-cols-2">
         <FormField id={`${formIdPrefix}-fullName`} label="Full Name" required>
           <input
             id={`${formIdPrefix}-fullName`}
@@ -379,15 +378,15 @@ function LeadForm({
           />
         </FormField>
 
-        <div className="space-y-3 md:col-span-2">
-          <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="space-y-2 md:col-span-2">
+          <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
             <label
               htmlFor={`${formIdPrefix}-whatsapp`}
-              className="text-sm font-semibold text-slate-700"
+              className="sr-only"
             >
               WhatsApp Number *
             </label>
-            <label className="inline-flex items-center gap-2 text-xs font-medium text-slate-600">
+            <label className="inline-flex items-center gap-2 text-[11px] font-medium text-slate-600 sm:text-xs">
               <input
                 type="checkbox"
                 name="sameAsMobile"
@@ -461,17 +460,17 @@ function LeadForm({
         </FormField>
       </div>
 
-      <fieldset className="space-y-3">
-        <legend className="text-sm font-semibold text-slate-700">
+      <fieldset className="space-y-2">
+        <legend className="sr-only">
           NEET Status *
         </legend>
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-2 md:grid-cols-3">
           {statusOptions.map((option) => {
             const checked = formData.neetStatus === option;
             return (
               <label
                 key={option}
-                className={`flex cursor-pointer items-center gap-3 rounded-2xl border px-4 py-3 text-sm font-medium transition ${
+                className={`flex cursor-pointer items-center gap-2 rounded-2xl border px-3 py-2.5 text-xs font-medium transition sm:text-sm ${
                   checked
                     ? "border-blue-600 bg-blue-50 text-blue-900"
                     : "border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:bg-slate-50"
@@ -495,7 +494,7 @@ function LeadForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-500"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-500"
       >
         {isSubmitting ? "Submitting..." : "Find My Country & University Options"}
         {!isSubmitting && <ArrowRight className="h-4 w-4" />}
@@ -600,7 +599,6 @@ export default function LandingPageClient() {
   const router = useRouter();
   const [formData, setFormData] = useState<LeadFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeHeroVideo, setActiveHeroVideo] = useState(false);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [consultationModal, setConsultationModal] =
     useState<ConsultationModalState | null>(null);
@@ -851,7 +849,7 @@ export default function LandingPageClient() {
         Book Free Consultation
       </button>
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden lg:min-h-[60vh]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(251,146,60,0.16),transparent_28%),linear-gradient(140deg,#081226_10%,#102a5f_52%,#0f3f7a_100%)]" />
         <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_54%)]" />
         <div
@@ -863,73 +861,37 @@ export default function LandingPageClient() {
           className="absolute bottom-10 right-[10%] h-44 w-44 rounded-full bg-orange-300/10 blur-3xl"
         />
 
-        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[1.06fr_0.94fr] lg:items-start lg:px-8 lg:pb-24 lg:pt-20">
-          <div className="text-white">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[1.03fr_0.97fr] lg:items-center lg:gap-10 lg:px-8 lg:py-10">
+          <div className="flex flex-col gap-5 text-white sm:gap-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100 backdrop-blur">
               <BadgeCheck className="h-4 w-4" />
               Free MBBS Abroad Counselling
             </div>
 
-            <h1 className="mt-5 max-w-4xl text-[2.35rem] font-black leading-[1.06] tracking-tight sm:mt-6 sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-[1.9rem] font-black leading-[1.03] tracking-tight sm:text-[2.9rem] lg:text-[3.1rem]">
               24 Lakh Students. 1.4 Lakh Seats. Your MBBS Dream Is Bigger Than
               One Number.
             </h1>
 
-            <div className="mt-6 overflow-hidden rounded-[24px] border border-white/12 bg-slate-950/25 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur sm:mt-8 sm:rounded-[28px]">
-              <div className="border-b border-white/10 px-4 py-4 sm:px-5">
-                <h2 className="text-base font-bold text-white sm:text-lg">
-                  Just a NEET score of 130 -150 can still get you an
-                  NMC-approved MBBS seat abroad.
-                </h2>
-              </div>
-              <div className="aspect-video">
-                {activeHeroVideo ? (
-                  <iframe
-                    className="h-full w-full"
-                    src={`https://www.youtube-nocookie.com/embed/${heroVideoId}?autoplay=1`}
-                    title="MBBS abroad explainer video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setActiveHeroVideo(true)}
-                    className="group relative h-full w-full text-left"
-                    style={{
-                      backgroundImage: `linear-gradient(to top, rgba(15,23,42,0.72), rgba(15,23,42,0.16)), url(https://i.ytimg.com/vi/${heroVideoId}/hqdefault.jpg)`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  >
-                    <div className="flex h-full flex-col justify-between p-4 sm:p-6">
-                      <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white backdrop-blur sm:px-4 sm:text-xs">
-                        <PlayCircle className="h-4 w-4" />
-                        Play Video
-                      </span>
-                      <div>
-                        <p className="text-base font-bold text-white sm:text-lg">
-                          How a qualifying NEET score can still open MBBS
-                          abroad options
-                        </p>
-                        <p className="mt-2 text-sm leading-6 text-slate-200 sm:leading-7">
-                          Tap to load the video and hear how score, budget, and
-                          country fit work together.
-                        </p>
-                      </div>
-                    </div>
-                  </button>
-                )}
-              </div>
+            <div className="rounded-[24px] border border-white/12 bg-slate-950/25 px-4 py-5 shadow-[0_24px_70px_rgba(8,18,38,0.35)] backdrop-blur sm:rounded-[28px] sm:px-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100 sm:text-sm">
+                Practical MBBS reality
+              </p>
+              <h2 className="mt-3 text-base font-bold text-white sm:text-lg">
+                Even a NEET qualifying score in the 130-150 range can still open NMC-approved MBBS abroad options.
+              </h2>
+              <p className="mt-3 text-sm leading-6 text-slate-200 sm:leading-7">
+                The real decision is not just the number. It is how score, budget, country fit, and recognition work together for your family.
+              </p>
             </div>
 
-            <p className="mt-5 max-w-3xl text-[15px] leading-7 text-slate-200 sm:mt-6 sm:text-lg sm:leading-8">
+            <p className="max-w-3xl text-[15px] leading-7 text-slate-200 sm:text-base sm:leading-7 lg:text-[1.02rem] lg:leading-7">
               A NEET qualifying score is enough for NMC-approved MBBS abroad in{" "}
               {heroCountries}. Same doctor dream, same recognised pathway, and
               often a more realistic budget path for Indian families.
             </p>
 
-            <div className="mt-5 rounded-[24px] border border-white/10 bg-white/10 p-4 backdrop-blur sm:mt-6 sm:rounded-[28px] sm:p-5">
+            <div className="rounded-[24px] border border-white/10 bg-white/10 p-4 backdrop-blur sm:rounded-[28px] sm:p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-100 sm:text-sm">
                 Latest official NEET guidance
               </p>
@@ -945,7 +907,7 @@ export default function LandingPageClient() {
               </p>
             </div>
 
-            <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
               <button
                 type="button"
                 onClick={() =>
@@ -974,27 +936,27 @@ export default function LandingPageClient() {
               </button>
             </div>
 
-            <p className="mt-4 text-sm leading-6 text-slate-200 sm:leading-7">
+            <p className="text-sm leading-6 text-slate-200 sm:leading-7">
               2026 counselling is already worth starting now. Shortlisting early
               gives families more time before intake and visa timelines tighten.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">24 Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
+            <div className="grid gap-3 sm:grid-cols-3">
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <p className="text-2xl font-black text-white">24 Lakh</p>
+                <p className="mt-1.5 text-sm leading-6 text-slate-200">
                   students sit for NEET every year
                 </p>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">1.4 Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <p className="text-2xl font-black text-white">1.4 Lakh</p>
+                <p className="mt-1.5 text-sm leading-6 text-slate-200">
                   MBBS seats are available in India
                 </p>
               </div>
-              <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
-                <p className="text-3xl font-black text-white">22+ Lakh</p>
-                <p className="mt-2 text-sm leading-6 text-slate-200">
+              <div className="rounded-3xl border border-white/10 bg-white/10 p-4 backdrop-blur">
+                <p className="text-2xl font-black text-white">22+ Lakh</p>
+                <p className="mt-1.5 text-sm leading-6 text-slate-200">
                   students still need a realistic backup path
                 </p>
               </div>
@@ -1004,18 +966,16 @@ export default function LandingPageClient() {
 
           <aside
             id="lead-form"
-            className="scroll-mt-32 self-start rounded-[28px] border border-white/50 bg-white p-5 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:rounded-[32px] sm:p-8"
+            className="scroll-mt-32 self-start rounded-[28px] border border-white/50 bg-white p-5 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:rounded-[32px] sm:p-6 lg:my-2 lg:p-6"
           >
-            <h2 className="text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">
+            <h2 className="text-[1.85rem] font-black leading-tight tracking-tight text-slate-950 sm:text-[2rem]">
               Get your free MBBS abroad counselling call
             </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              No consultation fee. No obligation. A {BRAND_NAME} counsellor
-              will call or WhatsApp you after reviewing your score range and
-              preferences.
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              No consultation fee. A {BRAND_NAME} counsellor will review your score range and contact you on call or WhatsApp.
             </p>
 
-            <div className="mt-6">
+            <div className="mt-4">
               <LeadForm
                 formIdPrefix="hero-form"
                 formData={formData}

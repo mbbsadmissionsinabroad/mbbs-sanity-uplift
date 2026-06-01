@@ -5,6 +5,7 @@ import Link from "next/link";
 import HungaryLeadSection from "./HungaryLeadSection";
 import {
   additionalCosts,
+  admissionSteps,
   advantages,
   articleSchema,
   breadcrumbSchema,
@@ -15,6 +16,7 @@ import {
   eligibility,
   eligibilityNotes,
   examContext,
+  feesTableSchema,
   faqSchema,
   faqs,
   feeBreakdown,
@@ -34,9 +36,11 @@ import {
   scholarships,
   syllabus,
   timeline,
+  universityTableSchema,
   universities,
   whatsappHref,
   whatsappNumber,
+  whyChooseReasons,
 } from "./pageData";
 
 type Row = Record<string, string | undefined>;
@@ -112,6 +116,8 @@ export default function HungaryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(universityTableSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(feesTableSchema) }} />
 
       <section className="relative overflow-hidden border-b border-sky-100">
         <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.18),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(14,165,233,0.12),_transparent_30%),linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(255,255,255,0.86))]" />
@@ -120,7 +126,7 @@ export default function HungaryPage() {
             <div className="inline-flex rounded-full border border-sky-200 bg-white/90 px-4 py-2 text-sm font-medium text-sky-800 shadow-sm">2026-27 Hungary admissions guide for Indian medical aspirants</div>
             <h1 className="mt-6 max-w-4xl text-4xl font-black tracking-tight text-slate-950 md:text-6xl">{pageTitle}</h1>
             <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">Last Updated: {lastUpdated}</p>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">Compare entrance-exam difficulty, scholarship upside, total costs, EU-career value and India-return practicality before you commit to the Hungary route.</p>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">Compare NMC-approved universities, total costs, scholarships, FMGE or NExT upside, and long-term EU career value before you commit to the Hungary route.</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#quick-summary" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">Start With Summary</a>
               <a href={whatsappHref} target="_blank" rel="noreferrer" className="rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-95">WhatsApp {whatsappNumber}</a>
@@ -142,7 +148,9 @@ export default function HungaryPage() {
             <div className="mt-5 space-y-3">
               {[
                 ["#quick-summary", "Quick summary"],
+                ["#why-hungary", "Why Hungary"],
                 ["#timeline", "2026 timeline"],
+                ["#admission-guide", "Admission guide"],
                 ["#universities", "Top universities"],
                 ["#fees", "Fees breakdown"],
                 ["#exam-context", "NExT context"],
@@ -168,7 +176,7 @@ export default function HungaryPage() {
             </article>
           ))}
         </div>
-        <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Hungary is one of the strongest English-medium EU routes for Indian students, but the entrance exam and total budget mean it should be chosen deliberately, not casually.</div>
+        <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">Hungary is an EU member state. An MD degree from Hungary holds the same legal validity across Europe as degrees from Germany, France, or Italy for EU registration pathways.</div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
@@ -176,10 +184,23 @@ export default function HungaryPage() {
         <div className="mt-10"><DataTable rows={keyFacts} caption="Hungary medicine key facts table" /></div>
       </section>
 
+      <section id="why-hungary" className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <SectionHeading eyebrow="Why Hungary" title="Why Indian students are choosing Hungary in 2026" description="Hungary has quietly become one of the most trusted MBBS destinations in Europe for Indian students because it combines English-medium teaching, strong recognition, and a much clearer long-term career picture than many lower-cost options." />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {whyChooseReasons.map((item) => (
+              <div key={item} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+                <p className="text-base leading-7 text-slate-700">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="timeline" className="bg-slate-950 py-16 text-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="Timeline" title="Admission planning for the Hungary route" theme="dark" />
-          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <SectionHeading eyebrow="Timeline" title="Admission timeline 2026-27" description="Missing a visa or application deadline by even a few weeks can push your admission to the next cycle, so this calendar should be treated seriously." theme="dark" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {timeline.map((item) => (
               <div key={`${item.Month}-${item.Action}`} className="rounded-[28px] border border-white/10 bg-white/5 p-6 backdrop-blur">
                 <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-300">{item.Month}</p>
@@ -190,27 +211,33 @@ export default function HungaryPage() {
         </div>
       </section>
 
+      <section id="admission-guide" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <SectionHeading eyebrow="Admission Guide" title="Step-by-step Hungary admission process for Indian students" description="Follow these eight steps in order. Skipping or rushing any one of them can lead to rejection, delays, or last-minute visa pressure." />
+        <div className="mt-10 grid gap-4 md:grid-cols-2">
+          {admissionSteps.map((item) => (
+            <article key={item.step} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">{item.step}</p>
+              <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-950">{item.title}</h3>
+              <p className="mt-4 text-base leading-7 text-slate-700">{item.details}</p>
+            </article>
+          ))}
+        </div>
+        <div className="mt-8 rounded-[28px] border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-900">Visa processing for Hungary from India can take 4-8 weeks. Apply no later than early July if you want to protect your September 2026 intake.</div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Eligibility" title="Minimum criteria Indian students should plan around" />
         <div className="mt-10"><DataTable rows={eligibility} caption="Hungary medicine eligibility table" /></div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {eligibilityNotes.map((note) => (
-            <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">
-                {note.includes("/mbbs-in-armenia") ? (
-                <>
-                    If you want a lower-cost no-entrance-exam comparison, review <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link> and the current <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia for Indian students</Link> guidance path.
-                </>
-              ) : (
-                note
-              )}
-            </div>
+            <div key={note} className="rounded-3xl border border-slate-200 bg-slate-50 p-5 text-sm leading-7 text-slate-700">{note}</div>
           ))}
         </div>
       </section>
 
       <section id="universities" className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="Top Universities" title="Hungary options students most often compare" />
+          <SectionHeading eyebrow="Top Universities" title="Top medical universities in Hungary Indian students compare first" description="All four universities below are NMC-aware, WHO-listed, and EU-recognised. Choosing among them usually comes down to budget, city preference, and how much prestige matters to you." />
           <div className="mt-10"><DataTable rows={universities} caption="Hungary top universities table" /></div>
         </div>
       </section>
@@ -224,10 +251,10 @@ export default function HungaryPage() {
 
       <section id="exam-context" className="bg-[linear-gradient(180deg,#f8fafc_0%,#eff6ff_100%)] py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="FMGE / NExT Context" title="India licensing context for Hungary graduates" />
+          <SectionHeading eyebrow="FMGE / NExT Context" title="FMGE and NExT context for Hungary graduates" description="This is the section most India-return-focused families care about because licensing results shape what the degree really means after graduation." />
           <div className="mt-10 grid gap-8 xl:grid-cols-2">
             <div>
-              <h3 className="mb-4 text-xl font-bold text-slate-900">Recent Hungary comparison context</h3>
+              <h3 className="mb-4 text-xl font-bold text-slate-900">Recent pass-rate comparison context</h3>
               <DataTable rows={examContext} caption="Hungary exam context table" />
             </div>
             <div>
@@ -263,7 +290,7 @@ export default function HungaryPage() {
 
       <section className="bg-slate-50 py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="Living Costs" title="Monthly living picture in Hungary" />
+          <SectionHeading eyebrow="Living Costs" title="Cost of living breakdown" description="Hungary is one of the more affordable countries in the EU, especially outside Budapest. Debrecen, Pecs, and Szeged are usually easier on the monthly budget." />
           <div className="mt-10"><DataTable rows={livingCosts} caption="Hungary living cost table" /></div>
         </div>
       </section>
@@ -284,10 +311,10 @@ export default function HungaryPage() {
 
       <section className="bg-[linear-gradient(180deg,#ffffff_0%,#eff6ff_100%)] py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="Alternatives" title="How Hungary compares with other common destinations" />
+          <SectionHeading eyebrow="Alternatives" title="Hungary versus other popular MBBS destinations" />
           <div className="mt-10"><DataTable rows={comparison} caption="Hungary alternatives comparison table" /></div>
           <p className="mt-6 text-sm leading-7 text-slate-600">
-            Compare Hungary with <Link href="/mbbs-in-armenia" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Armenia 2026-27</Link>, <Link href="/mbbs-in-france" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in France for Indian students</Link>, the current <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Georgia 2026</Link> guidance path, and <Link href="/mbbs-admission-in-germany-for-indian-students" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>. For India licensing planning, review <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">NMC NEXT exam preparation guide</Link> and <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link>.
+            If cost is your top priority, compare this with <Link href="/mbbs-admission-in-uzbekistan" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Uzbekistan 2026</Link>. If you are exploring stronger Europe-facing options, read <Link href="/mbbs-in-germany" className="font-semibold text-sky-700 underline underline-offset-4">MBBS in Germany for free</Link>. Students researching rule flexibility should also review <Link href="/mbbs-without-neet" className="font-semibold text-sky-700 underline underline-offset-4">MBBS without NEET for Indian students</Link> before making assumptions.
           </p>
         </div>
       </section>
@@ -311,7 +338,7 @@ export default function HungaryPage() {
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
         <SectionHeading eyebrow="Career Pathways" title="Where this degree can take you next" />
         <div className="mt-10"><DataTable rows={careerPathways} caption="Hungary career pathways table" /></div>
-        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link> and, if scholarship is central to your decision, ask us directly about the <Link href="/contact" className="font-semibold text-sky-700 underline underline-offset-4">Stipendium Hungaricum scholarship guide</Link>.</p>
+        <p className="mt-6 text-sm leading-7 text-slate-600">If you are also comparing non-MBBS healthcare routes, explore <Link href="/bsc-nursing" className="font-semibold text-sky-700 underline underline-offset-4">BSc Nursing abroad</Link>. Scholarship-focused families should pay special attention to the Stipendium Hungaricum route because it can dramatically change the total cost picture.</p>
       </section>
       <StaticPageResourceLinks currentRoute={pageUrl} />
 

@@ -71,7 +71,9 @@ function isPrimaryDesktopLink(link: SiteLink) {
   return (
     link.title !== "Home" &&
     link.title !== "Nursing Jobs Abroad" &&
-    link.title !== "PG Abroad"
+    link.title !== "PG Abroad" &&
+    link.title !== "Gallery" &&
+    link.title !== "Contact"
   );
 }
 
@@ -301,6 +303,17 @@ export default function Navbar() {
                           />
                         ))}
                     </div>
+                    <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
+                      {mainNavLinks
+                        .filter((link) => link.title === "Gallery" || link.title === "Contact")
+                        .map((link) => (
+                          <NavLink
+                            key={link.href}
+                            link={link}
+                            onClick={() => setMobileOpen(false)}
+                          />
+                        ))}
+                    </div>
                   </div>
                 </div>
 
@@ -340,8 +353,47 @@ export default function Navbar() {
       </Transition.Root>
 
       <header className="pointer-events-auto shadow-[0_18px_45px_rgba(15,23,42,0.08)]">
-        <div className="bg-blue-800 px-4 py-2 text-center text-xs font-semibold text-white">
-          info@new-lyf.com
+        <div className="bg-blue-800 px-4 py-2 text-white">
+          <div className="mx-auto hidden max-w-7xl items-center justify-between gap-4 lg:flex">
+            <div className="flex items-center gap-4">
+              <span className="text-xs font-semibold">info@new-lyf.com</span>
+            </div>
+            <div className="flex items-center gap-4">
+              <Link
+                href="/gallery"
+                prefetch={false}
+                className="text-xs font-semibold text-white transition hover:text-blue-100"
+              >
+                Gallery
+              </Link>
+              <Link
+                href="/contact"
+                prefetch={false}
+                className="text-xs font-semibold text-white transition hover:text-blue-100"
+              >
+                Contact
+              </Link>
+              <div className="flex items-center gap-2">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.title}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer external"
+                      aria-label={social.title}
+                      className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20"
+                    >
+                      <Icon className="h-3.5 w-3.5" />
+                      <span className="sr-only">{social.title}</span>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="text-center text-xs font-semibold lg:hidden">info@new-lyf.com</div>
         </div>
 
         <nav className="border-b border-slate-200 bg-white">
@@ -514,33 +566,6 @@ export default function Navbar() {
                 ))}
             </div>
 
-            <div className="ml-auto hidden items-center gap-3 lg:flex">
-              <div className="hidden items-center gap-2 px-3 py-1.5 xl:flex">
-                <span className="h-2 w-2 rounded-full bg-blue-600" />
-                <span className="whitespace-nowrap text-[11px] font-medium text-slate-700 xl:text-xs">
-                  Connect with us
-                </span>
-              </div>
-              <span className="whitespace-nowrap text-[11px] font-medium text-slate-700 xl:hidden">
-                Connect with us
-              </span>
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.title}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer external"
-                    aria-label={social.title}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-blue-100 hover:bg-blue-50 hover:text-blue-800"
-                  >
-                    <Icon className="h-4 w-4" />
-                    <span className="sr-only">{social.title}</span>
-                  </a>
-                );
-              })}
-            </div>
           </div>
         </nav>
       </header>

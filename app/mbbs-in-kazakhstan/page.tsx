@@ -238,7 +238,7 @@ export default function KazakhstanPage() {
       </section>
 
       <section id="fees" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <SectionHeading eyebrow="Fees Breakdown" title="Transparent budgeting before you commit to Kazakhstan" />
+        <SectionHeading eyebrow="Fees Breakdown" title="MBBS in Kazakhstan Fees 2026 - Complete Cost Breakdown for Indian Students" />
         <div className="mt-10"><DataTable rows={feeBreakdown} caption="Kazakhstan fee breakdown table" /></div>
         <h3 className="mt-10 text-xl font-bold text-slate-900">Common additional costs students should budget for</h3>
         <div className="mt-5"><DataTable rows={additionalCosts} caption="Kazakhstan additional cost table" /></div>

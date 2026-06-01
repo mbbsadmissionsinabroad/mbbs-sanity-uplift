@@ -15,6 +15,7 @@ import {
   eligibility,
   eligibilityNotes,
   examContext,
+  examCallout,
   faqSchema,
   faqs,
   feeBreakdown,
@@ -234,6 +235,9 @@ export default function PhilippinesPage() {
               <h3 className="mb-4 text-xl font-bold text-slate-900">What those numbers mean in practice</h3>
               <DataTable rows={philippinesExamNotes} caption="Philippines exam notes table" />
             </div>
+          </div>
+          <div className="mt-8 rounded-[28px] border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
+            {examCallout}
           </div>
         </div>
       </section>

@@ -68,7 +68,6 @@ interface ConsultationModalState {
 
 const BRAND_NAME = "New-Lyf";
 const landingPagePath = "/study-mbbs-abroad-georgia-kazakhstan-uzbekistan";
-const heroVideoId = "FDSSu6Tns6s";
 
 const destinationCards: DestinationCard[] = [
   {
@@ -222,8 +221,8 @@ function FormField({
   children: ReactNode;
 }) {
   return (
-    <div className="space-y-2">
-      <label htmlFor={id} className="text-sm font-semibold text-slate-700">
+    <div>
+      <label htmlFor={id} className="sr-only">
         {label}
         {required ? " *" : ""}
       </label>
@@ -302,10 +301,10 @@ function LeadForm({
   onSubmit: (event: FormEvent<HTMLFormElement>) => void;
 }) {
   const inputClassName =
-    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-100";
+    "w-full rounded-2xl border border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-blue-600 focus:ring-4 focus:ring-blue-100";
 
   return (
-    <form onSubmit={onSubmit} className="space-y-5">
+    <form onSubmit={onSubmit} className="space-y-3 sm:space-y-4">
       <FormField id={`${formIdPrefix}-fullName`} label="Full Name" required>
         <input
           id={`${formIdPrefix}-fullName`}
@@ -373,7 +372,7 @@ function LeadForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-4 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-500"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:bg-slate-500"
       >
         {isSubmitting
           ? "Submitting..."
@@ -473,7 +472,6 @@ export default function LandingPageClient() {
   const router = useRouter();
   const [formData, setFormData] = useState<LeadFormData>(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeHeroVideo, setActiveHeroVideo] = useState(false);
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
   const [consultationModal, setConsultationModal] =
     useState<ConsultationModalState | null>(null);
@@ -647,67 +645,44 @@ export default function LandingPageClient() {
         Book Free Consultation
       </button>
 
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden lg:min-h-[60vh]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(14,165,233,0.16),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(251,146,60,0.18),transparent_30%),linear-gradient(135deg,#081226_8%,#113978_58%,#1d4ed8_100%)]" />
         <div className="absolute inset-y-0 right-0 w-1/2 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.15),transparent_55%)]" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 lg:grid-cols-[1.02fr_0.98fr] lg:px-8 lg:pb-24 lg:pt-20">
-          <div className="text-white">
+        <div className="relative mx-auto grid max-w-7xl gap-8 px-4 pb-12 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:grid-cols-[1.03fr_0.97fr] lg:items-center lg:gap-10 lg:px-8 lg:py-10">
+          <div className="flex flex-col gap-5 text-white sm:gap-6">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-sky-100 backdrop-blur">
               <GraduationCap className="h-4 w-4" />
               MBBS Abroad Admissions
             </div>
 
-            <h1 className="mt-6 max-w-4xl text-4xl font-black leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-4xl text-[2.35rem] font-black leading-[1.02] tracking-tight sm:text-[2.85rem] lg:text-[3.2rem]">
               Study MBBS Abroad with {BRAND_NAME}: Secure Your Medical Future
               in Georgia, Kazakhstan, or Uzbekistan
             </h1>
 
-            <div className="mt-8 overflow-hidden rounded-[32px] border border-white/10 bg-white/5 shadow-[0_24px_70px_rgba(8,18,38,0.22)] backdrop-blur">
-              <div className="border-b border-white/10 px-6 py-5">
-                <h2 className="text-2xl font-black tracking-tight text-white">
-                  Just a NEET score of 130 -150 can still get you an
-                  NMC-approved MBBS seat abroad.
-                </h2>
-              </div>
-              <div className="aspect-video">
-                {activeHeroVideo ? (
-                  <iframe
-                    className="h-full w-full"
-                    src={`https://www.youtube-nocookie.com/embed/${heroVideoId}?autoplay=1`}
-                    title="MBBS abroad explainer video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => setActiveHeroVideo(true)}
-                    className="group relative h-full w-full text-left"
-                    style={{
-                      backgroundImage: `linear-gradient(to top, rgba(15,23,42,0.72), rgba(15,23,42,0.16)), url(https://i.ytimg.com/vi/${heroVideoId}/hqdefault.jpg)`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                    >
-                      <div className="flex h-full flex-col justify-between p-6">
-                        <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/12 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur">
-                          <PlayCircle className="h-4 w-4" />
-                          Play Video
-                        </span>
-                      </div>
-                    </button>
-                )}
-              </div>
+            <div className="rounded-[30px] border border-white/12 bg-white/10 px-6 py-5 shadow-[0_24px_70px_rgba(8,18,38,0.18)] backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
+                Admission reality check
+              </p>
+              <h2 className="mt-3 max-w-3xl text-2xl font-black leading-tight tracking-tight text-white sm:text-[2rem]">
+                A NEET score in the 130-150 range can still open practical,
+                NMC-aligned MBBS abroad options.
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-100 sm:text-base">
+                The better decision usually comes from matching your score with
+                the right country, budget, and university pathway instead of
+                chasing a single outcome.
+              </p>
             </div>
 
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200 sm:text-xl">
+            <p className="max-w-3xl text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
               Join the 17,000+ Indian students who have trusted {BRAND_NAME}
               since 2009 to pursue their doctor dream. Get direct admission to
               globally recognised universities with transparent fee guidance and
               zero donation pressure.
             </p>
 
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3">
               <div className="rounded-3xl border border-white/10 bg-white/10 p-5 backdrop-blur">
                 <p className="text-3xl font-black text-white">2009</p>
                 <p className="mt-2 text-sm leading-6 text-slate-200">
@@ -728,7 +703,7 @@ export default function LandingPageClient() {
               </div>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-4">
+            <div className="flex flex-wrap items-center gap-4 pt-1">
               <button
                 type="button"
                 onClick={() =>
@@ -759,20 +734,20 @@ export default function LandingPageClient() {
 
           <aside
             id="hero-form"
-            className="rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-8"
+            className="rounded-[32px] border border-white/50 bg-white p-6 shadow-[0_30px_90px_rgba(8,18,38,0.18)] sm:p-7 lg:p-6"
           >
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-blue-700">
               Free consultation
             </p>
-            <h2 className="mt-3 text-3xl font-black tracking-tight text-slate-950">
-              Get your free, personalized MBBS consultation today
+            <h2 className="mt-2 text-[2rem] font-black leading-tight tracking-tight text-slate-950">
+              Get your free MBBS abroad counselling call
             </h2>
-            <p className="mt-3 text-sm leading-6 text-slate-600">
-              Tell us your preferred destination, and a {BRAND_NAME} expert
-              will guide you on admission fit, costs, and next steps.
+            <p className="mt-2 text-sm leading-6 text-slate-600">
+              Share your preference and a {BRAND_NAME} expert will help with
+              destination fit, budget planning, and next steps.
             </p>
 
-            <div className="mt-6">
+            <div className="mt-4">
               <LeadForm
                 formIdPrefix="hero-form"
                 formData={formData}

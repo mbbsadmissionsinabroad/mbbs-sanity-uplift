@@ -81,6 +81,13 @@ export default function NursingJobsAbroadPage() {
               >
                 View Nursing In Germany
               </Link>
+              <Link
+                href="/study-nursing-in-bosnia"
+                className="rounded-full border border-slate-300 px-6 py-4 text-center text-base font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50"
+                prefetch={false}
+              >
+                Study Nursing In Bosnia
+              </Link>
             </div>
           </div>
         </div>
@@ -101,14 +108,26 @@ export default function NursingJobsAbroadPage() {
               Use this section as a planning filter. Compare the country fit, the language barrier, the licensing path, and
               the true relocation effort before you start paying for exams, translations, coaching, or paperwork.
             </p>
-            <p className="mt-4 text-base leading-7 text-slate-600">
-              This page works best when you use it to narrow your next step.
-              Some nurses need a route with stronger employer demand. Others
-              need a route with lower language pressure or a clearer licensing
-              path. The aim is not to read every detail at once. The aim is to
-              decide which route deserves your time.
-            </p>
-          </div>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            This page works best when you use it to narrow your next step.
+            Some nurses need a route with stronger employer demand. Others
+            need a route with lower language pressure or a clearer licensing
+            path. The aim is not to read every detail at once. The aim is to
+            decide which route deserves your time.
+          </p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            If you are looking for a low-cost European education route before
+            moving into Germany or the wider EU, compare{" "}
+            <Link
+              href="/study-nursing-in-bosnia"
+              className="font-semibold text-blue-700 transition hover:text-blue-900"
+              prefetch={false}
+            >
+              Study Nursing in Bosnia
+            </Link>{" "}
+            as a separate path from direct overseas job-migration options.
+          </p>
+        </div>
           <div className="rounded-[2rem] border border-blue-100 bg-blue-50 p-8">
             <h2 className="text-2xl font-black text-slate-900">
               Quick checks for Indian nurses

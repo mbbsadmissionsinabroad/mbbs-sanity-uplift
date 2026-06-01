@@ -10,14 +10,6 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "kind": "ausbildung"
   },
   {
-    "route": "/krasnoyarsk-state-medical-university-russia",
-    "title": "Krasnoyarsk State Medical University Russia 2026-27 - Complete Guide for Indian Students",
-    "metaTitle": "Krasnoyarsk State Medical University 2026-27 Guide",
-    "metaDescription": "Complete guide to Krasnoyarsk State Medical University 2026-27 for Indian students - fees in INR and USD, FMGE context, admission process, eligibility, scholarships and visa planning.",
-    "section": "mbbs-abroad",
-    "kind": "other"
-  },
-  {
     "route": "/learn-german-language-course-in-bangalore",
     "title": "German Language Course in Bangalore 2026: Complete Guide (A1 to C2, Fees, Syllabus and Career)",
     "metaTitle": "German Course in Bangalore 2026 | A1-C2",
@@ -213,7 +205,7 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "route": "/mbbs-in-hungary",
     "title": "MBBS Admission in Hungary 2026-27 for Indian Students - Complete Guide",
     "metaTitle": "MBBS Admission in Hungary 2026-27 - Complete Guide",
-    "metaDescription": "Planning MBBS in Hungary 2026-27? Compare NMC-approved universities, entrance exam planning, fees in INR and EUR, scholarship options and admission steps for Indian students.",
+    "metaDescription": "Planning MBBS in Hungary 2026-27? Get NMC-approved universities, fees, admission timeline, NEET requirements, FMGE pass rates and scholarships for Indian students.",
     "section": "mbbs-abroad",
     "kind": "mbbs-in"
   },
@@ -243,8 +235,8 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   },
   {
     "route": "/mbbs-in-kazakhstan",
-    "title": "MBBS Admission in Kazakhstan 2026-27 for Indian Students - Complete Guide",
-    "metaTitle": "MBBS Admission in Kazakhstan 2026-27 - Complete Guide",
+    "title": "MBBS in Kazakhstan 2026-27 for Indian Students - Complete Guide",
+    "metaTitle": "MBBS in Kazakhstan 2026 | NMC Approved Universities, Fees & FMGE Guide",
     "metaDescription": "Planning MBBS in Kazakhstan 2026-27? Compare NMC-approved universities, FMGE performance, fees, visa process, living costs and India-return value for Indian students.",
     "section": "mbbs-abroad",
     "kind": "mbbs-in"
@@ -259,17 +251,17 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
   },
   {
     "route": "/mbbs-in-philippines",
-    "title": "MBBS Admission in Philippines 2026-27 for Indian Students - Complete Guide",
-    "metaTitle": "MBBS Admission in Philippines 2026-27 - Complete Guide",
+    "title": "MBBS in Philippines 2026-27 for Indian Students - Complete Guide",
+    "metaTitle": "MBBS in Philippines 2026 | NMC Approved Universities, Fees & FMGE Guide",
     "metaDescription": "Planning MBBS in Philippines 2026-27? Compare NMC-approved universities, NMAT and BS+MD structure, fees in INR, FMGE context and admission steps for Indian students.",
     "section": "mbbs-abroad",
     "kind": "mbbs-in"
   },
   {
     "route": "/mbbs-in-russia",
-    "title": "MBBS Admission in Russia 2026-27 for Indian Students - Complete Guide",
-    "metaTitle": "MBBS Admission in Russia 2026-27 - Complete Guide",
-    "metaDescription": "Planning MBBS in Russia 2026-27? Get NMC-approved universities, fees in INR, FMGE 29.54% pass rate by university, admission timeline, NEET rules and a complete guide.",
+    "title": "MBBS in Russia 2026 - Complete Guide for Indian Students",
+    "metaTitle": "MBBS in Russia 2026 | NMC Approved Universities, Fees & Admission Guide",
+    "metaDescription": "MBBS in Russia 2026 for Indian students. 28 NMC-approved universities compared, fees Rs 21-50 lakhs, FMGE pass rate data, 8-step admission process. Free counselling available.",
     "section": "mbbs-abroad",
     "kind": "mbbs-in"
   },
@@ -302,6 +294,14 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "title": "Medical PG in Germany 2026-27 for Indian Doctors - Complete Guide",
     "metaTitle": "Medical PG in Germany 2026-27 - Complete Guide for Doctors",
     "metaDescription": "Medical PG in Germany 2026-27 for Indian doctors: zero tuition, EUR 4,800-EUR 5,500/month paid residency, Approbation process, FSP/KP exams, German language guide and career paths.",
+    "section": "medical-pg",
+    "kind": "medical-pg"
+  },
+  {
+    "route": "/pg-in-pharm-d",
+    "title": "PG in Pharm D / Masters in Pharmacy in Germany 2026 | Complete Guide for Indian Students",
+    "metaTitle": "PG in Pharm D / Masters in Pharmacy in Germany 2026 | Complete Guide for Indian Students",
+    "metaDescription": "PG in Pharm D / Masters in Pharmacy in Germany 2026 for Indian students: zero tuition public universities, Approbation pathway, APS, C1 German, blocked account, costs, salaries and scholarships.",
     "section": "medical-pg",
     "kind": "medical-pg"
   },
@@ -342,6 +342,14 @@ export const staticSeoPages: StaticSeoRegistryEntry[] = [
     "title": "Nursing Jobs in Netherlands 2026-27 for Indian Nurses - Complete Guide",
     "metaTitle": "Nursing Jobs in Netherlands 2026-27 | Indian Nurses",
     "metaDescription": "Planning nursing jobs in the Netherlands 2026-27? Get BIG registration, Nuffic evaluation, Dutch language requirements, TWV/GVVA work permit route, salary, costs and full guidance for Indian nurses.",
+    "section": "nursing-jobs",
+    "kind": "nursing"
+  },
+  {
+    "route": "/study-nursing-in-bosnia",
+    "title": "Study Nursing in Bosnia 2026 | Complete Guide for Indian Students",
+    "metaTitle": "Study Nursing in Bosnia 2026 | Complete Guide for Indian Students",
+    "metaDescription": "Study nursing in Bosnia 2026 with low tuition, no NEET, no IELTS, living costs, eligibility, admission process and Germany pathway guidance for Indian students.",
     "section": "nursing-jobs",
     "kind": "nursing"
   },

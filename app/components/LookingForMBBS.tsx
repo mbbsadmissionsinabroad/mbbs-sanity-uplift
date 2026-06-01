@@ -10,7 +10,7 @@ const features = [
   {
     name: "Free Counselling",
     description:
-      "Professional counseling services provided by Good Goods, Inc.",
+      "Professional counselling support for students comparing MBBS abroad options.",
   },
   {
     name: "Guaranteed Admission in Top Universities",

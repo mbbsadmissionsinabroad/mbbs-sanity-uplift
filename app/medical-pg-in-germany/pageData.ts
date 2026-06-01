@@ -1,11 +1,11 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/medical-pg-in-germany`;
 export const pageTitle =
-  "Medical PG in Germany 2026-27 for Indian Doctors - Complete Guide";
+  "PG in Germany for Indian Doctors 2026-27 - Complete Residency Guide";
 export const metaTitle =
-  "Medical PG in Germany 2026-27 - Complete Guide for Doctors";
+  "PG in Germany for Indian Doctors 2026 | Residency, Approbation & Salary Guide";
 export const metaDescription =
-  "Medical PG in Germany 2026-27 for Indian doctors: zero tuition, paid residency, Approbation, FSP/KP exams, and career guidance.";
+  "PG in Germany for Indian doctors in 2026: residency pathway, Approbation, C1 medical German, salary, timeline, FSP/KP exams, and career guidance.";
 
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =
@@ -16,7 +16,7 @@ export const lastUpdated = "March 2026";
 export const quickSummary = [
   { detail: "Tuition Fees", fact: "Zero; hospitals pay you during specialist training." },
   { detail: "Residency Duration", fact: "Usually 4-6 years depending on specialty." },
-  { detail: "Main Exams", fact: "B2 German, FSP medical German, and KP if required." },
+  { detail: "Main Exams", fact: "B2 German for filing, C1 medical German for FSP and hospital work, and KP if required." },
   { detail: "Recognition", fact: "Strong EU-wide and global value, but not direct Indian MD/MS equivalence." },
   { detail: "Main Hiring Windows", fact: "Year-round, with especially active movement around February and October." },
   { detail: "Core Model", fact: "This is paid hospital employment under Weiterbildung, not a tuition-based classroom course." },
@@ -36,7 +36,7 @@ export const keyFacts = [
   { Feature: "Tuition Fees", Details: "Zero" },
   { Feature: "Resident Salary", Details: "EUR 4,800-EUR 5,500 per month gross" },
   { Feature: "Preparation Cost", Details: "Usually around Rs 15 lakh before first salary" },
-  { Feature: "Language Requirement", Details: "B2 general German plus FSP medical German; KP if required" },
+  { Feature: "Language Requirement", Details: "B2 general German for document filing, C1 medical German for FSP and most hospital roles; KP if required" },
   { Feature: "Recognition Route", Details: "Approbation or Berufserlaubnis through the chosen state medical authority" },
   { Feature: "Recognition in India", Details: "Not directly accepted as Indian MD/MS equivalence" },
   { Feature: "Permanent Residency", Details: "Possible after 21 months on the right Blue Card setup with B2" },
@@ -46,10 +46,10 @@ export const keyFacts = [
 
 export const timeline = [
   { Phase: "Language", Month: "Month 1-4", Action: "Build A1-B1 German", Focus: "Start structured German immediately and study daily." },
-  { Phase: "Language", Month: "Month 4-8", Action: "Complete B2 general German", Focus: "Prepare for Goethe, telc, or accepted equivalent." },
+  { Phase: "Language", Month: "Month 4-8", Action: "Complete B2 general German", Focus: "Prepare for Goethe, telc, or accepted equivalent so your recognition file can move." },
   { Phase: "Documents", Month: "Month 5-8", Action: "Open recognition file", Focus: "Submit your degree-recognition application to a target state." },
   { Phase: "Documents", Month: "Month 5-8", Action: "Prepare India documents", Focus: "Apostille degree, transcripts, internship, and registration papers." },
-  { Phase: "Medical German", Month: "Month 8-12", Action: "FSP-focused language prep", Focus: "Train for history taking, Arztbrief, and handover communication." },
+  { Phase: "Medical German", Month: "Month 8-12", Action: "Reach C1 medical German for FSP", Focus: "Train for history taking, Arztbrief, and handover communication needed for FSP and hospital interviews." },
   { Phase: "Exam", Month: "Month 10-14", Action: "Appear for FSP", Focus: "Clear the clinical German stage." },
   { Phase: "License", Month: "Month 12-18", Action: "Prepare and clear KP if needed", Focus: "Address curriculum gaps identified in the Defizitbescheid." },
   { Phase: "Hospital Job", Month: "Month 15-20", Action: "Hospitation and applications", Focus: "Build local references and apply for Assistenzarzt contracts." },
@@ -59,7 +59,7 @@ export const timeline = [
 export const processSteps = [
   { title: "Step 1: Start German early", detail: "Treat German as the foundation of the entire plan. Without language progress, everything else stalls." },
   { title: "Step 2: Open your recognition file in parallel", detail: "Do not wait until your language journey is over. Recognition and language should run together." },
-  { title: "Step 3: Shift into medical German", detail: "B2 alone is not enough. You need clinical communication readiness for the FSP." },
+  { title: "Step 3: Shift into medical German", detail: "B2 helps you file documents, but C1 medical German is the real target for FSP clearance and hospital employability." },
   { title: "Step 4: Clear the FSP", detail: "This proves you can function in doctor-patient and doctor-to-doctor German." },
   { title: "Step 5: Clear KP if your file requires it", detail: "Many Indian MBBS holders should plan for KP rather than assuming they will avoid it." },
   { title: "Step 6: Build local exposure through Hospitation", detail: "Observerships help you understand hospital culture and often lead to interviews." },
@@ -71,8 +71,8 @@ export const eligibility = [
   { Criteria: "Medical Degree", Requirement: "MBBS from an NMC-approved, WDOMS-listed institution", Notes: "AYUSH routes are not suitable here." },
   { Criteria: "Internship", Requirement: "Completed internship certificate", Notes: "Required for the recognition file." },
   { Criteria: "Registration", Requirement: "Valid NMC or State Medical Council registration", Notes: "Should be current and in good standing." },
-  { Criteria: "General German", Requirement: "B2 level", Notes: "Usually shown through Goethe, telc, or accepted equivalent." },
-  { Criteria: "Medical German", Requirement: "FSP / clinical German competence", Notes: "Essential for licensing and work." },
+  { Criteria: "General German", Requirement: "B2 level", Notes: "Usually shown through Goethe, telc, or accepted equivalent for document filing." },
+  { Criteria: "Medical German", Requirement: "C1 medical German / FSP readiness", Notes: "Essential for licensing, FSP, and most hospital roles." },
   { Criteria: "Recognition", Requirement: "Approbation or Berufserlaubnis pathway", Notes: "Handled through the selected German state." },
   { Criteria: "KP", Requirement: "Needed if curriculum gaps are identified", Notes: "Common for Indian MBBS holders." },
   { Criteria: "NEET", Requirement: "Not required", Notes: "Germany does not use NEET as its PG entry filter." },
@@ -196,7 +196,7 @@ export const disadvantages = [
 export const comparison = [
   { Parameter: "Tuition / Cost", Germany: "Zero tuition + prep cost", India: "Low in govt, high in private", UK: "PLAB route cost", USA: "USMLE route cost", Australia: "AMC route cost", Gulf: "Lower exam-entry cost" },
   { Parameter: "Residency Salary", Germany: "EUR 4,800-5,500/month", India: "Rs 30,000-Rs 60,000/month", UK: "GBP 3,000-4,500/month", USA: "USD 5,000-8,000/month", Australia: "AUD 7,000-10,000/month", Gulf: "AED 15,000-25,000/month" },
-  { Parameter: "Language", Germany: "German B2 + medical German", India: "English", UK: "English", USA: "English", Australia: "English", Gulf: "English, Arabic useful" },
+  { Parameter: "Language", Germany: "B2 for filing + C1 medical German for FSP/work", India: "English", UK: "English", USA: "English", Australia: "English", Gulf: "English, Arabic useful" },
   { Parameter: "Recognition in India", Germany: "Not direct", India: "Direct", UK: "Not direct", USA: "Not direct", Australia: "Not direct", Gulf: "Not direct" },
   { Parameter: "Time to First Paid Job", Germany: "18-24 months", India: "Immediate after seat", UK: "6-12 months", USA: "12-18 months", Australia: "12-18 months", Gulf: "3-6 months" },
   { Parameter: "Permanent Residency", Germany: "Fast in strong Blue Card cases", India: "N/A", UK: "Longer ILR route", USA: "Long green-card route", Australia: "Strong", Gulf: "Weak" },
@@ -244,15 +244,16 @@ export const careerPathways = [
 ];
 
 export const faqs = [
-  { question: "Is Medical PG in Germany free for Indian doctors?", answer: "Yes. Germany does not charge tuition for specialist training. The major cost is the preparation phase before you start earning." },
-  { question: "How long does the Germany PG route take?", answer: "Expect around 18-24 months of preparation from zero German to first hospital job, followed by 4-6 years of specialty training." },
+  { question: "Is Medical PG in Germany free for Indian doctors?", answer: "Yes. Germany does not charge tuition for specialist training (Weiterbildung). Doctors earn EUR 4,800-EUR 5,500 per month gross during residency. The main cost is the preparation phase before your first salary, usually around Rs 13 lakh-Rs 22 lakh for language, FSP, KP, and relocation." },
+  { question: "How long does PG in Germany take for Indian doctors?", answer: "Expect 18-24 months of preparation for language, Approbation, and FSP or KP before your first hospital job, followed by 4-6 years of specialist training. The full route from India to Facharzt usually spans about 6-8 years." },
+  { question: "What is the salary during PG residency in Germany?", answer: "A practical 2026 gross salary range is around EUR 4,800-EUR 5,500 per month for Assistenzarzt roles in the early years. Senior residents often move into the EUR 6,000-EUR 8,000 per month range, while consultant-level roles can reach EUR 80,000-EUR 200,000 or more annually." },
+  { question: "What German language level is required for PG in Germany?", answer: "B2 general German is commonly the minimum for document filing, but C1 medical German is the real standard for the FSP exam and most hospital positions. Most Indian doctors should plan for C1, not stop at B2." },
+  { question: "Is German PG degree recognized in India?", answer: "German Facharzt is not directly accepted as Indian MD or MS equivalence by NMC India. It carries strong value for Germany, the EU, UK, USA, and Australia pathways, but doctors returning to India would still need to go through the Indian licensing route such as NExT." },
   { question: "Can Indian MBBS graduates do PG in Germany?", answer: "Yes, but only after language preparation, recognition processing, FSP, and often KP. It is possible, but it is not a direct seat-allotment system." },
   { question: "What is Approbation?", answer: "Approbation is the full German medical license and the key legal status that lets you practice as a doctor in Germany." },
   { question: "What is the FSP exam?", answer: "The FSP is the medical German exam testing history taking, clinical documentation, and doctor-to-doctor communication." },
   { question: "Do all Indian doctors need KP?", answer: "Not every case is identical, but many Indian MBBS holders should plan for KP because curriculum gaps are often identified." },
-  { question: "How much does a resident doctor earn in Germany?", answer: "A practical 2026 gross range is around EUR 4,800-EUR 5,500 per month, with strong long-term growth after specialization." },
   { question: "Which German states are good for Indian doctors?", answer: "Bavaria, Berlin, Baden-Wurttemberg, Hamburg, and Saxony are common choices depending on your priorities." },
-  { question: "Is German PG recognized in India?", answer: "Not directly. German Facharzt is globally valuable, but it is not automatically treated as Indian MD/MS equivalence by NMC India." },
   { question: "How do I find Assistenzarzt jobs?", answer: "Doctors usually apply through hospital career portals, German medical job boards, direct HR outreach, and links built during Hospitation." },
   { question: "How fast can permanent residency happen?", answer: "In strong Blue Card cases with the right language level, permanent residence can come much faster than in many competing countries." },
   { question: "Can I bring my family during Medical PG in Germany?", answer: "Yes. Doctors on the right work-residence route can usually bring spouse and children through family reunification." },
@@ -286,6 +287,6 @@ export const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
     { "@type": "ListItem", position: 2, name: "PG in Abroad", item: `${siteUrl}/contact` },
-    { "@type": "ListItem", position: 3, name: "Medical PG in Germany", item: pageUrl },
+    { "@type": "ListItem", position: 3, name: "PG in Germany for Indian Doctors", item: pageUrl },
   ],
 };

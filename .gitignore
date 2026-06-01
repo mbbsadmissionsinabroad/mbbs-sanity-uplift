@@ -10,3 +10,4 @@ studio/.sanity/
 studio/dist/
 studio/studio-dev.log
 studio/studio-dev.err.log
+.vercel
