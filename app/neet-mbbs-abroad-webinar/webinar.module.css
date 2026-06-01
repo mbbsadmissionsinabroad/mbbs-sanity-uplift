@@ -164,8 +164,7 @@
 .secondaryButton,
 .headerButton,
 .panelButton,
-.whatsappButton,
-.callButton,
+.groupLinkButton,
 .closeButton {
   appearance: none;
   border: 0;
@@ -189,10 +188,16 @@
 
 .ctaButton:hover,
 .secondaryButton:hover,
-.whatsappButton:hover,
-.callButton:hover,
+.groupLinkButton:hover,
 .closeButton:hover {
   transform: translateY(-2px);
+}
+
+.ctaButton:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+  box-shadow: 0 12px 24px rgba(255, 123, 82, 0.18);
 }
 
 .secondaryButton {
@@ -710,6 +715,8 @@
 
 .modalCard {
   width: min(640px, 100%);
+  max-height: min(90vh, 760px);
+  overflow-y: auto;
   border-radius: 30px;
   padding: 28px;
   background: #fffdfc;
@@ -749,50 +756,107 @@
   line-height: 1.05;
 }
 
-.contactGrid {
+.modalForm {
   display: grid;
-  gap: 16px;
+  gap: 18px;
   margin-top: 24px;
 }
 
-.contactCard {
-  padding: 20px;
+.formGrid {
+  display: grid;
+  gap: 16px;
 }
 
-.contactNumber {
-  margin: 10px 0 0;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: #1f1417;
+.formField {
+  display: grid;
+  gap: 8px;
 }
 
-.contactActions {
-  display: flex;
-  flex-wrap: wrap;
+.formLabel {
+  color: #5e444b;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.formInput {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(124, 17, 39, 0.14);
+  background: #ffffff;
+  color: #221317;
+  font: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.formInput:focus {
+  border-color: #c64e2c;
+  box-shadow: 0 0 0 4px rgba(232, 89, 60, 0.12);
+}
+
+.radioFieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
   gap: 12px;
-  margin-top: 18px;
 }
 
-.whatsappButton,
-.callButton {
+.radioGrid {
+  display: grid;
+  gap: 12px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(124, 17, 39, 0.14);
+  background: #ffffff;
+  color: #2a171b;
+  font-weight: 700;
+}
+
+.radioOption input {
+  accent-color: #e8593c;
+}
+
+.formError {
+  margin: 0;
+  color: #b42318;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.successState {
+  display: grid;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.groupLinkButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 140px;
-  padding: 14px 18px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 800;
-}
-
-.whatsappButton {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 16px;
   background: #25d366;
   color: #083917;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 18px 35px rgba(37, 211, 102, 0.24);
 }
 
-.callButton {
-  background: #1f1417;
-  color: #fffaf9;
+.successHelper {
+  margin: 0;
+  color: #5f4a50;
+  line-height: 1.7;
 }
 
 @media (min-width: 768px) {
@@ -831,7 +895,8 @@
     align-items: center;
   }
 
-  .contactGrid {
+  .formGrid,
+  .radioGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -982,12 +1047,7 @@
     padding: 22px;
   }
 
-  .contactActions {
-    flex-direction: column;
-  }
-
-  .whatsappButton,
-  .callButton {
-    width: 100%;
+  .radioGrid {
+    grid-template-columns: 1fr;
   }
 }

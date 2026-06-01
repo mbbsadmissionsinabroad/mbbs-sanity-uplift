@@ -25,6 +25,8 @@ export async function POST(request: NextRequest) {
     const body = buildWebhookBody({
       timestamp: new Date().toISOString(),
       eventType: payload.type ?? payload.eventType ?? "",
+      sheetId: payload.sheetId ?? "",
+      sheetName: payload.sheetName ?? "",
       page: payload.page ?? "",
       source: payload.source ?? "",
       ctaLabel: payload.ctaLabel ?? "",

@@ -1,15 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import type { ChangeEvent, FormEvent } from "react";
 import { useEffect, useState } from "react";
 
 import styles from "./webinar.module.css";
 
-type ContactOption = {
-  displayNumber: string;
-  dialNumber: string;
-  whatsappHref: string;
-};
+type StudentType = "Fresher" | "Repeater" | "Qualified Earlier" | "";
 
 type TimingCard = {
   month: string;
@@ -19,25 +16,27 @@ type TimingCard = {
   copy: string;
 };
 
-const contactOptions: ContactOption[] = [
-  {
-    displayNumber: "+91 88490 872",
-    dialNumber: "+9188490872",
-    whatsappHref:
-      "https://wa.me/9188490872?text=Hi%20New-Lyf%20Overseas%2C%20I%20want%20to%20register%20for%20the%20MBBS%20abroad%20webinar%20on%207th%20June%20at%207%20PM.",
-  },
-  {
-    displayNumber: "+9343 20953",
-    dialNumber: "+934320953",
-    whatsappHref:
-      "https://wa.me/934320953?text=Hi%20New-Lyf%20Overseas%2C%20I%20want%20to%20register%20for%20the%20MBBS%20abroad%20webinar%20on%207th%20June%20at%207%20PM.",
-  },
-];
+type WebinarLeadFormData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  studentType: StudentType;
+};
 
 const webinarStartAt = new Date("2026-06-07T19:00:00+05:30");
 const totalSeats = 200;
 const registeredSeats = 57;
 const seatsRemaining = totalSeats - registeredSeats;
+const whatsappGroupLink =
+  "https://chat.whatsapp.com/BIwQ5q2OLS3KGSZZwAzieH";
+const webinarSheetId = "1vD6ZvuSehykNCSsvIVsI8CyvX-53XI-ybX_Bt9wqv-w";
+
+const initialLeadFormData: WebinarLeadFormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  studentType: "",
+};
 
 const timingCards: TimingCard[] = [
   {
@@ -78,7 +77,8 @@ const speakerCards = [
     role: "Medical expert",
     imageSrc: "/speaker-dr-vinith.jpg",
     imageAlt: "Doctor Vinith",
-    credential: "Focused on medical-pathway clarity for NEET families planning beyond the re-exam panic.",
+    credential:
+      "Focused on medical-pathway clarity for NEET families planning beyond the re-exam panic.",
     description:
       "Covers practical MBBS-abroad fit, long-term practice thinking, and the questions families should answer before they commit to a country.",
   },
@@ -87,7 +87,8 @@ const speakerCards = [
     role: "International admissions specialist",
     imageSrc: "/speaker-mr-avinash.jpg",
     imageAlt: "Mr. Avinash",
-    credential: "Brings 10+ years of admissions planning experience for students moving on tight intake timelines.",
+    credential:
+      "Brings 10+ years of admissions planning experience for students moving on tight intake timelines.",
     description:
       "Breaks down shortlisting, documentation, and the August-intake process so students can move before the admission rush peaks.",
   },
@@ -120,6 +121,77 @@ export default function WebinarLandingPage() {
     "Book Your Free Webinar Seat Now",
   );
   const [timeLeft, setTimeLeft] = useState("");
+  const [leadFormData, setLeadFormData] =
+    useState<WebinarLeadFormData>(initialLeadFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsSubmitting(false);
+    setSubmitError("");
+    setIsSubmitted(false);
+    setLeadFormData(initialLeadFormData);
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setLeadFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleStudentTypeChange = (studentType: StudentType) => {
+    setLeadFormData((prev) => ({
+      ...prev,
+      studentType,
+    }));
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("/api/landing-events", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          eventType: "form_submission",
+          page: "/neet-mbbs-abroad-webinar",
+          source: `Webinar modal - ${activeCtaLabel}`,
+          ctaLabel: activeCtaLabel,
+          ctaDestination: whatsappGroupLink,
+          fullName: leadFormData.fullName,
+          mobile: leadFormData.phone,
+          email: leadFormData.email,
+          neetStatus: leadFormData.studentType,
+          message: "MBBS abroad webinar registration",
+          sheetId: webinarSheetId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Submission failed");
+      }
+
+      setIsSubmitted(true);
+      window.open(whatsappGroupLink, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error("Webinar registration failed", error);
+      setSubmitError(
+        "We could not save your registration right now. Please try again in a moment.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -161,12 +233,14 @@ export default function WebinarLandingPage() {
         "Register Now";
 
       setActiveCtaLabel(label);
+      setSubmitError("");
+      setIsSubmitted(false);
       setIsModalOpen(true);
     };
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsModalOpen(false);
+        closeModal();
       }
     };
 
@@ -258,8 +332,8 @@ export default function WebinarLandingPage() {
             </div>
 
             <p className={styles.ctaCaption}>
-              Only {seatsRemaining} of {totalSeats} seats remaining • 7th June
-              • Free to attend
+              Only {seatsRemaining} of {totalSeats} seats remaining | 7th June
+              | Free to attend
             </p>
           </div>
 
@@ -284,7 +358,9 @@ export default function WebinarLandingPage() {
               </div>
               <div>
                 <p className={styles.metaLabel}>Speakers</p>
-                <p className={styles.metaValue}>Doctor Vinith &amp; Mr. Avinash</p>
+                <p className={styles.metaValue}>
+                  Doctor Vinith &amp; Mr. Avinash
+                </p>
               </div>
               <div>
                 <p className={styles.metaLabel}>Cost</p>
@@ -311,9 +387,9 @@ export default function WebinarLandingPage() {
 
       <section className={styles.proofBarSection}>
         <div className={styles.proofBar}>
-          <span>✓ 17,000+ students guided</span>
-          <span>✓ Guiding aspirants since 2009</span>
-          <span>✓ MBBS abroad planning before intake deadlines</span>
+          <span>17,000+ students guided</span>
+          <span>Guiding aspirants since 2009</span>
+          <span>MBBS abroad planning before intake deadlines</span>
         </div>
       </section>
 
@@ -376,9 +452,12 @@ export default function WebinarLandingPage() {
 
       <section className={`${styles.section} ${styles.testimonialSection}`}>
         <div className={styles.sectionIntro}>
-          <p className={styles.sectionEyebrow}>Families who moved early felt the difference</p>
+          <p className={styles.sectionEyebrow}>
+            Families who moved early felt the difference
+          </p>
           <h2 className={styles.sectionTitle}>
-            Real parent and student feedback from families who planned before the rush.
+            Real parent and student feedback from families who planned before
+            the rush.
           </h2>
           <p className={styles.sectionCopy}>
             The biggest trust signal on pages like this is simple: hearing from
@@ -388,7 +467,10 @@ export default function WebinarLandingPage() {
 
         <div className={styles.testimonialGrid}>
           {testimonials.map((item) => (
-            <article key={`${item.name}-${item.city}`} className={styles.testimonialCard}>
+            <article
+              key={`${item.name}-${item.city}`}
+              className={styles.testimonialCard}
+            >
               <div className={styles.testimonialHeader}>
                 <img
                   src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
@@ -501,7 +583,7 @@ export default function WebinarLandingPage() {
             and secure your future now.
           </p>
           <p className={styles.finalMeta}>
-            Free live webinar • 7th June at 7 PM • Attend with parents
+            Free live webinar | 7th June at 7 PM | Attend with parents
           </p>
           <div className={styles.ctaRow}>
             <button
@@ -522,7 +604,7 @@ export default function WebinarLandingPage() {
         }`}
         onClick={(event) => {
           if (event.target === event.currentTarget) {
-            setIsModalOpen(false);
+            closeModal();
           }
         }}
       >
@@ -537,42 +619,135 @@ export default function WebinarLandingPage() {
           <button
             type="button"
             className={styles.closeButton}
-            onClick={() => setIsModalOpen(false)}
+            onClick={closeModal}
             aria-label="Close modal"
           >
             X
           </button>
 
-          <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
-          <h2 id="webinar-modal-title" className={styles.modalTitle}>
-            Contact us to register!
-          </h2>
-          <p className={styles.modalCopy}>
-            Choose your preferred contact option below and our team will help
-            you lock your webinar seat without leaving this page.
-          </p>
+          {isSubmitted ? (
+            <div className={styles.successState}>
+              <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
+              <h2 id="webinar-modal-title" className={styles.modalTitle}>
+                You&apos;re registered for the webinar.
+              </h2>
+              <p className={styles.modalCopy}>
+                Your details have been saved. Join the WhatsApp group below to
+                receive the meeting link and updates for the session.
+              </p>
+              <a
+                href={whatsappGroupLink}
+                target="_blank"
+                rel="noreferrer"
+                className={styles.groupLinkButton}
+              >
+                Join the WhatsApp group
+              </a>
+              <p className={styles.successHelper}>
+                If the group did not open automatically, use the button above.
+              </p>
+            </div>
+          ) : (
+            <>
+              <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
+              <h2 id="webinar-modal-title" className={styles.modalTitle}>
+                Reserve your webinar seat
+              </h2>
+              <p className={styles.modalCopy}>
+                Fill in the form below. After you submit, we&apos;ll give you
+                the WhatsApp group link where the meeting link will be shared.
+              </p>
 
-          <div className={styles.contactGrid}>
-            {contactOptions.map((contact) => (
-              <div key={contact.displayNumber} className={styles.contactCard}>
-                <p className={styles.contactLabel}>New-Lyf registration line</p>
-                <p className={styles.contactNumber}>{contact.displayNumber}</p>
-                <div className={styles.contactActions}>
-                  <a
-                    href={contact.whatsappHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.whatsappButton}
-                  >
-                    WhatsApp
-                  </a>
-                  <a href={`tel:${contact.dialNumber}`} className={styles.callButton}>
-                    Call now
-                  </a>
+              <form className={styles.modalForm} onSubmit={handleSubmit}>
+                <div className={styles.formField}>
+                  <label htmlFor="webinar-full-name" className={styles.formLabel}>
+                    Name
+                  </label>
+                  <input
+                    id="webinar-full-name"
+                    name="fullName"
+                    type="text"
+                    value={leadFormData.fullName}
+                    onChange={handleInputChange}
+                    className={styles.formInput}
+                    placeholder="Enter your full name"
+                    required
+                  />
                 </div>
-              </div>
-            ))}
-          </div>
+
+                <div className={styles.formGrid}>
+                  <div className={styles.formField}>
+                    <label htmlFor="webinar-email" className={styles.formLabel}>
+                      Email
+                    </label>
+                    <input
+                      id="webinar-email"
+                      name="email"
+                      type="email"
+                      value={leadFormData.email}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="you@example.com"
+                      required
+                    />
+                  </div>
+
+                  <div className={styles.formField}>
+                    <label htmlFor="webinar-phone" className={styles.formLabel}>
+                      Phone number
+                    </label>
+                    <input
+                      id="webinar-phone"
+                      name="phone"
+                      type="tel"
+                      value={leadFormData.phone}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="+91"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <fieldset className={styles.radioFieldset}>
+                  <legend className={styles.formLabel}>You are</legend>
+                  <div className={styles.radioGrid}>
+                    {(
+                      [
+                        "Fresher",
+                        "Repeater",
+                        "Qualified Earlier",
+                      ] as StudentType[]
+                    ).map((option) => (
+                      <label key={option} className={styles.radioOption}>
+                        <input
+                          type="radio"
+                          name="studentType"
+                          value={option}
+                          checked={leadFormData.studentType === option}
+                          onChange={() => handleStudentTypeChange(option)}
+                          required
+                        />
+                        <span>{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </fieldset>
+
+                {submitError ? (
+                  <p className={styles.formError}>{submitError}</p>
+                ) : null}
+
+                <button
+                  type="submit"
+                  className={styles.ctaButton}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Submit and get group link"}
+                </button>
+              </form>
+            </>
+          )}
         </div>
       </div>
     </main>
