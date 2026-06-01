@@ -9,9 +9,20 @@ import Footer from "./Footer";
 export default function LayoutShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() || "";
   const isStudioRoute = pathname === "/studio" || pathname.startsWith("/studio/");
+  const isWebinarLandingRoute = pathname === "/neet-mbbs-abroad-webinar";
 
   if (isStudioRoute) {
     return <>{children}</>;
+  }
+
+  if (isWebinarLandingRoute) {
+    return (
+      <>
+        <DeferredTracking />
+        <main id="main-content">{children}</main>
+        <Footer />
+      </>
+    );
   }
 
   return (

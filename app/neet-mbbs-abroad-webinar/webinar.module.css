@@ -51,15 +51,19 @@
 }
 
 .logoMark {
-  width: 54px;
-  height: 54px;
-  border-radius: 18px;
-  display: grid;
-  place-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  flex-shrink: 0;
+}
+
+.logoImage {
+  object-fit: contain;
+  padding: 10px;
 }
 
 .logoEyebrow {

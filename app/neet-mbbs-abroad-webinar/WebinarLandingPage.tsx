@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import styles from "./webinar.module.css";
@@ -124,7 +125,16 @@ export default function WebinarLandingPage() {
         <div className={styles.heroGlow} />
         <header className={styles.header}>
           <div className={styles.logoLockup}>
-            <div className={styles.logoMark}>NL</div>
+            <div className={styles.logoMark}>
+              <Image
+                src="/new-lyf-logo.webp"
+                alt="New-Lyf Overseas"
+                fill
+                sizes="88px"
+                className={styles.logoImage}
+                priority
+              />
+            </div>
             <div>
               <p className={styles.logoEyebrow}>Guiding aspirants since 2009</p>
               <p className={styles.logoName}>New-Lyf Overseas</p>
