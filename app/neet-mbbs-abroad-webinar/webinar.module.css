@@ -835,27 +835,40 @@
 }
 
 @media (max-width: 767px) {
+  .heroSection {
+    padding: 84px 16px 40px;
+  }
+
   .header {
+    position: fixed;
+    top: 10px;
+    left: 16px;
+    right: 16px;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 10px;
-    padding: 12px 14px;
-    border-radius: 22px;
+    padding: 10px 12px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    z-index: 80;
   }
 
   .mobileHeaderPill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 0 14px;
+    min-height: 30px;
+    padding: 4px 10px;
     border-radius: 999px;
-    border: 1px solid rgba(35, 20, 25, 0.12);
-    background: #ffffff;
-    color: #231419;
-    font-size: 0.9rem;
-    font-weight: 700;
+    border: 1px solid rgba(35, 20, 25, 0.06);
+    background: #f4f4f4;
+    color: #666666;
+    font-size: 11px;
+    font-weight: 500;
     white-space: nowrap;
   }
 
@@ -866,13 +879,15 @@
   }
 
   .logoMark {
-    width: 92px;
-    height: 46px;
-    border-radius: 16px;
+    width: 88px;
+    height: 36px;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
   }
 
   .logoImage {
-    padding: 6px 8px;
+    padding: 0;
   }
 
   .logoEyebrow {
@@ -885,13 +900,15 @@
 
   .headerButton {
     width: auto;
-    min-height: 44px;
-    padding: 0 18px;
+    min-height: 36px;
+    padding: 8px 16px;
     border-radius: 999px;
-    background: #171717;
+    background: #e8593c;
     box-shadow: none;
     color: #fffaf9;
-    font-size: 0.9rem;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
     white-space: nowrap;
   }
 
@@ -901,6 +918,27 @@
 
   .headerButtonMobile {
     display: inline;
+  }
+
+  .heroGrid {
+    padding-top: 24px;
+  }
+
+  .preHeader {
+    padding: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+    margin-bottom: 12px;
+  }
+
+  .heroTitle {
+    font-size: clamp(32px, 9vw, 60px);
+    line-height: 1.1;
+    margin-bottom: 16px;
   }
 
   .ctaButton,

@@ -220,7 +220,7 @@ export default function WebinarLandingPage() {
             <span className={styles.headerButtonDesktop}>
               Book Your Free Webinar Seat Now
             </span>
-            <span className={styles.headerButtonMobile}>Register</span>
+            <span className={styles.headerButtonMobile}>Register Free</span>
           </button>
         </header>
 
