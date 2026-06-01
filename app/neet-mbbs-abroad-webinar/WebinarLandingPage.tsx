@@ -192,8 +192,6 @@ export default function WebinarLandingPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroGlow} />
         <header className={styles.header}>
-          <div className={styles.mobileHeaderPill}>7th June</div>
-
           <div className={styles.logoLockup}>
             <div className={styles.logoMark}>
               <Image
