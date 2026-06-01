@@ -89,6 +89,27 @@ const speakerCards = [
   },
 ];
 
+const testimonials = [
+  {
+    name: "Ramesh K., father",
+    city: "Bangalore",
+    quote:
+      "We started the process in May before results. By the time our son's marks came out, the university seat discussion was already moving.",
+  },
+  {
+    name: "Anita S.",
+    city: "Hyderabad",
+    quote:
+      "Dr. Vinith told us exactly which documents to prepare first. We were not scrambling at the last minute like other families we knew.",
+  },
+  {
+    name: "Priya's mother",
+    city: "Chennai",
+    quote:
+      "The biggest relief was clarity. We understood the August intake timeline early, so we could plan calmly instead of reacting in panic.",
+  },
+];
+
 export default function WebinarLandingPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeCtaLabel, setActiveCtaLabel] = useState(
@@ -343,6 +364,41 @@ export default function WebinarLandingPage() {
               Register Now
             </button>
           </div>
+        </div>
+      </section>
+
+      <section className={`${styles.section} ${styles.testimonialSection}`}>
+        <div className={styles.sectionIntro}>
+          <p className={styles.sectionEyebrow}>Families who moved early felt the difference</p>
+          <h2 className={styles.sectionTitle}>
+            Real parent and student feedback from families who planned before the rush.
+          </h2>
+          <p className={styles.sectionCopy}>
+            The biggest trust signal on pages like this is simple: hearing from
+            families who acted before panic took over.
+          </p>
+        </div>
+
+        <div className={styles.testimonialGrid}>
+          {testimonials.map((item) => (
+            <article key={`${item.name}-${item.city}`} className={styles.testimonialCard}>
+              <div className={styles.testimonialHeader}>
+                <img
+                  src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                    item.name,
+                  )}&background=8B2020&color=fff&size=80&bold=true`}
+                  alt={item.name}
+                  className={styles.testimonialAvatar}
+                  loading="lazy"
+                />
+                <div>
+                  <p className={styles.testimonialName}>{item.name}</p>
+                  <p className={styles.testimonialCity}>{item.city}</p>
+                </div>
+              </div>
+              <p className={styles.testimonialQuote}>"{item.quote}"</p>
+            </article>
+          ))}
         </div>
       </section>
 
