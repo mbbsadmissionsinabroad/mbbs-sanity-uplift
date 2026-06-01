@@ -192,6 +192,8 @@ export default function WebinarLandingPage() {
       <section className={styles.heroSection}>
         <div className={styles.heroGlow} />
         <header className={styles.header}>
+          <div className={styles.mobileHeaderPill}>7th June</div>
+
           <div className={styles.logoLockup}>
             <div className={styles.logoMark}>
               <Image
@@ -215,7 +217,10 @@ export default function WebinarLandingPage() {
             data-webinar-cta
             data-cta-label="Header CTA"
           >
-            Book Your Free Webinar Seat Now
+            <span className={styles.headerButtonDesktop}>
+              Book Your Free Webinar Seat Now
+            </span>
+            <span className={styles.headerButtonMobile}>Register</span>
           </button>
         </header>
 
