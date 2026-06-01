@@ -20,7 +20,6 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
       <>
         <DeferredTracking />
         <main id="main-content">{children}</main>
-        <Footer />
       </>
     );
   }
