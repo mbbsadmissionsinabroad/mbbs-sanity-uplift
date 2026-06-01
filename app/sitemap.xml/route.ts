@@ -24,6 +24,7 @@ const coreRoutes: SitemapEntry[] = [
   { route: "/nursing-jobs-in-abroad", changefreq: "monthly", priority: "0.7" },
   { route: "/pg-in-abroad", changefreq: "monthly", priority: "0.7" },
   { route: "/neet-qualifying-score-mbbs-abroad", changefreq: "weekly", priority: "0.9" },
+  { route: "/neet-mbbs-abroad-webinar", changefreq: "weekly", priority: "0.9" },
   {
     route: "/study-mbbs-abroad-georgia-kazakhstan-uzbekistan",
     changefreq: "weekly",

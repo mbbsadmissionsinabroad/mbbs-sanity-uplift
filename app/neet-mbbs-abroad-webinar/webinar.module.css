@@ -1,0 +1,733 @@
+.pageShell {
+  background:
+    radial-gradient(circle at top left, rgba(149, 24, 46, 0.18), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 177, 153, 0.12), transparent 30%),
+    linear-gradient(180deg, #fff8f6 0%, #ffffff 32%, #f7f7fb 100%);
+  color: #171717;
+}
+
+.heroSection {
+  position: relative;
+  overflow: hidden;
+  padding: 24px 20px 72px;
+  background:
+    linear-gradient(135deg, rgba(98, 9, 24, 0.98), rgba(35, 8, 16, 0.94)),
+    #300710;
+  color: #fff9f7;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: auto -140px -120px auto;
+  width: 380px;
+  height: 380px;
+  border-radius: 999px;
+  background: rgba(255, 186, 165, 0.18);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+.header,
+.heroGrid,
+.section,
+.footer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.logoLockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logoMark {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.logoEyebrow {
+  margin: 0 0 4px;
+  color: #f8c6bb;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.logoName {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.heroGrid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 28px;
+  align-items: start;
+  padding-top: 56px;
+}
+
+.heroCopy {
+  max-width: 700px;
+}
+
+.preHeader,
+.sectionEyebrow,
+.panelBadge,
+.modalEyebrow,
+.urgencyLabel,
+.speakerRole,
+.infoCardTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.preHeader {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd8cf;
+}
+
+.heroTitle {
+  margin: 20px 0 0;
+  max-width: 11ch;
+  font-size: clamp(2.6rem, 5vw, 5.2rem);
+  line-height: 0.96;
+  letter-spacing: -0.05em;
+}
+
+.heroSubtitle {
+  margin: 22px 0 0;
+  max-width: 640px;
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.55;
+  color: rgba(255, 241, 236, 0.9);
+}
+
+.heroSupport {
+  margin: 18px 0 0;
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: rgba(255, 236, 229, 0.82);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.ctaButton,
+.secondaryButton,
+.headerButton,
+.panelButton,
+.whatsappButton,
+.callButton,
+.closeButton {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ctaButton {
+  padding: 15px 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff7b52, #ff9f6a);
+  box-shadow: 0 18px 35px rgba(255, 123, 82, 0.28);
+  color: #2e090f;
+  font-weight: 800;
+}
+
+.ctaButton:hover,
+.secondaryButton:hover,
+.whatsappButton:hover,
+.callButton:hover,
+.closeButton:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  padding: 15px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff7f5;
+  font-weight: 700;
+}
+
+.headerButton {
+  flex-shrink: 0;
+}
+
+.trustRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.trustRow span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 241, 236, 0.88);
+  font-size: 0.95rem;
+}
+
+.heroPanel {
+  position: relative;
+  border-radius: 30px;
+  padding: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 244, 241, 0.98), rgba(255, 233, 226, 0.94));
+  color: #2a1316;
+  box-shadow: 0 30px 60px rgba(15, 7, 8, 0.28);
+}
+
+.panelBadge {
+  background: rgba(124, 17, 39, 0.08);
+  color: #7b162d;
+}
+
+.panelTitle {
+  margin: 18px 0 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.panelMeta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.panelMeta > div {
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.metaLabel {
+  margin: 0 0 8px;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8c5964;
+}
+
+.metaValue {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.panelNote {
+  margin-top: 20px;
+  border-radius: 22px;
+  padding: 18px 20px;
+  background: #fff;
+  color: #4d2b31;
+  line-height: 1.7;
+}
+
+.noteTitle {
+  margin: 0 0 8px;
+  font-weight: 800;
+  color: #7d1730;
+}
+
+.panelButton {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.section {
+  padding: 72px 20px;
+}
+
+.sectionIntro {
+  max-width: 780px;
+}
+
+.sectionEyebrow {
+  background: rgba(124, 17, 39, 0.07);
+  color: #7b162d;
+}
+
+.sectionTitle {
+  margin: 18px 0 0;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+  color: #221317;
+}
+
+.sectionCopy {
+  margin: 18px 0 0;
+  max-width: 700px;
+  color: #5b4b50;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.timelineGrid {
+  display: grid;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.timelineCard,
+.speakerCard,
+.webinarInfoCard,
+.contactCard {
+  border: 1px solid rgba(99, 23, 40, 0.08);
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(56, 16, 27, 0.06);
+}
+
+.timelineCard {
+  padding: 24px;
+}
+
+.timelineCard h3,
+.speakerName {
+  margin: 14px 0 0;
+  font-size: 1.4rem;
+  line-height: 1.25;
+  color: #211217;
+}
+
+.timelineCard p,
+.speakerDescription,
+.modalCopy,
+.contactLabel {
+  margin: 12px 0 0;
+  color: #5b4b50;
+  line-height: 1.8;
+}
+
+.timelineMonth {
+  margin: 0;
+  color: #981d3b;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.urgencyPanel {
+  display: grid;
+  gap: 20px;
+  margin-top: 26px;
+  padding: 26px;
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, rgba(124, 17, 39, 0.96), rgba(66, 10, 24, 1));
+  color: #fff7f5;
+}
+
+.urgencyLabel {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffd3c7;
+}
+
+.pointList {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pointList li {
+  position: relative;
+  padding-left: 22px;
+  line-height: 1.8;
+}
+
+.pointList li + li {
+  margin-top: 12px;
+}
+
+.pointList li::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #ff9f6a;
+}
+
+.urgencyAction {
+  border-radius: 26px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.urgencyStat {
+  margin: 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.urgencyText {
+  margin: 12px 0 24px;
+  line-height: 1.8;
+}
+
+.webinarSection {
+  background: linear-gradient(180deg, #fff0ec 0%, #fff7f4 100%);
+}
+
+.webinarGrid {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+.webinarChecklist {
+  display: grid;
+  gap: 16px;
+}
+
+.checkItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid rgba(124, 17, 39, 0.08);
+  box-shadow: 0 18px 45px rgba(73, 20, 33, 0.06);
+}
+
+.checkItem span {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(124, 17, 39, 0.08);
+  color: #8f1733;
+  font-weight: 900;
+}
+
+.checkItem p {
+  margin: 0;
+  color: #4d3c41;
+  line-height: 1.8;
+}
+
+.webinarFooterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.webinarInfoCard {
+  padding: 24px;
+}
+
+.infoCardTitle {
+  margin-bottom: 12px;
+  background: rgba(124, 17, 39, 0.07);
+  color: #7b162d;
+}
+
+.webinarInfoCard p {
+  margin: 8px 0 0;
+  color: #4d3c41;
+}
+
+.speakerGrid {
+  display: grid;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.speakerCard {
+  padding: 24px;
+}
+
+.speakerAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #7d1630, #cc5f49);
+  color: #fff9f8;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.speakerRole {
+  margin-top: 20px;
+  background: rgba(124, 17, 39, 0.08);
+  color: #7b162d;
+}
+
+.finalSection {
+  padding-top: 24px;
+}
+
+.finalPanel {
+  padding: 32px;
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(119, 16, 39, 1), rgba(31, 7, 14, 1));
+  color: #fff9f7;
+  box-shadow: 0 28px 65px rgba(35, 8, 16, 0.24);
+}
+
+.finalTitle {
+  margin: 18px 0 0;
+  font-size: clamp(2rem, 4vw, 3.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.finalCopy {
+  margin: 18px 0 0;
+  max-width: 700px;
+  color: rgba(255, 240, 236, 0.86);
+  line-height: 1.9;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 20px 64px;
+  color: #5a4c50;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 60;
+}
+
+.modalOverlayOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modalCard {
+  width: min(640px, 100%);
+  border-radius: 30px;
+  padding: 28px;
+  background: #fffdfc;
+  color: #221317;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.22);
+  transform: translateY(20px) scale(0.96);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modalCardOpen {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.closeButton {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  border-radius: 999px;
+  background: rgba(124, 17, 39, 0.08);
+  color: #7b162d;
+  font-weight: 800;
+}
+
+.modalEyebrow {
+  margin-top: 8px;
+  background: rgba(124, 17, 39, 0.08);
+  color: #7b162d;
+}
+
+.modalTitle {
+  margin: 18px 0 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.05;
+}
+
+.contactGrid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.contactCard {
+  padding: 20px;
+}
+
+.contactNumber {
+  margin: 10px 0 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #1f1417;
+}
+
+.contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.whatsappButton,
+.callButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.whatsappButton {
+  background: #25d366;
+  color: #083917;
+}
+
+.callButton {
+  background: #1f1417;
+  color: #fffaf9;
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    padding: 28px 28px 90px;
+  }
+
+  .section {
+    padding: 88px 28px;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 28px 72px;
+  }
+
+  .timelineGrid,
+  .speakerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .urgencyPanel,
+  .webinarGrid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  }
+
+  .webinarFooterRow {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contactGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+    gap: 40px;
+  }
+
+  .timelineGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .speakerGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerButton,
+  .ctaButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .panelMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .modalCard {
+    padding: 22px;
+  }
+
+  .contactActions {
+    flex-direction: column;
+  }
+
+  .whatsappButton,
+  .callButton {
+    width: 100%;
+  }
+}
