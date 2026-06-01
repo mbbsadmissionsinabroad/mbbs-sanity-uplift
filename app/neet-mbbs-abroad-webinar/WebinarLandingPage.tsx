@@ -11,6 +11,14 @@ type ContactOption = {
   whatsappHref: string;
 };
 
+type TimingCard = {
+  month: string;
+  accentColor: string;
+  title: string;
+  lead: string;
+  copy: string;
+};
+
 const contactOptions: ContactOption[] = [
   {
     displayNumber: "+91 88490 872",
@@ -26,22 +34,33 @@ const contactOptions: ContactOption[] = [
   },
 ];
 
-const timingCards = [
+const webinarStartAt = new Date("2026-06-07T19:00:00+05:30");
+const totalSeats = 200;
+const registeredSeats = 57;
+const seatsRemaining = totalSeats - registeredSeats;
+
+const timingCards: TimingCard[] = [
   {
     month: "June",
+    accentColor: "#f59e0b",
     title: "Students are waiting on the re-exam",
+    lead: "Waiting quietly costs time.",
     copy:
       "Every week spent waiting reduces your document preparation runway for the August intake.",
   },
   {
     month: "July",
+    accentColor: "#ef6c00",
     title: "Processing pressure starts building",
+    lead: "Paperwork starts stacking up.",
     copy:
       "Shortlisting, university paperwork, financial planning, and visa prep cannot be compressed overnight.",
   },
   {
     month: "August",
+    accentColor: "#c0392b",
     title: "Seats move fast once the rush begins",
+    lead: "Competition gets louder.",
     copy:
       "When re-exam results arrive, thousands of families start competing for the same limited MBBS abroad seats.",
   },
@@ -57,14 +76,16 @@ const speakerCards = [
   {
     name: "Doctor Vinith",
     role: "Medical expert",
+    credential: "Focused on medical-pathway clarity for NEET families planning beyond the re-exam panic.",
     description:
-      "Shares realistic guidance on studying medicine abroad, long-term practice pathways, and how students should think beyond panic-driven decisions.",
+      "Covers practical MBBS-abroad fit, long-term practice thinking, and the questions families should answer before they commit to a country.",
   },
   {
     name: "Mr. Avinash",
     role: "International admissions specialist",
+    credential: "Brings 10+ years of admissions planning experience for students moving on tight intake timelines.",
     description:
-      "Brings a decade-plus of admissions experience helping students shortlist universities, plan documents, and move before the admission rush peaks.",
+      "Breaks down shortlisting, documentation, and the August-intake process so students can move before the admission rush peaks.",
   },
 ];
 
@@ -73,6 +94,32 @@ export default function WebinarLandingPage() {
   const [activeCtaLabel, setActiveCtaLabel] = useState(
     "Book Your Free Webinar Seat Now",
   );
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const updateCountdown = () => {
+      const diff = webinarStartAt.getTime() - Date.now();
+
+      if (diff <= 0) {
+        setTimeLeft("Starting soon");
+        return;
+      }
+
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+
+      setTimeLeft(`${days}d ${hours}h ${minutes}m`);
+    };
+
+    updateCountdown();
+
+    const interval = window.setInterval(updateCountdown, 1000);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
 
   useEffect(() => {
     const ctaButtons = Array.from(
@@ -157,18 +204,18 @@ export default function WebinarLandingPage() {
               ATTENTION: NEET 2024 &amp; 2025 QUALIFIED STUDENTS
             </p>
             <h1 className={styles.heroTitle}>
-              NEET Students, Stop Scrolling! Don&apos;t Let the Re-Exam Delay
-              Your MBBS Dreams.
+              Secure your August MBBS intake before the NEET re-exam rush
+              begins.
             </h1>
             <p className={styles.heroSubtitle}>
-              Learn how to secure your August intake seat before the 45-day
-              documentation window closes.
+              The August intake for MBBS abroad is filling up fast. Learn how
+              to move before the strict 45-day documentation window closes.
             </p>
             <p className={styles.heroSupport}>
-              Stop Scrolling. Waiting for the NEET re-exam could cost you your
-              MBBS dream. The August intake for MBBS abroad is filling up fast,
-              and families who plan late lose time, seat options, and document
-              flexibility.
+              Students waiting for the June 21 re-exam are not just waiting on
+              marks. They are losing shortlist time, document runway, and early
+              access to August-intake seats that serious families are already
+              evaluating.
             </p>
 
             <div className={styles.ctaRow}>
@@ -178,23 +225,14 @@ export default function WebinarLandingPage() {
                 data-webinar-cta
                 data-cta-label="Hero primary CTA"
               >
-                Secure My Free Webinar Seat
-              </button>
-              <button
-                type="button"
-                className={styles.secondaryButton}
-                data-webinar-cta
-                data-cta-label="Hero secondary CTA"
-              >
-                Save My Seat
+                Secure my free seat
               </button>
             </div>
 
-            <div className={styles.trustRow}>
-              <span>Free live webinar</span>
-              <span>7th June at 7 PM</span>
-              <span>Parents should attend too</span>
-            </div>
+            <p className={styles.ctaCaption}>
+              Only {seatsRemaining} of {totalSeats} seats remaining • 7th June
+              • Free to attend
+            </p>
           </div>
 
           <aside className={styles.heroPanel}>
@@ -202,6 +240,10 @@ export default function WebinarLandingPage() {
             <h2 className={styles.panelTitle}>
               Secure Your MBBS Future Abroad
             </h2>
+            <p className={styles.countdownLine}>Starts in {timeLeft}</p>
+            <p className={styles.seatCounter}>
+              {seatsRemaining} of {totalSeats} seats remaining
+            </p>
 
             <div className={styles.panelMeta}>
               <div>
@@ -222,14 +264,10 @@ export default function WebinarLandingPage() {
               </div>
             </div>
 
-            <div className={styles.panelNote}>
-              <p className={styles.noteTitle}>Why this matters now</p>
-              <p>
-                Documentation, university approvals, and visa preparation can
-                take 45+ days. If you wait for 21st June to start thinking,
-                you start late.
-              </p>
-            </div>
+            <p className={styles.panelSupport}>
+              Attend with your parents and get a clear next-step plan before
+              the admission rush gets louder.
+            </p>
 
             <button
               type="button"
@@ -237,9 +275,17 @@ export default function WebinarLandingPage() {
               data-webinar-cta
               data-cta-label="Hero panel CTA"
             >
-              Register for the 7th June Webinar
+              Book your free webinar seat now
             </button>
           </aside>
+        </div>
+      </section>
+
+      <section className={styles.proofBarSection}>
+        <div className={styles.proofBar}>
+          <span>✓ 17,000+ students guided</span>
+          <span>✓ Guiding aspirants since 2009</span>
+          <span>✓ MBBS abroad planning before intake deadlines</span>
         </div>
       </section>
 
@@ -257,32 +303,40 @@ export default function WebinarLandingPage() {
 
         <div className={styles.timelineGrid}>
           {timingCards.map((item) => (
-            <article key={item.month} className={styles.timelineCard}>
+            <article
+              key={item.month}
+              className={styles.timelineCard}
+              style={{ borderLeftColor: item.accentColor }}
+            >
               <p className={styles.timelineMonth}>{item.month}</p>
               <h3>{item.title}</h3>
-              <p>{item.copy}</p>
+              <p>
+                <strong>{item.lead}</strong> {item.copy}
+              </p>
             </article>
           ))}
         </div>
 
-        <div className={styles.urgencyPanel}>
-          <div>
+        <div className={styles.deadlineGrid}>
+          <div className={styles.deadlineStatCard}>
+            <p className={styles.deadlineLabel}>Documentation runway</p>
+            <p className={styles.deadlineNumber}>45+ days</p>
+            <p className={styles.deadlineCopy}>
+              Documentation, university approvals, and visa preparation take
+              real time. You cannot rush this at the end.
+            </p>
+          </div>
+
+          <div className={styles.deadlineListCard}>
             <p className={styles.urgencyLabel}>Here is what you need to know</p>
             <ul className={styles.pointList}>
               {urgencyPoints.map((point) => (
                 <li key={point}>{point}</li>
               ))}
             </ul>
-          </div>
-
-          <div className={styles.urgencyAction}>
-            <p className={styles.urgencyStat}>45+ days</p>
-            <p className={styles.urgencyText}>
-              is the document runway many families underestimate.
-            </p>
             <button
               type="button"
-              className={styles.ctaButton}
+              className={`${styles.ctaButton} ${styles.inlineCta}`}
               data-webinar-cta
               data-cta-label="Urgency section CTA"
             >
@@ -323,13 +377,6 @@ export default function WebinarLandingPage() {
         </div>
 
         <div className={styles.webinarFooterRow}>
-          <div className={styles.webinarInfoCard}>
-            <p className={styles.infoCardTitle}>Webinar details</p>
-            <p>Date: 7th June</p>
-            <p>Time: 7:00 PM</p>
-            <p>Cost: 100% Free</p>
-          </div>
-
           <button
             type="button"
             className={styles.ctaButton}
@@ -360,6 +407,7 @@ export default function WebinarLandingPage() {
               </div>
               <p className={styles.speakerRole}>{speaker.role}</p>
               <h3 className={styles.speakerName}>{speaker.name}</h3>
+              <p className={styles.speakerCredential}>{speaker.credential}</p>
               <p className={styles.speakerDescription}>{speaker.description}</p>
             </article>
           ))}
@@ -377,6 +425,9 @@ export default function WebinarLandingPage() {
             Get ahead of the crowd, clear your doubts directly with our experts,
             and secure your future now.
           </p>
+          <p className={styles.finalMeta}>
+            Free live webinar • 7th June at 7 PM • Attend with parents
+          </p>
           <div className={styles.ctaRow}>
             <button
               type="button"
@@ -386,32 +437,9 @@ export default function WebinarLandingPage() {
             >
               Book My Free Spot Now
             </button>
-            <button
-              type="button"
-              className={styles.secondaryButton}
-              data-webinar-cta
-              data-cta-label="Final secondary CTA"
-            >
-              Save My Seat
-            </button>
           </div>
         </div>
       </section>
-
-      <footer className={styles.footer}>
-        <p>
-          Copyright {new Date().getFullYear()} New-Lyf Overseas. All rights
-          reserved.
-        </p>
-        <button
-          type="button"
-          className={styles.ctaButton}
-          data-webinar-cta
-          data-cta-label="Footer CTA"
-        >
-          Register Now
-        </button>
-      </footer>
 
       <div
         className={`${styles.modalOverlay} ${
