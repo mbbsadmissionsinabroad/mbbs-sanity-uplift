@@ -62,6 +62,7 @@ import type { Metadata } from "next";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
 import { getBlogSummaries } from "../../lib/getBlogSummaries";
+import { localBlogs } from "../../lib/localBlogs";
 import BlogDetailsPage from "./components/BlogDetailsPage";
 import BlogShimmer from "./components/BlogShimmer";
 import Notfound from "../not-found";
@@ -189,13 +190,13 @@ const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
   let blogDetailsContent;
   let sidebarData: SidebarData = { categories: [], latestPosts: [] };
   try {
-    const [blogDetailsResult, allBlogsResult] = await Promise.all([
-      getBlogDetails(route),
-      getBlogSummaries(),
-    ]);
+    blogDetailsContent = await getBlogDetails(route);
 
-    blogDetailsContent = blogDetailsResult;
-    sidebarData = buildSidebarData(allBlogsResult || [], route);
+    const sidebarSourceBlogs = blogDetailsContent?.data?.isLocalBlog
+      ? localBlogs
+      : await getBlogSummaries();
+
+    sidebarData = buildSidebarData(sidebarSourceBlogs || [], route);
   } catch (error) {
     console.error("Error fetching blog details:", error);
     return <Notfound />;

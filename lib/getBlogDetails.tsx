@@ -10,6 +10,7 @@ interface BlogDetails {
 
 const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
 const directSanityApiHost = `https://${projectId}.api.sanity.io/v2021-10-21/data/query/production?query=`;
+const FETCH_TIMEOUT_MS = 4500;
 
 function getQueryResult(payload: any) {
   if (Array.isArray(payload?.result)) return payload.result;
@@ -18,10 +19,29 @@ function getQueryResult(payload: any) {
   return [];
 }
 
+async function fetchWithTimeout(url: string, init?: RequestInit) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    return await fetch(url, {
+      ...init,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 async function fetchQuery(apiHost: string, query: string) {
-  const response = await fetch(apiHost + query, {
+  const response = await fetchWithTimeout(apiHost + query, {
     next: { revalidate: 60 },
   });
+
+  if (!response.ok) {
+    throw new Error(`Failed to fetch blog details: ${response.status}`);
+  }
+
   const json = await response.json();
   return getQueryResult(json);
 }

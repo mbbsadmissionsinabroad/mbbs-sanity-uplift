@@ -6,6 +6,7 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "xz1irwuo";
 const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const apiVersion = "2021-10-21";
 const queryUrl = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=`;
+const FETCH_TIMEOUT_MS = 4500;
 
 const remoteBlogSummaryQuery = encodeURIComponent(`*[_type == "pages" && isBlog == true]{
   title,
@@ -20,8 +21,22 @@ const remoteBlogSummaryQuery = encodeURIComponent(`*[_type == "pages" && isBlog 
   publicSlug
 }`);
 
+async function fetchWithTimeout(url: string, init?: RequestInit) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+
+  try {
+    return await fetch(url, {
+      ...init,
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timeoutId);
+  }
+}
+
 const fetchRemoteBlogSummaries = cache(async () => {
-  const response = await fetch(`${queryUrl}${remoteBlogSummaryQuery}`, {
+  const response = await fetchWithTimeout(`${queryUrl}${remoteBlogSummaryQuery}`, {
     next: { revalidate: 3600 },
   });
 
