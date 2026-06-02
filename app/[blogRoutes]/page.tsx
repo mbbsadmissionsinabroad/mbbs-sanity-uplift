@@ -61,12 +61,61 @@
 import type { Metadata } from "next";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
+import { getBlogData } from "../../lib/getBlogs";
 import BlogDetailsPage from "./components/BlogDetailsPage";
 import BlogShimmer from "./components/BlogShimmer";
 import Notfound from "../not-found";
 import { urlFor } from "@/lib/client";
 
 const siteUrl = "https://www.mbbsadmissionsinabroad.com";
+
+type SidebarData = {
+  categories: Array<{ name: string; count: number }>;
+  latestPosts: Array<{ title: string; href: string; category?: string }>;
+};
+
+function getBlogHref(blog: any) {
+  return `/${blog?.publicSlug || blog?.slug?.current || ""}`;
+}
+
+function getPublishedAtValue(blog: any) {
+  const rawDate = blog?.publishedAt || blog?._updatedAt || "";
+  const timestamp = rawDate ? Date.parse(rawDate) : NaN;
+  return Number.isNaN(timestamp) ? 0 : timestamp;
+}
+
+function buildSidebarData(blogs: any[], currentRoute: string): SidebarData {
+  const normalizedRoute = currentRoute.replace(/^\/+/, "").toLowerCase();
+  const categoriesMap = new Map<string, number>();
+
+  blogs.forEach((blog) => {
+    const category = blog?.blogCategory || "MBBS Abroad Guidance";
+    categoriesMap.set(category, (categoriesMap.get(category) || 0) + 1);
+  });
+
+  const categories = Array.from(categoriesMap.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((left, right) =>
+      right.count === left.count
+        ? left.name.localeCompare(right.name)
+        : right.count - left.count,
+    );
+
+  const latestPosts = blogs
+    .filter((blog) => {
+      const slug = (blog?.publicSlug || blog?.slug?.current || "").toLowerCase();
+      return Boolean(slug) && slug !== normalizedRoute;
+    })
+    .sort((left, right) => getPublishedAtValue(right) - getPublishedAtValue(left))
+    .slice(0, 5)
+    .map((blog) => ({
+      title: blog?.cardTitle || blog?.title || "Blog article",
+      href: getBlogHref(blog),
+      category: blog?.blogCategory || "MBBS Abroad Guidance",
+    }));
+
+  return { categories, latestPosts };
+}
 
 export async function generateMetadata({
   params,
@@ -138,8 +187,15 @@ const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
   const route = params?.blogRoutes ?? "";
 
   let blogDetailsContent;
+  let sidebarData: SidebarData = { categories: [], latestPosts: [] };
   try {
-    blogDetailsContent = await getBlogDetails(route);
+    const [blogDetailsResult, allBlogsResult] = await Promise.all([
+      getBlogDetails(route),
+      getBlogData(),
+    ]);
+
+    blogDetailsContent = blogDetailsResult;
+    sidebarData = buildSidebarData(allBlogsResult?.result || [], route);
   } catch (error) {
     console.error("Error fetching blog details:", error);
     return <Notfound />;
@@ -152,7 +208,12 @@ const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
     return <BlogShimmer />;
   }
 
-  return <BlogDetailsPage blogDetailsContent={blogDetailsContent} />;
+  return (
+    <BlogDetailsPage
+      blogDetailsContent={blogDetailsContent}
+      sidebarData={sidebarData}
+    />
+  );
 };
 
 export default Page;

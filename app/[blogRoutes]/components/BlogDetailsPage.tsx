@@ -6,6 +6,7 @@ import Assist from "@/app/components/Assist";
 import TextSerializer from "./TextSerializers";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import BlogSidebar from "./BlogSidebar";
 
 // const TOC = dynamic(() => import("./TOC"), { ssr: false });
 const Modal = dynamic(() => import("./Modal"), { ssr: false });
@@ -14,13 +15,13 @@ const Modal = dynamic(() => import("./Modal"), { ssr: false });
 // });
 // 
 // import Modal from "./Modal";
-import TOC from "./TOC";
 
 const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 
 const BlogDetailsPage = (props: any) => {
   const data = props?.blogDetailsContent?.data;
   const faq = props?.blogDetailsContent?.faq || [];
+  const sidebarData = props?.sidebarData || { categories: [], latestPosts: [] };
   const bannerSrc = data?.bannerImageUrl
     ? data.bannerImageUrl
     : data?.bannerImage
@@ -120,45 +121,57 @@ const BlogDetailsPage = (props: any) => {
           </h1>
         </div>
       </section>
-      <div className="container py-8 mx-auto w-full items-center justify-center text-justify sm:p-40">
-        {bannerSrc ? (
-          <Image
-            src={bannerSrc}
-            className="h-auto max-w-full object-cover"
-            width={1350}
-            height={700}
-            alt={data?.title}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1350px"
-            priority
-            loading="eager"
-          />
-        ) : null}
+      <div className="mx-auto w-full max-w-7xl px-4 py-8 lg:px-6">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_340px] lg:items-start">
+          <article className="min-w-0 text-justify">
+            {bannerSrc ? (
+              <Image
+                src={bannerSrc}
+                className="h-auto max-w-full rounded-[28px] object-cover"
+                width={1350}
+                height={700}
+                alt={data?.title}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1350px"
+                priority
+                loading="eager"
+              />
+            ) : null}
 
-        <div className="tocContainer">
-          {data && <TOC />}
-        </div>
-        <TextSerializer
-          data={data?.pageContent}
-          className="serializerTitle mt-4"
-        />
-        {Array.isArray(data?.relatedLinks) && data.relatedLinks.length > 0 ? (
-          <section className="mt-12 rounded-3xl border border-slate-200 bg-slate-50 p-6">
-            <h2 className="text-2xl font-bold text-slate-900">
-              Related Guidance
-            </h2>
-            <div className="mt-4 flex flex-col gap-3">
-              {data.relatedLinks.map((link: any) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-blue-700 underline-offset-4 hover:underline"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+              <span className="font-medium text-slate-900">Category:</span>{" "}
+              {data?.blogCategory || "MBBS Abroad Guidance"}
             </div>
-          </section>
-        ) : null}
+
+            <TextSerializer
+              data={data?.pageContent}
+              className="serializerTitle mt-6"
+            />
+            {Array.isArray(data?.relatedLinks) && data.relatedLinks.length > 0 ? (
+              <section className="mt-12 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+                <h2 className="text-2xl font-bold text-slate-900">
+                  Related Guidance
+                </h2>
+                <div className="mt-4 flex flex-col gap-3">
+                  {data.relatedLinks.map((link: any) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="text-blue-700 underline-offset-4 hover:underline"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+          </article>
+
+          <BlogSidebar
+            categories={sidebarData.categories}
+            latestPosts={sidebarData.latestPosts}
+            currentCategory={data?.blogCategory}
+          />
+        </div>
       </div>
 
       {faq.length > 0 && (
