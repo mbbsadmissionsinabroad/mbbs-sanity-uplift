@@ -59,12 +59,6 @@ export default function BlogSidebar({
             </div>
           </div>
 
-          <p className="mt-4 text-sm leading-7 text-slate-200">
-            This sidebar form UI is ready across every blog page. For immediate
-            help while we wire the final lead flow, call the team directly from
-            here.
-          </p>
-
           <form className="mt-6 space-y-4">
             <div>
               <label
@@ -134,7 +128,7 @@ export default function BlogSidebar({
               href={primaryCallHref}
               className="inline-flex w-full items-center justify-center rounded-full bg-[#f3b33d] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#f8c35b]"
             >
-              Call Now
+              Enquire Now
             </a>
             <p className="text-center text-xs leading-6 text-slate-300">
               Direct counselling line: {primaryCallNumber}
