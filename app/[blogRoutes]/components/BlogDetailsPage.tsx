@@ -22,6 +22,10 @@ const BlogDetailsPage = (props: any) => {
   const data = props?.blogDetailsContent?.data;
   const faq = props?.blogDetailsContent?.faq || [];
   const sidebarData = props?.sidebarData || { categories: [], latestPosts: [] };
+  const hasLocalBodyHtml =
+    data?.isLocalBlog &&
+    typeof data?.bodyHtml === "string" &&
+    data.bodyHtml.length > 0;
   const bannerSrc = data?.bannerImageUrl
     ? data.bannerImageUrl
     : data?.bannerImage
@@ -142,10 +146,17 @@ const BlogDetailsPage = (props: any) => {
               {data?.blogCategory || "MBBS Abroad Guidance"}
             </div>
 
-            <TextSerializer
-              data={data?.pageContent}
-              className="serializerTitle mt-6"
-            />
+            {hasLocalBodyHtml ? (
+              <div
+                className="serializerTitle mt-6 space-y-4"
+                dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
+              />
+            ) : (
+              <TextSerializer
+                data={data?.pageContent}
+                className="serializerTitle mt-6"
+              />
+            )}
             {Array.isArray(data?.relatedLinks) && data.relatedLinks.length > 0 ? (
               <section className="mt-12 rounded-3xl border border-slate-200 bg-slate-50 p-6">
                 <h2 className="text-2xl font-bold text-slate-900">

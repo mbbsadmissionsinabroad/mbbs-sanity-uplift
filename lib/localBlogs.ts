@@ -55,6 +55,7 @@ export type LocalBlogEntry = {
   publicSlug: string;
   blogCategory: string;
   bannerImageUrl: string;
+  bodyHtml: string;
   pageContent: PortableTextBlock[];
   faq: Array<{
     question: string;
@@ -76,7 +77,7 @@ export type LocalBlogEntry = {
   }>;
 };
 
-export type LocalBlogSummary = Omit<LocalBlogEntry, "pageContent" | "faq">;
+export type LocalBlogSummary = Omit<LocalBlogEntry, "pageContent" | "faq" | "bodyHtml">;
 
 const rawBlogs = rawLocalBlogs as RawLocalBlog[];
 
@@ -122,6 +123,14 @@ function createBlock(
   }
 
   return block;
+}
+
+function createHeadingId(text: string) {
+  return normalizeWhitespace(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "_");
 }
 
 function isRule(line: string) {
@@ -278,6 +287,139 @@ function parseMarkdownContent(source: string) {
   return blocks;
 }
 
+function renderHeadingHtml(text: string, level: "h2" | "h3") {
+  const tag = level;
+  const className =
+    level === "h2"
+      ? "text-black text-3xl font-bold mt-5 mb-2"
+      : "text-black text-2xl font-bold mt-5 mb-2";
+  const id = createHeadingId(text);
+  return `<${tag} id="${id}" class="${className}">${escapeHtml(text)}</${tag}>`;
+}
+
+function renderParagraphHtml(text: string) {
+  return `<p class="text-gray-800 leading-relaxed">${escapeHtml(text)}</p>`;
+}
+
+function renderBulletListHtml(items: string[]) {
+  const renderedItems = items
+    .filter(Boolean)
+    .map(
+      (item) =>
+        `<li class="pb-2 list-disc">${escapeHtml(item)}</li>`
+    )
+    .join("");
+
+  return `<ul class="list-disc">${renderedItems}</ul>`;
+}
+
+function renderPlainContentHtml(source: string) {
+  const lines = source.split(/\r?\n/);
+  const parts: string[] = [];
+  const paragraphBuffer: string[] = [];
+
+  const flushParagraph = () => {
+    const paragraph = joinWrappedLines(paragraphBuffer);
+    if (paragraph) {
+      parts.push(renderParagraphHtml(paragraph));
+    }
+    paragraphBuffer.length = 0;
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line || isRule(line)) {
+      flushParagraph();
+      continue;
+    }
+
+    const headingStyle = headingStyleForLine(line);
+    if (headingStyle) {
+      flushParagraph();
+      const headingText = stripHeadingPrefix(line);
+      if (headingStyle === "h2" || headingStyle === "h3") {
+        parts.push(renderHeadingHtml(headingText, headingStyle));
+      } else {
+        parts.push(renderParagraphHtml(headingText));
+      }
+      continue;
+    }
+
+    if (isBullet(line)) {
+      flushParagraph();
+      parts.push(renderBulletListHtml([line.slice(2).trim()]));
+      continue;
+    }
+
+    paragraphBuffer.push(line);
+  }
+
+  flushParagraph();
+  return parts.join("");
+}
+
+function renderMarkdownContentHtml(source: string) {
+  const lines = source.split(/\r?\n/);
+  const parts: string[] = [];
+
+  for (let i = 0; i < lines.length; ) {
+    const line = lines[i].trim();
+
+    if (!line || isRule(line)) {
+      i += 1;
+      continue;
+    }
+
+    const headingStyle = headingStyleForLine(line);
+    if (headingStyle) {
+      const headingText = stripHeadingPrefix(line);
+      if (headingStyle === "h2" || headingStyle === "h3") {
+        parts.push(renderHeadingHtml(headingText, headingStyle));
+      } else {
+        parts.push(renderParagraphHtml(headingText));
+      }
+      i += 1;
+      continue;
+    }
+
+    if (isBullet(line)) {
+      const bulletItems: string[] = [];
+      while (i < lines.length && isBullet(lines[i].trim())) {
+        const bulletLine = lines[i].trim().slice(2).trim();
+        if (bulletLine) {
+          bulletItems.push(bulletLine);
+        }
+        i += 1;
+      }
+      parts.push(renderBulletListHtml(bulletItems));
+      continue;
+    }
+
+    const paragraphLines: string[] = [];
+    while (i < lines.length) {
+      const current = lines[i].trim();
+      if (!current || isStructuralLine(current)) {
+        break;
+      }
+      paragraphLines.push(current);
+      i += 1;
+    }
+
+    const paragraph = joinWrappedLines(paragraphLines);
+    if (paragraph) {
+      parts.push(renderParagraphHtml(paragraph));
+    }
+  }
+
+  return parts.join("");
+}
+
+function renderBodyHtml(source: string, format: RawLocalBlog["format"]) {
+  return format === "plain"
+    ? renderPlainContentHtml(source)
+    : renderMarkdownContentHtml(source);
+}
+
 function renderFaqAnswerHtml(lines: string[], format: RawLocalBlog["format"]) {
   if (format === "plain") {
     return lines
@@ -380,10 +522,8 @@ function buildBaseLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogSummary {
 function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
   return {
     ...buildBaseLocalBlogEntry(rawBlog),
-    pageContent:
-      rawBlog.format === "plain"
-        ? parsePlainContent(rawBlog.bodySource)
-        : parseMarkdownContent(rawBlog.bodySource),
+    bodyHtml: renderBodyHtml(rawBlog.bodySource, rawBlog.format),
+    pageContent: [],
     faq: rawBlog.faq.map((item) => ({
       question: item.question,
       answer: renderFaqAnswerHtml(item.answerLines, rawBlog.format),
@@ -392,10 +532,21 @@ function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
 }
 
 export const localBlogs: LocalBlogSummary[] = rawBlogs.map(buildBaseLocalBlogEntry);
+const localBlogEntriesBySlug = new Map<string, LocalBlogEntry>();
 
 export function getLocalBlogBySlug(slug: string) {
   const normalizedSlug = slug.replace(/^\/+/, "").toLowerCase();
-  const rawBlog = rawBlogs.find((blog) => blog.slug.toLowerCase() === normalizedSlug);
+  const existingEntry = localBlogEntriesBySlug.get(normalizedSlug);
+  if (existingEntry) {
+    return existingEntry;
+  }
 
-  return rawBlog ? toLocalBlogEntry(rawBlog) : undefined;
+  const rawBlog = rawBlogs.find((blog) => blog.slug.toLowerCase() === normalizedSlug);
+  if (!rawBlog) {
+    return undefined;
+  }
+
+  const entry = toLocalBlogEntry(rawBlog);
+  localBlogEntriesBySlug.set(normalizedSlug, entry);
+  return entry;
 }
