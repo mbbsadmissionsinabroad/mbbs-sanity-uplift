@@ -29,7 +29,6 @@ const registeredSeats = 57;
 const seatsRemaining = totalSeats - registeredSeats;
 const whatsappGroupLink =
   "https://chat.whatsapp.com/BIwQ5q2OLS3KGSZZwAzieH";
-const webinarSheetId = "1vD6ZvuSehykNCSsvIVsI8CyvX-53XI-ybX_Bt9wqv-w";
 
 const initialLeadFormData: WebinarLeadFormData = {
   fullName: "",
@@ -157,23 +156,16 @@ export default function WebinarLandingPage() {
     setSubmitError("");
 
     try {
-      const response = await fetch("/api/landing-events", {
+      const response = await fetch("/api/webinar-registration", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          eventType: "form_submission",
-          page: "/neet-mbbs-abroad-webinar",
-          source: `Webinar modal - ${activeCtaLabel}`,
-          ctaLabel: activeCtaLabel,
-          ctaDestination: whatsappGroupLink,
           fullName: leadFormData.fullName,
-          mobile: leadFormData.phone,
+          phone: leadFormData.phone,
           email: leadFormData.email,
-          neetStatus: leadFormData.studentType,
-          message: "MBBS abroad webinar registration",
-          sheetId: webinarSheetId,
+          studentType: leadFormData.studentType,
         }),
       });
 
