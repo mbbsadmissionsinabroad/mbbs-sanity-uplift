@@ -1,25 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Tabs, Tab } from "./TabComponent";
-import { getBlogData } from "@/lib/getBlogs";
-import ShimmerUIBlog from "./ShimmerUIBlog";
 import BlogsTab from "./BlogsTab";
 
-const BlogSection = () => {
-  const [blogContent, setBlogContent] = useState([]);
-
-  useEffect(() => {
-    fetchMyAPI();
-  }, []);
-
-  async function fetchMyAPI() {
-    const homePageData = await getBlogData();
-    setBlogContent(homePageData.result);
-  }
-
-  if (blogContent.length === 0) {
-    return <ShimmerUIBlog />;
-  }
+const BlogSection = ({ blogContent }: { blogContent: any[] }) => {
 
   return (
     <div>

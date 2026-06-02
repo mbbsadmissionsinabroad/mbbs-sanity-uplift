@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { getLocalBlogBySlug } from "./localBlogs";
 
 interface BlogDetails {
@@ -25,7 +26,9 @@ async function fetchQuery(apiHost: string, query: string) {
   return getQueryResult(json);
 }
 
-export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
+export const getBlogDetails = cache(async function getBlogDetails(
+  routeURL: string
+): Promise<BlogDetails> {
   const localBlog = getLocalBlogBySlug(routeURL);
   if (localBlog) {
     return {
@@ -82,4 +85,4 @@ export async function getBlogDetails(routeURL: string): Promise<BlogDetails> {
     youtubeEmbedRes,
     notFound: false,
   };
-}
+});

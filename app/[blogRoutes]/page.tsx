@@ -61,7 +61,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
-import { getBlogData } from "../../lib/getBlogs";
+import { getBlogSummaries } from "../../lib/getBlogSummaries";
 import BlogDetailsPage from "./components/BlogDetailsPage";
 import BlogShimmer from "./components/BlogShimmer";
 import Notfound from "../not-found";
@@ -191,11 +191,11 @@ const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
   try {
     const [blogDetailsResult, allBlogsResult] = await Promise.all([
       getBlogDetails(route),
-      getBlogData(),
+      getBlogSummaries(),
     ]);
 
     blogDetailsContent = blogDetailsResult;
-    sidebarData = buildSidebarData(allBlogsResult?.result || [], route);
+    sidebarData = buildSidebarData(allBlogsResult || [], route);
   } catch (error) {
     console.error("Error fetching blog details:", error);
     return <Notfound />;

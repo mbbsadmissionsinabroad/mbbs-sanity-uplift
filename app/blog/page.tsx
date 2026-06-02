@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import BlogSection from "./components/BlogSection";
+import { getBlogSummaries } from "@/lib/getBlogSummaries";
 
 export const metadata: Metadata = {
   title: "Blog | MBBS Admissions in Abroad",
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
   },
 };
 
-const page = () => {
+const page = async () => {
+  const blogContent = await getBlogSummaries();
+
   return (
     <>
       <section className="text-white body-font bg-blue-800 bg-gradient-to-r">
@@ -48,7 +51,7 @@ const page = () => {
             designed to give you clearer answers.
           </p>
         </div>
-        <BlogSection />
+        <BlogSection blogContent={blogContent} />
         <div className="mx-auto mt-12 max-w-5xl px-4 text-center">
           <h3 className="text-2xl font-semibold tracking-tight text-slate-900">
             How to use the blog effectively
