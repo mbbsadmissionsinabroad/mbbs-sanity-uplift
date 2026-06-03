@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo } from "react";
+import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 
 import TOC from "./TOC";
 
@@ -22,8 +22,22 @@ type BlogSidebarProps = {
   currentCategory?: string;
 };
 
+type StudentType = "Fresher" | "Repeater" | "Qualified Earlier" | "";
+
+type SidebarFormData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  studentType: StudentType;
+};
+
 const primaryCallNumber = "+91 80505 75767";
-const primaryCallHref = "tel:+918050575767";
+const initialFormData: SidebarFormData = {
+  fullName: "",
+  email: "",
+  phone: "",
+  studentType: "",
+};
 
 function initialsForCategory(name: string) {
   return name
@@ -40,6 +54,51 @@ export default function BlogSidebar({
   currentCategory,
 }: BlogSidebarProps) {
   const topCategories = useMemo(() => categories.slice(0, 8), [categories]);
+  const [formData, setFormData] = useState<SidebarFormData>(initialFormData);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    setSubmitError("");
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError("");
+    setIsSubmitted(false);
+
+    try {
+      const response = await fetch("/api/blog-sidebar-enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Sidebar enquiry failed");
+      }
+
+      setIsSubmitted(true);
+      setFormData(initialFormData);
+    } catch (error) {
+      console.error("Blog sidebar enquiry failed", error);
+      setSubmitError(
+        "We could not save your enquiry right now. Please try again.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <aside className="w-full">
@@ -59,7 +118,7 @@ export default function BlogSidebar({
             </div>
           </div>
 
-          <form className="mt-6 space-y-4">
+          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="blog-sidebar-name"
@@ -69,9 +128,13 @@ export default function BlogSidebar({
               </label>
               <input
                 id="blog-sidebar-name"
+                name="fullName"
                 type="text"
+                value={formData.fullName}
+                onChange={handleInputChange}
                 placeholder="Enter your full name"
                 className="w-full rounded-2xl border border-white/12 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-300 focus:ring-4 focus:ring-sky-100/60"
+                required
               />
             </div>
 
@@ -84,9 +147,13 @@ export default function BlogSidebar({
               </label>
               <input
                 id="blog-sidebar-email"
+                name="email"
                 type="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 placeholder="you@example.com"
                 className="w-full rounded-2xl border border-white/12 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-300 focus:ring-4 focus:ring-sky-100/60"
+                required
               />
             </div>
 
@@ -99,9 +166,13 @@ export default function BlogSidebar({
               </label>
               <input
                 id="blog-sidebar-phone"
+                name="phone"
                 type="tel"
+                value={formData.phone}
+                onChange={handleInputChange}
                 placeholder="+91"
                 className="w-full rounded-2xl border border-white/12 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-300 focus:ring-4 focus:ring-sky-100/60"
+                required
               />
             </div>
 
@@ -110,30 +181,50 @@ export default function BlogSidebar({
                 You are
               </span>
               <div className="grid gap-2">
-                {["Fresher", "Repeater", "Qualified Earlier"].map((option) => (
+                {(
+                  ["Fresher", "Repeater", "Qualified Earlier"] as StudentType[]
+                ).map((option) => (
                   <label
                     key={option}
                     className="flex items-center gap-2 rounded-2xl border border-white/12 bg-white/10 px-4 py-3 text-sm text-white"
                   >
-                    <input type="radio" name="blog-sidebar-student-type" />
+                    <input
+                      type="radio"
+                      name="studentType"
+                      value={option}
+                      checked={formData.studentType === option}
+                      onChange={handleInputChange}
+                      required
+                    />
                     <span>{option}</span>
                   </label>
                 ))}
               </div>
             </div>
-          </form>
 
-          <div className="mt-6 space-y-3">
-            <a
-              href={primaryCallHref}
-              className="inline-flex w-full items-center justify-center rounded-full bg-[#f3b33d] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#f8c35b]"
-            >
-              Enquire Now
-            </a>
-            <p className="text-center text-xs leading-6 text-slate-300">
-              Direct counselling line: {primaryCallNumber}
-            </p>
-          </div>
+            {submitError ? (
+              <p className="text-sm leading-6 text-red-200">{submitError}</p>
+            ) : null}
+
+            {isSubmitted ? (
+              <p className="text-sm leading-6 text-emerald-200">
+                Your enquiry has been submitted successfully.
+              </p>
+            ) : null}
+
+            <div className="mt-6 space-y-3">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="inline-flex w-full items-center justify-center rounded-full bg-[#f3b33d] px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-[#f8c35b] disabled:cursor-wait disabled:opacity-75"
+              >
+                {isSubmitting ? "Submitting..." : "Enquire Now"}
+              </button>
+              <p className="text-center text-xs leading-6 text-slate-300">
+                Direct counselling line: {primaryCallNumber}
+              </p>
+            </div>
+          </form>
         </section>
 
         <section className="rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm">

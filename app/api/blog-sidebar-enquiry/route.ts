@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+
 import { submitToGoogleForm } from "@/lib/server/googleFormSubmission";
 
 export const runtime = "nodejs";
 
 const FORM_RESPONSE_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSfoDsOcyVwtdfqrq33g4yn3iA_JQhLiycLzE_ku9lcjRcvTag/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLScN82KEgn2vOP3hWmO_H2qA3agcvCaKWqM44Xqs9H0a6wo-4Q/formResponse";
 
 const FIELD_MAP = {
   fullName: "entry.1998186726",
@@ -38,10 +39,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    console.error("Webinar registration failed", error);
+    console.error("Blog sidebar enquiry failed", error);
 
     return NextResponse.json(
-      { ok: false, error: "Webinar registration failed" },
+      { ok: false, error: "Blog sidebar enquiry failed" },
       { status: 500 },
     );
   }
