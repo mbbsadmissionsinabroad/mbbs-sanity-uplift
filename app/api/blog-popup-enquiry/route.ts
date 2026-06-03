@@ -1,6 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
 import { submitToGoogleForm } from "@/lib/server/googleFormSubmission";
+import {
+  appendLeadToGoogleSheet,
+  extractPathnameFromUrl,
+} from "@/lib/server/googleSheetsLeadLogger";
 
 export const runtime = "nodejs";
 
@@ -32,6 +36,17 @@ export async function POST(request: NextRequest) {
       [FIELD_MAP.name]: name,
       [FIELD_MAP.email]: email,
       [FIELD_MAP.phone]: phone,
+    });
+
+    await appendLeadToGoogleSheet({
+      page: extractPathnameFromUrl(request.headers.get("referer")),
+      leadSource: "Blog Popup Enquiry",
+      formType: "blog_popup_enquiry",
+      fullName: name,
+      phone,
+      whatsapp: phone,
+      email,
+      rawPayloadJson: JSON.stringify(payload),
     });
 
     return NextResponse.json({ ok: true });
