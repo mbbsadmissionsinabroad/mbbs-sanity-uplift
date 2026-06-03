@@ -62,7 +62,7 @@ import type { Metadata } from "next";
 import React from "react";
 import { getBlogDetails } from "../../lib/getBlogDetails";
 import { getBlogSummaries } from "../../lib/getBlogSummaries";
-import { localBlogs } from "../../lib/localBlogs";
+import { getLocalBlogSummaryBySlug, localBlogs } from "../../lib/localBlogs";
 import BlogDetailsPage from "./components/BlogDetailsPage";
 import BlogShimmer from "./components/BlogShimmer";
 import Notfound from "../not-found";
@@ -126,6 +126,59 @@ export async function generateMetadata({
   const route = params?.blogRoutes ?? "";
 
   try {
+    const localBlogSummary = getLocalBlogSummaryBySlug(route);
+    if (localBlogSummary) {
+      const canonical =
+        localBlogSummary.seo?.canonicalUrl ||
+        localBlogSummary.canonical ||
+        `${siteUrl}/${route}`;
+      const title =
+        localBlogSummary.seo?.title ||
+        localBlogSummary.metaTitle ||
+        localBlogSummary.title ||
+        "MBBS Admissions in Abroad";
+      const description =
+        localBlogSummary.seo?.description ||
+        localBlogSummary.metaDescription ||
+        "Explore MBBS abroad guidance, university details, fees, and admission support.";
+      const keywordList = Array.isArray(localBlogSummary.seo?.keywords)
+        ? localBlogSummary.seo.keywords
+        : typeof localBlogSummary.metaKeywords === "string"
+          ? localBlogSummary.metaKeywords
+              .split(",")
+              .map((keyword: string) => keyword.trim())
+              .filter(Boolean)
+          : undefined;
+      const imageUrl = localBlogSummary.bannerImageUrl
+        ? `${siteUrl}${localBlogSummary.bannerImageUrl}`
+        : undefined;
+
+      return {
+        title,
+        description,
+        keywords: keywordList,
+        alternates: {
+          canonical,
+        },
+        robots: localBlogSummary.seo?.robots || "index,follow",
+        openGraph: {
+          title,
+          description,
+          url: canonical,
+          type: "article",
+          images: imageUrl
+            ? [{ url: imageUrl, width: 1200, height: 630, alt: localBlogSummary.title || title }]
+            : [],
+        },
+        twitter: {
+          card: imageUrl ? "summary_large_image" : "summary",
+          title,
+          description,
+          images: imageUrl ? [imageUrl] : [],
+        },
+      };
+    }
+
     const blogDetailsContent = await getBlogDetails(route);
     if (!blogDetailsContent || blogDetailsContent.notFound) {
       return {};

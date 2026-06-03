@@ -80,6 +80,9 @@ export type LocalBlogEntry = {
 export type LocalBlogSummary = Omit<LocalBlogEntry, "pageContent" | "faq" | "bodyHtml">;
 
 const rawBlogs = rawLocalBlogs as RawLocalBlog[];
+const rawBlogsBySlug = new Map(
+  rawBlogs.map((blog) => [blog.slug.toLowerCase(), blog])
+);
 
 function escapeHtml(value: string) {
   return value
@@ -172,6 +175,21 @@ function isStructuralLine(line: string) {
       isRule(line) ||
       line.startsWith("|")
   );
+}
+
+function isTableRow(line: string) {
+  return line.startsWith("|");
+}
+
+function isTableDividerLine(line: string) {
+  return /^\|?[\s:\-|]+\|?$/.test(line) && line.includes("-");
+}
+
+function splitTableCells(line: string) {
+  return line
+    .split("|")
+    .map((cell) => normalizeWhitespace(cell))
+    .filter(Boolean);
 }
 
 function joinWrappedLines(lines: string[]) {
@@ -267,6 +285,21 @@ function parseMarkdownContent(source: string) {
       continue;
     }
 
+    if (isTableRow(line)) {
+      while (i < lines.length && isTableRow(lines[i].trim())) {
+        const current = lines[i].trim();
+        if (!isTableDividerLine(current)) {
+          const cells = splitTableCells(current);
+          if (cells.length > 0) {
+            blocks.push(createBlock(cells.join(" | "), index));
+            index += 1;
+          }
+        }
+        i += 1;
+      }
+      continue;
+    }
+
     const paragraphLines: string[] = [];
     while (i < lines.length) {
       const current = lines[i].trim();
@@ -281,7 +314,10 @@ function parseMarkdownContent(source: string) {
     if (paragraph) {
       blocks.push(createBlock(paragraph, index));
       index += 1;
+      continue;
     }
+
+    i += 1;
   }
 
   return blocks;
@@ -311,6 +347,38 @@ function renderBulletListHtml(items: string[]) {
     .join("");
 
   return `<ul class="list-disc">${renderedItems}</ul>`;
+}
+
+function renderTableHtml(lines: string[]) {
+  const rows = lines
+    .filter((line) => !isTableDividerLine(line))
+    .map(splitTableCells)
+    .filter((cells) => cells.length > 0);
+
+  if (rows.length === 0) {
+    return "";
+  }
+
+  const [headerRow, ...bodyRows] = rows;
+  const headerHtml = headerRow
+    .map(
+      (cell) =>
+        `<th class="border border-slate-200 bg-slate-100 px-3 py-2 text-left text-sm font-semibold text-slate-900">${escapeHtml(cell)}</th>`
+    )
+    .join("");
+  const bodyHtml = bodyRows
+    .map((row) => {
+      const cells = row
+        .map(
+          (cell) =>
+            `<td class="border border-slate-200 px-3 py-2 align-top text-sm text-slate-700">${escapeHtml(cell)}</td>`
+        )
+        .join("");
+      return `<tr>${cells}</tr>`;
+    })
+    .join("");
+
+  return `<div class="my-6 overflow-x-auto"><table class="min-w-full border-collapse rounded-2xl border border-slate-200 bg-white"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`;
 }
 
 function renderPlainContentHtml(source: string) {
@@ -395,6 +463,19 @@ function renderMarkdownContentHtml(source: string) {
       continue;
     }
 
+    if (isTableRow(line)) {
+      const tableLines: string[] = [];
+      while (i < lines.length && isTableRow(lines[i].trim())) {
+        tableLines.push(lines[i].trim());
+        i += 1;
+      }
+      const renderedTable = renderTableHtml(tableLines);
+      if (renderedTable) {
+        parts.push(renderedTable);
+      }
+      continue;
+    }
+
     const paragraphLines: string[] = [];
     while (i < lines.length) {
       const current = lines[i].trim();
@@ -408,7 +489,10 @@ function renderMarkdownContentHtml(source: string) {
     const paragraph = joinWrappedLines(paragraphLines);
     if (paragraph) {
       parts.push(renderParagraphHtml(paragraph));
+      continue;
     }
+
+    i += 1;
   }
 
   return parts.join("");
@@ -532,7 +616,15 @@ function toLocalBlogEntry(rawBlog: RawLocalBlog): LocalBlogEntry {
 }
 
 export const localBlogs: LocalBlogSummary[] = rawBlogs.map(buildBaseLocalBlogEntry);
+const localBlogSummariesBySlug = new Map(
+  localBlogs.map((blog) => [blog.slug.current.toLowerCase(), blog])
+);
 const localBlogEntriesBySlug = new Map<string, LocalBlogEntry>();
+
+export function getLocalBlogSummaryBySlug(slug: string) {
+  const normalizedSlug = slug.replace(/^\/+/, "").toLowerCase();
+  return localBlogSummariesBySlug.get(normalizedSlug);
+}
 
 export function getLocalBlogBySlug(slug: string) {
   const normalizedSlug = slug.replace(/^\/+/, "").toLowerCase();
@@ -541,7 +633,7 @@ export function getLocalBlogBySlug(slug: string) {
     return existingEntry;
   }
 
-  const rawBlog = rawBlogs.find((blog) => blog.slug.toLowerCase() === normalizedSlug);
+  const rawBlog = rawBlogsBySlug.get(normalizedSlug);
   if (!rawBlog) {
     return undefined;
   }
