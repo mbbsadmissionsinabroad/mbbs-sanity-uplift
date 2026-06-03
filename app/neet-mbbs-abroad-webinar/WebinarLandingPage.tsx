@@ -134,6 +134,13 @@ export default function WebinarLandingPage() {
     setLeadFormData(initialLeadFormData);
   };
 
+  const openModal = (label: string) => {
+    setActiveCtaLabel(label);
+    setSubmitError("");
+    setIsSubmitted(false);
+    setIsModalOpen(true);
+  };
+
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
@@ -211,40 +218,15 @@ export default function WebinarLandingPage() {
   }, []);
 
   useEffect(() => {
-    const ctaButtons = Array.from(
-      document.querySelectorAll<HTMLButtonElement>("[data-webinar-cta]"),
-    );
-
-    const handleCtaClick = (event: Event) => {
-      event.preventDefault();
-
-      const button = event.currentTarget as HTMLButtonElement | null;
-      const label =
-        button?.getAttribute("data-cta-label") ??
-        button?.textContent?.trim() ??
-        "Register Now";
-
-      setActiveCtaLabel(label);
-      setSubmitError("");
-      setIsSubmitted(false);
-      setIsModalOpen(true);
-    };
-
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeModal();
       }
     };
 
-    ctaButtons.forEach((button) =>
-      button.addEventListener("click", handleCtaClick),
-    );
     document.addEventListener("keydown", handleEscape);
 
     return () => {
-      ctaButtons.forEach((button) =>
-        button.removeEventListener("click", handleCtaClick),
-      );
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
@@ -282,8 +264,7 @@ export default function WebinarLandingPage() {
           <button
             type="button"
             className={`${styles.ctaButton} ${styles.headerButton}`}
-            data-webinar-cta
-            data-cta-label="Header CTA"
+            onClick={() => openModal("Header CTA")}
           >
             <span className={styles.headerButtonDesktop}>
               Book Your Free Webinar Seat Now
@@ -316,8 +297,7 @@ export default function WebinarLandingPage() {
               <button
                 type="button"
                 className={styles.ctaButton}
-                data-webinar-cta
-                data-cta-label="Hero primary CTA"
+                onClick={() => openModal("Hero primary CTA")}
               >
                 Secure my free seat
               </button>
@@ -368,8 +348,7 @@ export default function WebinarLandingPage() {
             <button
               type="button"
               className={`${styles.ctaButton} ${styles.panelButton}`}
-              data-webinar-cta
-              data-cta-label="Hero panel CTA"
+              onClick={() => openModal("Hero panel CTA")}
             >
               Book your free webinar seat now
             </button>
@@ -433,8 +412,7 @@ export default function WebinarLandingPage() {
             <button
               type="button"
               className={`${styles.ctaButton} ${styles.inlineCta}`}
-              data-webinar-cta
-              data-cta-label="Urgency section CTA"
+              onClick={() => openModal("Urgency section CTA")}
             >
               Register Now
             </button>
@@ -517,8 +495,7 @@ export default function WebinarLandingPage() {
           <button
             type="button"
             className={styles.ctaButton}
-            data-webinar-cta
-            data-cta-label="Webinar details CTA"
+            onClick={() => openModal("Webinar details CTA")}
           >
             Book Your Free Webinar Seat Now
           </button>
@@ -581,8 +558,7 @@ export default function WebinarLandingPage() {
             <button
               type="button"
               className={styles.ctaButton}
-              data-webinar-cta
-              data-cta-label="Final primary CTA"
+              onClick={() => openModal("Final primary CTA")}
             >
               Book My Free Spot Now
             </button>
@@ -590,158 +566,156 @@ export default function WebinarLandingPage() {
         </div>
       </section>
 
-      <div
-        className={`${styles.modalOverlay} ${
-          isModalOpen ? styles.modalOverlayOpen : ""
-        }`}
-        onClick={(event) => {
-          if (event.target === event.currentTarget) {
-            closeModal();
-          }
-        }}
-      >
+      {isModalOpen ? (
         <div
-          className={`${styles.modalCard} ${
-            isModalOpen ? styles.modalCardOpen : ""
-          }`}
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="webinar-modal-title"
+          className={`${styles.modalOverlay} ${styles.modalOverlayOpen}`}
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              closeModal();
+            }
+          }}
         >
-          <button
-            type="button"
-            className={styles.closeButton}
-            onClick={closeModal}
-            aria-label="Close modal"
+          <div
+            className={`${styles.modalCard} ${styles.modalCardOpen}`}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="webinar-modal-title"
           >
-            X
-          </button>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={closeModal}
+              aria-label="Close modal"
+            >
+              X
+            </button>
 
-          {isSubmitted ? (
-            <div className={styles.successState}>
-              <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
-              <h2 id="webinar-modal-title" className={styles.modalTitle}>
-                You&apos;re registered for the webinar.
-              </h2>
-              <p className={styles.modalCopy}>
-                Your details have been saved. Join the WhatsApp group below to
-                receive the meeting link and updates for the session.
-              </p>
-              <a
-                href={whatsappGroupLink}
-                target="_blank"
-                rel="noreferrer"
-                className={styles.groupLinkButton}
-              >
-                Join the WhatsApp group
-              </a>
-              <p className={styles.successHelper}>
-                If the group did not open automatically, use the button above.
-              </p>
-            </div>
-          ) : (
-            <>
-              <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
-              <h2 id="webinar-modal-title" className={styles.modalTitle}>
-                Reserve your webinar seat
-              </h2>
-              <p className={styles.modalCopy}>
-                Fill in the form below. After you submit, we&apos;ll give you
-                the WhatsApp group link where the meeting link will be shared.
-              </p>
-
-              <form className={styles.modalForm} onSubmit={handleSubmit}>
-                <div className={styles.formField}>
-                  <label htmlFor="webinar-full-name" className={styles.formLabel}>
-                    Name
-                  </label>
-                  <input
-                    id="webinar-full-name"
-                    name="fullName"
-                    type="text"
-                    value={leadFormData.fullName}
-                    onChange={handleInputChange}
-                    className={styles.formInput}
-                    placeholder="Enter your full name"
-                    required
-                  />
-                </div>
-
-                <div className={styles.formGrid}>
-                  <div className={styles.formField}>
-                    <label htmlFor="webinar-email" className={styles.formLabel}>
-                      Email
-                    </label>
-                    <input
-                      id="webinar-email"
-                      name="email"
-                      type="email"
-                      value={leadFormData.email}
-                      onChange={handleInputChange}
-                      className={styles.formInput}
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-
-                  <div className={styles.formField}>
-                    <label htmlFor="webinar-phone" className={styles.formLabel}>
-                      Phone number
-                    </label>
-                    <input
-                      id="webinar-phone"
-                      name="phone"
-                      type="tel"
-                      value={leadFormData.phone}
-                      onChange={handleInputChange}
-                      className={styles.formInput}
-                      placeholder="+91"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <fieldset className={styles.radioFieldset}>
-                  <legend className={styles.formLabel}>You are</legend>
-                  <div className={styles.radioGrid}>
-                    {(
-                      [
-                        "Fresher",
-                        "Repeater",
-                        "Qualified Earlier",
-                      ] as StudentType[]
-                    ).map((option) => (
-                      <label key={option} className={styles.radioOption}>
-                        <input
-                          type="radio"
-                          name="studentType"
-                          value={option}
-                          checked={leadFormData.studentType === option}
-                          onChange={() => handleStudentTypeChange(option)}
-                          required
-                        />
-                        <span>{option}</span>
-                      </label>
-                    ))}
-                  </div>
-                </fieldset>
-
-                {submitError ? (
-                  <p className={styles.formError}>{submitError}</p>
-                ) : null}
-
-                <button
-                  type="submit"
-                  className={styles.ctaButton}
-                  disabled={isSubmitting}
+            {isSubmitted ? (
+              <div className={styles.successState}>
+                <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
+                <h2 id="webinar-modal-title" className={styles.modalTitle}>
+                  You&apos;re registered for the webinar.
+                </h2>
+                <p className={styles.modalCopy}>
+                  Your details have been saved. Join the WhatsApp group below to
+                  receive the meeting link and updates for the session.
+                </p>
+                <a
+                  href={whatsappGroupLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.groupLinkButton}
                 >
-                  {isSubmitting ? "Submitting..." : "Submit and get group link"}
-                </button>
-              </form>
-            </>
-          )}
+                  Join the WhatsApp group
+                </a>
+                <p className={styles.successHelper}>
+                  If the group did not open automatically, use the button above.
+                </p>
+              </div>
+            ) : (
+              <>
+                <p className={styles.modalEyebrow}>{activeCtaLabel}</p>
+                <h2 id="webinar-modal-title" className={styles.modalTitle}>
+                  Reserve your webinar seat
+                </h2>
+                <p className={styles.modalCopy}>
+                  Fill in the form below. After you submit, we&apos;ll give you
+                  the WhatsApp group link where the meeting link will be shared.
+                </p>
+
+                <form className={styles.modalForm} onSubmit={handleSubmit}>
+                  <div className={styles.formField}>
+                    <label htmlFor="webinar-full-name" className={styles.formLabel}>
+                      Name
+                    </label>
+                    <input
+                      id="webinar-full-name"
+                      name="fullName"
+                      type="text"
+                      value={leadFormData.fullName}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  <div className={styles.formGrid}>
+                    <div className={styles.formField}>
+                      <label htmlFor="webinar-email" className={styles.formLabel}>
+                        Email
+                      </label>
+                      <input
+                        id="webinar-email"
+                        name="email"
+                        type="email"
+                        value={leadFormData.email}
+                        onChange={handleInputChange}
+                        className={styles.formInput}
+                        placeholder="you@example.com"
+                        required
+                      />
+                    </div>
+
+                    <div className={styles.formField}>
+                      <label htmlFor="webinar-phone" className={styles.formLabel}>
+                        Phone number
+                      </label>
+                      <input
+                        id="webinar-phone"
+                        name="phone"
+                        type="tel"
+                        value={leadFormData.phone}
+                        onChange={handleInputChange}
+                        className={styles.formInput}
+                        placeholder="+91"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <fieldset className={styles.radioFieldset}>
+                    <legend className={styles.formLabel}>You are</legend>
+                    <div className={styles.radioGrid}>
+                      {(
+                        [
+                          "Fresher",
+                          "Repeater",
+                          "Qualified Earlier",
+                        ] as StudentType[]
+                      ).map((option) => (
+                        <label key={option} className={styles.radioOption}>
+                          <input
+                            type="radio"
+                            name="studentType"
+                            value={option}
+                            checked={leadFormData.studentType === option}
+                            onChange={() => handleStudentTypeChange(option)}
+                            required
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
+
+                  {submitError ? (
+                    <p className={styles.formError}>{submitError}</p>
+                  ) : null}
+
+                  <button
+                    type="submit"
+                    className={styles.ctaButton}
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit and get group link"}
+                  </button>
+                </form>
+              </>
+            )}
+          </div>
         </div>
-      </div>
+      ) : null}
     </main>
   );
 }
