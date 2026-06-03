@@ -29,6 +29,7 @@ const registeredSeats = 57;
 const seatsRemaining = totalSeats - registeredSeats;
 const whatsappGroupLink =
   "https://chat.whatsapp.com/BIwQ5q2OLS3KGSZZwAzieH";
+const autoPopupSessionKey = "neet-mbbs-webinar-popup-seen";
 
 const initialLeadFormData: WebinarLeadFormData = {
   fullName: "",
@@ -125,6 +126,9 @@ export default function WebinarLandingPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [hasSeenAutoPopup, setHasSeenAutoPopup] = useState<boolean | null>(
+    null,
+  );
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -139,6 +143,15 @@ export default function WebinarLandingPage() {
     setSubmitError("");
     setIsSubmitted(false);
     setIsModalOpen(true);
+  };
+
+  const markAutoPopupSeen = () => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.sessionStorage.setItem(autoPopupSessionKey, "true");
+    setHasSeenAutoPopup(true);
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -218,6 +231,16 @@ export default function WebinarLandingPage() {
   }, []);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    setHasSeenAutoPopup(
+      window.sessionStorage.getItem(autoPopupSessionKey) === "true",
+    );
+  }, []);
+
+  useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         closeModal();
@@ -230,6 +253,30 @@ export default function WebinarLandingPage() {
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || hasSeenAutoPopup !== false) {
+      return;
+    }
+
+    const handleScroll = () => {
+      const scrollThreshold = Math.max(260, window.innerHeight * 0.35);
+      if (window.scrollY < scrollThreshold || isModalOpen) {
+        return;
+      }
+
+      markAutoPopupSeen();
+      openModal("Get the webinar link");
+      window.removeEventListener("scroll", handleScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [hasSeenAutoPopup, isModalOpen]);
 
   useEffect(() => {
     document.body.style.overflow = isModalOpen ? "hidden" : "";
@@ -571,6 +618,7 @@ export default function WebinarLandingPage() {
           className={`${styles.modalOverlay} ${styles.modalOverlayOpen}`}
           onClick={(event) => {
             if (event.target === event.currentTarget) {
+              markAutoPopupSeen();
               closeModal();
             }
           }}
@@ -584,7 +632,10 @@ export default function WebinarLandingPage() {
             <button
               type="button"
               className={styles.closeButton}
-              onClick={closeModal}
+              onClick={() => {
+                markAutoPopupSeen();
+                closeModal();
+              }}
               aria-label="Close modal"
             >
               X
