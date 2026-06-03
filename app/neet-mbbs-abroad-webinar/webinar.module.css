@@ -696,15 +696,18 @@
 .modalOverlay {
   position: fixed;
   inset: 0;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   background: rgba(0, 0, 0, 0.7);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 60;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 140;
 }
 
 .modalOverlayOpen {
@@ -714,8 +717,8 @@
 }
 
 .modalCard {
-  width: min(640px, 100%);
-  max-height: min(90vh, 760px);
+  width: min(640px, calc(100vw - 40px));
+  max-height: min(90dvh, 760px);
   overflow-y: auto;
   border-radius: 30px;
   padding: 28px;
@@ -725,6 +728,7 @@
   transform: translateY(20px) scale(0.96);
   opacity: 0;
   transition: transform 0.25s ease, opacity 0.25s ease;
+  scrollbar-gutter: stable;
 }
 
 .modalCardOpen {
@@ -742,6 +746,9 @@
   background: rgba(124, 17, 39, 0.08);
   color: #7b162d;
   font-weight: 800;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .modalEyebrow {
@@ -899,6 +906,15 @@
   .radioGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .modalOverlay {
+    padding: 28px;
+  }
+
+  .modalCard {
+    width: min(680px, calc(100vw - 56px));
+    max-height: min(88dvh, 760px);
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1044,7 +1060,40 @@
   }
 
   .modalCard {
-    padding: 22px;
+    width: min(100%, calc(100vw - 24px));
+    max-height: calc(100dvh - 24px);
+    min-height: min(620px, calc(100dvh - 24px));
+    padding: 20px 18px 24px;
+    border-radius: 24px;
+    margin: auto;
+  }
+
+  .modalOverlay {
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .modalTitle {
+    font-size: clamp(1.6rem, 8vw, 2.15rem);
+  }
+
+  .modalCopy {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .modalForm {
+    gap: 16px;
+  }
+
+  .formInput,
+  .radioOption {
+    padding: 13px 14px;
+  }
+
+  .closeButton {
+    width: 36px;
+    height: 36px;
   }
 
   .radioGrid {
