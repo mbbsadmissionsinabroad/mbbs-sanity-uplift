@@ -164,7 +164,7 @@ export default function RussiaLeadSection() {
         body: JSON.stringify(requestData),
       });
 
-      if (!response.ok || !emailResponse.ok) {
+      if (!response.ok) {
         throw new Error("Submission failed");
       }
 
@@ -248,3 +248,4 @@ export default function RussiaLeadSection() {
     </>
   );
 }
+

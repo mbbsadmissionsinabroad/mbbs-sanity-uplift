@@ -577,9 +577,7 @@ export default function LandingPageClient() {
 
       if (
         leadResponse.status !== "fulfilled" ||
-        emailResponse.status !== "fulfilled" ||
-        !leadResponse.value.ok ||
-        !emailResponse.value.ok
+        !leadResponse.value.ok
       ) {
         throw new Error("Lead form submission failed");
       }

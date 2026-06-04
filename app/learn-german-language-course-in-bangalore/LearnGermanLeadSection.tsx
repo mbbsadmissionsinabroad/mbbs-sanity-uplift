@@ -174,7 +174,7 @@ export default function LearnGermanLeadSection() {
         body: JSON.stringify(requestData),
       });
 
-      if (!response.ok || !emailResponse.ok) {
+      if (!response.ok) {
         throw new Error("Submission failed");
       }
 
@@ -258,3 +258,4 @@ export default function LearnGermanLeadSection() {
     </>
   );
 }
+

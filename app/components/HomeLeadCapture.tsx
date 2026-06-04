@@ -93,9 +93,12 @@ function useLeadForm(source: string) {
       }
 
       const responses = await Promise.all(requests);
-      const allOk = responses.every((response) => response.ok);
+      const leadResponse =
+        API_URL !== "https://default-api.com" && ACCESS_TOKEN
+          ? responses[1]
+          : responses[0];
 
-      if (!allOk) {
+      if (!leadResponse?.ok) {
         throw new Error("Failed to submit one or more requests.");
       }
 

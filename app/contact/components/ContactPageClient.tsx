@@ -176,7 +176,7 @@ export default function ContactPageClient({
         }
       );
 
-      if (response.ok && response2.ok) {
+      if (response.ok) {
         alert("Form submitted successfully!");
       } else {
         alert("Failed to submit form.");

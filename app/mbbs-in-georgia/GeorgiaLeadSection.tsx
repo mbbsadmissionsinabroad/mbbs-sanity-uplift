@@ -177,7 +177,7 @@ export default function GeorgiaLeadSection() {
         body: JSON.stringify(requestData),
       });
 
-      if (!response.ok || !emailResponse.ok) {
+      if (!response.ok) {
         throw new Error("Submission failed");
       }
 
@@ -261,3 +261,4 @@ export default function GeorgiaLeadSection() {
     </>
   );
 }
+
