@@ -1,11 +1,11 @@
 export const siteUrl = "https://www.mbbsadmissionsinabroad.com";
 export const pageUrl = `${siteUrl}/mbbs-in-russia`;
 export const pageTitle =
-  "MBBS in Russia 2026 - Complete Guide for Indian Students";
+  "MBBS in Russia 2026-27 - Full Guide for Indian Students";
 export const metaTitle =
-  "MBBS in Russia 2026 | NMC Approved Universities, Fees & Admission Guide";
+  "MBBS in Russia 2026-27 for Indian Students | Fees, NMC Rules and Admission Guide";
 export const metaDescription =
-  "MBBS in Russia 2026 for Indian students. 28 NMC-approved universities compared, fees Rs 21-50 lakhs, FMGE pass rate data, 8-step admission process. Free counselling available.";
+  "Planning MBBS in Russia after NEET? Compare NMC-listed universities, realistic 2026-27 fee ranges, FMGE context, eligibility rules, admission steps, living costs, and India-return realities before you decide.";
 
 export const lastUpdated = "March 2026";
 export const whatsappNumber = "+918147030030";
@@ -17,34 +17,38 @@ export const quickSummary = [
   {
     feature: "Russia at a glance",
     details:
-      "Russia has 55+ NMC-approved medical universities for Indian students.",
+      "Russia still gives Indian students one of the broadest MBBS abroad shortlists, with 55+ NMC-listed universities discussed across different budget levels.",
   },
   {
     feature: "Annual tuition range",
-    details: "Most mainstream MBBS options fall in the Rs 2.5 lakh-Rs 5.5 lakh per year range.",
+    details:
+      "Most mainstream MBBS options sit roughly in the Rs 2.5 lakh to Rs 5.5 lakh per year bracket, while premium universities can cost more.",
   },
   {
     feature: "Intake window",
-    details: "The 2026-27 intake usually begins in September-October 2026.",
+    details:
+      "For most families, the real working intake is the September-October 2026 session, with paperwork and shortlisting starting months earlier.",
   },
   {
     feature: "NEET rule",
-    details: "NEET is mandatory for Indian students under current NMC guidelines.",
+    details:
+      "NEET remains compulsory for Indian students who want the India-return path to stay open under current NMC rules.",
   },
   {
     feature: "FMGE context",
-    details: "Russia's overall FMGE pass rate is about 29.5% in the 2024 data.",
+    details:
+      "Russia's overall FMGE signal is about 29.5% in the 2024 data, but the gap between strong and weak universities is much wider than that single number suggests.",
   },
 ];
 
 export const highlights = [
-  "NMC and WHO-approved universities with globally recognised degrees.",
-  "English-medium programs are available at most top Russian medical universities.",
-  "No donation or management quota; the standard route is documentation-based and merit-oriented.",
-  "The degree is a 6-year structure with academic study plus clinical internship.",
-  "Living costs in regional Russian cities can stay around Rs 15,000-Rs 20,000 per month.",
-  "There are 55+ NMC-approved Russian universities, so families can compare by outcome as well as by fees.",
-  "Indian food, Indian student communities, and Indian mess support exist in many established student cities.",
+  "Many Russian medical universities still sit on the NMC and WDOMS route, but families should verify the exact university before paying anything.",
+  "A number of the better-known Russian universities continue to offer English-medium study, while basic Russian becomes important later for hospital interaction.",
+  "There is no donation or management-quota culture in the standard Russia route; admission is typically driven by documents, eligibility, and timing.",
+  "The degree follows a 6-year structure, which usually means 5 years of academic study plus 1 year of internship or clinical training.",
+  "Living costs in regional Russian cities can remain manageable compared with many European destinations, often around the Rs 15,000-Rs 20,000 monthly band.",
+  "With 55+ Russia options discussed by Indian families, the real work is not finding a university but shortlisting the right one for budget, language, and India-return safety.",
+  "Indian food, Indian student groups, and Indian mess support are available in a number of long-established Russian student cities, which makes daily adjustment easier for many first-year students.",
 ];
 
 export const keyFacts = [
