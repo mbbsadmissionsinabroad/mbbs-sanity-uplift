@@ -161,7 +161,7 @@ export default function RussiaAdmissionContent() {
               Last Updated: {lastUpdated}
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
-              Russia remains the most popular MBBS abroad destination for Indian students because it still gives families a broad university choice, manageable fees, and a practical India-return route when the right university is chosen.
+              Russia continues to stay relevant for Indian MBBS aspirants because it still combines a wide university pool, comparatively manageable fees, and a workable India-return pathway when the shortlist is built carefully.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#quick-summary" className="rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
@@ -216,7 +216,7 @@ export default function RussiaAdmissionContent() {
       </section>
 
       <section id="quick-summary" className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <SectionHeading level="h2" eyebrow="Quick Summary" title="The five things families should know first" />
+        <SectionHeading level="h2" eyebrow="Quick Summary" title="The five things most families should understand first" />
         <div className="mt-10 grid gap-5 lg:grid-cols-5">
           {quickSummary.map((item) => (
             <article key={item.feature} className="rounded-[28px] border border-slate-200 bg-white p-6 shadow-[0_18px_40px_rgba(15,23,42,0.05)]">
@@ -234,7 +234,7 @@ export default function RussiaAdmissionContent() {
 
       <section id="timeline" className="bg-slate-950 py-16 text-white">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading eyebrow="Timeline" title="2026-27 MBBS admission timeline in Russia" theme="dark" description="Students who plan each stage in advance usually avoid the deadline mistakes that cost a full intake year." />
+          <SectionHeading eyebrow="Timeline" title="2026-27 MBBS admission timeline in Russia" theme="dark" description="Students who plan each step early usually avoid the invitation, passport, and visa delays that can cost an entire intake year." />
           <div className="mt-10"><DataTable rows={timeline} caption="Russia MBBS admission timeline table" /></div>
           <div className="mt-8 rounded-[28px] border border-amber-400/30 bg-amber-500/10 p-5 text-sm leading-7 text-amber-100">
             Key warning: your passport should ideally have at least 18 months of validity before you apply, so renew it early if needed.
@@ -319,7 +319,7 @@ export default function RussiaAdmissionContent() {
             ))}
           </div>
           <div className="mt-8 rounded-[28px] border border-sky-200 bg-sky-50 p-5 text-sm leading-7 text-sky-950">
-            After clearing GOZZ, students receive the Russian MBBS-equivalent degree and then need to follow the India licensing route such as FMGE or NExT to practise medicine in India.
+            Passing GOZZ helps complete the Russian graduation side of the journey. After that, Indian students still need to follow the licensing pathway applicable in India before they can practise back home.
           </div>
         </div>
       </section>

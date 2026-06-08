@@ -17,38 +17,38 @@ export const quickSummary = [
   {
     feature: "Russia at a glance",
     details:
-      "Russia still gives Indian students one of the broadest MBBS abroad shortlists, with 55+ NMC-listed universities discussed across different budget levels.",
+      "Russia still gives Indian students one of the widest MBBS abroad shortlists, with more than 55 universities commonly considered under the NMC-compliance route.",
   },
   {
     feature: "Annual tuition range",
     details:
-      "Most mainstream MBBS options sit roughly in the Rs 2.5 lakh to Rs 5.5 lakh per year bracket, while premium universities can cost more.",
+      "Most mainstream MBBS universities in Russia fall roughly in the Rs 2.5 lakh to Rs 5.5 lakh per year band, though premium options can sit higher.",
   },
   {
     feature: "Intake window",
     details:
-      "For most families, the real working intake is the September-October 2026 session, with paperwork and shortlisting starting months earlier.",
+      "For Indian students, the real working intake is usually the September-October 2026 session, so shortlisting and paperwork should begin well in advance.",
   },
   {
     feature: "NEET rule",
     details:
-      "NEET remains compulsory for Indian students who want the India-return path to stay open under current NMC rules.",
+      "NEET remains compulsory for Indian students who want to keep the India-return licensing path open under current NMC rules.",
   },
   {
     feature: "FMGE context",
     details:
-      "Russia's overall FMGE signal is about 29.5% in the 2024 data, but the gap between strong and weak universities is much wider than that single number suggests.",
+      "Russia's overall FMGE signal is about 29.5% in the 2024 data, but university quality and student preparation create a much wider gap than that one average suggests.",
   },
 ];
 
 export const highlights = [
-  "Many Russian medical universities still sit on the NMC and WDOMS route, but families should verify the exact university before paying anything.",
-  "A number of the better-known Russian universities continue to offer English-medium study, while basic Russian becomes important later for hospital interaction.",
-  "There is no donation or management-quota culture in the standard Russia route; admission is typically driven by documents, eligibility, and timing.",
-  "The degree follows a 6-year structure, which usually means 5 years of academic study plus 1 year of internship or clinical training.",
-  "Living costs in regional Russian cities can remain manageable compared with many European destinations, often around the Rs 15,000-Rs 20,000 monthly band.",
-  "With 55+ Russia options discussed by Indian families, the real work is not finding a university but shortlisting the right one for budget, language, and India-return safety.",
-  "Indian food, Indian student groups, and Indian mess support are available in a number of long-established Russian student cities, which makes daily adjustment easier for many first-year students.",
+  "Many Russian medical universities remain on the NMC and WDOMS route, which is why Russia is still considered a practical option for Indian students who want an India-return pathway.",
+  "Several established Russian medical universities offer English-medium teaching, while basic Russian is introduced mainly for local life and patient interaction.",
+  "The standard admission route is documentation-based. There is no donation or management-quota system in the way families often fear in India.",
+  "The degree usually follows a 6-year format, combining academic study with clinical training and internship within the same university system.",
+  "Regional Russian cities can still be reasonably affordable by Europe standards, with many students managing living costs in the Rs 15,000-Rs 20,000 monthly range.",
+  "Russia is not short of university options. The real decision is choosing the right university for budget, recognition, language comfort, and FMGE or NExT readiness.",
+  "In the better-known student cities, Indian food, hostel support, Indian communities, and local student networks make the first-year adjustment much easier than families often expect.",
 ];
 
 export const keyFacts = [
@@ -78,44 +78,44 @@ export const timeline = [
 
 export const processSteps = [
   {
-    title: "Step 1 - Check your eligibility",
+    title: "Step 1 - Verify your eligibility",
     detail:
-      "Confirm you meet the minimum requirements: 50% marks in PCB in Class 12, NEET qualified, age 17+, and a valid passport.",
+      "Before anything else, confirm the basics: 50% in PCB in Class 12 for General category or 45% where applicable, NEET qualification, minimum age of 17, and a valid passport.",
   },
   {
-    title: "Step 2 - Shortlist NMC-approved universities",
+    title: "Step 2 - Shortlist the right Russian universities",
     detail:
-      "Apply only to universities listed on the current NMC-approved route and compare 3-5 options by fees, location, language structure, and FMGE reputation.",
+      "Do not stop at the first name you hear from an agent. Compare 3-5 realistic options by fees, city, English-medium structure, clinical exposure, and India-return comfort.",
   },
   {
     title: "Step 3 - Submit the online application",
     detail:
-      "Fill in the university application form and upload Class 10 and 12 mark sheets, passport copy, passport-size photos, and NEET scorecard.",
+      "Fill in the university application and upload the standard documents: 10th and 12th marksheets, passport copy, passport-size photographs, and NEET scorecard.",
   },
   {
-    title: "Step 4 - Receive the invitation letter",
+    title: "Step 4 - Get the invitation letter",
     detail:
-      "The university reviews your documents and usually issues an official invitation or offer letter within 2-4 weeks.",
+      "Once the university checks your documents, it usually issues an official offer or invitation letter within about 2 to 4 weeks.",
   },
   {
-    title: "Step 5 - Pay the initial registration fee",
+    title: "Step 5 - Pay the initial confirmation fee",
     detail:
-      "Pay the initial registration or confirmation fee, usually around USD 200-500, to secure the seat and move to the next stage.",
+      "After the invitation letter arrives, you can pay the initial registration or confirmation amount, usually in the USD 200-500 range, to reserve the seat.",
   },
   {
-    title: "Step 6 - Apply for the Russian student visa",
+    title: "Step 6 - Apply for the student visa",
     detail:
-      "Visit the nearest Russian Embassy or Consulate with your invitation letter, passport, health papers, and financial proof. Processing usually takes 2-4 weeks.",
+      "Take the invitation letter, passport, medical reports, and financial documents to the Russian Embassy or Consulate. Visa processing usually takes around 2 to 4 weeks.",
   },
   {
-    title: "Step 7 - Complete pre-departure formalities",
+    title: "Step 7 - Finish pre-departure formalities",
     detail:
-      "Get documents attested, apostilled, insured, and travel-ready. Families should also confirm payment channels and winter preparation before departure.",
+      "This is the stage for apostille, travel insurance, document packing, forex planning, and practical winter preparation. Families should also confirm the exact fee payment channel before departure.",
   },
   {
-    title: "Step 8 - Travel and report to university",
+    title: "Step 8 - Travel and report to the university",
     detail:
-      "Reach Russia in August, complete university registration, medical checks, and hostel move-in, then begin orientation before the academic session starts.",
+      "Most students travel in August or early September, complete local registration, hostel check-in, medical formalities, and orientation, and then begin the academic session.",
   },
 ];
 
@@ -144,10 +144,10 @@ export const eligibility = [
 ];
 
 export const eligibilityNotes = [
-  "There is no separate minimum NEET score cutoff imposed by most Russian universities themselves; the NMC percentile rule is the real qualifying bar for Indian students.",
-  "Even a NEET score in the 150-200 band can still be enough for admission to many Russian universities if the India-side eligibility requirement is satisfied.",
-  "Your passport should ideally have at least 18 months of validity before you begin the visa and invitation process.",
-  "Students should verify the university's current NMC and WDOMS status before paying any confirmation fee.",
+  "Most Russian universities do not ask for a separate university-specific NEET cutoff. In practical terms, the NMC qualifying percentile is what matters for Indian students.",
+  "A NEET score in the 150-200 range can still be enough for many Russian universities if the student satisfies the India-side eligibility rules.",
+  "Your passport should ideally have at least 18 months of validity before you start the invitation-letter and visa process.",
+  "Before paying any booking or confirmation amount, verify the university's current status on WDOMS and cross-check its India-return viability carefully.",
 ];
 
 export const universities = [
@@ -158,7 +158,7 @@ export const universities = [
   { "#": "5", University: "Bashkir State Medical University", "Annual Tuition (INR)": "Rs 2.9 lakh", "Annual Hostel (INR)": "Rs 74,000", "Total 6-Year Cost (Approx.)": "Rs 22 lakh" },
   { "#": "6", University: "Altai State Medical University", "Annual Tuition (INR)": "Rs 3.0 lakh", "Annual Hostel (INR)": "Rs 57,000", "Total 6-Year Cost (Approx.)": "Rs 21 lakh" },
   { "#": "7", University: "Volgograd State Medical University", "Annual Tuition (INR)": "Rs 4.9 lakh", "Annual Hostel (INR)": "Rs 90,000", "Total 6-Year Cost (Approx.)": "Rs 34 lakh" },
-  { "#": "8", University: "Northern State Medical University", "Annual Tuition (INR)": "Rs 3.3 lakh", "Annual Hostel (INR)": "Rs 57,000", "Total 6-Year Cost (Approx.)": "Rs 23 lakh" },
+  { "#": "8", University: "North-Western State Medical University", "Annual Tuition (INR)": "Rs 3.3 lakh", "Annual Hostel (INR)": "Rs 57,000", "Total 6-Year Cost (Approx.)": "Rs 23 lakh" },
   { "#": "9", University: "Kazan Federal University", "Annual Tuition (INR)": "Rs 4.5 lakh", "Annual Hostel (INR)": "Rs 82,000", "Total 6-Year Cost (Approx.)": "Rs 32 lakh" },
   { "#": "10", University: "St. Petersburg State Medical University", "Annual Tuition (INR)": "Rs 4.5 lakh", "Annual Hostel (INR)": "Rs 1.3 lakh", "Total 6-Year Cost (Approx.)": "Rs 34 lakh" },
 ];
@@ -211,10 +211,10 @@ export const fmgeContext = [
 ];
 
 export const universityFmge = [
-  { "FMGE Insight": "Top-ranked NMC-approved Russian universities", "Why It Matters": "Commonly discussed in the 40-50% FMGE band when the university quality, language model, and student preparation are stronger." },
-  { "FMGE Insight": "Mid-tier mainstream options", "Why It Matters": "Often sit around the broader Russia average, which means serious NExT or FMGE preparation becomes even more important." },
-  { "FMGE Insight": "Lower-ranked fee-only options", "Why It Matters": "These can fall into the 10-15% outcome band, which is why fee-only shortlisting is risky." },
-  { "FMGE Insight": "Student strategy", "Why It Matters": "Starting FMGE or NExT preparation from Year 4, not after graduation, materially improves the odds of a stronger India-return outcome." },
+  { "FMGE Insight": "Top-ranked Russian universities", "Why It Matters": "The stronger universities are often discussed in the 40-50% FMGE band when student quality, teaching support, and exam preparation are all better aligned." },
+  { "FMGE Insight": "Mid-tier mainstream options", "Why It Matters": "Many mainstream universities sit close to the broader Russia average, which means India-return success depends much more on the student's discipline and preparation strategy." },
+  { "FMGE Insight": "Low-fee, low-support choices", "Why It Matters": "Some ultra-budget options can drift into the 10-15% outcome range, so choosing only on low fees is one of the most expensive mistakes a family can make." },
+  { "FMGE Insight": "Preparation strategy", "Why It Matters": "Students who start FMGE or NExT preparation during MBBS, instead of waiting until the end, usually give themselves a far better India-return chance." },
 ];
 
 export const recognition = [
@@ -237,29 +237,29 @@ export const syllabus = [
 
 export const gozzSteps = [
   {
-    title: "Written test",
+    title: "Written exam",
     detail:
-      "A multiple-choice examination covering the core medical subjects studied during the degree.",
+      "A theory paper, usually multiple-choice in format, covering the core subjects studied across the MBBS course.",
   },
   {
     title: "Practical assessment",
     detail:
-      "Real patient examination, case work, and clinical reporting are assessed in a practical format.",
+      "Students may be assessed on patient examination, case handling, and clinical reasoning in a practical setting.",
   },
   {
-    title: "Oral examination",
+    title: "Oral or viva-style round",
     detail:
-      "Students discuss clinical cases and reasoning in a viva-style format before receiving the final degree outcome.",
+      "In many universities, the final stage includes discussing cases, clinical judgment, and treatment logic before the degree outcome is finalized.",
   },
 ];
 
 export const licensingSteps = [
-  "Clear the GOZZ examination and complete all university graduation requirements in Russia.",
-  "Receive the Russian MBBS-equivalent degree and local licensing documents issued after graduation.",
-  "Apostille and organise the degree, transcript, and supporting academic records for India-side processing.",
-  "Return to India and prepare for the current NExT or FMGE-linked licensing pathway applicable at that time.",
-  "Clear the Indian licensing requirements and complete the required registration steps with the appropriate authority.",
-  "Proceed into general practice, PG entrance, or international pathways once your India or foreign licensing path is active.",
+  "First, complete graduation requirements and clear the university's final Russian-side examination and exit formalities.",
+  "After graduation, collect the degree, transcript, and any local completion or licensing documents issued by the university system.",
+  "Get the academic records apostilled and organized properly before starting India-side document processing.",
+  "Return to India and prepare for the licensing route that is active at that time, usually FMGE now and NExT whenever implemented.",
+  "Once the Indian licensing requirement is cleared, complete the registration steps required by the relevant authority in India.",
+  "After registration, students can move toward internship completion where applicable, PG entrance, general practice, or international pathways.",
 ];
 
 export const livingCosts = [
@@ -275,44 +275,44 @@ export const vacationBreaks = [
   {
     title: "Summer vacation",
     detail:
-      "Usually July-August, around 2 months. Most Indian students use this period to return home, and the new academic year typically restarts on 1 September.",
+      "In most universities, the longer break falls around July and August. Many Indian students use it to visit home before the next academic year begins in September.",
   },
   {
     title: "Winter vacation",
     detail:
-      "Usually from mid-January to the first week of February, giving students around 3 weeks of winter break.",
+      "A shorter winter break is common around mid-January to early February, usually giving students about 2 to 3 weeks off.",
   },
   {
     title: "Flight planning note",
     detail:
-      "Round-trip flights for summer return planning commonly fall in the Rs 35,000-Rs 55,000 range depending on city and booking window.",
+      "For summer return trips, round-trip airfare often lands in the Rs 35,000-Rs 55,000 range depending on the city, route, and how early you book.",
   },
 ];
 
 export const accommodationNotes = [
-  "Most university hostels in the major Indian-student cities offer access to Indian vegetarian and non-vegetarian meals nearby or through Indian mess support.",
-  "Indian restaurants and regional food options are easier to find in cities like Moscow, Kazan, Kursk, and St. Petersburg than in smaller regional cities.",
-  "Shared apartments usually cost around Rs 7,000-Rs 12,000 per month, while university hostels often stay in the Rs 4,000-Rs 8,000 band.",
-  "Indian grocery access is strongest in cities with a larger Indian student base, while smaller cities often require more self-cooking and advance planning.",
+  "In the better-known Indian-student cities, university hostels usually have Indian messes nearby or at least dependable access to vegetarian and non-vegetarian Indian food.",
+  "Cities like Moscow, Kazan, Kursk, and St. Petersburg naturally offer more Indian restaurants, grocery options, and student support than smaller regional towns.",
+  "Students who prefer university hostels usually spend around Rs 4,000-Rs 8,000 a month, while shared apartments often cost closer to Rs 7,000-Rs 12,000 depending on the city.",
+  "The smaller the city, the more important self-cooking and advance grocery planning become. In larger student hubs, daily adjustment is usually much easier.",
 ];
 
 export const advantages = [
-  "Affordable total cost compared with Indian private colleges and many European destinations.",
-  "No donation or capitation fee in the standard route; the process is documentation-based and transparent.",
-  "NMC and WHO-approved degrees are available at many long-established Russian medical universities.",
-  "English-medium programs are available at most of the better-known universities.",
-  "Clinical exposure usually becomes more meaningful from Year 3 onward in the larger university hospital ecosystems.",
-  "A large Indian student community exists in several established Russian medical cities.",
-  "The admission process is usually simple because no university-specific entrance exam is required beyond NEET for Indian eligibility.",
+  "The total cost is still far lower than what many Indian private colleges ask for.",
+  "The process is usually transparent and document-driven, without donation or capitation fee pressure.",
+  "Several long-established universities offer degrees that align with the NMC and WDOMS pathway families check for India return.",
+  "English-medium study is available at many of the better-known universities.",
+  "Clinical exposure generally improves substantially from the middle years onward, especially in stronger hospital-linked universities.",
+  "Large Indian student communities in established cities make adjustment, food, and peer support easier.",
+  "Admission is straightforward because students usually do not face a separate university entrance exam beyond NEET eligibility on the India side.",
 ];
 
 export const disadvantages = [
-  "The overall FMGE pass rate is about 29.5%, so dedicated preparation is non-negotiable for India return.",
-  "Basic Russian is still important for patient interaction and daily life even in English-medium programs.",
-  "Winter temperatures can become severe in colder cities, especially beyond western Russia.",
-  "Not every low-fee Russian university is equally safe for India-return outcomes, so shortlisting mistakes are costly.",
-  "Currency fluctuations and payment-channel changes can affect year-by-year budgeting.",
-  "International scholarships are limited compared with some other study-abroad routes.",
+  "The overall FMGE signal is still modest, so India-return success depends heavily on disciplined preparation.",
+  "Even in English-medium programs, basic Russian becomes important for patient interaction and everyday life.",
+  "Weather can be harsh in colder regions, especially for students not prepared for long winters.",
+  "Cheap does not always mean safe. A poor university shortlist can create serious long-term problems for India return.",
+  "Currency movement and payment-channel changes can alter the yearly budget.",
+  "Scholarship opportunities are more limited than many students initially expect.",
 ];
 
 export const comparison = [
@@ -332,19 +332,19 @@ export const scholarships = [
 ];
 
 export const documents = [
-  "Class 10 and 12 mark sheets and certificates",
+  "Class 10 and Class 12 marksheets and passing certificates",
   "NEET 2026 scorecard",
-  "Valid passport with at least 18 months validity",
-  "Passport-size photographs (minimum 8)",
+  "Valid passport with at least 18 months of remaining validity",
+  "Passport-size photographs, usually at least 8 copies",
   "Birth certificate",
   "Recent HIV test report",
   "Medical fitness certificate",
-  "Bank statement / financial proof",
-  "No-objection certificate where required by the processing route",
-  "Health insurance and travel insurance certificates",
-  "Invitation letter from the university after acceptance",
-  "Attestation from the Ministry of External Affairs (MEA)",
-  "Legalisation or embassy-side completion where required for the visa route",
+  "Bank statement or other financial proof where required",
+  "No-objection certificate if needed under the chosen processing route",
+  "Health insurance and travel insurance papers",
+  "University invitation or offer letter after acceptance",
+  "Ministry of External Affairs apostille or attestation formalities",
+  "Embassy-side legalisation or final visa-stage document completion where applicable",
 ];
 
 export const careerPathways = [
@@ -361,77 +361,77 @@ export const faqs = [
   {
     question: "Is NEET required for MBBS in Russia?",
     answer:
-      "Yes. As per NMC's 2021 regulations, NEET is mandatory for all Indian students applying to foreign medical universities, including Russia. The minimum qualifying percentile is 50th for General and 40th for SC, ST, and OBC.",
+      "Yes. Under the current NMC rules, Indian students need a valid NEET qualification if they want to keep the option of returning to India for licensing and practice after graduation.",
   },
   {
     question: "What is the total cost of MBBS in Russia for an Indian student?",
     answer:
-      "Total 6-year cost including tuition, hostel, food, travel, and personal expenses ranges from Rs 22 lakh-Rs 40 lakh depending on the university and city. Budget universities like Bashkir State and Altai State usually stay around Rs 21 lakh-Rs 23 lakh all-in, while premium options like Pirogov RNRMU or First Moscow State can move toward the Rs 40 lakh-Rs 50 lakh band.",
+      "A realistic 6-year budget usually falls somewhere between Rs 20 lakh and Rs 38 lakh for many mainstream options, although premium universities and bigger cities can push that number higher. Families should calculate tuition, hostel, food, flights, winter clothing, visa costs, and personal expenses together instead of looking only at tuition.",
   },
   {
     question: "Is MBBS from Russia valid in India?",
     answer:
-      "Yes. If you graduate from an NMC-approved Russian university and clear the NExT licensing route, you can practise medicine in India. Always verify your university's current approval status at wdoms.org before paying any fee.",
+      "It can be valid in India, but only if the student studies at a compliant university and later clears the applicable Indian licensing route such as FMGE now or NExT when it is implemented. The safest habit is to verify the university's WDOMS and India-return standing before paying any fee.",
   },
   {
     question: "What is the FMGE pass rate for students from Russia?",
     answer:
-      "The overall FMGE pass rate for Indian students from Russian universities is 29.54% in the 2024 NMC data. Top universities like Kazan State, Kursk State, and Perm State are commonly discussed in the 40-50% band when paired with serious student preparation from Year 4 onward.",
+      "The overall Russia-linked FMGE figure in the 2024 data is about 29.54%. That average, however, hides a big difference between stronger universities and weak shortlists, which is why university choice and preparation discipline matter so much.",
   },
   {
     question: "Which is the best Russian university for Indian students?",
     answer:
-      "Kazan State Medical University, Kursk State Medical University, and Perm State Medical University are strong India-return focused choices. For budget-conscious families, Bashkir State Medical University and Altai State Medical University remain popular value picks.",
+      "There is no one perfect answer for every family, but universities like Kazan State Medical University, Kursk State Medical University, and Perm State Medical University are often shortlisted by students who care about both recognition and India-return outcomes. For tighter budgets, Bashkir State and Altai State are commonly discussed value options.",
   },
   {
     question: "When does MBBS admission in Russia start in 2026?",
     answer:
-      "Applications usually open January-March 2026. Invitation letters are generally issued March-April, visa processing runs June-August, and the academic session begins September-October 2026. Students should ideally begin research in November-December 2025.",
+      "Most applications begin moving between January and March 2026, with invitation letters following in the next stage and the academic session usually starting around September or October. Families who start comparing universities in late 2025 usually make calmer and better decisions.",
   },
   {
     question: "How many years is MBBS in Russia?",
     answer:
-      "MBBS in Russia is usually structured as a 6-year program: 5 years of academic study plus 1 year of clinical internship or integrated clinical training depending on the university model.",
+      "Most Russian MBBS pathways are structured over 6 years, usually combining around 5 years of academic study with 1 year of internship or integrated clinical training.",
   },
   {
     question: "Can I practise in India after MBBS from Russia?",
     answer:
-      "Yes. After graduation, you return to India, clear the required licensing route such as FMGE or NExT as applicable, and then complete the Indian registration process before practice.",
+      "Yes, but not automatically. After graduation, you still need to clear the Indian licensing requirement in force at that time and complete the registration steps before practising in India.",
   },
   {
     question: "Is there any entrance exam for MBBS in Russia?",
     answer:
-      "No separate university-specific entrance exam is usually required. For Indian students, the main mandatory exam is NEET, and admission is otherwise based on documents and academic profile.",
+      "Most Russian universities do not conduct a separate university entrance exam for Indian students. In practice, NEET qualification plus academic documents are what usually matter.",
   },
   {
     question: "Can I do a part-time job in Russia while studying MBBS?",
     answer:
-      "Russian student-visa rules are more restrictive than many students assume, so students should not build their budget around external part-time work. University-side assistantships or small institutional roles are a more realistic possibility than outside employment.",
+      "Students should not build their budget around part-time work. Visa rules, language barriers, and course pressure make outside work much less reliable than many social media posts suggest.",
   },
   {
     question: "What is the medium of instruction for MBBS in Russia?",
     answer:
-      "The top Russian medical universities offer English-medium programs, but most students still learn basic Russian from Year 1 because clinical patient interaction requires it later.",
+      "Many of the better-known Russian universities offer English-medium teaching, but students are still introduced to Russian because clinical interaction and daily life become easier with it.",
   },
   {
     question: "How is clinical exposure in Russia compared with other countries?",
     answer:
-      "Russia offers meaningful clinical training from around Year 3 onward, especially in the larger government hospital ecosystems attached to the stronger medical universities. Patient volumes are usually high, which helps practical exposure.",
+      "Clinical exposure varies by university, but in the stronger hospital-linked institutions it becomes much more meaningful from the middle years onward. This is one reason shortlisting the right university matters more than just choosing the cheapest one.",
   },
   {
     question: "Are there coaching programs for FMGE or NExT preparation in Russia?",
     answer:
-      "Yes. Many Indian student communities, online platforms, and selected local mentorship setups help students prepare for FMGE or NExT while they are still in Russia. Starting from Year 4 is usually a better strategy than waiting until graduation.",
+      "Yes. Many Indian students in Russia use online platforms, peer groups, and coaching support while still studying there. Starting that preparation early is far safer than waiting until after graduation.",
   },
   {
     question: "What are the PG options after MBBS in Russia?",
     answer:
-      "Common routes include MD or MS in India through NEET-PG, the USMLE route for USA residency, PLAB for the UK, Germany's doctor pathway through German language plus FSP, AMC for Australia, or PG specialisation inside Russia itself.",
+      "After MBBS in Russia, students usually explore one of several routes: NEET-PG for India, USMLE for the USA, PLAB for the UK, Germany's language-plus-licensing route, AMC for Australia, or postgraduate training within Russia itself.",
   },
   {
     question: "What is the weather like in Russia for Indian students?",
     answer:
-      "Russian winters can be severe. Cities like Novosibirsk or Orenburg can reach minus 15 degrees Celsius to minus 30 degrees Celsius in winter, while places like Kazan, Kursk, and Volgograd are usually milder. Families should budget around Rs 15,000-Rs 25,000 for a proper first-winter clothing setup.",
+      "Russia can feel extremely cold for first-time Indian students, especially in the harsher regions. Cities differ a lot, so weather should always be discussed alongside fees and university quality. Families should also budget separately for a proper first-winter clothing setup.",
   },
 ];
 
