@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StaticPageResourceLinks from "@/app/components/StaticPageResourceLinks";
 import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
+import BosniaNursingLeadSection from "./BosniaNursingLeadSection";
 import {
   admissionSteps,
   articleSchema,
@@ -564,6 +565,8 @@ export default function StudyNursingInBosniaPage() {
           </div>
         </div>
       </section>
+
+      <BosniaNursingLeadSection />
 
       <StaticPageResourceLinks currentRoute={pageUrl} />
 
