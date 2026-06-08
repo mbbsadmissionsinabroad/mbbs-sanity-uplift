@@ -34,7 +34,17 @@ function BangladeshLeadForm({
   buttonLabel: string;
 }) {
   const universityOptions = useMemo(
-    () => universities.map((item) => String(item["University / Program" as keyof typeof item] ?? item["University" as keyof typeof item] ?? "")),
+    () =>
+      universities
+        .map((item) =>
+          String(
+            item["College" as keyof typeof item] ??
+              item["University / Program" as keyof typeof item] ??
+              item["University" as keyof typeof item] ??
+              "",
+          ).trim(),
+        )
+        .filter(Boolean),
     []
   );
 
