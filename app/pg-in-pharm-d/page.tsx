@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import StaticPageResourceLinks from "@/app/components/StaticPageResourceLinks";
 import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
+import PharmDLeadSection from "./PharmDLeadSection";
 import {
   admissionRequirements,
   approbationSteps,
@@ -525,6 +526,8 @@ export default function PgInPharmDPage() {
           </div>
         </div>
       </section>
+
+      <PharmDLeadSection />
 
       <StaticPageResourceLinks currentRoute={pageUrl} />
 
