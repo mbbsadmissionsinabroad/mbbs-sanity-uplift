@@ -19,11 +19,12 @@ type TimingCard = {
 type WebinarLeadFormData = {
   fullName: string;
   email: string;
+  city: string;
   phone: string;
   studentType: StudentType;
 };
 
-const webinarStartAt = new Date("2026-06-07T19:00:00+05:30");
+const webinarStartAt = new Date("2026-06-15T19:00:00+05:30");
 const totalSeats = 200;
 const registeredSeats = 57;
 const seatsRemaining = totalSeats - registeredSeats;
@@ -34,6 +35,7 @@ const autoPopupSessionKey = "neet-mbbs-webinar-popup-seen";
 const initialLeadFormData: WebinarLeadFormData = {
   fullName: "",
   email: "",
+  city: "",
   phone: "",
   studentType: "",
 };
@@ -185,6 +187,7 @@ export default function WebinarLandingPage() {
           fullName: leadFormData.fullName,
           phone: leadFormData.phone,
           email: leadFormData.email,
+          city: leadFormData.city,
           studentType: leadFormData.studentType,
         }),
       });
@@ -351,7 +354,7 @@ export default function WebinarLandingPage() {
             </div>
 
             <p className={styles.ctaCaption}>
-              Only {seatsRemaining} of {totalSeats} seats remaining | 7th June
+              Only {seatsRemaining} of {totalSeats} seats remaining | 15th June
               | Free to attend
             </p>
           </div>
@@ -369,7 +372,7 @@ export default function WebinarLandingPage() {
             <div className={styles.panelMeta}>
               <div>
                 <p className={styles.metaLabel}>Date</p>
-                <p className={styles.metaValue}>7th June</p>
+                <p className={styles.metaValue}>15th June</p>
               </div>
               <div>
                 <p className={styles.metaLabel}>Time</p>
@@ -599,7 +602,7 @@ export default function WebinarLandingPage() {
             and secure your future now.
           </p>
           <p className={styles.finalMeta}>
-            Free live webinar | 7th June at 7 PM | Attend with parents
+            Free live webinar | 15th June at 7 PM | Attend with parents
           </p>
           <div className={styles.ctaRow}>
             <button
@@ -723,6 +726,22 @@ export default function WebinarLandingPage() {
                         required
                       />
                     </div>
+                  </div>
+
+                  <div className={styles.formField}>
+                    <label htmlFor="webinar-city" className={styles.formLabel}>
+                      City
+                    </label>
+                    <input
+                      id="webinar-city"
+                      name="city"
+                      type="text"
+                      value={leadFormData.city}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="Enter your city"
+                      required
+                    />
                   </div>
 
                   <fieldset className={styles.radioFieldset}>

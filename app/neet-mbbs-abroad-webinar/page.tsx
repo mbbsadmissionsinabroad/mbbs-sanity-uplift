@@ -11,8 +11,8 @@ const eventSchema = {
   name: "Free Live Webinar: Secure Your MBBS Future Abroad",
   description:
     "A free live webinar for NEET 2024 and 2025 qualified students who want to secure MBBS abroad admission before the August intake documentation window closes.",
-  startDate: "2026-06-07T19:00:00+05:30",
-  endDate: "2026-06-07T21:00:00+05:30",
+  startDate: "2026-06-15T19:00:00+05:30",
+  endDate: "2026-06-15T21:00:00+05:30",
   eventAttendanceMode: "https://schema.org/OnlineEventAttendanceMode",
   eventStatus: "https://schema.org/EventScheduled",
   url: pageUrl,
@@ -46,14 +46,14 @@ const eventSchema = {
 export const metadata: Metadata = {
   title: "Free Live Webinar: Secure Your MBBS Future Abroad | New-Lyf Overseas",
   description:
-    "Join New-Lyf Overseas on 7th June at 7 PM for a free MBBS abroad webinar for NEET 2024 and 2025 qualified students. Learn how to secure your August intake seat before the 45-day documentation window closes.",
+    "Join New-Lyf Overseas on 15th June at 7 PM for a free MBBS abroad webinar for NEET 2024 and 2025 qualified students. Learn how to secure your August intake seat before the 45-day documentation window closes.",
   alternates: {
     canonical: pageUrl,
   },
   openGraph: {
     title: "Free Live Webinar: Secure Your MBBS Future Abroad",
     description:
-      "NEET students waiting for the re-exam are losing time. Join the free 7th June webinar and plan your MBBS abroad admission before August intake seats move.",
+      "NEET students waiting for the re-exam are losing time. Join the free 15th June webinar and plan your MBBS abroad admission before August intake seats move.",
     url: pageUrl,
     type: "website",
     siteName: "New-Lyf Overseas",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Live Webinar: Secure Your MBBS Future Abroad",
     description:
-      "Join the 7th June 7 PM webinar for NEET qualified students and learn how to secure your MBBS abroad seat before the August intake window gets tighter.",
+      "Join the 15th June 7 PM webinar for NEET qualified students and learn how to secure your MBBS abroad seat before the August intake window gets tighter.",
     images: [
       "https://www.mbbsadmissionsinabroad.com/home-counselling.jpg",
     ],

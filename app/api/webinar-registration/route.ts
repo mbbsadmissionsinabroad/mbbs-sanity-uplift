@@ -20,10 +20,11 @@ export async function POST(request: NextRequest) {
 
     const fullName = String(payload.fullName ?? "").trim();
     const email = String(payload.email ?? "").trim();
+    const city = String(payload.city ?? "").trim();
     const phone = String(payload.phone ?? "").trim();
     const studentType = String(payload.studentType ?? "").trim();
 
-    if (!fullName || !email || !phone || !studentType) {
+    if (!fullName || !email || !city || !phone || !studentType) {
       return NextResponse.json(
         { ok: false, error: "Missing required fields" },
         { status: 400 },
@@ -45,6 +46,7 @@ export async function POST(request: NextRequest) {
       phone,
       whatsapp: phone,
       email,
+      city,
       neetStatus: studentType,
       rawPayloadJson: JSON.stringify(payload),
     });
