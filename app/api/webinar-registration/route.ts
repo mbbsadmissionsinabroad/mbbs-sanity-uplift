@@ -10,6 +10,7 @@ const FORM_RESPONSE_URL =
 const FIELD_MAP = {
   fullName: "entry.1998186726",
   email: "entry.760397205",
+  city: "entry.1634531887",
   phone: "entry.231551245",
   studentType: "entry.486298540",
 } as const;
@@ -34,6 +35,7 @@ export async function POST(request: NextRequest) {
     await submitToGoogleForm(FORM_RESPONSE_URL, {
       [FIELD_MAP.fullName]: fullName,
       [FIELD_MAP.email]: email,
+      [FIELD_MAP.city]: city,
       [FIELD_MAP.phone]: phone,
       [FIELD_MAP.studentType]: studentType,
     });
