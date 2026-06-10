@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const GA_TRACKING_ID = "G-YR4Q895Z3R";
 const FACEBOOK_PIXEL_ID = "1187114626535068";
@@ -17,30 +18,64 @@ declare global {
       push?: (...args: unknown[]) => number;
     };
     _fbq?: Window["fbq"];
+    __gaReady?: boolean;
+    __lastGaPagePath?: string;
   }
 }
 
 export default function DeferredTracking() {
+  const pathname = usePathname();
+
   useEffect(() => {
-    let loaded = false;
-    let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    let idleId: number | null = null;
+    function loadGoogleAnalytics() {
+      if (window.__gaReady) return;
+      window.__gaReady = true;
 
-    function loadTracking() {
-      if (loaded) return;
-      loaded = true;
+      const existingScript = document.querySelector(
+        `script[src*="googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}"]`
+      );
 
-      const gaScript = document.createElement("script");
-      gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
-      gaScript.async = true;
-      document.head.appendChild(gaScript);
+      if (!existingScript) {
+        const gaScript = document.createElement("script");
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+      }
 
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag(...args: unknown[]) {
         window.dataLayer?.push(args);
       };
       window.gtag("js", new Date());
-      window.gtag("config", GA_TRACKING_ID);
+      window.gtag("config", GA_TRACKING_ID, { send_page_view: false });
+    }
+
+    loadGoogleAnalytics();
+  }, []);
+
+  useEffect(() => {
+    if (!window.gtag) return;
+
+    const pagePath = pathname || window.location.pathname;
+
+    if (window.__lastGaPagePath === pagePath) return;
+    window.__lastGaPagePath = pagePath;
+
+    window.gtag("event", "page_view", {
+      page_path: pagePath,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [pathname]);
+
+  useEffect(() => {
+    let loaded = false;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+    let idleId: number | null = null;
+
+    function loadFacebookPixel() {
+      if (loaded) return;
+      loaded = true;
 
       if (!window.fbq) {
         const fbq: NonNullable<Window["fbq"]> = function (...args: unknown[]) {
@@ -68,20 +103,20 @@ export default function DeferredTracking() {
         window.fbq("track", "PageView");
       }
 
-      window.removeEventListener("pointerdown", loadTracking);
-      window.removeEventListener("keydown", loadTracking);
-      window.removeEventListener("scroll", loadTracking);
+      window.removeEventListener("pointerdown", loadFacebookPixel);
+      window.removeEventListener("keydown", loadFacebookPixel);
+      window.removeEventListener("scroll", loadFacebookPixel);
     }
 
-    timeoutId = setTimeout(loadTracking, 4000);
+    timeoutId = setTimeout(loadFacebookPixel, 4000);
 
     if (window.requestIdleCallback) {
-      idleId = window.requestIdleCallback(loadTracking, { timeout: 4000 });
+      idleId = window.requestIdleCallback(loadFacebookPixel, { timeout: 4000 });
     }
 
-    window.addEventListener("pointerdown", loadTracking, { once: true });
-    window.addEventListener("keydown", loadTracking, { once: true });
-    window.addEventListener("scroll", loadTracking, { once: true });
+    window.addEventListener("pointerdown", loadFacebookPixel, { once: true });
+    window.addEventListener("keydown", loadFacebookPixel, { once: true });
+    window.addEventListener("scroll", loadFacebookPixel, { once: true });
 
     return () => {
       if (timeoutId) {
@@ -90,9 +125,9 @@ export default function DeferredTracking() {
       if (idleId && window.cancelIdleCallback) {
         window.cancelIdleCallback(idleId);
       }
-      window.removeEventListener("pointerdown", loadTracking);
-      window.removeEventListener("keydown", loadTracking);
-      window.removeEventListener("scroll", loadTracking);
+      window.removeEventListener("pointerdown", loadFacebookPixel);
+      window.removeEventListener("keydown", loadFacebookPixel);
+      window.removeEventListener("scroll", loadFacebookPixel);
     };
   }, []);
 
