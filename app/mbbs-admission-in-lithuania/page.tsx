@@ -575,7 +575,7 @@ export default function LithuaniaPage() {
             </Link>
             ,{" "}
             <Link
-              href="/contact"
+              href="/mbbs-without-neet"
               className="font-semibold text-sky-700 underline underline-offset-4"
             >
               MBBS without NEET for Indian students
@@ -638,7 +638,7 @@ export default function LithuaniaPage() {
         <p className="mt-6 text-sm leading-7 text-slate-600">
           If you are also comparing non-MBBS healthcare routes, explore{" "}
           <Link
-            href="/contact"
+            href="/bsc-nursing"
             className="font-semibold text-sky-700 underline underline-offset-4"
           >
             BSc Nursing abroad

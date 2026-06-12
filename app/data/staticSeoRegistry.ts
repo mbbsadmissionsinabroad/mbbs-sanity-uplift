@@ -2,6 +2,22 @@ import type { StaticSeoRegistryEntry } from "./staticPageResources";
 
 export const staticSeoPages: StaticSeoRegistryEntry[] = [
   {
+    "route": "/bsc-nursing",
+    "title": "BSc Nursing Abroad for Indian Students in 2026",
+    "metaTitle": "BSc Nursing Abroad for Indian Students 2026 | New-Lyf",
+    "metaDescription": "Explore BSc Nursing abroad options for Indian students in 2026: eligibility, countries, costs, language needs, documents, career routes, and New-Lyf guidance.",
+    "section": "nursing-jobs",
+    "kind": "nursing"
+  },
+  {
+    "route": "/mbbs-without-neet",
+    "title": "MBBS Without NEET Abroad: The Honest Answer for Indian Students",
+    "metaTitle": "MBBS Without NEET Abroad 2026 | What Indian Students Must Know",
+    "metaDescription": "Can Indian students study MBBS abroad without NEET? Learn the NMC rule, no-India-return exceptions, country risks, and safer planning options with New-Lyf.",
+    "section": "mbbs-abroad",
+    "kind": "other"
+  },
+  {
     "route": "/ausbildung",
     "title": "Ausbildung in Germany 2026 Guide for Indian Students - Earn While You Learn",
     "metaTitle": "Ausbildung in Germany 2026 | Indian Guide",

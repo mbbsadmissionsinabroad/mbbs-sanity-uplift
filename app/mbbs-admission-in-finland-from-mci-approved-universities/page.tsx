@@ -357,7 +357,7 @@ export default function FinlandPage() {
         <div className="mt-10"><DataTable rows={careerPathways} /></div>
         <p className="mt-6 rounded-3xl border border-cyan-200 bg-cyan-50 p-5 text-sm leading-7 text-cyan-950">
           Also consider{" "}
-          <Link href="/contact" className="font-semibold underline underline-offset-4">
+          <Link href="/bsc-nursing" className="font-semibold underline underline-offset-4">
             BSc Nursing abroad
           </Link>{" "}
           if you are comparing healthcare careers with a shorter, lower-risk training path.
