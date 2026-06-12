@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionGeorgiaRedirectPage() {
-  redirect("/mbbs-in-georgia");
+  permanentRedirect("/mbbs-in-georgia");
 }

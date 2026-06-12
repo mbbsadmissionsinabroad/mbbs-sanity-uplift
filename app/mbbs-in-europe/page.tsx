@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function EuropeAliasPage() {
-  redirect("/mbbs-admission-in-europe-from-mci-approved-university");
+  permanentRedirect("/mbbs-admission-in-europe-from-mci-approved-university");
 }

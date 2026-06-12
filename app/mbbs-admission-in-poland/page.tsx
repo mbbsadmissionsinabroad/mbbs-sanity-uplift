@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function PolandAliasPage() {
-  redirect("/mbbs-admission-in-poland-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-poland-for-indian-students");
 }

@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionInUzbekistanRedirectPage() {
-  redirect("/mbbs-in-uzbekistan");
+  permanentRedirect("/mbbs-in-uzbekistan");
 }

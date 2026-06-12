@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
 
 const route = "/nursing-jobs-in-germany";
@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function NursingJobsInGermanyRedirectPage() {
-  redirect("/nursing-job-in-germany");
+  permanentRedirect("/nursing-job-in-germany");
 }

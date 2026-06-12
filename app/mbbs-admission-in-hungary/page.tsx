@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function HungaryAliasPage() {
-  redirect("/mbbs-in-hungary");
+  permanentRedirect("/mbbs-in-hungary");
 }

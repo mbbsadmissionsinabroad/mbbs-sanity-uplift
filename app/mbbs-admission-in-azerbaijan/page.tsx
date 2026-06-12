@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function AzerbaijanAliasPage() {
-  redirect("/mbbs-in-azerbaijan");
+  permanentRedirect("/mbbs-in-azerbaijan");
 }

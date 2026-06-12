@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionInFinlandRedirectPage() {
-  redirect("/mbbs-admission-in-finland-from-mci-approved-universities");
+  permanentRedirect("/mbbs-admission-in-finland-from-mci-approved-universities");
 }

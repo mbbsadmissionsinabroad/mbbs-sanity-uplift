@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function DenmarkAliasPage() {
-  redirect("/mbbs-admission-in-denmark-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-denmark-for-indian-students");
 }

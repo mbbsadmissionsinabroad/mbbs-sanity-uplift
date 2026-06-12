@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function ItalyAliasPage() {
-  redirect("/mbbs-in-italy");
+  permanentRedirect("/mbbs-in-italy");
 }

@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function BangladeshAliasPage() {
-  redirect("/mbbs-admission-in-bangladesh-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-bangladesh-for-indian-students");
 }

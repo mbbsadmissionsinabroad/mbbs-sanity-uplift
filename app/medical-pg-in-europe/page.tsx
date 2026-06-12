@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
 
 const route = "/medical-pg-in-europe";
@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function MedicalPgInEuropeRedirectPage() {
-  redirect("/medical-pg-in-europe-for-indian-students");
+  permanentRedirect("/medical-pg-in-europe-for-indian-students");
 }

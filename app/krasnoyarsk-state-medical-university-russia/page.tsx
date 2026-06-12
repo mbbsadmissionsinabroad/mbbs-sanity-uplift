@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function KrasnoyarskPage() {
-  redirect("/mbbs-in-russia#krasnoyarsk-state-medical-university");
+  permanentRedirect("/mbbs-in-russia#krasnoyarsk-state-medical-university");
 }

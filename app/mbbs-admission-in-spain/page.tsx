@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionSpainRedirectPage() {
-  redirect("/mbbs-admission-in-spain-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-spain-for-indian-students");
 }

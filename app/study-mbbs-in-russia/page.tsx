@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 import { buildStaticPageMetadata } from "@/lib/staticPageSeo";
 
 const route = "/study-mbbs-in-russia";
@@ -18,5 +18,5 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function StudyMbbsInRussiaRedirectPage() {
-  redirect("/mbbs-in-russia");
+  permanentRedirect("/mbbs-in-russia");
 }

@@ -1,10 +1,5 @@
-// import Image from "next/image";
-import Navbar from "../components/Navbar";
+import { permanentRedirect } from "next/navigation";
 
-export default function Home() {
-  return (
-    <div>
-      <h1>Hii</h1>
-    </div>
-  );
+export default function HomeAliasPage() {
+  permanentRedirect("/");
 }

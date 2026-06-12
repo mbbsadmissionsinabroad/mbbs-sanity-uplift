@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function BulgariaAliasPage() {
-  redirect("/mbbs-admission-in-bulgaria-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-bulgaria-for-indian-students");
 }

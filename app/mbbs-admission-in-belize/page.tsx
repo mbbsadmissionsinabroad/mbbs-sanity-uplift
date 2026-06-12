@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionInBelizeRedirectPage() {
-  redirect("/mbbs-in-belize");
+  permanentRedirect("/mbbs-in-belize");
 }

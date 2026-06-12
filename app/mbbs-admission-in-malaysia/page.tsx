@@ -1,5 +1,5 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect } from "next/navigation";
 
 export default function MbbsAdmissionInMalaysiaRedirect() {
-  redirect("/mbbs-admission-in-malaysia-for-indian-students");
+  permanentRedirect("/mbbs-admission-in-malaysia-for-indian-students");
 }
