@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -75,16 +74,6 @@ const nextConfig = {
       {
         source: "/medical-pg-in-europe",
         destination: "/medical-pg-in-europe-for-indian-students",
-        permanent: true,
-      },
-      {
-        source: "/bsc-nursing",
-        destination: "/contact",
-        permanent: true,
-      },
-      {
-        source: "/mbbs-without-neet",
-        destination: "/contact",
         permanent: true,
       },
       {

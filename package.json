@@ -38,6 +38,7 @@
     "react-svg": "^16.1.33",
     "react-toastify": "^11.0.2",
     "sanity": "^3.37.1",
+    "sharp": "^0.34.5",
     "styled-components": "^6.3.12",
     "tailwind-merge": "^2.2.1",
     "tailwind-scrollbar-hide": "^1.1.7",
