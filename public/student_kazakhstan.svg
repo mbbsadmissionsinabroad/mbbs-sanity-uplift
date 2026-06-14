@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="450" cy="330" r="170" fill="#f5d0b5"/>
+  <path d="M220 780c20-162 118-250 230-250 110 0 211 88 230 250" fill="#f5d0b5"/>
+  <path d="M299 292c10-88 76-147 158-147 82 0 154 53 176 137-27-12-62-18-104-18-110 0-182 40-230 97-8-20-10-42 0-69z" fill="#1e293b"/>
+  <path d="M250 780c40-116 119-188 200-188s159 72 200 188" fill="#fef3c7"/>
+  <text x="450" y="835" font-family="Inter, Arial, sans-serif" font-size="52" text-anchor="middle" fill="#ffffff" font-weight="700">Kazakhstan Student</text>
+</svg>

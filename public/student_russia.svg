@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="450" cy="330" r="170" fill="#f0c7a6"/>
+  <path d="M220 780c26-162 125-252 230-252 104 0 205 90 230 252" fill="#f0c7a6"/>
+  <path d="M300 255c39-86 122-122 207-108 61 10 119 54 144 116-56-16-116-16-168-6-54 10-103 29-145 56-23-18-36-38-38-58z" fill="#111827"/>
+  <path d="M252 780c36-111 115-184 198-184 83 0 160 73 198 184" fill="#0a1628"/>
+  <text x="450" y="835" font-family="Inter, Arial, sans-serif" font-size="58" text-anchor="middle" fill="#ffffff" font-weight="700">Russia Student</text>
+</svg>
