@@ -51,5 +51,5 @@ export default defineConfig({
     seoDashboardTool(),
     visionTool(),
   ],
-  schema: { types: schemaTypes },
+  schema: { types: schemaTypes as any },
 });

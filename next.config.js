@@ -93,6 +93,14 @@ const nextConfig = {
       },
     ];
   },
+  webpack: (config) => {
+    const path = require("path");
+    config.resolve.modules = [
+      path.resolve(__dirname, "node_modules"),
+      ...config.resolve.modules,
+    ];
+    return config;
+  },
 };
 
 module.exports = nextConfig;
