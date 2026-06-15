@@ -355,10 +355,10 @@ function NewLyfLandingPage() {
               {/* Happy Student Avatars Visual Hook */}
               <div className="flex items-center gap-3.5 mb-6 bg-white/5 border border-white/10 rounded-2xl p-3.5 max-w-md">
                 <div className="flex -space-x-3">
-                  <img src="/student_georgia.svg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-center" alt="Student" />
-                  <img src="/student_russia.svg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-center" alt="Student" />
-                  <img src="/student_kazakhstan.svg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-center" alt="Student" />
-                  <img src="/student_philippines.svg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-center" alt="Student" />
+                  <img src="/students/neil-issac-russia.jpeg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-top" alt="Neil Issac" />
+                  <img src="/students/patil-vedant-russia.jpeg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-top" alt="Patil Vedant" />
+                  <img src="/students/pearl-russia.jpeg" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-top" alt="Pearl" />
+                  <img src="/students/shefali-gautam-germany.png" className="w-10 h-10 rounded-full border-2 border-navy-900 object-cover object-top" alt="Shefali Gautam" />
                 </div>
                 <div>
                   <div className="flex items-center gap-0.5 text-saffron-400 text-xs">
