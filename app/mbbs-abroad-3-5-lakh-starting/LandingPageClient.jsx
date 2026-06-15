@@ -516,8 +516,8 @@ function NewLyfLandingPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                img: "/student_russia.svg",
-                name: "Aditya & Friends",
+                img: "/students/neil-issac-russia.jpeg",
+                name: "Neil Issac",
                 country: "Russia",
                 flag: "🇷🇺",
                 status: "Year 2 Student",
@@ -525,8 +525,8 @@ function NewLyfLandingPage() {
                 quote: "Newlyf laid out every single charge transparently. Studying here is amazing and within our budget!"
               },
               {
-                img: "/student_georgia.svg",
-                name: "Riya Patel",
+                img: "/students/patil-vedant-russia.jpeg",
+                name: "Patil Vedant",
                 country: "Georgia",
                 flag: "🇬🇪",
                 status: "Year 1 Student",
@@ -534,8 +534,8 @@ function NewLyfLandingPage() {
                 quote: "The NMC guidelines were confusing, but Newlyf mapped my documentation from Day 1. Georgia is extremely safe!"
               },
               {
-                img: "/student_kazakhstan.svg",
-                name: "Rohan & Team",
+                img: "/students/pearl-russia.jpeg",
+                name: "Pearl",
                 country: "Kazakhstan",
                 flag: "🇰🇿",
                 status: "Year 3 Student",
@@ -543,40 +543,25 @@ function NewLyfLandingPage() {
                 quote: "Modern labs and English-medium curriculum. My FMGE roadmap started from the very first semester."
               },
               {
-                img: "/student_philippines.svg",
-                name: "Sneha Rao",
+                img: "/students/shefali-gautam-germany.png",
+                name: "Shefali Gautam",
                 country: "Philippines",
                 flag: "🇵🇭",
                 status: "Year 4 Clinicals",
                 uni: "Davao Medical School Foundation",
                 quote: "The US-pattern curriculum here is a huge advantage for my career goals. Newlyf guided me every step."
               }
-            ].map((student, i) => (
-              <div key={i} className="group bg-warm-50 rounded-2xl overflow-hidden border border-warm-200/80 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full">
-                {/* Image Container with Zoom */}
-                <div className="relative overflow-hidden aspect-[4/3] w-full bg-warm-200">
-                  <img 
-                    src={student.img} 
+            ].map((student) => (
+              <div key={student.name} className="group rounded-[28px] overflow-hidden border border-warm-200/80 bg-white shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="aspect-[4/5] overflow-hidden bg-warm-100">
+                  <img
+                    src={student.img}
                     alt={student.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Flag & Country overlay */}
-                  <div className="absolute bottom-3 left-3 bg-navy-900/80 backdrop-blur-sm px-2.5 py-1 rounded-full text-xs font-bold text-white flex items-center gap-1.5 shadow-sm">
-                    <span>{student.flag}</span>
-                    <span>{student.country}</span>
-                  </div>
                 </div>
-
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <h3 className="font-extrabold text-navy-800 text-sm">{student.name}</h3>
-                    <span className="text-[0.65rem] font-bold px-2 py-0.5 rounded-md bg-blue-50 text-medical-blue">{student.status}</span>
-                  </div>
-                  <p className="text-[0.68rem] text-warm-500 font-semibold mb-3">{student.uni}</p>
-                  <p className="text-xs text-navy-700/90 italic leading-relaxed m-0 relative pl-4 border-l border-medical-blue/30 flex-grow">
-                    "{student.quote}"
-                  </p>
+                <div className="px-5 py-4 text-center">
+                  <h3 className="font-extrabold text-base text-navy-800 m-0">{student.name}</h3>
                 </div>
               </div>
             ))}
