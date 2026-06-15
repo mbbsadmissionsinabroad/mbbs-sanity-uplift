@@ -4,6 +4,7 @@ import { client } from "./client";
 export type StaticSeoOverride = {
   seoTitle?: string;
   metaDescription?: string;
+  keywords?: string[];
 };
 
 type BuildStaticPageMetadataInput = {
@@ -11,11 +12,13 @@ type BuildStaticPageMetadataInput = {
   fallbackTitle: string;
   fallbackDescription: string;
   fallbackCanonical: string;
+  keywords?: string | string[];
 };
 
 const STATIC_SEO_QUERY = `*[_type == "staticSeoPage" && route == $route][0]{
   seoTitle,
-  metaDescription
+  metaDescription,
+  keywords
 }`;
 
 export async function getStaticSeoOverride(route: string): Promise<StaticSeoOverride | null> {
@@ -32,14 +35,17 @@ export async function buildStaticPageMetadata({
   fallbackTitle,
   fallbackDescription,
   fallbackCanonical,
+  keywords,
 }: BuildStaticPageMetadataInput): Promise<Metadata> {
   const override = await getStaticSeoOverride(route);
   const title = override?.seoTitle?.trim() || fallbackTitle;
   const description = override?.metaDescription?.trim() || fallbackDescription;
+  const mergedKeywords = override?.keywords || keywords;
 
   return {
     title,
     description,
+    keywords: mergedKeywords,
     alternates: { canonical: fallbackCanonical },
     openGraph: {
       title,

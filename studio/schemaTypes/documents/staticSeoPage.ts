@@ -51,6 +51,13 @@ export const staticSeoPage = defineType({
       rows: 4,
       validation: (rule) => rule.required().min(80).max(170),
     }),
+    defineField({
+      name: "keywords",
+      title: "Meta Keywords",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "List of SEO keywords for search engines.",
+    }),
   ],
   preview: {
     select: {

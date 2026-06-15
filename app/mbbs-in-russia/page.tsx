@@ -5,6 +5,7 @@ import {
   metaDescription,
   metaTitle,
   pageUrl,
+  metaKeywords,
 } from "../mbbs-admission-in-russia/pageData";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -13,6 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     fallbackTitle: metaTitle,
     fallbackDescription: metaDescription,
     fallbackCanonical: pageUrl,
+    keywords: metaKeywords,
   });
 }
 

@@ -7,6 +7,19 @@ export const metaTitle =
 export const metaDescription =
   "Planning MBBS in Russia after NEET? Compare NMC-listed universities, realistic 2026-27 fee ranges, FMGE context, eligibility rules, admission steps, living costs, and India-return realities before you decide.";
 
+export const metaKeywords = [
+  "mbbs in russia",
+  "study mbbs in russia",
+  "cost of mbbs in russia",
+  "mbbs in russia for indian students",
+  "mbbs university in russia",
+  "top medical university in russia",
+  "mbbs in russia curriculum",
+  "mbbs in russia 2026",
+  "russia mbbs fees",
+  "mbbs in russia without neet"
+];
+
 export const lastUpdated = "March 2026";
 export const whatsappNumber = "+918147030030";
 export const whatsappHref =
