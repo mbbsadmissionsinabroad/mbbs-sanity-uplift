@@ -95,10 +95,7 @@ const nextConfig = {
   },
   webpack: (config) => {
     const path = require("path");
-    config.resolve.modules = [
-      path.resolve(__dirname, "node_modules"),
-      ...config.resolve.modules,
-    ];
+    config.resolve.alias["sanity"] = path.resolve(__dirname, "node_modules/sanity");
     return config;
   },
 };
