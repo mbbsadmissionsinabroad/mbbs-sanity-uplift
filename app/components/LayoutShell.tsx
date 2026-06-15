@@ -9,13 +9,15 @@ import Footer from "./Footer";
 export default function LayoutShell({ children }: { children: ReactNode }) {
   const pathname = usePathname() || "";
   const isStudioRoute = pathname === "/studio" || pathname.startsWith("/studio/");
-  const isWebinarLandingRoute = pathname === "/neet-mbbs-abroad-webinar";
+  const isStandaloneLandingRoute =
+    pathname === "/neet-mbbs-abroad-webinar" ||
+    pathname === "/mbbs-abroad-3-5-lakh-starting";
 
   if (isStudioRoute) {
     return <>{children}</>;
   }
 
-  if (isWebinarLandingRoute) {
+  if (isStandaloneLandingRoute) {
     return (
       <>
         <DeferredTracking />
