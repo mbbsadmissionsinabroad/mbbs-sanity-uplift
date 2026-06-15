@@ -1,4 +1,5 @@
 import rawLocalBlogs from "./localBlogsData.generated.json";
+import localBlogsSupplement from "./localBlogsSupplement";
 
 const SITE_URL = "https://www.mbbsadmissionsinabroad.com";
 
@@ -79,7 +80,10 @@ export type LocalBlogEntry = {
 
 export type LocalBlogSummary = Omit<LocalBlogEntry, "pageContent" | "faq" | "bodyHtml">;
 
-const rawBlogs = rawLocalBlogs as RawLocalBlog[];
+const rawBlogs = [
+  ...(rawLocalBlogs as RawLocalBlog[]),
+  ...(localBlogsSupplement as RawLocalBlog[]),
+];
 const rawBlogsBySlug = new Map(
   rawBlogs.map((blog) => [blog.slug.toLowerCase(), blog])
 );
