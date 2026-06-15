@@ -24,7 +24,7 @@ const COUNTRIES = [
   { flag: "🇺🇿", name: "Uzbekistan", cost: "₹3–4.5L / yr", tagline: "Lowest total cost", label: "Rising pick" },
   { flag: "🇻🇳", name: "Vietnam", cost: "₹4–6L / yr", tagline: "Emerging destination", label: "Quality campus" },
   { flag: "🇧🇦", name: "Bosnia", cost: "₹4–5.5L / yr", tagline: "European exposure", label: "Unique edge" },
-  { flag: "🇵🇭", name: "Philippines", cost: "₹5–7L / yr", tagline: "US-pattern curriculum", label: "FMGE-ready" },
+  { flag: "🇩🇪", name: "Germany", cost: "₹5–7L / yr", tagline: "European destination", label: "Structured pathway" },
   { flag: "🇧🇩", name: "Bangladesh", cost: "₹4.5–6L / yr", tagline: "Close to home", label: "Similar culture" },
 ];
 
@@ -183,7 +183,6 @@ function LeadForm({ source, compact = false }) {
         <option value="uzbekistan">Uzbekistan</option>
         <option value="vietnam">Vietnam</option>
         <option value="bosnia">Bosnia</option>
-        <option value="philippines">Philippines</option>
         <option value="bangladesh">Bangladesh</option>
         <option value="unsure">Not Sure — Help Me Decide</option>
       </select>
@@ -545,10 +544,10 @@ function NewLyfLandingPage() {
               {
                 img: "/students/shefali-gautam-germany.png",
                 name: "Shefali Gautam",
-                country: "Philippines",
-                flag: "🇵🇭",
+                country: "Germany",
+                flag: "🇩🇪",
                 status: "Year 4 Clinicals",
-                uni: "Davao Medical School Foundation",
+                uni: "",
                 quote: "The US-pattern curriculum here is a huge advantage for my career goals. Newlyf guided me every step."
               }
             ].map((student) => (
