@@ -121,9 +121,10 @@ function buildSidebarData(blogs: any[], currentRoute: string): SidebarData {
 export async function generateMetadata({
   params,
 }: {
-  params: { blogRoutes?: string };
+  params: Promise<{ blogRoutes?: string }>;
 }): Promise<Metadata> {
-  const route = params?.blogRoutes ?? "";
+  const resolvedParams = await params;
+  const route = resolvedParams?.blogRoutes ?? "";
 
   try {
     const localBlogSummary = getLocalBlogSummaryBySlug(route);
@@ -237,8 +238,9 @@ export async function generateMetadata({
   }
 }
 
-const Page = async ({ params }: { params: { blogRoutes?: string } }) => {
-  const route = params?.blogRoutes ?? "";
+const Page = async ({ params }: { params: Promise<{ blogRoutes?: string }> }) => {
+  const resolvedParams = await params;
+  const route = resolvedParams?.blogRoutes ?? "";
 
   let blogDetailsContent;
   let sidebarData: SidebarData = { categories: [], latestPosts: [] };
