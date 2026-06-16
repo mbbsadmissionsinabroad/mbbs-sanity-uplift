@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /_next/image
 Disallow: /cgi-bin/
 Disallow: /admin/
 Disallow: /studio/
@@ -10,6 +9,6 @@ Disallow: /exam/
 Disallow: /result/
 Disallow: /review/
 Disallow: /thank-you/
-Disallow: /Home
 Disallow: /*?*
+
 Sitemap: https://www.mbbsadmissionsinabroad.com/sitemap.xml
