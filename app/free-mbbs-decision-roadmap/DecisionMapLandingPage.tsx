@@ -113,53 +113,43 @@ const openWhatsApp = () => {
 const pad = (n: number) => String(Math.max(0, n)).padStart(2, "0");
 
 /* ============================================================
-   LEAD FORM
+   ROADMAP FORM  (matches the new design)
    ============================================================ */
-interface LeadFormProps {
+interface RoadmapFormProps {
   source: string;
-  compact?: boolean;
 }
 
-function LeadForm({ source, compact = false }: LeadFormProps) {
+function RoadmapForm({ source }: RoadmapFormProps) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
     neetStatus: "",
-    state: "",
     city: "",
-    email: "",
     countries: "",
-    message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     if (errors[e.target.name]) {
-      setErrors((prev) => {
-        const n = { ...prev };
-        delete n[e.target.name];
-        return n;
-      });
+      setErrors((prev) => { const n = { ...prev }; delete n[e.target.name]; return n; });
     }
   };
 
   const validate = () => {
     const e: Record<string, string> = {};
-    if (!form.name.trim() || form.name.trim().length < 2) e.name = "Name is required";
-    const phone = form.phone.replace(/\D/g, "");
-    if (!phone || phone.length !== 10) e.phone = "Valid 10-digit WhatsApp number required";
+    if (!form.name.trim() || form.name.trim().length < 2) e.name = "Full name is required";
+    const digits = form.phone.replace(/\D/g, "");
+    if (!digits || digits.length !== 10) e.phone = "Valid 10-digit WhatsApp number required";
+    if (!form.neetStatus) e.neetStatus = "Please select your NEET year";
     return e;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const ve = validate();
-    if (Object.keys(ve).length > 0) {
-      setErrors(ve);
-      return;
-    }
+    if (Object.keys(ve).length > 0) { setErrors(ve); return; }
     setStatus("loading");
     try {
       await fetch(CONFIG.apiEndpoint, {
@@ -174,22 +164,20 @@ function LeadForm({ source, compact = false }: LeadFormProps) {
   };
 
   const iCls =
-    "w-full border-[1.5px] border-warm-200 rounded-xl px-4 py-3 text-sm text-navy-800 placeholder:text-warm-400 outline-none transition-all focus:border-medical-blue focus:ring-[3px] focus:ring-medical-blue/10 bg-white";
-  const iClsCompact =
-    "w-full border-[1.5px] border-white/20 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none transition-all focus:border-saffron-500 focus:ring-[3px] focus:ring-saffron-500/20 bg-white/5";
+    "w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-navy-800 placeholder:text-gray-400 outline-none transition-all focus:border-saffron-500 focus:ring-[3px] focus:ring-saffron-500/15 bg-white";
   const eCls = "text-medical-red text-xs mt-1 ml-1";
 
   if (status === "success") {
     return (
-      <div className="text-center py-6 animate-fade-in">
-        <div className="text-5xl mb-3">✅</div>
-        <h3 className="font-extrabold text-lg text-green-700 mb-2">Details Received!</h3>
-        <p className="text-sm text-warm-500 mb-4 leading-relaxed">
-          Thank you. New Lyf received your details. Our team will contact you on WhatsApp with your MBBS roadmap guidance.
+      <div className="text-center py-8 animate-fade-in">
+        <div className="text-5xl mb-4">✅</div>
+        <h3 className="font-extrabold text-xl text-green-700 mb-2">Details Received!</h3>
+        <p className="text-sm text-warm-500 mb-5 leading-relaxed">
+          Thank you. New Lyf received your details. Our counsellor will contact you on WhatsApp within 24 hours.
         </p>
         <button
           onClick={openWhatsApp}
-          className="w-full bg-wa hover:bg-wa-hover text-white font-extrabold text-sm py-3.5 rounded-xl transition-all flex items-center justify-center gap-2"
+          className="w-full bg-wa hover:bg-wa-hover text-white font-extrabold text-sm py-4 rounded-xl transition-all flex items-center justify-center gap-2"
         >
           📲 WhatsApp for Instant Response
         </button>
@@ -199,13 +187,13 @@ function LeadForm({ source, compact = false }: LeadFormProps) {
 
   if (status === "error") {
     return (
-      <div className="text-center py-4 animate-fade-in">
+      <div className="text-center py-6 animate-fade-in">
         <p className="text-medical-red font-bold text-sm mb-4">
-          Something went wrong. Please reach us on WhatsApp directly.
+          Something went wrong. Please reach us directly on WhatsApp.
         </p>
         <button
           onClick={openWhatsApp}
-          className="w-full bg-wa hover:bg-wa-hover text-white font-extrabold text-sm py-3.5 rounded-xl transition-all flex items-center justify-center gap-2"
+          className="w-full bg-wa hover:bg-wa-hover text-white font-extrabold text-sm py-4 rounded-xl transition-all flex items-center justify-center gap-2"
         >
           📲 WhatsApp Now
         </button>
@@ -213,96 +201,91 @@ function LeadForm({ source, compact = false }: LeadFormProps) {
     );
   }
 
-  const iC = compact ? iClsCompact : iCls;
-
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        name="name"
-        placeholder="Student or Parent Name *"
-        value={form.name}
-        onChange={onChange}
-        className={iC}
-      />
-      {errors.name && <p className={eCls}>{errors.name}</p>}
+      {/* Full Name */}
+      <div>
+        <input
+          name="name"
+          placeholder="Full Name *"
+          value={form.name}
+          onChange={onChange}
+          className={iCls}
+        />
+        {errors.name && <p className={eCls}>{errors.name}</p>}
+      </div>
 
-      <input
-        name="phone"
-        placeholder="Enter active WhatsApp number *"
-        value={form.phone}
-        onChange={onChange}
-        inputMode="numeric"
-        className={iC}
-      />
-      {errors.phone && <p className={eCls}>{errors.phone}</p>}
+      {/* Phone */}
+      <div>
+        <input
+          name="phone"
+          placeholder="WhatsApp / Phone Number *"
+          value={form.phone}
+          onChange={onChange}
+          inputMode="numeric"
+          className={iCls}
+        />
+        {errors.phone && <p className={eCls}>{errors.phone}</p>}
+      </div>
 
-      <select name="neetStatus" value={form.neetStatus} onChange={onChange} className={iC}>
-        <option value="">{"What's your NEET STATUS so far?"}</option>
-        <option value="2024-eligible">2024 Eligible Score</option>
-        <option value="2025-eligible">2025 Eligible Score</option>
-        <option value="2026-appearing">2026 Appearing</option>
-        <option value="score-uncertain">Score Uncertain</option>
-        <option value="need-guidance">Need Guidance</option>
+      {/* NEET Year */}
+      <div>
+        <select
+          name="neetStatus"
+          value={form.neetStatus}
+          onChange={onChange}
+          className={`${iCls} ${!form.neetStatus ? "text-gray-400" : "text-navy-800"}`}
+        >
+          <option value="" disabled>NEET Qualified Year *</option>
+          <option value="2024">NEET 2024</option>
+          <option value="2025">NEET 2025</option>
+          <option value="2026-appearing">2026 Appearing</option>
+          <option value="score-uncertain">Score Uncertain</option>
+          <option value="need-guidance">Need Guidance</option>
+        </select>
+        {errors.neetStatus && <p className={eCls}>{errors.neetStatus}</p>}
+      </div>
+
+      {/* City */}
+      <input
+        name="city"
+        placeholder="Your City"
+        value={form.city}
+        onChange={onChange}
+        className={iCls}
+      />
+
+      {/* Preferred Country */}
+      <select
+        name="countries"
+        value={form.countries}
+        onChange={onChange}
+        className={`${iCls} ${!form.countries ? "text-gray-400" : "text-navy-800"}`}
+      >
+        <option value="">Preferred Country (Optional)</option>
+        <option value="Russia">🇷🇺 Russia</option>
+        <option value="Georgia">🇬🇪 Georgia</option>
+        <option value="Uzbekistan">🇺🇿 Uzbekistan</option>
+        <option value="Kazakhstan">🇰🇿 Kazakhstan</option>
+        <option value="Vietnam">🇻🇳 Vietnam</option>
+        <option value="Bangladesh">🇧🇩 Bangladesh</option>
+        <option value="Malaysia">🇲🇾 Malaysia</option>
+        <option value="Bosnia">🇧🇦 Bosnia</option>
+        <option value="Not Sure">Not Sure — Help Me Decide</option>
       </select>
 
-      {!compact && (
-        <>
-          <input
-            name="state"
-            placeholder="Where are you based right now? State — Example: Karnataka"
-            value={form.state}
-            onChange={onChange}
-            className={iCls}
-          />
-          <input
-            name="city"
-            placeholder="Where are you based right now? City — Example: Bangalore"
-            value={form.city}
-            onChange={onChange}
-            className={iCls}
-          />
-          <input
-            name="email"
-            placeholder="example@gmail.com"
-            type="email"
-            value={form.email}
-            onChange={onChange}
-            className={iCls}
-          />
-          <textarea
-            name="countries"
-            placeholder="Which countries or universities are you curious about? Russia, Georgia, Malaysia, Bosnia, not sure yet…"
-            value={form.countries}
-            onChange={onChange}
-            rows={2}
-            className={`${iCls} resize-none`}
-          />
-          <textarea
-            name="message"
-            placeholder="What would you like to know? — Example: I want to know about fees, safety, hostel, country fit and future pathway."
-            value={form.message}
-            onChange={onChange}
-            rows={2}
-            className={`${iCls} resize-none`}
-          />
-        </>
-      )}
-
+      {/* Submit */}
       <button
         type="submit"
         disabled={status === "loading"}
-        className={`w-full bg-saffron-500 hover:bg-saffron-600 disabled:opacity-60 text-white font-extrabold text-sm py-3.5 rounded-xl transition-all flex items-center justify-center ${!compact ? "animate-pulse-cta" : ""}`}
-        style={{ letterSpacing: "0.04em" }}
+        className="w-full bg-saffron-500 hover:bg-saffron-600 disabled:opacity-60 text-white font-extrabold text-sm py-4 rounded-xl transition-all flex items-center justify-center mt-1 animate-pulse-cta"
+        style={{ letterSpacing: "0.06em" }}
       >
-        {status === "loading"
-          ? "Sending…"
-          : compact
-          ? "Send My Details →"
-          : "Get My MBBS Decision Map →"}
+        {status === "loading" ? "Sending…" : "GET MY FREE FEE + COUNTRY ROADMAP →"}
       </button>
 
-      <p className={`text-center text-[0.65rem] ${compact ? "text-white/50" : "text-warm-400"}`}>
-        🔒 New Lyf will contact you on WhatsApp. No pressure. Just clarity.
+      <p className="text-center text-[0.65rem] text-warm-400 mt-0.5">
+        🔒 Free. Confidential. No commitment required.
       </p>
     </form>
   );
@@ -347,7 +330,7 @@ function Modal({ open, onClose }: { open: boolean; onClose: () => void }) {
           </p>
         </div>
         <div className="px-6 pb-6">
-          <LeadForm source="modal" />
+          <RoadmapForm source="modal" />
         </div>
       </div>
     </div>
@@ -534,11 +517,11 @@ export default function DecisionMapLandingPage() {
 
             {/* Right: Hero Form */}
             <div className="bg-white rounded-[24px] p-6 sm:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.25)]">
-              <h2 className="font-extrabold text-lg text-navy-800 mb-1">Get Your Free MBBS Decision Map</h2>
-              <p className="text-[0.7rem] text-warm-400 mb-4">
-                Takes less than 30 seconds. New Lyf will contact you on WhatsApp.
+              <h2 className="font-extrabold text-xl text-navy-800 mb-1">Get Your Free Roadmap</h2>
+              <p className="text-sm text-warm-500 mb-5 leading-relaxed">
+                Personalised Fee + Country Fit Analysis — free, no commitment. Our counsellor calls within 24 hours.
               </p>
-              <LeadForm source="hero" />
+              <RoadmapForm source="hero" />
             </div>
           </div>
         </div>
@@ -1105,16 +1088,15 @@ export default function DecisionMapLandingPage() {
             🔒 No pressure. No rushed admission push. Just clarity before you decide. New Lyf will contact you on WhatsApp.
           </p>
 
-          {/* Compact CTA form in footer */}
-          <div
-            className="mt-10 rounded-[24px] p-6 sm:p-8"
-            style={{ background: "rgba(255,255,255,0.08)" }}
-          >
-            <h3 className="text-base font-extrabold text-white mb-1 text-center">
-              Drop your details — we will reach you on WhatsApp
+          {/* End-of-page Roadmap Form on white card */}
+          <div className="mt-10 bg-white rounded-[24px] p-6 sm:p-8 shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
+            <h3 className="font-extrabold text-xl text-navy-800 mb-1">
+              Get Your Free Roadmap
             </h3>
-            <p className="text-[0.7rem] text-blue-300 mb-5 text-center">Takes 30 seconds. No commitment.</p>
-            <LeadForm source="footer" compact={true} />
+            <p className="text-sm text-warm-500 mb-5 leading-relaxed">
+              Personalised Fee + Country Fit Analysis — free, no commitment. Our counsellor calls within 24 hours.
+            </p>
+            <RoadmapForm source="footer" />
           </div>
         </div>
       </section>
