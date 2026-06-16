@@ -131,6 +131,7 @@ function RoadmapForm({ source }: RoadmapFormProps) {
     const digits = form.phone.replace(/\D/g, "");
     if (!digits || digits.length !== 10) e.phone = "Valid 10-digit WhatsApp number required";
     if (!form.neetStatus) e.neetStatus = "Please select your NEET year";
+    if (!form.city.trim()) e.city = "City is required";
     return e;
   };
 
@@ -225,23 +226,26 @@ function RoadmapForm({ source }: RoadmapFormProps) {
           className={`${iCls} ${!form.neetStatus ? "text-gray-400" : "text-navy-800"}`}
         >
           <option value="" disabled>NEET Qualified Year *</option>
-          <option value="2024">NEET 2024</option>
-          <option value="2025">NEET 2025</option>
-          <option value="2026-appearing">2026 Appearing</option>
-          <option value="score-uncertain">Score Uncertain</option>
-          <option value="need-guidance">Need Guidance</option>
+          <option value="NEET 2024">NEET 2024</option>
+          <option value="NEET 2025">NEET 2025</option>
+          <option value="2026 Appearing">2026 Appearing</option>
+          <option value="Score Uncertain">Score Uncertain</option>
+          <option value="Need Guidance">Need Guidance</option>
         </select>
         {errors.neetStatus && <p className={eCls}>{errors.neetStatus}</p>}
       </div>
 
       {/* City */}
-      <input
-        name="city"
-        placeholder="Your City"
-        value={form.city}
-        onChange={onChange}
-        className={iCls}
-      />
+      <div>
+        <input
+          name="city"
+          placeholder="Your City *"
+          value={form.city}
+          onChange={onChange}
+          className={iCls}
+        />
+        {errors.city && <p className={eCls}>{errors.city}</p>}
+      </div>
 
       {/* Preferred Country */}
       <select
@@ -251,15 +255,15 @@ function RoadmapForm({ source }: RoadmapFormProps) {
         className={`${iCls} ${!form.countries ? "text-gray-400" : "text-navy-800"}`}
       >
         <option value="">Preferred Country (Optional)</option>
-        <option value="Russia">🇷🇺 Russia</option>
-        <option value="Georgia">🇬🇪 Georgia</option>
-        <option value="Uzbekistan">🇺🇿 Uzbekistan</option>
-        <option value="Kazakhstan">🇰🇿 Kazakhstan</option>
-        <option value="Vietnam">🇻🇳 Vietnam</option>
-        <option value="Bangladesh">🇧🇩 Bangladesh</option>
-        <option value="Malaysia">🇲🇾 Malaysia</option>
-        <option value="Bosnia">🇧🇦 Bosnia</option>
-        <option value="Not Sure">Not Sure — Help Me Decide</option>
+        <option value="RU Russia">🇷🇺 RU Russia</option>
+        <option value="GE Georgia">🇬🇪 GE Georgia</option>
+        <option value="UZ Uzbekistan">🇺🇿 UZ Uzbekistan</option>
+        <option value="KZ Kazakhstan">🇰🇿 KZ Kazakhstan</option>
+        <option value="VN Vietnam">🇻🇳 VN Vietnam</option>
+        <option value="BD Bangladesh">🇧🇩 BD Bangladesh</option>
+        <option value="MY Malaysia">🇲🇾 MY Malaysia</option>
+        <option value="BA Bosnia">🇧🇦 BA Bosnia</option>
+        <option value="Not Sure - Help Me Decide">Not Sure — Help Me Decide</option>
       </select>
 
       {/* Submit */}

@@ -3,19 +3,19 @@ import { google } from "googleapis";
 
 export const runtime = "nodejs";
 
-const SPREADSHEET_ID = "1bPwl-wbhKiYsoproJLpmLt8FYMCm1V49_Q3hQ7DQ6uA";
-const SHEET_NAME = "Sheet1";
+const SPREADSHEET_ID = "1exuXsUy2XQaxTUt-hUXOiw_RLXDPhrS0teb796XhM84";
+const SHEET_NAME = "Form responses 1";
 
 const HEADER_ROW = [
   "Timestamp",
+  "Full Name ",
+  "WhatsApp/Phone Number",
+  "NEET Qualified Year",
+  "Your City",
+  "Preferred Country (Optional)",
   "Source",
-  "Name",
-  "Phone",
-  "NEET Status",
   "State",
-  "City",
   "Email",
-  "Countries Interested",
   "Message",
 ];
 
@@ -80,16 +80,16 @@ export async function POST(request: NextRequest) {
     }
 
     const row = [
-      payload.timestamp ?? new Date().toISOString(),
-      String(payload.source ?? "").trim(),
-      name,
-      phone,
-      String(payload.neetStatus ?? "").trim(),
-      String(payload.state ?? "").trim(),
-      String(payload.city ?? "").trim(),
-      String(payload.email ?? "").trim(),
-      String(payload.countries ?? "").trim(),
-      String(payload.message ?? "").trim(),
+      payload.timestamp ?? new Date().toISOString(), // Column A
+      name,                                          // Column B (Full Name )
+      phone,                                         // Column C (WhatsApp/Phone Number)
+      String(payload.neetStatus ?? "").trim(),       // Column D (NEET Qualified Year)
+      String(payload.city ?? "").trim(),            // Column E (Your City)
+      String(payload.countries ?? "").trim(),        // Column F (Preferred Country (Optional))
+      String(payload.source ?? "").trim(),           // Column G (Source)
+      String(payload.state ?? "").trim(),            // Column H (State)
+      String(payload.email ?? "").trim(),            // Column I (Email)
+      String(payload.message ?? "").trim(),          // Column J (Message)
     ];
 
     try {
