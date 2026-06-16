@@ -67,23 +67,23 @@ const FAQS = [
 
 const TESTIMONIALS = [
   {
-    img: "/testimonial_riya.jpg",
-    name: "Riya Patel",
+    img: "/pearl.jpg",
+    name: "Pearl",
     text: "New Lyf's counselling changed everything for our family. We were confused between 4 countries and about to make a rushed decision. Their calm roadmap session showed us exactly why Georgia was the right fit for my NEET score, budget and comfort.",
   },
   {
-    img: "/testimonial_arjun.jpg",
-    name: "Arjun Verma",
+    img: "/neil_issac.jpg",
+    name: "Neil Issac",
     text: "I was about to delay my MBBS by a year because I didn't understand the timeline. New Lyf mapped every document, every deadline, and guided my parents through the full process. I reached Russia before the intake closed.",
   },
   {
-    img: "/testimonial_priya.png",
-    name: "Priya & Family",
+    img: "/shefali_gautam.png",
+    name: "Shefali Gautam",
     text: "As parents, we were scared about safety and unknown costs. New Lyf spent time understanding our concerns, showed us real hostels, real student experiences, and gave us a complete 6-year budget. We chose confidently, not fearfully.",
   },
   {
-    img: "/testimonial_rahul.jpg",
-    name: "Rahul Singh",
+    img: "/patil_vedant.jpg",
+    name: "Patil Vedant",
     text: "Three different agents gave me three different advice. New Lyf was the only one who didn't push me toward any country. They helped me compare and understand. That honest approach is why I trusted them with my MBBS journey.",
   },
 ];
