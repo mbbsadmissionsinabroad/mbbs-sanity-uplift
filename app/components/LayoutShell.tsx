@@ -11,7 +11,8 @@ export default function LayoutShell({ children }: { children: ReactNode }) {
   const isStudioRoute = pathname === "/studio" || pathname.startsWith("/studio/");
   const isStandaloneLandingRoute =
     pathname === "/neet-mbbs-abroad-webinar" ||
-    pathname === "/mbbs-abroad-3-5-lakh-starting";
+    pathname === "/mbbs-abroad-3-5-lakh-starting" ||
+    pathname === "/free-mbbs-decision-roadmap";
 
   if (isStudioRoute) {
     return <>{children}</>;
