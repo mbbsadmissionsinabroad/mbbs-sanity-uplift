@@ -67,35 +67,23 @@ const FAQS = [
 
 const TESTIMONIALS = [
   {
-    img: "/student_georgia.png",
+    img: "/testimonial_riya.jpg",
     name: "Riya Patel",
-    city: "Surat",
-    tag: "NEET 2024",
-    result: "Now in Georgia",
     text: "New Lyf's counselling changed everything for our family. We were confused between 4 countries and about to make a rushed decision. Their calm roadmap session showed us exactly why Georgia was the right fit for my NEET score, budget and comfort.",
   },
   {
-    img: "/student_russia.png",
+    img: "/testimonial_arjun.jpg",
     name: "Arjun Verma",
-    city: "Lucknow",
-    tag: "NEET 2025",
-    result: "Now in Russia",
     text: "I was about to delay my MBBS by a year because I didn't understand the timeline. New Lyf mapped every document, every deadline, and guided my parents through the full process. I reached Russia before the intake closed.",
   },
   {
-    img: "/student_kazakhstan.png",
+    img: "/testimonial_priya.png",
     name: "Priya & Family",
-    city: "Bangalore",
-    tag: "Parents",
-    result: "Daughter in Kazakhstan",
     text: "As parents, we were scared about safety and unknown costs. New Lyf spent time understanding our concerns, showed us real hostels, real student experiences, and gave us a complete 6-year budget. We chose confidently, not fearfully.",
   },
   {
-    img: "/student_russia.png",
+    img: "/testimonial_rahul.jpg",
     name: "Rahul Singh",
-    city: "Patna",
-    tag: "NEET 2024",
-    result: "Now in Bangladesh",
     text: "Three different agents gave me three different advice. New Lyf was the only one who didn't push me toward any country. They helped me compare and understand. That honest approach is why I trusted them with my MBBS journey.",
   },
 ];
@@ -956,17 +944,9 @@ export default function DecisionMapLandingPage() {
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-14 h-14 rounded-full object-cover object-center border-2 border-blue-100 flex-shrink-0"
+                    className="w-14 h-14 rounded-full object-cover object-top border-2 border-blue-100 flex-shrink-0"
                   />
-                  <div>
-                    <p className="font-extrabold text-sm text-navy-800 m-0">{t.name}</p>
-                    <p className="text-[0.7rem] text-warm-500 mt-0.5 m-0">
-                      {t.city} · {t.tag}
-                    </p>
-                  </div>
-                  <span className="ml-auto text-[0.65rem] font-bold px-2.5 py-1 rounded-full bg-green-50 text-green-700 whitespace-nowrap flex-shrink-0">
-                    {t.result}
-                  </span>
+                  <p className="font-extrabold text-sm text-navy-800 m-0">{t.name}</p>
                 </div>
                 <p className="text-saffron-500 text-sm mb-2">★★★★★</p>
                 <p className="text-[0.82rem] text-navy-800 leading-relaxed italic m-0">&quot;{t.text}&quot;</p>
