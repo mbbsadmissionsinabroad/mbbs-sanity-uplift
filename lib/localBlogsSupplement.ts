@@ -1563,6 +1563,203 @@ If you want a one-to-one roadmap after MBBS in India, [contact Newlyf Overseas](
       },
     ],
   },
+  {
+    slug: "which-exam-is-required-after-mbbs-in-abroad",
+    title: "Which Exam Is Required After MBBS in Abroad in 2026",
+    cardTitle: "Which Exam Is Required After MBBS in Abroad",
+    metaTitle: "Which exam is required after MBBS in abroad",
+    metaDescription:
+      "Wondering which exam is required after MBBS abroad? Compare the USMLE, PLAB, AMC, MCCQE, and FMGE routes. Learn about costs, eligibility, and 2026 updates.",
+    focusKeyword: "which exam is required after mbbs in abroad",
+    keywordSynonyms: [
+      "exam after mbbs abroad for indian students",
+      "fmge usmle plab amc mccqe after mbbs abroad",
+      "medical licensing exam after mbbs abroad",
+      "which licensing exam after studying mbbs abroad",
+      "2026 medical exam routes after mbbs abroad",
+    ],
+    bodySource: `When Indian students ask which exam is required after MBBS in abroad, they usually want to know something deeper. They want to figure out where to build their medical career and how much time and money it will take.
+
+This guide breaks down the country-wise medical licensing exams after MBBS abroad. We cover practice rights in India, the United States, the United Kingdom, Australia, Canada, the Gulf, and Germany. We also explain how Newlyf Overseas helps you pick the right pathway instead of just guessing.
+
+Before choosing your exam route, it helps to review the service pages for the most common MBBS destinations students come from: [MBBS in Russia](/mbbs-in-russia), [MBBS in Georgia](/mbbs-in-georgia), [MBBS in Germany](/mbbs-in-germany), [MBBS in Kazakhstan](/mbbs-in-kazakhstan), [MBBS in Uzbekistan](/mbbs-in-uzbekistan), [MBBS in Bosnia](/mbbs-in-bosnia), [MBBS in Malaysia](/mbbs-in-malaysia), [MBBS in Vietnam](/mbbs-in-vietnam), [MBBS in Kyrgyzstan](/mbbs-in-kyrgyzstan), [MBBS in Armenia](/mbbs-in-armenia), and [MBBS in Europe](/mbbs-in-europe).
+
+## India: FMGE and the Shift to NExT
+
+If you are wondering which exam is required after MBBS abroad to practise in India, the answer depends on your graduation year.
+
+Right now, the Foreign Medical Graduate Examination, or FMGE, is the active test. The National Board of Examinations in Medical Sciences has announced the next FMGE session for June 28, 2026.
+
+Eventually, the National Exit Test, or NExT, is expected to replace the FMGE. NExT is planned as a single licensing exam for both Indian and foreign medical graduates, but the full rollout is still deferred. If you are graduating soon, FMGE remains the practical focus.
+
+No matter which Indian licensing test applies, your foreign degree should still follow the National Medical Commission rules. That is why students often revisit pages such as [MBBS in Russia](/mbbs-in-russia), [MBBS in Georgia](/mbbs-in-georgia), [MBBS in Kazakhstan](/mbbs-in-kazakhstan), and [MBBS in Uzbekistan](/mbbs-in-uzbekistan) to check whether the original study route was structurally safe.
+
+## United States: The USMLE Route
+
+To train and work in the USA, you must pass the United States Medical Licensing Examination.
+
+- Step 1: basic science, now reported as pass or fail
+- Step 2 CK: clinical multiple-choice exam that strongly affects residency competitiveness
+- Step 3: tests independent clinical decision-making, usually taken during residency
+
+This path needs major financial planning. You also need ECFMG certification to confirm your degree pathway is valid. Students from [MBBS in Europe](/mbbs-in-europe), [MBBS in Germany](/mbbs-in-germany), or [MBBS in Bosnia](/mbbs-in-bosnia) often compare documentation details carefully before committing to the USMLE route.
+
+## United Kingdom: PLAB and UKMLA
+
+If you want to work in the UK National Health Service, you need General Medical Council registration.
+
+Historically, foreign graduates used the PLAB route. The UK is now transitioning to the UK Medical Licensing Assessment model. The written part tests acute care, applied knowledge, and patient safety. The practical part tests communication and clinical skill performance.
+
+You also need a strong English-language score through IELTS or OET.
+
+Students who completed [MBBS in Malaysia](/mbbs-in-malaysia), [MBBS in Vietnam](/mbbs-in-vietnam), or [MBBS in Kyrgyzstan](/mbbs-in-kyrgyzstan) often compare the UK route because of the English-medium transition advantage in some programmes, but the licensing standards still remain strict.
+
+## Australia and New Zealand: The AMC and NZREX
+
+Australia uses the standard AMC route for international graduates. First comes the computer-based multiple-choice exam. Then comes the clinical stage or workplace-based assessment. Passing these steps opens the door toward general registration.
+
+New Zealand uses the NZREX model and also expects very strong English proficiency.
+
+If you want one of the more balanced work-life pathways after medicine, AMC remains a popular route. Students from [MBBS in Armenia](/mbbs-in-armenia), [MBBS in Georgia](/mbbs-in-georgia), and [MBBS in Europe](/mbbs-in-europe) often look at Australia because of the long-term lifestyle appeal.
+
+## Canada: The MCCQE
+
+To practise in Canada, you generally move through the Medical Council of Canada pathway, including MCCQE Part 1.
+
+The exam itself is only one part of the problem. The bigger issue is residency access. Canada strongly favours domestic graduates, and international match rates remain very low.
+
+That is why students from [MBBS in Germany](/mbbs-in-germany), [MBBS in Bosnia](/mbbs-in-bosnia), and [MBBS in Europe](/mbbs-in-europe) should evaluate Canada with realism rather than just prestige in mind.
+
+## The Gulf Region: DHA, MOH, and More
+
+The Gulf countries use local licensing systems. Dubai uses DHA. Abu Dhabi uses DOH. Saudi Arabia uses the SMLE.
+
+These routes focus on safe practice, medicine fundamentals, and emergency handling. Regulators in the Gulf also pay close attention to clinical work gaps, and long breaks can hurt your chances.
+
+Students returning from [MBBS in Uzbekistan](/mbbs-in-uzbekistan), [MBBS in Kazakhstan](/mbbs-in-kazakhstan), [MBBS in Malaysia](/mbbs-in-malaysia), and [MBBS in Vietnam](/mbbs-in-vietnam) often explore Gulf exams because the transition timeline can look faster than US or UK specialty routes.
+
+## Germany: The Language Challenge
+
+Germany does not rely on a single English exam route the way the US or UK does. Instead, the biggest gate is language.
+
+You normally need B2 general German plus C1 medical German. Then you take the Fachsprachprufung for medical communication, and in many states you also face a clinical knowledge exam before full recognition.
+
+If you are debating between USMLE, PLAB, AMC, MCCQE, DHA, and the German route, remember that Germany requires sustained language commitment before hospital-level practice becomes realistic. Students who studied [MBBS in Germany](/mbbs-in-germany), [MBBS in Europe](/mbbs-in-europe), or [MBBS in Bosnia](/mbbs-in-bosnia) may already have a small structural advantage in understanding the European transition, but the language challenge remains decisive.
+
+## How to Decide Which Exam Is Right for You
+
+Pick your target lifestyle and healthcare system first. The exam comes second.
+
+- If you want high income and top-end medical research, the USMLE route is usually the natural first comparison
+- If you want a more balanced lifestyle with English-speaking patients, PLAB or AMC may fit better
+- If your immediate goal is practise in India, FMGE and the future NExT pathway matter most
+- If you want faster job entry and tax-free income, the Gulf routes may deserve attention
+
+Your original MBBS destination still matters because it shapes documentation, recognition, language pressure, and your academic comfort. That is why students keep returning to route pages such as [MBBS in Russia](/mbbs-in-russia), [MBBS in Georgia](/mbbs-in-georgia), [MBBS in Germany](/mbbs-in-germany), [MBBS in Kazakhstan](/mbbs-in-kazakhstan), [MBBS in Uzbekistan](/mbbs-in-uzbekistan), [MBBS in Bosnia](/mbbs-in-bosnia), [MBBS in Malaysia](/mbbs-in-malaysia), [MBBS in Vietnam](/mbbs-in-vietnam), [MBBS in Kyrgyzstan](/mbbs-in-kyrgyzstan), [MBBS in Armenia](/mbbs-in-armenia), and [MBBS in Europe](/mbbs-in-europe) before making a final licensing decision.
+
+It is always smart to have a backup plan. If one pathway slows down, another may become more practical.
+
+## FAQs: Planning Your Licensing Exams
+
+### Can you help me decide which exam to take first?
+
+Yes. We review your budget, your long-term goal, and the country where you studied MBBS. Then we prioritise the order of exam decisions so you do not waste money.
+
+### Will you check if my foreign university makes me eligible for the USMLE or PLAB?
+
+Yes. We verify your university in the World Directory of Medical Schools and cross-check recognition requirements route by route.
+
+### Do you help plan for English or German language tests?
+
+Yes. We integrate IELTS, OET, or German requirements into the same timeline as the licensing exam plan.
+
+### What happens if I fail my first exam attempt?
+
+We treat the backup path as part of the original strategy. If one route stalls, we help reassess the next practical option.
+
+## Final Word
+
+If you are trying to decide which exam is required after MBBS in abroad, the right answer depends on where you want to live, where you want to practise, and how much time and money you can realistically commit.
+
+But the decision should never be separated from the country where you actually studied. That is why this blog is connected only to the service pages for [MBBS in Russia](/mbbs-in-russia), [MBBS in Georgia](/mbbs-in-georgia), [MBBS in Germany](/mbbs-in-germany), [MBBS in Kazakhstan](/mbbs-in-kazakhstan), [MBBS in Uzbekistan](/mbbs-in-uzbekistan), [MBBS in Bosnia](/mbbs-in-bosnia), [MBBS in Malaysia](/mbbs-in-malaysia), [MBBS in Vietnam](/mbbs-in-vietnam), [MBBS in Kyrgyzstan](/mbbs-in-kyrgyzstan), [MBBS in Armenia](/mbbs-in-armenia), and [MBBS in Europe](/mbbs-in-europe).`,
+    faq: [
+      {
+        question: "Can you help me decide which exam to take first?",
+        answerLines: [
+          "Yes. We review your budget, long-term goal, and the country where you completed MBBS, then help prioritise the exam route in the right order.",
+        ],
+      },
+      {
+        question:
+          "Will you check if my foreign university makes me eligible for the USMLE or PLAB?",
+        answerLines: [
+          "Yes. We verify your university status in WDOMS and cross-check the recognition requirements that affect each route.",
+        ],
+      },
+      {
+        question: "Do you help plan for English or German language tests?",
+        answerLines: [
+          "Yes. We place IELTS, OET, and German-language milestones directly inside the same preparation timeline as your licensing exams.",
+        ],
+      },
+      {
+        question: "What happens if I fail my first exam attempt?",
+        answerLines: [
+          "We treat the backup path as part of the original strategy so you can reassess the next practical exam route without starting from zero.",
+        ],
+      },
+    ],
+    format: "markdown",
+    blogCategory: "Medical PG Abroad",
+    bannerImageUrl: "/which-exam-is-required-after-mbbs-in-abroad.png",
+    publishedAt: "2026-06-17T01:00:00.000Z",
+    relatedLinks: [
+      {
+        href: "/mbbs-in-russia",
+        label: "MBBS in Russia",
+      },
+      {
+        href: "/mbbs-in-georgia",
+        label: "MBBS in Georgia",
+      },
+      {
+        href: "/mbbs-in-germany",
+        label: "MBBS in Germany",
+      },
+      {
+        href: "/mbbs-in-kazakhstan",
+        label: "MBBS in Kazakhstan",
+      },
+      {
+        href: "/mbbs-in-uzbekistan",
+        label: "MBBS in Uzbekistan",
+      },
+      {
+        href: "/mbbs-in-bosnia",
+        label: "MBBS in Bosnia",
+      },
+      {
+        href: "/mbbs-in-malaysia",
+        label: "MBBS in Malaysia",
+      },
+      {
+        href: "/mbbs-in-vietnam",
+        label: "MBBS in Vietnam",
+      },
+      {
+        href: "/mbbs-in-kyrgyzstan",
+        label: "MBBS in Kyrgyzstan",
+      },
+      {
+        href: "/mbbs-in-armenia",
+        label: "MBBS in Armenia",
+      },
+      {
+        href: "/mbbs-in-europe",
+        label: "MBBS in Europe",
+      },
+    ],
+  },
 ];
 
 export default localBlogsSupplement;
