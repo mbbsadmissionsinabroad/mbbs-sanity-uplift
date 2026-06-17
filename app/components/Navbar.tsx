@@ -22,31 +22,36 @@ const socialLinks = [
     title: "Instagram",
     href: "https://www.instagram.com/mbbsadmissionsinabroad/",
     icon: FaInstagram,
-    color: "#E1306C",
+    wrapperClass: "bg-gradient-to-tr from-[#f58529] via-[#dd2a7b] to-[#8134af] text-white rounded-[7px]",
+    iconClass: "h-4 w-4",
   },
   {
     title: "X",
     href: "https://x.com/_mbbsabroad",
     icon: FaXTwitter,
-    color: "#000000",
+    wrapperClass: "bg-black text-white rounded-[7px]",
+    iconClass: "h-3.5 w-3.5",
   },
   {
     title: "Facebook",
     href: "https://www.facebook.com/mbbsadmissionsinabroad",
     icon: FaFacebookF,
-    color: "#1877F2",
+    wrapperClass: "bg-[#1877F2] text-white rounded-full",
+    iconClass: "h-4 w-4 translate-y-[0.5px] translate-x-[0.2px]",
   },
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/new-lyf/",
     icon: FaLinkedinIn,
-    color: "#0077B5",
+    wrapperClass: "bg-[#0077B5] text-white rounded-[4px]",
+    iconClass: "h-3.5 w-3.5",
   },
   {
     title: "YouTube",
     href: "https://www.youtube.com/@mbbsadmissionsinabroad",
     icon: FaYoutube,
-    color: "#FF0000",
+    wrapperClass: "bg-[#FF0000] text-white rounded-[6px]",
+    iconClass: "h-4 w-4",
   },
 ];
 
@@ -343,10 +348,9 @@ export default function Navbar() {
                           className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
                         >
                           <span 
-                            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 shadow-inner"
-                            style={{ color: social.color }}
+                            className={`inline-flex h-8 w-8 items-center justify-center shadow-inner ${social.wrapperClass}`}
                           >
-                            <Icon className="h-4 w-4" />
+                            <Icon className={social.iconClass} />
                           </span>
                           {social.title}
                         </a>
@@ -391,10 +395,9 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer external"
                       aria-label={social.title}
-                      className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm transition hover:scale-110 active:scale-95"
-                      style={{ color: social.color }}
+                      className={`inline-flex h-7 w-7 items-center justify-center shadow-sm transition hover:scale-115 active:scale-95 ${social.wrapperClass}`}
                     >
-                      <Icon className="h-4 w-4" />
+                      <Icon className={social.iconClass} />
                       <span className="sr-only">{social.title}</span>
                     </a>
                   );
