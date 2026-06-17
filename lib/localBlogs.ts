@@ -97,6 +97,25 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
+function sanitizeHref(value: string) {
+  const href = normalizeWhitespace(value);
+  if (!href) {
+    return "#";
+  }
+
+  if (
+    href.startsWith("/") ||
+    href.startsWith("https://") ||
+    href.startsWith("http://") ||
+    href.startsWith("mailto:") ||
+    href.startsWith("tel:")
+  ) {
+    return href;
+  }
+
+  return "#";
+}
+
 function normalizeWhitespace(value: string) {
   return value.replace(/\s+/g, " ").trim();
 }
@@ -221,6 +240,33 @@ function joinWrappedLines(lines: string[]) {
   return normalizeWhitespace(output);
 }
 
+function renderInlineHtml(text: string) {
+  const linkPattern = /\[([^\]]+)\]\(([^)\s]+)\)/g;
+  let html = "";
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    const [fullMatch, label, rawHref] = match;
+    const start = match.index;
+    const safeHref = escapeHtml(sanitizeHref(rawHref));
+    const safeLabel = escapeHtml(label);
+    const isExternal = /^https?:\/\//.test(rawHref);
+
+    html += escapeHtml(text.slice(lastIndex, start));
+    html += `<a href="${safeHref}" class="font-medium text-blue-700 underline underline-offset-4 hover:text-blue-800"`;
+    if (isExternal) {
+      html += ` target="_blank" rel="noopener noreferrer"`;
+    }
+    html += `>${safeLabel}</a>`;
+
+    lastIndex = start + fullMatch.length;
+  }
+
+  html += escapeHtml(text.slice(lastIndex));
+  return html;
+}
+
 function parsePlainContent(source: string) {
   const lines = source.split(/\r?\n/);
   const blocks: PortableTextBlock[] = [];
@@ -338,7 +384,7 @@ function renderHeadingHtml(text: string, level: "h2" | "h3") {
 }
 
 function renderParagraphHtml(text: string) {
-  return `<p class="text-gray-800 leading-relaxed">${escapeHtml(text)}</p>`;
+  return `<p class="text-gray-800 leading-relaxed">${renderInlineHtml(text)}</p>`;
 }
 
 function renderBulletListHtml(items: string[]) {
@@ -346,7 +392,7 @@ function renderBulletListHtml(items: string[]) {
     .filter(Boolean)
     .map(
       (item) =>
-        `<li class="pb-2 list-disc">${escapeHtml(item)}</li>`
+        `<li class="pb-2 list-disc">${renderInlineHtml(item)}</li>`
     )
     .join("");
 
@@ -367,7 +413,7 @@ function renderTableHtml(lines: string[]) {
   const headerHtml = headerRow
     .map(
       (cell) =>
-        `<th class="border border-slate-200 bg-slate-100 px-3 py-2 text-left text-sm font-semibold text-slate-900">${escapeHtml(cell)}</th>`
+        `<th class="border border-slate-200 bg-slate-100 px-3 py-2 text-left text-sm font-semibold text-slate-900">${renderInlineHtml(cell)}</th>`
     )
     .join("");
   const bodyHtml = bodyRows
@@ -375,7 +421,7 @@ function renderTableHtml(lines: string[]) {
       const cells = row
         .map(
           (cell) =>
-            `<td class="border border-slate-200 px-3 py-2 align-top text-sm text-slate-700">${escapeHtml(cell)}</td>`
+            `<td class="border border-slate-200 px-3 py-2 align-top text-sm text-slate-700">${renderInlineHtml(cell)}</td>`
         )
         .join("");
       return `<tr>${cells}</tr>`;
@@ -513,7 +559,7 @@ function renderFaqAnswerHtml(lines: string[], format: RawLocalBlog["format"]) {
     return lines
       .map((line) => normalizeWhitespace(line))
       .filter(Boolean)
-      .map((line) => `<p>${escapeHtml(line)}</p>`)
+      .map((line) => `<p>${renderInlineHtml(line)}</p>`)
       .join("");
   }
 
@@ -537,7 +583,7 @@ function renderFaqAnswerHtml(lines: string[], format: RawLocalBlog["format"]) {
 
     if (isBullet(line)) {
       flushParagraph();
-      parts.push(`<ul><li>${escapeHtml(line.slice(2).trim())}</li></ul>`);
+      parts.push(`<ul><li>${renderInlineHtml(line.slice(2).trim())}</li></ul>`);
       continue;
     }
 
