@@ -1313,6 +1313,256 @@ The safest path is the one built on verified eligibility, compliant universities
       },
     ],
   },
+  {
+    slug: "after-completing-mbbs-in-india-how-to-go-abroad",
+    title: "After Completing MBBS in India, How to Go Abroad in 2026",
+    cardTitle: "After Completing MBBS in India: How to Go Abroad",
+    metaTitle: "After completing MBBS in India how to go abroad",
+    metaDescription:
+      "Completed your MBBS in India? Learn how to go abroad step by step. Compare the USMLE, PLAB, AMC, and German routes, along with true costs and backup plans.",
+    focusKeyword: "after completing mbbs in india how to go abroad",
+    keywordSynonyms: [
+      "how to go abroad after mbbs in india",
+      "usmle plab amc germany after mbbs",
+      "pg abroad for indian doctors after mbbs",
+      "medical residency abroad after mbbs india",
+      "doctor career abroad after mbbs india",
+    ],
+    bodySource: `If you just finished your MBBS in India, your next question is probably how to go abroad. You might want better medical training, higher pay, or a different lifestyle.
+
+Pathways like the USMLE in the United States, the PLAB or UKMLA in the UK, the AMC in Australia, and the Approbation in Germany offer excellent opportunities. But these routes are expensive and hard to navigate. A poor plan can cost you years of time and lakhs of rupees.
+
+This guide breaks down each major pathway. It also explains how Newlyf Overseas helps you plan your exams, manage your costs, and secure your first job abroad.
+
+If you are still comparing the overall roadmap first, start with our [PG abroad for Indian doctors](/pg-in-abroad) page before choosing a licensing route.
+
+## Step 1 - Decide Your Goal First
+
+Do not pick a country until you know exactly what kind of career you want. You basically have three choices:
+
+- Full clinical practice abroad: You want to complete your medical residency and work in another country long term
+- Train abroad and return: You want to finish your post-graduation training overseas and bring your advanced skills back to India
+- Non-clinical careers: You want to leave hospital wards for roles in public health, pharmaceuticals, or health technology
+
+Each goal requires a different path. If you want a structured medical residency, you need to pass exams like the USMLE or the PLAB. If you want a non-clinical career, a Master's route can often be faster and lighter financially than a residency path.
+
+How Newlyf Overseas helps: We sit down with you to set clear goals. We look at whether you want a US residency, a UK NHS job, or a master's-led career route, and we filter out the routes that do not fit your vision.
+
+## Step 2 - Choose Your Target Country
+
+Every country has its own licensing system. Trying to prepare for three different countries at once usually leads to confusion and wasted money.
+
+### The United States: USMLE
+
+The path: You clear USMLE Step 1 and Step 2 CK, gain ECFMG certification, and then apply for residency through the Match.
+
+The good: This route offers elite training and some of the strongest long-term salary upside in the world.
+
+The bad: It is highly competitive and usually one of the most expensive doctor-migration paths. Because there is no dedicated USMLE service page on this site yet, the closest planning page for this route is our broader [PG abroad for Indian doctors](/pg-in-abroad) guide.
+
+### The United Kingdom: PLAB and UKMLA
+
+The path: The UK is shifting from the old PLAB naming to the UKMLA structure for new entrants. Passing the UKMLA route leads to GMC registration and access to NHS jobs.
+
+The good: It usually costs much less upfront than the US path, and many doctors can move into a paid junior role faster.
+
+The bad: Competition for specialty training is tightening, and English testing remains a serious requirement.
+
+For this route, the exact internal page to review is our [UKMLA guide for Indian doctors](/united-kingdom-medical-licensing-assessment-ukmla).
+
+### Australia and New Zealand: AMC and NZREX
+
+The path for Australia: You clear the AMC MCQ and the later clinical or supervised-practice stages before settling into the system.
+
+The good: Work-life balance and permanent-residency prospects can be attractive.
+
+The bad: Urban jobs are competitive and many international doctors begin in regional settings. Since there is no dedicated AMC service page yet, the most suitable internal planning page for this route is again [PG abroad for Indian doctors](/pg-in-abroad).
+
+### Germany: Approbation
+
+The path: You build B2 general German plus C1 medical German, complete the language and recognition process, and work toward Approbation.
+
+The good: Germany offers a paid doctor-employment model during specialist training rather than a tuition-driven residency structure.
+
+The bad: The language barrier is heavy, and bureaucracy can delay your first paycheck.
+
+The exact internal page for this pathway is our [medical PG in Germany](/medical-pg-in-germany) service page.
+
+### The Middle East and Canada
+
+The UAE and Gulf: Licensing routes such as DHA or related exams can lead to tax-free salaries, but many employers expect a clean recent clinical-work record with no major gaps.
+
+Canada: The MCC pathway exists, but the match is difficult for international medical graduates and heavily favours domestic graduates.
+
+How Newlyf Overseas helps: We compare these pathways against your budget, timeline, licensing tolerance, and PR goal. Then we help you choose one primary route and one realistic backup.
+
+## Step 3 - Learn the Exam and Language Requirements
+
+Foreign medical exams do not just test textbook knowledge. They test how well you can fit into that country's medical system, documentation style, ethics, and communication expectations.
+
+Language tests are equally important.
+
+### English Tests
+
+If you want the UK, Australia, or New Zealand routes, you will almost certainly need IELTS or OET. These scores affect both licensing and visa progress.
+
+If the UK is your first-choice path, use the [UKMLA guide for Indian doctors](/united-kingdom-medical-licensing-assessment-ukmla) alongside your language timeline.
+
+### German Tests
+
+If you choose Germany, you cannot treat language as a side task. Failing to reach strong medical German is one of the biggest reasons doctors get stuck.
+
+Use our [medical PG in Germany](/medical-pg-in-germany) page together with the broader [medical PG in Europe for Indian students](/medical-pg-in-europe-for-indian-students) guide if Germany is one of your main options.
+
+How Newlyf Overseas helps: We build a practical schedule for your language exams, licensing exams, application deadlines, and study resources.
+
+## Step 4 - Plan Your Timeline
+
+Your preparation strategy changes depending on whether you are still in MBBS or have already graduated.
+
+### For Current MBBS Students
+
+The best strategy is usually to start early. During third year, build theory for your target route. During final year or internship, attempt your first serious exam stage and try for clinical exposure abroad where possible.
+
+### For Medical Graduates
+
+If you have already finished internship, expect a realistic timeline of roughly two to four years before securing a stable overseas role in many pathways.
+
+Do not sit at home for years studying full time unless you have a very specific reason. Working as a junior resident or medical officer in India while preparing can help you fund the process and protect your clinical continuity.
+
+If you are comparing timelines across multiple destinations, our [PG abroad for Indian doctors](/pg-in-abroad) page and [medical PG in Europe for Indian students](/medical-pg-in-europe-for-indian-students) page give a better big-picture comparison.
+
+How Newlyf Overseas helps: We map the entire timeline around work, exam booking, visa stages, and attachment planning so you do not lose momentum.
+
+## Step 5 - Calculate the True Costs
+
+Going abroad after MBBS is a serious financial project.
+
+- USMLE route: often around Rs 12 lakh to Rs 30 lakh once you add exams, question banks, rotations, flights, and interviews
+- UKMLA route: often around Rs 2 lakh to Rs 4 lakh before final relocation
+- AMC route: often around Rs 8 lakh to Rs 12 lakh including exams and early setup
+- Germany route: lower exam fees, but significant upfront cost for language training and blocked-account-style financial planning
+
+You also need to count the salary you give up if you stop working in India for too long.
+
+For cost planning across PG destinations, the strongest internal pages here are [PG abroad for Indian doctors](/pg-in-abroad), [medical PG in Germany](/medical-pg-in-germany), and [medical PG in Europe for Indian students](/medical-pg-in-europe-for-indian-students).
+
+How Newlyf Overseas helps: We create a transparent budget based on your exact route and guide you toward realistic education-loan planning where needed.
+
+## Step 6 - Build a Strong International Resume
+
+High scores alone are often not enough.
+
+### For the US
+
+US Clinical Experience and strong letters can influence match outcomes heavily. Without a dedicated USMLE page on the site yet, the nearest suitable internal planning page remains [PG abroad for Indian doctors](/pg-in-abroad).
+
+### For the UK
+
+NHS attachments or taster experiences help demonstrate fit with British systems and hospital culture. Use the [UKMLA guide for Indian doctors](/united-kingdom-medical-licensing-assessment-ukmla) as your main internal reference.
+
+### For Germany
+
+Observerships help you build medical German confidence and local references before applying for full roles. The exact supporting service page is [medical PG in Germany](/medical-pg-in-germany).
+
+How Newlyf Overseas helps: We help you choose the right type of attachment or observership without letting it derail your exam preparation.
+
+## Step 7 - Create a Realistic Backup Plan
+
+A large number of international medical graduates do not get their first-choice result on the first attempt. That is why a backup plan is professional, not pessimistic.
+
+If one route slows down, you may need to pivot from the US toward the UK, or from a residency goal toward a non-clinical or master's pathway. For Europe-focused fallback options, review [medical PG in Europe for Indian students](/medical-pg-in-europe-for-indian-students). For general strategy, keep [PG abroad for Indian doctors](/pg-in-abroad) as your base page.
+
+How Newlyf Overseas helps: We discuss the backup pathway from day one, including how to pivot into non-clinical master's options or alternate doctor-migration routes if the first plan stalls.
+
+## FAQs: Planning Your Move Abroad
+
+### Can you help me choose between the US, the UK, Australia, and Germany?
+
+Yes. We review your academic record, your budget, and your timeline. Then we recommend one primary country and one safer backup so you do not waste money on the wrong exams.
+
+### Do you help working doctors or just fresh graduates?
+
+We work with both. If you are already working, we build study plans around your job and help you avoid the clinical gaps that create problems in several countries.
+
+### Can you help me secure clinical observerships?
+
+Yes. We guide you toward the right hospital exposure for your target route, including UK, Germany, and broader PG-abroad planning.
+
+### Will you help me figure out the budget and loans?
+
+Absolutely. We build detailed cost breakdowns for exams, travel, and living expenses and help you organise the paperwork banks usually want.
+
+### What happens if I fail my exams or do not match into a residency?
+
+We treat the backup plan as a core part of the strategy. If one route stalls, we help you pivot to another country or to non-clinical healthcare pathways.
+
+## Final Word
+
+By setting clear goals, managing your budget, and preparing a solid backup plan, you can turn your dream of going abroad into a realistic career move.
+
+If you want a one-to-one roadmap after MBBS in India, [contact Newlyf Overseas](/contact) after reviewing the linked PG pages above.`,
+    faq: [
+      {
+        question:
+          "Can you help me choose between the US, the UK, Australia, and Germany?",
+        answerLines: [
+          "Yes. We review your academic profile, budget, and timeline, then recommend one primary country and one realistic backup so you do not waste money on the wrong exam track.",
+        ],
+      },
+      {
+        question: "Do you help working doctors or just fresh graduates?",
+        answerLines: [
+          "We support both. If you are already working, we build a study plan around your job and help you avoid clinical gaps that can hurt overseas applications.",
+        ],
+      },
+      {
+        question: "Can you help me secure clinical observerships?",
+        answerLines: [
+          "Yes. We guide doctors toward the right observerships, attachments, and exposure opportunities based on the target country and licensing path.",
+        ],
+      },
+      {
+        question: "Will you help me figure out the budget and loans?",
+        answerLines: [
+          "Absolutely. We prepare route-specific cost breakdowns and help organise the documents commonly needed for education-loan or financial-planning decisions.",
+        ],
+      },
+      {
+        question:
+          "What happens if I fail my exams or do not match into a residency?",
+        answerLines: [
+          "We build a backup plan from the start so you can pivot to another country route or a non-clinical healthcare pathway instead of losing years in confusion.",
+        ],
+      },
+    ],
+    format: "markdown",
+    blogCategory: "Medical PG Abroad",
+    bannerImageUrl: "/after-completing-mbbs-in-india-how-to-go-abroad.jpg",
+    publishedAt: "2026-06-17T00:00:00.000Z",
+    relatedLinks: [
+      {
+        href: "/pg-in-abroad",
+        label: "Start with PG abroad planning",
+      },
+      {
+        href: "/united-kingdom-medical-licensing-assessment-ukmla",
+        label: "Read the UKMLA guide for Indian doctors",
+      },
+      {
+        href: "/medical-pg-in-germany",
+        label: "Explore medical PG in Germany",
+      },
+      {
+        href: "/medical-pg-in-europe-for-indian-students",
+        label: "Compare medical PG routes in Europe",
+      },
+      {
+        href: "/contact",
+        label: "Talk to Newlyf Overseas",
+      },
+    ],
+  },
 ];
 
 export default localBlogsSupplement;
