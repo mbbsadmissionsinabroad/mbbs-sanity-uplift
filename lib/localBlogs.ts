@@ -3,6 +3,166 @@ import localBlogsSupplement from "./localBlogsSupplement";
 
 const SITE_URL = "https://www.mbbsadmissionsinabroad.com";
 
+interface LinkTarget {
+  country: string;
+  href: string;
+  keywords: string[];
+}
+
+const LINK_TARGETS: LinkTarget[] = [
+  {
+    country: "Russia",
+    href: "/mbbs-in-russia",
+    keywords: ["Study MBBS in Russia", "MBBS admission in Russia", "MBBS in Russia", "Russia"],
+  },
+  {
+    country: "Georgia",
+    href: "/mbbs-in-georgia",
+    keywords: ["Study MBBS in Georgia", "MBBS admission in Georgia", "MBBS in Georgia", "Georgia"],
+  },
+  {
+    country: "Germany",
+    href: "/mbbs-admission-in-germany-for-indian-students",
+    keywords: ["Study MBBS in Germany", "MBBS admission in Germany", "MBBS in Germany", "Germany"],
+  },
+  {
+    country: "Kazakhstan",
+    href: "/mbbs-in-kazakhstan",
+    keywords: ["Study MBBS in Kazakhstan", "MBBS admission in Kazakhstan", "MBBS in Kazakhstan", "Kazakhstan"],
+  },
+  {
+    country: "Uzbekistan",
+    href: "/mbbs-in-uzbekistan",
+    keywords: ["Study MBBS in Uzbekistan", "MBBS admission in Uzbekistan", "MBBS in Uzbekistan", "Uzbekistan"],
+  },
+  {
+    country: "Bosnia",
+    href: "/mbbs-in-bosnia",
+    keywords: ["Study MBBS in Bosnia", "MBBS admission in Bosnia", "MBBS in Bosnia and Herzegovina", "MBBS in Bosnia", "Bosnia and Herzegovina", "Bosnia"],
+  },
+  {
+    country: "Malaysia",
+    href: "/mbbs-admission-in-malaysia-for-indian-students",
+    keywords: ["Study MBBS in Malaysia", "MBBS admission in Malaysia", "MBBS in Malaysia", "Malaysia"],
+  },
+  {
+    country: "Vietnam",
+    href: "/mbbs-in-vietnam",
+    keywords: ["Study MBBS in Vietnam", "MBBS admission in Vietnam", "MBBS in Vietnam", "Vietnam"],
+  },
+  {
+    country: "Kyrgyzstan",
+    href: "/mbbs-in-kyrgyzstan",
+    keywords: ["Study MBBS in Kyrgyzstan", "MBBS admission in Kyrgyzstan", "MBBS in Kyrgyzstan", "Kyrgyzstan"],
+  },
+  {
+    country: "Armenia",
+    href: "/mbbs-in-armenia",
+    keywords: ["Study MBBS in Armenia", "MBBS admission in Armenia", "MBBS in Armenia", "Armenia"],
+  },
+  {
+    country: "Europe",
+    href: "/mbbs-admission-in-europe-from-mci-approved-university",
+    keywords: ["Study MBBS in Europe", "MBBS admission in Europe", "MBBS in Europe", "Europe"],
+  },
+];
+
+interface CompiledKeyword {
+  keyword: string;
+  regex: RegExp;
+  target: LinkTarget;
+}
+
+const COMPILED_KEYWORDS: CompiledKeyword[] = [];
+for (const target of LINK_TARGETS) {
+  for (const keyword of target.keywords) {
+    const escaped = keyword.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+    const regex = new RegExp(`\\b${escaped}\\b`, "i");
+    COMPILED_KEYWORDS.push({
+      keyword,
+      regex,
+      target,
+    });
+  }
+}
+COMPILED_KEYWORDS.sort((a, b) => b.keyword.length - a.keyword.length);
+
+function injectInternalLinks(html: string): string {
+  const linkedCountries = new Set<string>();
+  const tokens = html.split(/(<[^>]+>)/g);
+  let inLink = 0;
+  let inSkipTag = 0;
+
+  for (let i = 0; i < tokens.length; i++) {
+    const token = tokens[i];
+    if (i % 2 === 1) {
+      // tag token
+      const lowerToken = token.toLowerCase();
+      if (lowerToken.startsWith("<a ") || lowerToken.startsWith("<a>")) {
+        inLink++;
+      } else if (lowerToken.startsWith("</a>")) {
+        inLink = Math.max(0, inLink - 1);
+      } else if (
+        lowerToken.startsWith("<h2") ||
+        lowerToken.startsWith("<h3") ||
+        lowerToken.startsWith("<th") ||
+        lowerToken.startsWith("<thead>")
+      ) {
+        inSkipTag++;
+      } else if (
+        lowerToken.startsWith("</h2>") ||
+        lowerToken.startsWith("</h3>") ||
+        lowerToken.startsWith("</th>") ||
+        lowerToken.startsWith("</thead>")
+      ) {
+        inSkipTag = Math.max(0, inSkipTag - 1);
+      }
+    } else {
+      // text token
+      if (inLink === 0 && inSkipTag === 0) {
+        let text = token;
+        let result = "";
+        let currentIndex = 0;
+        
+        while (currentIndex < text.length) {
+          let earliestMatchIndex = -1;
+          let selectedKeyword: CompiledKeyword | null = null;
+          
+          for (const kw of COMPILED_KEYWORDS) {
+            if (linkedCountries.has(kw.target.country)) {
+              continue;
+            }
+            
+            const slice = text.slice(currentIndex);
+            const match = kw.regex.exec(slice);
+            if (match) {
+              const matchIndex = currentIndex + match.index;
+              if (earliestMatchIndex === -1 || matchIndex < earliestMatchIndex) {
+                earliestMatchIndex = matchIndex;
+                selectedKeyword = kw;
+              }
+            }
+          }
+          
+          if (selectedKeyword && earliestMatchIndex !== -1) {
+            result += text.slice(currentIndex, earliestMatchIndex);
+            const matchedText = text.slice(earliestMatchIndex, earliestMatchIndex + selectedKeyword.keyword.length);
+            result += `<a href="${selectedKeyword.target.href}" class="font-medium text-blue-700 underline underline-offset-4 hover:text-blue-800">${matchedText}</a>`;
+            linkedCountries.add(selectedKeyword.target.country);
+            currentIndex = earliestMatchIndex + selectedKeyword.keyword.length;
+          } else {
+            result += text.slice(currentIndex);
+            break;
+          }
+        }
+        tokens[i] = result;
+      }
+    }
+  }
+
+  return tokens.join("");
+}
+
 type RawLocalBlog = {
   slug: string;
   title: string;
@@ -549,9 +709,10 @@ function renderMarkdownContentHtml(source: string) {
 }
 
 function renderBodyHtml(source: string, format: RawLocalBlog["format"]) {
-  return format === "plain"
+  const rawHtml = format === "plain"
     ? renderPlainContentHtml(source)
     : renderMarkdownContentHtml(source);
+  return injectInternalLinks(rawHtml);
 }
 
 function renderFaqAnswerHtml(lines: string[], format: RawLocalBlog["format"]) {
