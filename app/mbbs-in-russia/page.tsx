@@ -6,6 +6,9 @@ import {
   metaTitle,
   pageUrl,
   metaKeywords,
+  articleSchema,
+  faqSchema,
+  breadcrumbSchema,
 } from "../mbbs-admission-in-russia/pageData";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -19,5 +22,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function MbbsInRussiaPage() {
-  return <RussiaAdmissionContent />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <RussiaAdmissionContent />
+    </>
+  );
 }
+
