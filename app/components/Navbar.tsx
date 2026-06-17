@@ -22,26 +22,31 @@ const socialLinks = [
     title: "Instagram",
     href: "https://www.instagram.com/mbbsadmissionsinabroad/",
     icon: FaInstagram,
+    color: "#E1306C",
   },
   {
     title: "X",
     href: "https://x.com/_mbbsabroad",
     icon: FaXTwitter,
+    color: "#000000",
   },
   {
     title: "Facebook",
     href: "https://www.facebook.com/mbbsadmissionsinabroad",
     icon: FaFacebookF,
+    color: "#1877F2",
   },
   {
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/new-lyf/",
     icon: FaLinkedinIn,
+    color: "#0077B5",
   },
   {
     title: "YouTube",
     href: "https://www.youtube.com/@mbbsadmissionsinabroad",
     icon: FaYoutube,
+    color: "#FF0000",
   },
 ];
 
@@ -337,7 +342,10 @@ export default function Navbar() {
                           rel="noopener noreferrer external"
                           className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50"
                         >
-                          <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-700">
+                          <span 
+                            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 shadow-inner"
+                            style={{ color: social.color }}
+                          >
                             <Icon className="h-4 w-4" />
                           </span>
                           {social.title}
@@ -383,9 +391,10 @@ export default function Navbar() {
                       target="_blank"
                       rel="noopener noreferrer external"
                       aria-label={social.title}
-                      className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition hover:bg-white/20"
+                      className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white shadow-sm transition hover:scale-110 active:scale-95"
+                      style={{ color: social.color }}
                     >
-                      <Icon className="h-3.5 w-3.5" />
+                      <Icon className="h-4 w-4" />
                       <span className="sr-only">{social.title}</span>
                     </a>
                   );
