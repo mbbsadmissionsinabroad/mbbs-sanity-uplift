@@ -6,6 +6,7 @@ import ArmeniaLeadSection from "../mbbs-admission-in-armenia/ArmeniaLeadSection"
 import {
   advantages,
   articleSchema,
+  breadcrumbSchema,
   careerPathways,
   comparison,
   disadvantages,
@@ -149,6 +150,10 @@ export default function ArmeniaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <section className="relative overflow-hidden border-b border-emerald-100">

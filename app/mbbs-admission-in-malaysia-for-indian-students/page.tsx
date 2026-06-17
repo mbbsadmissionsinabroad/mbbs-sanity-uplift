@@ -13,6 +13,7 @@ import {
   eligibility,
   eligibilityNotes,
   faqs,
+  breadcrumbSchema,
   faqSchema,
   feeBreakdown,
   fmgeContext,
@@ -116,6 +117,7 @@ export default function MalaysiaPage() {
     <main className="bg-[linear-gradient(180deg,#eff6ff_0%,#fffaf5_30%,#ffffff_65%)] text-slate-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="relative overflow-hidden border-b border-blue-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.17),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(16,185,129,0.12),_transparent_30%),linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(255,255,255,0.86))]" />

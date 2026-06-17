@@ -13,6 +13,7 @@ import {
   eligibility,
   eligibilityNotes,
   faqs,
+  breadcrumbSchema,
   faqSchema,
   feeBreakdown,
   fmgeContext,
@@ -116,6 +117,7 @@ export default function BosniaPage() {
     <main className="bg-[linear-gradient(180deg,#f4fbff_0%,#fffaf3_28%,#ffffff_65%)] text-slate-900">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <section className="relative overflow-hidden border-b border-sky-100">
         <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.15),_transparent_35%),radial-gradient(circle_at_top_right,_rgba(245,158,11,0.15),_transparent_30%),linear-gradient(180deg,_rgba(255,255,255,0.96),_rgba(255,255,255,0.86))]" />

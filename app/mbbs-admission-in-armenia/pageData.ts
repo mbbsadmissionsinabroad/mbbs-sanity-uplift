@@ -246,3 +246,13 @@ export const articleSchema = {
   dateModified: "2026-03-25",
   mainEntityOfPage: pageUrl,
 };
+
+export const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: siteUrl },
+    { "@type": "ListItem", position: 2, name: "MBBS Abroad", item: `${siteUrl}/` },
+    { "@type": "ListItem", position: 3, name: "MBBS in Armenia", item: pageUrl },
+  ],
+};

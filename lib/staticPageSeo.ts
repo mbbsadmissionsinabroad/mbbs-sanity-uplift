@@ -52,12 +52,21 @@ export async function buildStaticPageMetadata({
       description,
       url: fallbackCanonical,
       siteName: "MBBS Admissions in Abroad",
+      images: [
+        {
+          url: "https://www.mbbsadmissionsinabroad.com/new-lyf-logo.webp",
+          alt: "New-Lyf Overseas Logo",
+        },
+      ],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [
+        "https://www.mbbsadmissionsinabroad.com/new-lyf-logo.webp",
+      ],
     },
   };
 }
