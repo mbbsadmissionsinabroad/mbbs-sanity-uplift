@@ -4498,6 +4498,289 @@ When families calculate tuition, hostel, living expenses, flights, insurance, vi
     publishedAt: "2026-06-19T10:45:00.000Z",
     relatedLinks: [],
   },
+  {
+    slug: "how-to-do-mbbs-in-russia",
+    title: "How to Do MBBS in Russia in 2026: Complete Step-by-Step Guide for Indian Students",
+    cardTitle: "How to Do MBBS in Russia",
+    metaTitle: "How to do MBBS in Russia Complete Step-by-Step Guide to Doing MBBS in Russia in 2026 for Indian Students",
+    metaDescription:
+      "Planning to do MBBS in Russia in 2026? Learn eligibility, NMC rules, admission, visa journey, real 6-year cost components, and the licensing roadmap for Indian students with NewLyf Overseas guidance.",
+    focusKeyword: "how to do mbbs in russia",
+    keywordSynonyms: [
+      "mbbs in russia admission process",
+      "how does one get admission in mbbs course in russia",
+      "top best mbbs in russia for indian students 2026",
+      "eligibility for mbbs in russia",
+      "steps to study mbbs in russia",
+    ],
+    bodySource: `# How to Do MBBS in Russia in 2026: Complete Step-by-Step Guide for Indian Students
+
+For many NEET-qualified Indian students, the Russian route remains one of the most practical ways to become a doctor without paying Rs. 60 lakh to Rs. 1 crore in an Indian private medical college. But the process can feel confusing when every consultant explains it differently, every university is called "NMC-approved", and the licensing pathway is rarely explained in plain English.
+
+This guide walks through eligibility, university selection, documents, admission, invitation letter, visa, finance, travel, arrival formalities, and the FMGE/NExT roadmap. For the destination overview behind this process, review [MBBS in Russia](/mbbs-in-russia).
+
+## Step 1: Check Your Eligibility
+
+Before shortlisting universities, confirm that you satisfy both university-level requirements and Indian regulatory requirements.
+
+Basic academic requirements:
+
+- Class 12 with Physics, Chemistry, Biology, and English.
+- General category: at least 50 percent aggregate in PCB.
+- Reserved categories: usually 40 to 45 percent in PCB, based on applicable norms.
+- Minimum age: 17 years on or before December 31 of the admission year.
+- Valid passport, ideally with 18 to 24 months of validity.
+
+NEET-UG qualification is mandatory if you want to return and practise in India. Some foreign universities may technically accept students without NEET, but Indian registration becomes a serious problem later. If there is even a small chance that you will practise in India, qualify NEET first.
+
+## Step 2: Understand NMC FMGL Rules
+
+The National Medical Commission's Foreign Medical Graduate Licentiate rules are not optional.
+
+Your program should meet these conditions:
+
+- At least 54 months of academic study.
+- A 12-month internship connected to the same foreign medical institution.
+- English-medium instruction as required for Indian eligibility.
+- WDOMS listing for the university.
+- Host-country licensing eligibility after completion.
+
+If a university fails any of these checks, the degree can become unusable for Indian medical registration. This is why compliance screening should happen before fees, hostel photos, city preference, or agent promises.
+
+## Step 3: Shortlist the Right Universities
+
+Do not select a university only because it is the cheapest or because an agent is pushing it hard.
+
+Compare each option on:
+
+- WDOMS listing.
+- Course duration and internship structure.
+- English-medium documentation.
+- Total six-year cost.
+- City climate and living conditions.
+- Indian student support.
+- Clinical exposure and language expectations.
+- Historical FMGE performance where reliable data is available.
+
+Shortlist two to four universities rather than locking onto one name immediately. NewLyf Overseas helps families match NEET score, budget, climate preference, and career goals with compliant options.
+
+## Step 4: Gather Your Documents
+
+Once eligibility is clear, prepare documents early. Delays usually happen because students wait until the last moment for passport, apostille, or medical reports.
+
+Core documents:
+
+- Class 10 marksheet and certificate.
+- Class 12 marksheet and certificate.
+- NEET scorecard.
+- Valid passport.
+- Birth certificate.
+- Aadhaar card for Indian KYC and loan work.
+- Passport-size photographs with white background.
+
+Medical documents:
+
+- Medical fitness certificate.
+- HIV-negative report.
+- Other tests requested by the university or visa office.
+
+Several documents may later need MEA apostille, Russian translation, and notarisation. Start this process early because it can take two to three weeks.
+
+## Step 5: Apply and Get the Admission Letter
+
+After shortlisting, the formal application process begins.
+
+Typical application steps:
+
+- Fill the university application form.
+- Upload scanned academic and identity documents.
+- Submit passport and NEET details.
+- Pay only official application or registration charges if required.
+- Wait for document verification.
+
+If accepted, the university issues a provisional or conditional admission letter. This confirms your admission intent, but it is not the same as the official invitation letter required for the student visa.
+
+## Step 6: Receive the Official Invitation Letter
+
+The invitation letter is one of the most important documents in the process.
+
+It is usually issued through the relevant foreign authority via the university and is required for the student visa application.
+
+Typical timeline:
+
+- University submits student details after admission confirmation.
+- Processing can take around 15 to 30 days.
+- The student receives a soft copy, and sometimes a hard copy if required.
+
+Do not book flights or make large irreversible payments before the invitation and visa pathway are clear.
+
+## Step 7: Complete Apostille and Translation
+
+In parallel with invitation processing, complete document legalisation.
+
+This may include:
+
+- MEA apostille for academic and civil documents.
+- Russian translation of required documents.
+- Notarisation where needed.
+
+Students who delay this step often face last-minute visa or university registration problems. Treat document legalisation as part of the admission process, not a small formality.
+
+## Step 8: Apply for the Student Visa
+
+Once the invitation letter and required documents are ready, apply for the student visa.
+
+Typical visa file:
+
+- Valid passport.
+- Official invitation letter.
+- University admission letter.
+- Apostilled and translated academic documents.
+- HIV-negative certificate.
+- Completed visa form.
+- Passport-size photographs.
+
+Visa processing can take around 10 to 15 working days, though timing depends on the consulate and season. Large fee transfers and travel booking should happen only after the visa position is clear.
+
+## Step 9: Plan the Full Six-Year Budget
+
+Do not plan only for first-year tuition. A realistic six-year budget includes:
+
+- Tuition for all academic years.
+- Hostel or accommodation.
+- Food and daily living.
+- Medical insurance.
+- Visa extensions and local registration.
+- Flights home.
+- Winter clothing.
+- Books and online resources.
+- FMGE or NExT preparation.
+- Emergency buffer.
+
+For most Indian students, the total realistic range is often around Rs. 20 lakh to Rs. 45 lakh or more depending on university, city, lifestyle, travel frequency, and currency movement.
+
+Payment routes also need caution because banking channels can change. NewLyf Overseas tracks safer, university-confirmed payment methods so families do not send money through risky or unclear channels.
+
+## Step 10: Travel and Complete Arrival Formalities
+
+After visa approval and payment instructions, students usually travel for the September or October intake.
+
+Travel points:
+
+- Flights often route through Dubai, Istanbul, or Central Asian hubs.
+- One-way tickets can range around Rs. 35,000 to Rs. 60,000 depending on route and booking time.
+- Group travel can make the first journey easier for new students.
+
+After arrival, students must complete:
+
+- Migration registration, usually within the required legal window.
+- Hostel allocation and contract signing.
+- Local medical check-up.
+- Biometric or fingerprint formalities if required.
+- Local bank account setup.
+- University enrolment and orientation.
+
+Students should also register with the Indian embassy or consulate for emergency support and official communication.
+
+## Step 11: Start Classes With a Licensing Plan
+
+The goal is not only to start the course. The goal is to finish with a valid path to medical registration.
+
+From year one, students should:
+
+- Attend Russian language classes seriously.
+- Build discipline around regular study.
+- Use Indian standard textbooks alongside university notes.
+- Begin FMGE or NExT awareness early.
+- Join structured exam preparation by year two or three.
+- Use vacations for clinical revision and Indian disease-pattern learning.
+
+This is how the route becomes more than admission. It becomes a planned path toward practising medicine.
+
+## How NewLyf Overseas Helps
+
+NewLyf Overseas supports the process as a managed project rather than a one-time admission transaction.
+
+The team helps with:
+
+- NEET score and eligibility review.
+- WDOMS and NMC-alignment checks.
+- University shortlisting based on profile and budget.
+- Six-year financial planning.
+- Document checklist, apostille, and translation guidance.
+- Admission-letter and invitation-letter tracking.
+- Visa file preparation.
+- Safe payment-channel guidance.
+- Travel and arrival coordination.
+- Early FMGE or NExT planning.
+
+The aim is to reduce avoidable mistakes and make sure the route remains legally, financially, and academically sound.
+
+## Frequently Asked Questions
+
+### What NEET score is needed?
+
+Most universities do not require a very high NEET rank, but Indian students should at least qualify NEET. Some stronger universities may prefer better scores or limited seats.
+
+### How long does the full process take?
+
+If documents are ready, the process from application to travel can take about six to ten weeks. Delays usually happen due to passport issues, apostille delays, incomplete medical documents, or late invitation processing.
+
+### Can I go without NEET if I never return to India?
+
+Some universities may accept students without NEET, but skipping NEET is risky if there is any chance of practising in India later. Most families should avoid this risk.
+
+### What is the total cost?
+
+A realistic six-year budget often ranges from Rs. 20 lakh to Rs. 45 lakh or more, depending on the university, city, lifestyle, travel pattern, and exam-preparation plan.
+
+### Why use NewLyf Overseas instead of applying directly?
+
+Applying directly is possible, but families must independently handle compliance checks, WDOMS verification, apostille, invitation tracking, visa paperwork, payment-channel risk, travel coordination, and early licensing planning. NewLyf Overseas brings these steps into one structured process.
+
+## Final Word
+
+Doing this route properly means following a sequence: qualify NEET, check NMC rules, select a compliant university, prepare documents, secure admission and invitation, complete visa steps, plan the full budget, travel safely, and begin licensing preparation early.
+
+When handled carefully, the pathway can be affordable and practical. When handled casually, it can become expensive, stressful, and risky.`,
+    faq: [
+      {
+        question: "What NEET score is needed?",
+        answerLines: [
+          "Most universities do not require a very high NEET rank, but Indian students should at least qualify NEET. Some stronger universities may prefer better scores or limited seats.",
+        ],
+      },
+      {
+        question: "How long does the full process take?",
+        answerLines: [
+          "If documents are ready, the process from application to travel can take about six to ten weeks. Delays usually happen due to passport issues, apostille delays, incomplete medical documents, or late invitation processing.",
+        ],
+      },
+      {
+        question: "Can I go without NEET if I never return to India?",
+        answerLines: [
+          "Some universities may accept students without NEET, but skipping NEET is risky if there is any chance of practising in India later. Most families should avoid this risk.",
+        ],
+      },
+      {
+        question: "What is the total cost?",
+        answerLines: [
+          "A realistic six-year budget often ranges from Rs. 20 lakh to Rs. 45 lakh or more, depending on the university, city, lifestyle, travel pattern, and exam-preparation plan.",
+        ],
+      },
+      {
+        question: "Why use NewLyf Overseas instead of applying directly?",
+        answerLines: [
+          "Applying directly is possible, but families must independently handle compliance checks, WDOMS verification, apostille, invitation tracking, visa paperwork, payment-channel risk, travel coordination, and early licensing planning.",
+        ],
+      },
+    ],
+    format: "markdown",
+    blogCategory: "MBBS in Russia",
+    bannerImageUrl: "/how-to-do-mbbs-in-russia.jpg",
+    publishedAt: "2026-06-19T11:00:00.000Z",
+    relatedLinks: [],
+  },
 ];
 
 export default localBlogsSupplement;
