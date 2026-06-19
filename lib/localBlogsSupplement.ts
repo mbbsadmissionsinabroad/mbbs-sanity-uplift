@@ -2853,7 +2853,7 @@ Students generally apply for the Russian student visa through the Russian Embass
 
 ### Step 6 - September to October: Travel and University Start
 
-Only book travel after the visa is approved. Once you reach Russia, local registration must be completed quickly, because migration compliance is a serious legal requirement.
+Only book travel after the visa is approved. Once you reach the country, local registration must be completed quickly, because migration compliance is a serious legal requirement.
 
 ## Get Every Document Right - Checklist
 
@@ -2900,7 +2900,7 @@ Sechenov, Kazan Federal, RUDN, Bashkir State Medical University, Far Eastern Fed
 
 ## What "English Medium" Really Means
 
-This is one of the most misunderstood parts of Russia admissions.
+This is one of the most misunderstood parts of Russian admissions.
 
 The teaching may begin in English, especially in earlier years, but clinical life in Russian hospitals depends heavily on Russian language ability. Patients speak Russian. Records are often in Russian. Hospital communication is not automatically English just because the brochure says "English medium."
 
@@ -2924,13 +2924,13 @@ A Russian medical degree can lead to multiple pathways, but only if the student 
 - India: FMGE or future NExT-style licensing route
 - USA: USMLE, if the student prepares from early years
 - UK: PLAB-aligned planning
-- Russia itself: possible for students who become strong in Russian
+- The host country itself: possible for students who become strong in Russian
 
 The biggest mistake is leaving licensing preparation until the final year.
 
 ## What Role Does NewLyf Overseas Play?
 
-The Russia application route has many moving parts: university filtering, document timing, translations, apostille work, invitation letters, payment caution, and migration compliance.
+The Russian application route has many moving parts: university filtering, document timing, translations, apostille work, invitation letters, payment caution, and migration compliance.
 
 That is why expert support matters most in the details, not just in filling out a basic application form.
 
