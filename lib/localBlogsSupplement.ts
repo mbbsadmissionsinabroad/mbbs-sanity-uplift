@@ -2811,7 +2811,7 @@ That is why this blog is internally linked only to the service pages for [MBBS i
     ],
     bodySource: `You cleared NEET. Government seats are gone. And private colleges in India are asking for huge fees. So now the question becomes simple: is Russia still a real route, or is it just another consultant pitch?
 
-The honest answer is that Russia remains one of the most established foreign routes for Indian students, but only when you understand the process properly and apply through the right filters.
+The honest answer is that Russia remains one of the most established foreign routes for Indian students, but only when you understand the process properly and apply through the right filters. For the core destination overview behind this process, see [MBBS in Russia](/mbbs-in-russia).
 
 ## Are You Actually Eligible? Confirm Before You Apply
 
@@ -2995,12 +2995,7 @@ If you want to apply for MBBS in Russia, the process is very workable, but only 
     blogCategory: "MBBS in Russia",
     bannerImageUrl: "/how-to-apply-for-mbbs-in-russia.png",
     publishedAt: "2026-06-19T05:30:00.000Z",
-    relatedLinks: [
-      {
-        href: "/mbbs-in-russia",
-        label: "MBBS in Russia",
-      },
-    ],
+    relatedLinks: [],
   },
 ];
 
