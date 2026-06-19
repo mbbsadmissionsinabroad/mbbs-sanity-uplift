@@ -4027,7 +4027,7 @@ The admission process is manageable when handled step by step. The biggest risks
       "validity of russian mbbs degree in india",
       "pros and cons of russian medical education",
     ],
-    content: `# Is MBBS in Russia Good for Indian Students in 2026? An Honest, Data-Backed Review
+    bodySource: `# Is MBBS in Russia Good for Indian Students in 2026? An Honest, Data-Backed Review
 
 For a large number of NEET-qualified Indian students, the Russian medical route looks like the only realistic way to become a doctor without paying Rs. 60 lakh to Rs. 1 crore in an Indian private college. At the same time, families hear worrying stories about FMGE pass rates, language barriers, cold weather, and misleading agents.
 
