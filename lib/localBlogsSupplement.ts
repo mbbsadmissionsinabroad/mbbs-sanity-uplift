@@ -2958,7 +2958,7 @@ In most cases, missing the intake means waiting until the next academic cycle, w
 
 ## Final Word
 
-If you want to apply for MBBS in Russia, the process is very workable, but only when the timeline, documents, university checks, visa sequence, and payment safety are all handled carefully.`,
+If you want to apply through the Russian MBBS route, the process is very workable, but only when the timeline, documents, university checks, visa sequence, and payment safety are all handled carefully.`,
     faq: [
       {
         question: "Can I do MBBS in Russia without NEET?",
