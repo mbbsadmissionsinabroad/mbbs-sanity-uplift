@@ -5559,7 +5559,7 @@ It is not worth it as a shortcut. It is worth it only as a planned, documented, 
     ],
     bodySource: `MBBS in Russia | How many years for Indian students? It is a career safety question, NMC compliance question, and financial planning question—not just a number. In this guide, we will explore how long does it take to become a doctor in India including the confusion between 6 and 7 years and why you need only NMC-aligned pathways without the risk of getting scammed.
 
-Choosing [MBBS in Russia](/mbbs-in-russia) is an excellent opportunity for Indian students, but understanding the duration is critical.
+Choosing MBBS in Russia is an excellent opportunity for Indian students, but understanding the duration is critical.
 
 ## Short Answer — MBBS in Russia How Many Years?
 
