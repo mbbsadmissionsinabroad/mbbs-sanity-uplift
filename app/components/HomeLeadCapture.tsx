@@ -151,7 +151,7 @@ function SharedFields({
             name="name"
             value={form.formData.name}
             onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none transition focus:border-sky-500"
             required
           />
         </div>
@@ -168,7 +168,7 @@ function SharedFields({
             name="phone"
             value={form.formData.phone}
             onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none transition focus:border-sky-500"
             required
           />
         </div>
@@ -188,7 +188,7 @@ function SharedFields({
             name="email"
             value={form.formData.email}
             onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none transition focus:border-sky-500"
             required
           />
         </div>
@@ -204,7 +204,7 @@ function SharedFields({
             name="course"
             value={form.formData.course}
             onChange={form.handleInputChange}
-            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+            className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none transition focus:border-sky-500"
             required
           >
             <option value="">Select an option</option>
@@ -230,7 +230,7 @@ function SharedFields({
           value={form.formData.message}
           onChange={form.handleInputChange}
           rows={3}
-          className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-sky-500"
+          className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-base text-slate-900 outline-none transition focus:border-sky-500"
           placeholder="Tell us your budget, preferred country, NEET status, or current stage."
           required
         />
@@ -427,9 +427,9 @@ export function HomePopupLeadForm({
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="w-full max-w-4xl overflow-hidden rounded-[2rem] bg-white shadow-[0_32px_90px_rgba(15,23,42,0.24)]">
+              <Dialog.Panel className="mx-auto w-full max-w-[95vw] sm:max-w-4xl overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] bg-white shadow-[0_32px_90px_rgba(15,23,42,0.24)]">
                 <div className="grid lg:grid-cols-[0.86fr_1.14fr]">
-                  <div className="bg-[linear-gradient(160deg,#081226_0%,#0f2a58_58%,#0ea5e9_140%)] p-8 text-white">
+                  <div className="bg-[linear-gradient(160deg,#081226_0%,#0f2a58_58%,#0ea5e9_140%)] p-5 sm:p-8 text-white">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">
@@ -474,7 +474,7 @@ export function HomePopupLeadForm({
                     </div>
                   </div>
 
-                  <div className="p-8">
+                  <div className="p-5 sm:p-8">
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <SharedFields form={form} formIdPrefix="home-popup" />
 
